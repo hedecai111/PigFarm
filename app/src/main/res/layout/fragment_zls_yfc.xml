@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_gray"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/title_textview_style"
+        android:text="猪栏数" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout style="@style/linear_style">
+
+                <TextView
+                    android:layout_weight="1.2"
+                    style="@style/textview_style"
+                    android:text="每栏饲养的商品猪数" />
+
+                <EditText
+                    android:id="@+id/mlsyspzs"
+                    android:hint="请输入每栏饲养的商品猪数"
+                    style="@style/edittext_style" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/linear_style">
+
+                <TextView
+                    android:layout_weight="1.2"
+                    style="@style/textview_style"
+                    android:text="商品猪育肥栏" />
+
+                <EditText
+                    android:id="@+id/spzyfl"
+                    android:hint="请输入商品猪育肥栏"
+                    style="@style/edittext_style" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <include layout="@layout/left_right_button"
+        android:visibility="gone"/>
+</LinearLayout>

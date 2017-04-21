@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_gray"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/title_textview_style"
+        android:text="基本参数设置" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout style="@style/linear_style">
+
+                <TextView
+                    style="@style/textview_style"
+                    android:text="断奶至配种间隔" />
+
+                <EditText
+                    android:id="@+id/dnzpzjg_Edi"
+                    android:hint="请输入断奶至配种间隔天数"
+                    style="@style/edittext_style" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/linear_style">
+
+                <TextView
+                    style="@style/textview_style"
+                    android:text="妊娠检查" />
+
+                <EditText
+                    android:id="@+id/rcjc_Edi"
+                    android:hint="请输入妊娠检查天数"
+                    style="@style/edittext_style" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/linear_style">
+
+                <TextView
+                    style="@style/textview_style"
+                    android:text="母猪妊娠期" />
+
+                <EditText
+                    android:id="@+id/mzrczq_Edi"
+                    android:hint="请输入母猪妊娠期天数"
+                    style="@style/edittext_style" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/linear_style">
+
+                <TextView
+                    style="@style/textview_style"
+                    android:text="母猪配怀率" />
+
+                <EditText
+                    android:id="@+id/mzhpl_Edi"
+                    android:hint="请输入母猪配怀率 %"
+                    style="@style/edittext_style" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/linear_style">
+
+                <TextView
+                    style="@style/textview_style"
+                    android:text="妊娠母猪分娩率" />
+
+                <EditText
+                    android:id="@+id/mzfwl_Edi"
+                    android:hint="请输入妊娠母猪分娩率 %"
+                    style="@style/edittext_style" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/linear_style">
+
+                <TextView
+                    style="@style/textview_style"
+                    android:text="母猪受胎分娩率" />
+
+                <EditText
+                    android:id="@+id/mzstfwl_Edi"
+                    android:hint="请输入母猪受胎分娩率 %"
+                    android:enabled="false"
+                    style="@style/edittext_style" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/linear_style">
+
+                <TextView
+                    style="@style/textview_style"
+                    android:text="断奶日龄" />
+
+                <EditText
+                    android:id="@+id/dnrl_Edi"
+                    android:hint="请输入断奶日龄 天"
+                    style="@style/edittext_style" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/linear_style">
+
+                <TextView
+                    style="@style/textview_style"
+                    android:text="母猪年产窝数" />
+
+                <EditText
+                    android:id="@+id/mzncws_Edi"
+                    android:hint="请输入母猪年产窝数 窝/年"
+                    android:enabled="false"
+                    style="@style/edittext_style" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/linear_style">
+
+                <TextView
+                    style="@style/textview_style"
+                    android:text="保育期" />
+
+                <EditText
+                    android:id="@+id/byq_Edi"
+                    android:hint="请输入保育期天数"
+                    android:enabled="false"
+                    style="@style/edittext_style" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/linear_style">
+
+                <TextView
+                    style="@style/textview_style"
+                    android:text="生长育肥期" />
+
+                <EditText
+                    android:id="@+id/szyfq_Edi"
+                    android:hint="请输入生长发育期天数"
+                    style="@style/edittext_style" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/linear_style">
+
+                <TextView
+                    style="@style/textview_style"
+                    android:text="母猪窝产活仔数" />
+
+                <EditText
+                    android:id="@+id/mzwczs_Edi"
+                    android:hint="请输入母猪窝产活仔数 头"
+                    style="@style/edittext_style" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/linear_style">
+
+                <TextView
+                    style="@style/textview_style"
+                    android:text="哺乳期存活率" />
+
+                <EditText
+                    android:id="@+id/prqchl_Edi"
+                    android:hint="请输入哺乳期存活率 %"
+                    style="@style/edittext_style" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/linear_style">
+
+                <TextView
+                    style="@style/textview_style"
+                    android:text="保育期存活率" />
+
+                <EditText
+                    android:id="@+id/byqchl_Edi"
+                    android:hint="请输入保育期存活率 %"
+                    style="@style/edittext_style" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/linear_style">
+
+                <TextView
+                    style="@style/textview_style"
+                    android:text="生长育肥期存活率" />
+
+                <EditText
+                    android:id="@+id/szbyqchl_Edi"
+                    android:hint="请输入生长育肥期存活率 %"
+                    style="@style/edittext_style" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/linear_style">
+
+                <TextView
+                    style="@style/textview_style"
+                    android:text="年提供育成仔猪数" />
+
+                <EditText
+                    android:id="@+id/ntgczzs_Edi"
+                    android:hint="请输入年提供育成仔猪数 头"
+                    android:enabled="false"
+                    style="@style/edittext_style" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/linear_style">
+
+                <TextView
+                    style="@style/textview_style"
+                    android:text="年提供商品猪数" />
+
+                <EditText
+                    android:id="@+id/ntgspzs_Edi"
+                    android:hint="请输入年提供商品猪数 头"
+                    android:enabled="false"
+                    style="@style/edittext_style" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/linear_style">
+
+                <TextView
+                    style="@style/textview_style"
+                    android:text="种猪年淘汰更新率" />
+
+                <EditText
+                    android:id="@+id/nzzttl_Edi"
+                    android:hint="请输入种猪年淘汰更新率 %"
+                    style="@style/edittext_style" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/linear_style">
+
+                <TextView
+                    style="@style/textview_style"
+                    android:text="自然交配比例:" />
+
+                <EditText
+                    android:id="@+id/zrjpbl_Edi"
+                    android:hint="请输入自然交配比例 0-1"
+                    android:enabled="false"
+                    style="@style/edittext_style" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/linear_style">
+
+                <TextView
+                    style="@style/textview_style"
+                    android:text="猪人工授精:" />
+
+                <EditText
+                    android:id="@+id/zrgsj_Edi"
+                    android:hint="请输入猪人工授精比例 0-1"
+                    android:enabled="false"
+                    style="@style/edittext_style" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/linear_style">
+
+                <TextView
+                    style="@style/textview_style"
+                    android:text="后备猪培育批次" />
+
+                <EditText
+                    android:id="@+id/hbzpypc_Edi"
+                    android:hint="请输入后备猪培育批次 次/年"
+                    style="@style/edittext_style" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/linear_style">
+
+                <TextView
+                    style="@style/textview_style"
+                    android:text="每年天数（天）" />
+
+                <EditText
+                    android:id="@+id/mnts_Edi"
+                    style="@style/edittext_style"
+                    android:enabled="false"
+                    android:text="365" />
+            </LinearLayout>
+            <LinearLayout style="@style/linear_style">
+
+                <TextView
+                    style="@style/textview_style"
+                    android:text="每年周数（周）" />
+
+                <EditText
+                    android:id="@+id/mnzs_edi"
+                    style="@style/edittext_style"
+                    android:enabled="false"
+                    android:text="52" />
+            </LinearLayout>
+            <LinearLayout style="@style/linear_style">
+
+                <TextView
+                    style="@style/textview_style"
+                    android:text="繁殖节律（天）" />
+
+                <Spinner
+                    android:id="@+id/fzjl_Spi"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:entries="@array/spingarr"
+                    android:gravity="center"></Spinner>
+            </LinearLayout>
+            <LinearLayout style="@style/linear_style">
+
+                <TextView
+                    style="@style/textview_style"
+                    android:text="母猪年产胎次/n（理论）" />
+
+                <EditText
+                    android:id="@+id/mzncts_edi"
+                    style="@style/edittext_style"
+                    android:enabled="false"
+                    android:text="2.5" />
+            </LinearLayout>
+            <LinearLayout style="@style/linear_style">
+
+                <TextView
+                    style="@style/textview_style"
+                    android:text="每周参配母猪数" />
+
+                <EditText
+                    android:id="@+id/mzcpmzs_edi"
+                    style="@style/edittext_style"
+                    android:enabled="false"
+                    android:text="54" />
+            </LinearLayout>
+            <LinearLayout style="@style/linear_style">
+
+                <TextView
+                    style="@style/textview_style"
+                    android:text="每周妊娠母猪数" />
+
+                <EditText
+                    android:id="@+id/mzrcmzs_edi"
+                    style="@style/edittext_style"
+                    android:enabled="false"
+                    android:text="42" />
+            </LinearLayout>
+            <LinearLayout style="@style/linear_style">
+
+                <TextView
+                    style="@style/textview_style"
+                    android:text="每周产仔母猪数" />
+
+                <EditText
+                    android:id="@+id/mzczmzs_edi"
+                    style="@style/edittext_style"
+                    android:enabled="false"
+                    android:text="52" />
+            </LinearLayout>
+            <LinearLayout style="@style/linear_style">
+
+                <TextView
+                    style="@style/textview_style"
+                    android:text="每周保育窝数" />
+
+                <EditText
+                    android:id="@+id/mzbyws_edi"
+                    style="@style/edittext_style"
+                    android:enabled="false"
+                    android:text="52" />
+            </LinearLayout>
+            <LinearLayout style="@style/linear_style">
+
+                <TextView
+                    style="@style/textview_style"
+                    android:text="每周肥育窝数" />
+
+                <EditText
+                    android:id="@+id/mzyfws_edi"
+                    style="@style/edittext_style"
+                    android:enabled="false"
+                    android:text="52" />
+            </LinearLayout>
+            <LinearLayout style="@style/linear_style">
+
+                <TextView
+                    style="@style/textview_style"
+                    android:text="猪栏空置消毒天数" />
+
+                <EditText
+                    android:id="@+id/zlkzxdts_edi"
+                    style="@style/edittext_style"
+                    android:paddingLeft="10dp"
+                    android:text="7" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <include layout="@layout/left_right_button" />
+</LinearLayout>

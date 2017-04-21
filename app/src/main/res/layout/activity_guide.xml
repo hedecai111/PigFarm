@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_guide"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/pig_guide"
+        />
+    <TextView
+        android:id="@+id/time_TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/black_overlay_44"
+        android:layout_alignParentRight="true"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:layout_margin="25dp"
+        android:textColor="@color/text_white"
+        android:textSize="14sp"
+        android:gravity="center"
+        />
+    <Button
+        android:id="@+id/experience_Button"
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:text="立即体验"
+        android:background="@drawable/experience_button_selecotr"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="70dp"
+        android:textColor="@color/text_white"
+        android:textSize="14sp"
+        android:gravity="center"
+        />
+</RelativeLayout>

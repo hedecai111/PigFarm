@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_gray"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/title_textview_style"
+        android:text="各猪舍设备参数" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <!--标题栏-->
+        <LinearLayout
+           style="@style/linear_style_zsjz">
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:layout_weight="3"
+                    android:text="设备名称"/>
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:text="规模型号"/>
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:text="单位"/>
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:text="--"/>
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:text="--(元)"/>
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:text="投资(万元)"/>
+            </LinearLayout>
+            <TextView
+                style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:layout_weight="2"
+                    android:text="小群圈栏"/>
+                <EditText
+                    style="@style/edittext_style_zqjg"
+                    android:textSize="9sp"
+                    android:text="长3.6*宽28"/>
+                <EditText
+                    style="@style/edittext_style_zqjg"
+                    android:text="个"/>
+                <EditText
+                    android:id="@+id/yfc_xqjl_sl"
+                    style="@style/edittext_style_zqjg"
+                    android:enabled="false"
+                    android:hint="个"/>
+                <EditText
+                    android:id="@+id/yfc_xqjl_dj"
+                    style="@style/edittext_style_zqjg"
+                    android:enabled="false"
+                    android:hint="--"/>
+                <EditText
+                    android:id="@+id/yfc_xqjl_tz"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--"/>
+            </LinearLayout>
+            <TextView
+                style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:layout_weight="2"
+                    android:text="料塔料线(按料槽位估算)"/>
+                <EditText
+                    style="@style/edittext_style_zqjg"
+                    android:textSize="9sp"
+                    android:text="--"/>
+                <EditText
+                    style="@style/edittext_style_zqjg"
+                    android:text="个"/>
+                <EditText
+                    android:id="@+id/yfc_ltlx_sl"
+                    style="@style/edittext_style_zqjg"
+                    android:enabled="false"
+                    android:hint="--"/>
+                <EditText
+                    android:id="@+id/yfc_ltlx_dj"
+                    style="@style/edittext_style_zqjg"
+                    android:enabled="false"
+                    android:hint="--"/>
+                <EditText
+                    android:id="@+id/yfc_ltlx_tz"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--"/>
+            </LinearLayout>
+            <TextView
+                style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:layout_weight="2"
+                    android:text="湿帘"/>
+                <EditText
+                    style="@style/edittext_style_zqjg"
+                    android:textSize="9sp"
+                    android:text="15cm厚"/>
+                <EditText
+                    style="@style/edittext_style_zqjg"
+                    android:text="m2"/>
+                <EditText
+                    android:id="@+id/yfc_sl_sl"
+                    style="@style/edittext_style_zqjg"
+                    android:enabled="false"
+                    android:hint="--"/>
+                <EditText
+                    android:id="@+id/yfc_sl_dj"
+                    style="@style/edittext_style_zqjg"
+                    android:enabled="false"
+                    android:hint="--"/>
+                <EditText
+                    android:id="@+id/yfc_sl_tz"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--"/>
+            </LinearLayout>
+            <TextView
+                style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:layout_weight="2"
+                    android:text="负压风机"/>
+                <EditText
+                    style="@style/edittext_style_zqjg"
+                    android:textSize="9sp"
+                    android:text="1.1*1.1"/>
+                <EditText
+                    style="@style/edittext_style_zqjg"
+                    android:text="个"/>
+                <EditText
+                    android:id="@+id/yfc_fyfj_sl"
+                    style="@style/edittext_style_zqjg"
+                    android:enabled="false"
+                    android:hint="--"/>
+                <EditText
+                    android:id="@+id/yfc_fyfj_dj"
+                    style="@style/edittext_style_zqjg"
+                    android:enabled="false"
+                    android:hint="--"/>
+                <EditText
+                    android:id="@+id/yfc_fyfj_tz"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--"/>
+            </LinearLayout>
+            <TextView
+                style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:layout_weight="2"
+                    android:text="智能环境控制器"/>
+                <EditText
+                    style="@style/edittext_style_zqjg"
+                    android:textSize="9sp"
+                    android:text="--"/>
+                <EditText
+                    style="@style/edittext_style_zqjg"
+                    android:text="个"/>
+                <EditText
+                    android:id="@+id/yfc_znhjkzq_sl"
+                    style="@style/edittext_style_zqjg"
+                    android:enabled="false"
+                    android:hint="--"/>
+                <EditText
+                    android:id="@+id/yfc_znhjkzq_dj"
+                    style="@style/edittext_style_zqjg"
+                    android:enabled="false"
+                    android:hint="--"/>
+                <EditText
+                    android:id="@+id/yfc_znhjkzq_tz"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--"/>
+            </LinearLayout>
+            <TextView
+                style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:layout_weight="2"
+                    android:text="漏缝地板(半漏缝地面)"/>
+                <EditText
+                    style="@style/edittext_style_zqjg"
+                    android:textSize="9sp"
+                    android:text="3*0.6*0.1"/>
+                <EditText
+                    style="@style/edittext_style_zqjg"
+                    android:text="m2"/>
+                <EditText
+                    android:id="@+id/yfc_lfdb_sl"
+                    style="@style/edittext_style_zqjg"
+                    android:enabled="false"
+                    android:hint="--"/>
+                <EditText
+                    android:id="@+id/yfc_lfdb_dj"
+                    style="@style/edittext_style_zqjg"
+                    android:enabled="false"
+                    android:hint="--"/>
+                <EditText
+                    android:id="@+id/yfc_lfdb_tz"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--"/>
+            </LinearLayout>
+            <TextView
+                style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:layout_weight="2"
+                    android:text="饮水器"/>
+                <EditText
+                    style="@style/edittext_style_zqjg"
+                    android:textSize="9sp"
+                    android:text="杯状"/>
+                <EditText
+                    style="@style/edittext_style_zqjg"
+                    android:text="个"/>
+                <EditText
+                    android:id="@+id/yfc_ysq_sl"
+                    style="@style/edittext_style_zqjg"
+                    android:enabled="false"
+                    android:hint="--"/>
+                <EditText
+                    android:id="@+id/yfc_ysq_dj"
+                    style="@style/edittext_style_zqjg"
+                    android:enabled="false"
+                    android:hint="--"/>
+                <EditText
+                    android:id="@+id/yfc_ysq_tz"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--"/>
+            </LinearLayout>
+            <TextView
+                style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:layout_weight="1"
+                    android:text="投资总额(万元)"/>
+                <EditText
+                    android:id="@+id/yfc_tzze"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+    </ScrollView>
+
+    <include layout="@layout/left_right_button"
+        android:visibility="gone"/>
+</LinearLayout>

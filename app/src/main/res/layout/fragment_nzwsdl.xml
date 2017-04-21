@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_gray"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/title_textview_style"
+        android:text="农作物施氮量设置" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="请设置农作物应施氮量"
+            android:padding="10dp"
+            android:textSize="16sp"/>
+        <LinearLayout style="@style/linear_style_zsjz">
+
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style"
+                    android:text="水稻（Kg/亩*季）" />
+                <EditText
+                    android:id="@+id/sd"
+                    style="@style/edittext_style"
+                    android:hint="请输入水稻施氮量"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style"
+                    android:text="小麦（Kg/亩*季" />
+                <EditText
+                    android:id="@+id/xm"
+                    style="@style/edittext_style"
+                    android:hint="请输入小麦施氮量"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style"
+                    android:text="玉米（Kg/亩*季）" />
+                <EditText
+                    android:id="@+id/ym"
+                    style="@style/edittext_style"
+                    android:hint="请输入玉米施氮量"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style"
+                    android:text="油菜（Kg/亩*季）" />
+                <EditText
+                    android:id="@+id/yc"
+                    style="@style/edittext_style"
+                    android:hint="请输入油菜施氮量"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style"
+                    android:text="甘薯（Kg/亩*季）" />
+                <EditText
+                    android:id="@+id/gs"
+                    style="@style/edittext_style"
+                    android:hint="请输入甘薯施氮量"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style"
+                    android:text="马铃薯（Kg/亩*季）" />
+                <EditText
+                    android:id="@+id/mls"
+                    style="@style/edittext_style"
+                    android:hint="请输入马铃薯施氮量"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style"
+                    android:text="茄果类蔬菜（Kg/亩*季）" />
+                <EditText
+                    android:id="@+id/qglsc"
+                    style="@style/edittext_style"
+                    android:hint="请输入茄果类蔬菜施氮量"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style"
+                    android:text="瓜类蔬菜（Kg/亩*季）" />
+                <EditText
+                    android:id="@+id/glsc"
+                    style="@style/edittext_style"
+                    android:hint="请输入瓜类蔬菜施氮量"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style"
+                    android:text="叶菜类蔬菜（Kg/亩*季）" />
+                <EditText
+                    android:id="@+id/yclsc"
+                    style="@style/edittext_style"
+                    android:hint="请输入叶菜类蔬菜施氮量"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style"
+                    android:text="根菜类蔬菜（Kg/亩*季）" />
+                <EditText
+                    android:id="@+id/gclsc"
+                    style="@style/edittext_style"
+                    android:hint="请输入根菜类蔬菜施氮量"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style"
+                    android:text="豆类蔬菜（Kg/亩*季）" />
+                <EditText
+                    android:id="@+id/dlsc"
+                    style="@style/edittext_style"
+                    android:hint="请输入豆类蔬菜施氮量"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style"
+                    android:text="葱蒜类蔬菜（Kg/亩*季）" />
+                <EditText
+                    android:id="@+id/cslsc"
+                    style="@style/edittext_style"
+                    android:hint="请输入葱蒜类蔬菜施氮量"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style"
+                    android:text="落叶果树（Kg/亩*年）" />
+                <EditText
+                    android:id="@+id/lygs"
+                    style="@style/edittext_style"
+                    android:hint="请输入落叶果树施氮量"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style"
+                    android:text="常绿果树（Kg/亩*年）" />
+                <EditText
+                    android:id="@+id/clgs"
+                    style="@style/edittext_style"
+                    android:hint="请输入常绿果树施氮量"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style"
+                    android:text="茶叶（Kg/亩*年）" />
+                <EditText
+                    android:id="@+id/cy"
+                    style="@style/edittext_style"
+                    android:hint="请输入茶叶施氮量"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style"
+                    android:text="牧草（黑麦草）\n（Kg/亩*年）" />
+                <EditText
+                    android:id="@+id/mc"
+                    style="@style/edittext_style"
+                    android:hint="请输入牧草施氮量"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+    </ScrollView>
+
+    <include layout="@layout/left_right_button" />
+</LinearLayout>

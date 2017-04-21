@@ -1,0 +1,753 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_gray"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/title_textview_style"
+        android:text="粪尿产生量设置" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout style="@style/linear_style_zsjz">
+
+                <TextView
+                    style="@style/zs_title"
+                    android:text="青年及成年公猪" />
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="粪 鲜粪(kg/天)" />
+
+                    <EditText
+                        android:id="@+id/qnjcngz_f_xf"
+                        style="@style/edittext_style"
+                        android:hint="请输入日鲜粪产量" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="粪 干物质(Kg/天)" />
+
+                    <EditText
+                        android:id="@+id/qnjcngz_f_gwz"
+                        style="@style/edittext_style"
+                        android:hint="请输入日干物质产量" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="尿 尿(kg/天)" />
+
+                    <EditText
+                        android:id="@+id/qnjcngz_l_l"
+                        style="@style/edittext_style"
+                        android:hint="请输入产尿量" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="尿 干物质(kg/天)" />
+
+                    <EditText
+                        android:id="@+id/qnjcngz_l_gwz"
+                        style="@style/edittext_style"
+                        android:hint="请输入干物质产量" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="粪尿氮合计(Kg)" />
+
+                    <EditText
+                        android:id="@+id/qnjcngz_flhj"
+                        style="@style/edittext_style"
+                        android:hint="请输入粪尿合计产氮量" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="干物质合计(Kg/天)" />
+
+                    <EditText
+                        android:id="@+id/qnjcngz_gwz"
+                        style="@style/edittext_style"
+                        android:hint="请输入干物质合计产量" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout style="@style/linear_style_zsjz">
+
+                <TextView
+                    style="@style/zs_title"
+                    android:text="后备母猪" />
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="粪 鲜粪(kg/天)" />
+
+                    <EditText
+                        android:id="@+id/hbmz_f_xf"
+                        style="@style/edittext_style"
+                        android:hint="请输入日鲜粪产量" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="粪 干物质(Kg/天)" />
+
+                    <EditText
+                        android:id="@+id/hbmz_f_gwz"
+                        style="@style/edittext_style"
+                        android:hint="请输入日干物质产量" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="尿 尿(kg/天)" />
+
+                    <EditText
+                        android:id="@+id/hbmz_l_l"
+                        style="@style/edittext_style"
+                        android:hint="请输入尿产量" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="尿 干物质(kg/天)" />
+
+                    <EditText
+                        android:id="@+id/hbmz_l_gwz"
+                        style="@style/edittext_style"
+                        android:hint="干物质产量" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="粪尿氮合计(Kg)" />
+
+                    <EditText
+                        android:id="@+id/hbmz_flhj"
+                        style="@style/edittext_style"
+                        android:hint="请输入粪尿合计产氮量" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="干物质合计(Kg/天)" />
+
+                    <EditText
+                        android:id="@+id/hbmz_gwz"
+                        style="@style/edittext_style"
+                        android:hint="请输入干物质合计产量" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout style="@style/linear_style_zsjz">
+
+                <TextView
+                    style="@style/zs_title"
+                    android:text="配种妊检母猪" />
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="粪 鲜粪(kg/天)" />
+
+                    <EditText
+                        android:id="@+id/pzrjmz_f_xf"
+                        style="@style/edittext_style"
+                        android:hint="请输入日鲜粪产量" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="粪 干物质(Kg/天)" />
+
+                    <EditText
+                        android:id="@+id/pzrjmz_f_gwz"
+                        style="@style/edittext_style"
+                        android:hint="请输入日干物质产量" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="尿 尿(kg/天)" />
+
+                    <EditText
+                        android:id="@+id/pzrjmz_l_l"
+                        style="@style/edittext_style"
+                        android:hint="请输入尿" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="尿 干物质(kg/天)" />
+
+                    <EditText
+                        android:id="@+id/pzrjmz_l_gwz"
+                        style="@style/edittext_style"
+                        android:hint="请输入干物质产量" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="粪尿氮合计(Kg)" />
+
+                    <EditText
+                        android:id="@+id/pzrjmz_flhj"
+                        style="@style/edittext_style"
+                        android:hint="请输入粪尿合计产氮量" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="干物质合计(Kg/天)" />
+
+                    <EditText
+                        android:id="@+id/pzrjmz_gwz"
+                        style="@style/edittext_style"
+                        android:hint="请输入干物质合计产量" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout style="@style/linear_style_zsjz">
+
+                <TextView
+                    style="@style/zs_title"
+                    android:text="妊娠母猪" />
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="粪 鲜粪(kg/天)" />
+
+                    <EditText
+                        android:id="@+id/rcmz_f_cf"
+                        style="@style/edittext_style"
+                        android:hint="请输入日鲜粪产量" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="粪 干物质(Kg/天)" />
+
+                    <EditText
+                        android:id="@+id/rcmz_f_gwz"
+                        style="@style/edittext_style"
+                        android:hint="请输入日干物质产量" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="尿 尿(kg/天)" />
+
+                    <EditText
+                        android:id="@+id/rcmz_l_l"
+                        style="@style/edittext_style"
+                        android:hint="请输入尿产量" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="尿 干物质(kg/天)" />
+
+                    <EditText
+                        android:id="@+id/rcmz_l_gwz"
+                        style="@style/edittext_style"
+                        android:hint="干物质" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="粪尿氮合计(Kg)" />
+
+                    <EditText
+                        android:id="@+id/rcmz_flhj"
+                        style="@style/edittext_style"
+                        android:hint="请输入粪尿合计产氮量" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="干物质合计(Kg/天)" />
+
+                    <EditText
+                        android:id="@+id/rcmz_gwz"
+                        style="@style/edittext_style"
+                        android:hint="请输入干物质合计产量" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout style="@style/linear_style_zsjz">
+
+                <TextView
+                    style="@style/zs_title"
+                    android:text="哺乳母猪" />
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="粪 鲜粪(kg/天)" />
+
+                    <EditText
+                        android:id="@+id/prmz_f_xf"
+                        style="@style/edittext_style"
+                        android:hint="请输入日鲜粪产量" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="粪 干物质(Kg/天)" />
+
+                    <EditText
+                        android:id="@+id/prmz_f_gwz"
+                        style="@style/edittext_style"
+                        android:hint="请输入日干物质产量" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="尿 尿(kg/天)" />
+
+                    <EditText
+                        android:id="@+id/prmz_l_l"
+                        style="@style/edittext_style"
+                        android:hint="请输入尿产量" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="尿 干物质(kg/天)" />
+
+                    <EditText
+                        android:id="@+id/prmz_l_gwz"
+                        style="@style/edittext_style"
+                        android:hint="请输入干物质产量" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="粪尿氮合计(Kg)" />
+
+                    <EditText
+                        android:id="@+id/prmz_flhj"
+                        style="@style/edittext_style"
+                        android:hint="请输入粪尿合计产氮量" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="干物质合计(Kg/天)" />
+
+                    <EditText
+                        android:id="@+id/prmz_gwz"
+                        style="@style/edittext_style"
+                        android:hint="请输入干物质合计产量" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout style="@style/linear_style_zsjz">
+
+                <TextView
+                    style="@style/zs_title"
+                    android:text="哺乳仔猪" />
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="粪 鲜粪(kg/天)" />
+
+                    <EditText
+                        android:id="@+id/przz_f_xf"
+                        style="@style/edittext_style"
+                        android:hint="请输入日鲜粪产量" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="粪 干物质(Kg/天)" />
+
+                    <EditText
+                        android:id="@+id/przz_f_gwz"
+                        style="@style/edittext_style"
+                        android:hint="请输入日干物质产量" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="尿 尿(kg/天)" />
+
+                    <EditText
+                        android:id="@+id/przz_l_l"
+                        style="@style/edittext_style"
+                        android:hint="请输入尿产量" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="尿 干物质(kg/天)" />
+
+                    <EditText
+                        android:id="@+id/przz_l_gwz"
+                        style="@style/edittext_style"
+                        android:hint="请输入干物质产量" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="粪尿氮合计(Kg)" />
+
+                    <EditText
+                        android:id="@+id/przz_flhj"
+                        style="@style/edittext_style"
+                        android:hint="请输入粪尿合计产氮量" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="干物质合计(Kg/天)" />
+
+                    <EditText
+                        android:id="@+id/przz_gwz"
+                        style="@style/edittext_style"
+                        android:hint="请输入干物质合计产量" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout style="@style/linear_style_zsjz">
+
+                <TextView
+                    style="@style/zs_title"
+                    android:text="保育仔猪" />
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="粪 鲜粪(kg/天)" />
+
+                    <EditText
+                        android:id="@+id/byzz_f_xf"
+                        style="@style/edittext_style"
+                        android:hint="请输入日鲜粪产量" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="粪 干物质(Kg/天)" />
+
+                    <EditText
+                        android:id="@+id/byzz_f_gwz"
+                        style="@style/edittext_style"
+                        android:hint="请输入日干物质产量" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="尿 尿(kg/天)" />
+
+                    <EditText
+                        android:id="@+id/byzz_l_l"
+                        style="@style/edittext_style"
+                        android:hint="请输入尿产量" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="尿 干物质(kg/天)" />
+
+                    <EditText
+                        android:id="@+id/byzz_l_gwz"
+                        style="@style/edittext_style"
+                        android:hint="请输入干物质产量" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="粪尿氮合计(Kg)" />
+
+                    <EditText
+                        android:id="@+id/byzz_flhj"
+                        style="@style/edittext_style"
+                        android:hint="请输入粪尿合计产氮量" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="干物质合计(Kg/天)" />
+
+                    <EditText
+                        android:id="@+id/byzz_gwz"
+                        style="@style/edittext_style"
+                        android:hint="请输入干物质合计产量" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout style="@style/linear_style_zsjz">
+
+                <TextView
+                    style="@style/zs_title"
+                    android:text="生长育肥猪" />
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="粪 鲜粪(kg/天)" />
+
+                    <EditText
+                        android:id="@+id/szyfz_f_xf"
+                        style="@style/edittext_style"
+                        android:hint="请输入日鲜粪产量" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="粪 干物质(Kg/天)" />
+
+                    <EditText
+                        android:id="@+id/szyfz_f_gwz"
+                        style="@style/edittext_style"
+                        android:hint="请输入日干物质产量" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="尿 尿(kg/天)" />
+
+                    <EditText
+                        android:id="@+id/szyfz_l_l"
+                        style="@style/edittext_style"
+                        android:hint="请输入尿产量" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="尿 干物质(kg/天)" />
+
+                    <EditText
+                        android:id="@+id/szyfz_l_gwz"
+                        style="@style/edittext_style"
+                        android:hint="请输入干物质产量" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="粪尿氮合计(Kg)" />
+
+                    <EditText
+                        android:id="@+id/szyfz_flhj"
+                        style="@style/edittext_style"
+                        android:hint="请输入粪尿合计产氮量" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="干物质合计(Kg/天)" />
+
+                    <EditText
+                        android:id="@+id/szyfz_gwz"
+                        style="@style/edittext_style"
+                        android:hint="请输入干物质合计产量" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <include layout="@layout/left_right_button" />
+</LinearLayout>

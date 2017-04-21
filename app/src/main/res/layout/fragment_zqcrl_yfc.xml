@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_gray"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/title_textview_style"
+        android:text="沼气池容量设置" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="沼气池容量设置"
+            android:padding="10dp"
+            android:textSize="16sp"/>
+        <LinearLayout style="@style/linear_style_zsjz">
+
+            <LinearLayout style="@style/linear_style">
+
+                <TextView
+                    style="@style/textview_style"
+                    android:text="干物质产气量\n（m3/kg）" />
+
+                <EditText
+                    style="@style/edittext_style"
+                    android:layout_weight="1"
+                    android:hint="请输入干物质产气量" />
+            </LinearLayout>
+
+            <TextView style="@style/textview_driver" />
+
+            <LinearLayout style="@style/linear_style">
+
+                <TextView
+                    style="@style/textview_style"
+                    android:text="沼气池池容产气率（m3/m3.天）" />
+
+                <EditText
+                    style="@style/edittext_style"
+                    android:hint="请输入池容产气率"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+
+            <TextView style="@style/textview_driver" />
+
+            <LinearLayout style="@style/linear_style">
+
+                <TextView
+                    style="@style/textview_style"
+                    android:text="沼气池容量（m3）" />
+
+                <EditText
+                    style="@style/edittext_style"
+                    android:hint="请输入沼气池容量"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    </ScrollView>
+
+    <include layout="@layout/left_right_button" />
+</LinearLayout>

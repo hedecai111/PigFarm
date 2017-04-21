@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_gray"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/title_textview_style"
+        android:text="猪舍建筑面积" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="专业育肥场猪舍建筑面积"
+                android:textSize="16sp" />
+
+            <LinearLayout style="@style/linear_style_zsjz">
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="生长育肥舍（m2）" />
+
+                    <EditText
+                        android:id="@+id/yfc_szyfs_mj"
+                        style="@style/edittext_style"
+                        android:layout_weight="1"
+                        android:hint="请输入生长育肥猪舍单价" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="辅助物建筑面积" />
+
+                    <EditText
+                        style="@style/edittext_style"
+                        android:layout_weight="1"
+                        android:hint="---" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="饲料库房" />
+
+                    <EditText
+                        android:id="@+id/yfc_slkf_mj"
+                        style="@style/edittext_style"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style"
+                        android:text="办公等其它建筑" />
+
+                    <EditText
+                        android:id="@+id/yfc_bgdqijz_mj"
+                        style="@style/edittext_style"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <include layout="@layout/left_right_button"
+        android:visibility="gone"/>
+</LinearLayout>

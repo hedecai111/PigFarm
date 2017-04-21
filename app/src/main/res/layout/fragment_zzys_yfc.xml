@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_gray"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/title_textview_style"
+        android:text="猪只饮水参数设置" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout style="@style/linear_style_zsjz">
+            <TextView
+                style="@style/zs_title"
+                android:text="生长育肥猪" />
+            <TextView style="@style/textview_driver" />
+            <TextView
+                style="@style/title_textview_fu_style"
+                android:text="猪只饮水参数"
+                />
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style"
+                    android:text="范围" />
+                <EditText
+                    android:id="@+id/zzys_szyfz_zx_Edi"
+                    style="@style/edittext_style"
+                    android:hint="最小值"
+                    android:layout_weight="0.75"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.3"
+                    android:text="--"/>
+                <EditText
+                    android:id="@+id/zzys_szyfz_zd_Edi"
+                    style="@style/edittext_style"
+                    android:hint="最大值"
+                    android:layout_weight="0.75"/>
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+            <TextView
+                style="@style/title_textview_fu_style"
+                android:text="猪只供水量"
+                />
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style"
+                    android:text="参考值(L/d)" />
+                <EditText
+                    android:id="@+id/zzgs_szyfz_Edi"
+                    style="@style/edittext_style"
+                    android:hint="请输入供水量参考值" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    </ScrollView>
+
+    <include layout="@layout/left_right_button" />
+</LinearLayout>

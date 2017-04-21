@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--标题栏-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimary">
+
+        <ImageView
+            android:id="@+id/menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:paddingLeft="10dp"
+            android:src="@drawable/list" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@drawable/white_shape"
+            android:layout_toRightOf="@id/menu"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/zzc_Tex"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/left_oncheck_shap"
+                android:gravity="center"
+                android:text="种猪场"
+                android:textColor="@color/titlebar_bg_color4"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/yfc_Tex"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="育肥场"
+                android:textColor="@color/text_white"
+                android:textSize="16sp"
+
+                />
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
+   <!-- &lt;!&ndash;App首页，选择猪场种类&ndash;&gt;<TextView
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:gravity="center"
+    android:text="选择猪场种类"
+    android:textColor="@color/colorWhite"
+    android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="请选择猪场种类" />
+
+    <Button
+        android:id="@+id/zzc_But"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/nomal_button_selector"
+        android:text="种猪场" />
+
+    <Button
+        android:id="@+id/yfc_But"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/nomal_button_selector"
+        android:text="专业育肥场" />-->
+    <FrameLayout
+        android:id="@+id/content_Fra"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+</LinearLayout>

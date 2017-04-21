@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_gray"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/title_textview_style"
+        android:text="猪舍建筑面积" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout style="@style/linear_style_zsjz">
+            <TextView
+                style="@style/zs_title"
+                android:text="自繁自养场" />
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:text="猪舍类型" />
+                <TextView
+                    style="@style/textview_style"
+                    android:gravity="center"
+                    android:text="工艺一" />
+                <TextView
+                    style="@style/textview_style"
+                    android:gravity="center"
+                    android:text="工艺二" />
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:text="后备母猪舍" />
+                <EditText
+                    android:id="@+id/zfzyc_hbmzs_gyy"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+                <EditText
+                    android:id="@+id/zfzyc_hbmzs_gye"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:text="公猪及配种妊检母猪舍" />
+                <EditText
+                    android:id="@+id/zfzyc_gzjpzrjmzs_gyy"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+                <EditText
+                    android:id="@+id/zfzyc_gzjpzrjmzs_gye"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:text="妊娠母猪舍" />
+                <EditText
+                    android:id="@+id/zfzyc_rcmzs_gyy"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+                <EditText
+                    android:id="@+id/zfzyc_rcmzs_gye"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:text="分娩舍" />
+                <EditText
+                    android:id="@+id/zfzyc_fws_gyy"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+                <EditText
+                    android:id="@+id/zfzyc_fws_gye"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:text="保育舍" />
+                <EditText
+                    android:id="@+id/zfzyc_bys_gyy"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+                <EditText
+                    android:id="@+id/zfzyc_bys_gye"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:text="生长育肥猪舍" />
+                <EditText
+                    android:id="@+id/zfzyc_szyfs_gyy"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+                <EditText
+                    android:id="@+id/zfzyc_szyfs_gye"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:text="病猪隔离舍" />
+                <EditText
+                    android:id="@+id/zfzyc_bzgls_gyy"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+                <EditText
+                    android:id="@+id/zfzyc_bzgls_gye"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:text="引种隔离舍" />
+                <EditText
+                    android:id="@+id/zfzyc_yzgls_gyy"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+                <EditText
+                    android:id="@+id/zfzyc_yzgls_gye"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:text="辅助物建筑面积" />
+                <EditText
+                    android:id="@+id/zfzyc_fzjzmj_gyy"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+                <EditText
+                    android:id="@+id/zfzyc_fzjzmj_gye"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:text="饲料库房" />
+                <EditText
+                    android:id="@+id/zfzyc_slkf_gyy"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+                <EditText
+                    android:id="@+id/zfzyc_slkf_gye"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:text="办公等其它建筑" />
+                <EditText
+                    android:id="@+id/zfzyc_bgdqtjz_gyy"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+                <EditText
+                    android:id="@+id/zfzyc_bgdqtjz_gye"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout style="@style/linear_style_zsjz">
+            <TextView
+                style="@style/zs_title"
+                android:text="断奶仔猪繁殖场" />
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:text="猪舍类型" />
+                <TextView
+                    style="@style/textview_style"
+                    android:gravity="center"
+                    android:text="工艺一" />
+                <TextView
+                    style="@style/textview_style"
+                    android:gravity="center"
+                    android:text="工艺二" />
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:text="后备母猪舍" />
+                <EditText
+                    android:id="@+id/dnzzfzc_hbmzs_gyy"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+                <EditText
+                    android:id="@+id/dnzzfzc_hbmzs_gye"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:text="配种妊检母猪舍" />
+                <EditText
+                    android:id="@+id/dnzzfzc_pzrjmzs_gyy"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+                <EditText
+                    android:id="@+id/dnzzfzc_pzrjmzs_gye"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:text="妊娠母猪舍" />
+                <EditText
+                    android:id="@+id/dnzzfzc_rcmzs_gyy"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+                <EditText
+                    android:id="@+id/dnzzfzc_rcmzs_gye"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:text="分娩舍" />
+                <EditText
+                    android:id="@+id/dnzzfzc_fws_gyy"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+                <EditText
+                    android:id="@+id/dnzzfzc_fws_gye"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:text="病猪隔离舍" />
+                <EditText
+                    android:id="@+id/dnzzfzc_bzgls_gyy"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+                <EditText
+                    android:id="@+id/dnzzfzc_bzgls_gye"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:text="引种隔离舍" />
+                <EditText
+                    android:id="@+id/dnzzfzc_yzgls_gyy"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+                <EditText
+                    android:id="@+id/dnzzfzc_yzgls_gye"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:text="辅助物建筑面积" />
+                <EditText
+                    android:id="@+id/dnzzfzc_fzwjzmj_gyy"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+                <EditText
+                    android:id="@+id/dnzzfzc_fzwjzmj_gye"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:text="饲料库房" />
+                <EditText
+                    android:id="@+id/dnzzfzc_slkf_gyy"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+                <EditText
+                    android:id="@+id/dnzzfzc_slkf_gye"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:text="办公等其它建筑" />
+                <EditText
+                    android:id="@+id/dnzzfzc_bgdqtjz_gyy"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+                <EditText
+                    android:id="@+id/dnzzfzc_bgdqtjz_gye"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout style="@style/linear_style_zsjz">
+            <TextView
+                style="@style/zs_title"
+                android:text="保育仔猪繁殖场" />
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:text="猪舍类型" />
+                <TextView
+                    style="@style/textview_style"
+                    android:gravity="center"
+                    android:text="工艺一" />
+                <TextView
+                    style="@style/textview_style"
+                    android:gravity="center"
+                    android:text="工艺二" />
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:text="后备母猪舍" />
+                <EditText
+                    android:id="@+id/byzzfzc_hbmzs_gyy"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+                <EditText
+                    android:id="@+id/byzzfzc_hbmzs_gye"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:text="配种妊检母猪舍" />
+                <EditText
+                    android:id="@+id/byzzfzc_pzrjmzs_gyy"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+                <EditText
+                    android:id="@+id/byzzfzc_pzrjmzs_gye"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:text="妊娠母猪舍" />
+                <EditText
+                    android:id="@+id/byzzfzc_rcmzs_gyy"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+                <EditText
+                    android:id="@+id/byzzfzc_rcmzs_gye"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:text="分娩舍舍" />
+                <EditText
+                    android:id="@+id/byzzfzc_fws_gyy"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+                <EditText
+                    android:id="@+id/byzzfzc_fws_gye"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:text="保育舍" />
+                <EditText
+                    android:id="@+id/byzzfzc_bys_gyy"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+                <EditText
+                    android:id="@+id/byzzfzc_bys_gye"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:text="病猪隔离舍" />
+                <EditText
+                    android:id="@+id/byzzfzc_bzgls_gyy"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+                <EditText
+                    android:id="@+id/byzzfzc_bzgls_gye"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:text="引种隔离舍" />
+                <EditText
+                    android:id="@+id/byzzfzc_yzgls_gyy"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+                <EditText
+                    android:id="@+id/byzzfzc_yzgls_gye"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:text="辅助物建筑面积" />
+                <EditText
+                    android:id="@+id/byzzfzc_fzwjzmj_gyy"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+                <EditText
+                    android:id="@+id/byzzfzc_fzwjzmj_gye"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:text="饲料库房" />
+                <EditText
+                    android:id="@+id/byzzfzc_slkf_gyy"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+                <EditText
+                    android:id="@+id/byzzfzc_slkf_gye"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:text="办公等其它建筑" />
+                <EditText
+                    android:id="@+id/byzzfzc_bgdqtjz_gyy"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+                <EditText
+                    android:id="@+id/byzzfzc_bgdqtjz_gye"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    </ScrollView>
+
+    <include layout="@layout/left_right_button"
+        android:visibility="gone"/>
+</LinearLayout>

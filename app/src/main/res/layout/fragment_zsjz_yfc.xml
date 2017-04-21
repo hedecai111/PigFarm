@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_gray"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/title_textview_style"
+        android:text="猪舍建筑面积参数设置" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <!--生长育肥栏-->
+        <LinearLayout style="@style/linear_style_zsjz">
+
+            <TextView
+                style="@style/zs_title"
+                android:text="生长育肥栏" />
+
+            <TextView style="@style/textview_driver" />
+
+            <LinearLayout style="@style/linear_style">
+
+                <TextView
+                    style="@style/textview_style"
+                    android:text="长（米）" />
+
+                <EditText
+                    android:id="@+id/szyfl_c_Edi"
+                    style="@style/edittext_style"
+                    android:hint="请输入长" />
+            </LinearLayout>
+
+            <TextView style="@style/textview_driver" />
+
+            <LinearLayout style="@style/linear_style">
+
+                <TextView
+                    style="@style/textview_style"
+                    android:text="宽（米）" />
+
+                <EditText
+                    android:id="@+id/szyfl_k_Edi"
+                    style="@style/edittext_style"
+                    android:hint="请输入宽" />
+            </LinearLayout>
+
+            <TextView style="@style/textview_driver" />
+
+            <LinearLayout style="@style/linear_style">
+
+                <TextView
+                    style="@style/textview_style"
+                    android:text="过道宽（米）" />
+
+                <EditText
+                    android:id="@+id/szyfl_gdk_Edi"
+                    style="@style/edittext_style"
+                    android:hint="请输入过道宽" />
+            </LinearLayout>
+
+            <TextView style="@style/textview_driver" />
+
+            <LinearLayout style="@style/linear_style">
+
+                <TextView
+                    style="@style/textview_style"
+                    android:text="面积（m2）" />
+
+                <EditText
+                    android:id="@+id/szyfl_mj_Edi"
+                    style="@style/edittext_style"
+                    android:hint="面积" />
+            </LinearLayout>
+
+            <TextView style="@style/textview_driver" />
+
+            <LinearLayout style="@style/linear_style">
+
+                <TextView
+                    style="@style/textview_style"
+                    android:text="单价" />
+
+                <EditText
+                    android:id="@+id/szyfl_dj_Edi"
+                    style="@style/edittext_style"
+                    android:hint="请输入单价" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    </ScrollView>
+
+    <include layout="@layout/left_right_button" />
+</LinearLayout>

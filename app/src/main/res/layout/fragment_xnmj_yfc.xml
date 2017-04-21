@@ -1,0 +1,630 @@
+<?xml version="--.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_gray"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/title_textview_style"
+        android:text="消纳面积" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout style="@style/linear_style_zsjz">
+
+                <TextView
+                    style="@style/zs_title"
+                    android:text="专业育肥场氮平衡" />
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style_zqjg"
+                        android:text="总产氮量(Kg)" />
+
+                    <EditText
+                        android:id="@+id/yfc_zcdl"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style_zqjg"
+                        android:text="作物" />
+
+                    <TextView
+                        style="@style/textview_style_zqjg"
+                        android:text="施氮量" />
+
+                    <TextView
+                        style="@style/textview_style_zqjg"
+                        android:text="季数或年数" />
+
+                    <TextView
+                        style="@style/textview_style_zqjg"
+                        android:text="面积（亩）" />
+
+                    <TextView
+                        style="@style/textview_style_zqjg"
+                        android:text="总施氮量" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style_zqjg"
+                        android:layout_weight="1"
+                        android:text="水稻" />
+
+                    <EditText
+                        android:id="@+id/yfc_sd_sdl"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/yfc_sd_jshns"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/yfc_sd_mj"
+                        style="@style/edittext_style_zqjg"
+                        android:enabled="true"
+                        android:hint="面积" />
+
+                    <EditText
+                        android:id="@+id/yfc_sd_zsdl"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style_zqjg"
+                        android:layout_weight="1"
+                        android:text="小麦" />
+
+                    <EditText
+                        android:id="@+id/yfc_xm_sdl"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/yfc_xm_jshns"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/yfc_xm_mj"
+                        style="@style/edittext_style_zqjg"
+                        android:enabled="true"
+                        android:hint="面积" />
+
+                    <EditText
+                        android:id="@+id/yfc_xm_zsdl"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style_zqjg"
+                        android:layout_weight="1"
+                        android:text="玉米" />
+
+                    <EditText
+                        android:id="@+id/yfc_ym_sdl"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/yfc_ym_jshns"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/yfc_ym_mj"
+                        style="@style/edittext_style_zqjg"
+                        android:enabled="true"
+                        android:hint="面积" />
+
+                    <EditText
+                        android:id="@+id/yfc_ym_zsdl"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style_zqjg"
+                        android:layout_weight="1"
+                        android:text="油菜" />
+
+                    <EditText
+                        android:id="@+id/yfc_yc_sdl"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/yfc_yc_jshns"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/yfc_yc_mj"
+                        style="@style/edittext_style_zqjg"
+                        android:enabled="true"
+                        android:hint="面积" />
+
+                    <EditText
+                        android:id="@+id/yfc_yc_zsdl"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style_zqjg"
+                        android:layout_weight="1"
+                        android:text="甘薯" />
+
+                    <EditText
+                        android:id="@+id/yfc_gs_sdl"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/yfc_gs_jshns"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/yfc_gs_mj"
+                        style="@style/edittext_style_zqjg"
+                        android:enabled="true"
+                        android:hint="面积" />
+
+                    <EditText
+                        android:id="@+id/yfc_gs_zsdl"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style_zqjg"
+                        android:layout_weight="1"
+                        android:text="马铃薯" />
+
+                    <EditText
+                        android:id="@+id/yfc_mls_sdl"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/yfc_mls_jshns"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/yfc_mls_mj"
+                        style="@style/edittext_style_zqjg"
+                        android:enabled="true"
+                        android:hint="面积" />
+
+                    <EditText
+                        android:id="@+id/yfc_mls_zsdl"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style_zqjg"
+                        android:layout_weight="1"
+                        android:text="茄果类蔬菜" />
+
+                    <EditText
+                        android:id="@+id/yfc_qglsc_sdl"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/yfc_qglsc_jshns"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/yfc_qglsc_mj"
+                        style="@style/edittext_style_zqjg"
+                        android:enabled="true"
+                        android:hint="面积" />
+
+                    <EditText
+                        android:id="@+id/yfc_qglsc_zsdl"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style_zqjg"
+                        android:layout_weight="1"
+                        android:text="瓜类蔬菜" />
+
+                    <EditText
+                        android:id="@+id/yfc_ggsc_sdl"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/yfc_ggsc_jshns"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/yfc_ggsc_mj"
+                        style="@style/edittext_style_zqjg"
+                        android:enabled="true"
+                        android:hint="面积" />
+
+                    <EditText
+                        android:id="@+id/yfc_ggsc_zsdl"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style_zqjg"
+                        android:layout_weight="1"
+                        android:text="叶菜类蔬菜" />
+
+                    <EditText
+                        android:id="@+id/yfc_yclsc_sdl"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/yfc_yclsc_jshns"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/yfc_yclsc_mj"
+                        style="@style/edittext_style_zqjg"
+                        android:enabled="true"
+                        android:hint="面积" />
+
+                    <EditText
+                        android:id="@+id/yfc_yclsc_zsdl"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style_zqjg"
+                        android:layout_weight="1"
+                        android:text="根菜类蔬菜" />
+
+                    <EditText
+                        android:id="@+id/yfc_gclsc_sdl"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/yfc_gclsc_jshns"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/yfc_gclsc_mj"
+                        style="@style/edittext_style_zqjg"
+                        android:enabled="true"
+                        android:hint="面积" />
+
+                    <EditText
+                        android:id="@+id/yfc_gclsc_zsdl"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style_zqjg"
+                        android:layout_weight="1"
+                        android:text="豆类蔬菜" />
+
+                    <EditText
+                        android:id="@+id/yfc_dlsc_sdl"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/yfc_dlsc_jshns"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/yfc_dlsc_mj"
+                        style="@style/edittext_style_zqjg"
+                        android:enabled="true"
+                        android:hint="面积" />
+
+                    <EditText
+                        android:id="@+id/yfc_dlsc_zsdl"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style_zqjg"
+                        android:layout_weight="1"
+                        android:text="葱蒜类蔬菜" />
+
+                    <EditText
+                        android:id="@+id/yfc_cslsc_sdl"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/yfc_cslsc_jshns"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/yfc_cslsc_mj"
+                        style="@style/edittext_style_zqjg"
+                        android:enabled="true"
+                        android:hint="面积" />
+
+                    <EditText
+                        android:id="@+id/yfc_cslsc_zsdl"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style_zqjg"
+                        android:layout_weight="1"
+                        android:text="落叶果树" />
+
+                    <EditText
+                        android:id="@+id/yfc_lygs_sdl"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/yfc_lygs_jshns"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/yfc_lygs_mj"
+                        style="@style/edittext_style_zqjg"
+                        android:enabled="true"
+                        android:hint="面积" />
+
+                    <EditText
+                        android:id="@+id/yfc_lygs_zsdl"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style_zqjg"
+                        android:layout_weight="1"
+                        android:text="常绿果树" />
+
+                    <EditText
+                        android:id="@+id/yfc_clgs_sdl"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/yfc_clgs_jshns"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/yfc_clgs_mj"
+                        style="@style/edittext_style_zqjg"
+                        android:enabled="true"
+                        android:hint="面积" />
+
+                    <EditText
+                        android:id="@+id/yfc_clgs_zsdl"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style_zqjg"
+                        android:layout_weight="1"
+                        android:text="茶叶" />
+
+                    <EditText
+                        android:id="@+id/yfc_cy_sdl"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/yfc_cy_jshns"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/yfc_cy_mj"
+                        style="@style/edittext_style_zqjg"
+                        android:enabled="true"
+                        android:hint="面积" />
+
+                    <EditText
+                        android:id="@+id/yfc_cy_zsdl"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style_zqjg"
+                        android:layout_weight="1"
+                        android:text="牧草" />
+
+                    <EditText
+                        android:id="@+id/yfc_mc_sdl"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/yfc_mc_jshns"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/yfc_mc_mj"
+                        style="@style/edittext_style_zqjg"
+                        android:enabled="true"
+                        android:hint="面积" />
+
+                    <EditText
+                        android:id="@+id/yfc_mc_zsdl"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style_zqjg"
+                        android:layout_weight="1"
+                        android:text="合计" />
+
+                    <EditText
+                        android:id="@+id/yfc_hj_sdl"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/yfc_hj_jshns"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/yfc_hj_mj"
+                        style="@style/edittext_style_zqjg"
+                        android:enabled="true"
+                        android:hint="面积" />
+
+                    <EditText
+                        android:id="@+id/yfc_hj_zsdl"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+                </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style_zqjg"
+                        android:layout_weight="1"
+                        android:text="差值" />
+
+                    <EditText
+                        android:id="@+id/yfc_cz_sdl"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/yfc_cz_jshns"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/yfc_cz_mj"
+                        style="@style/edittext_style_zqjg"
+                        android:enabled="true"
+                        android:hint="--" />
+
+                    <EditText
+                        android:id="@+id/yfc_cz_zsdl"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <include layout="@layout/left_right_button" />
+</LinearLayout>

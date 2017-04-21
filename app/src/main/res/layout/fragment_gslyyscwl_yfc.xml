@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_gray"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/title_textview_style"
+        android:text="供水量与饮水产污量" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout style="@style/linear_style_zsjz">
+            <TextView
+                style="@style/zs_title"
+                android:text="育肥场" />
+            <TextView style="@style/textview_driver" />
+            <TextView
+                style="@style/title_textview_fu_style"
+                android:text="水需要"
+                />
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style"
+                    android:text="供水量（t/d）" />
+                <EditText
+                    android:id="@+id/yfc_gsl"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--"/>
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style"
+                    android:text="饮水量（t/d）" />
+                <EditText
+                    android:id="@+id/yfc_ysl"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--"/>
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+            <TextView
+                style="@style/title_textview_fu_style"
+                android:text="产污量"
+                />
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style"
+                    android:text="粪（Kg/d）" />
+                <EditText
+                    android:id="@+id/yfc_f"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--"/>
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style"
+                    android:text="尿(Kg/d)" />
+                <EditText
+                    android:id="@+id/yfc_l"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--"/>
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+            <TextView
+                style="@style/title_textview_fu_style"
+                android:text="粪污处理设施"
+                />
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style"
+                    android:text="沼气池（全粪尿）m3" />
+                <EditText
+                    android:id="@+id/yfc_zqlqfl"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--"/>
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style"
+                    android:text="干清粪比例(%)" />
+                <EditText
+                    android:id="@+id/yfc_gqfbl"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--"/>
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style"
+                    android:text="干清粪沼气池容量m3" />
+                <EditText
+                    android:id="@+id/yfc_gqfzqcrl"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--"/>
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style"
+                    android:text="沼液池m3" />
+                <EditText
+                    android:id="@+id/yfc_zyc"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+    </ScrollView>
+
+    <include layout="@layout/left_right_button"
+        android:visibility="gone"/>
+</LinearLayout>

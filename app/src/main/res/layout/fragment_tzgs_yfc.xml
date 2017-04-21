@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_gray"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/title_textview_style"
+        android:text="投资估算" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout style="@style/linear_style_zsjz">
+            <TextView style="@style/textview_driver" />
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:text="" />
+                <TextView
+                    style="@style/textview_style"
+                    android:gravity="center"
+                    android:text="土建(万元)" />
+                <TextView
+                    style="@style/textview_style"
+                    android:gravity="center"
+                    android:text="设备(万元)" />
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:text="生长育肥猪舍" />
+                <EditText
+                    android:id="@+id/yfc_szyfs_tj"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+                <EditText
+                    android:id="@+id/yfc_szyfs_sb"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:text="沼气池" />
+                <EditText
+                    android:id="@+id/yfc_zqc_tj"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+                <EditText
+                    android:id="@+id/yfc_zqc_sb"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:text="沼液池" />
+                <EditText
+                    android:id="@+id/yfc_zyc_tj"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+                <EditText
+                    android:id="@+id/yfc_zyc_sb"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:text="辅助物建筑面积" />
+                <EditText
+                    android:id="@+id/yfc_fzwjzmj_tj"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+                <EditText
+                    android:id="@+id/yfc_fzwjzmj_sb"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:text="饲料库房" />
+                <EditText
+                    android:id="@+id/yfc_slkf_tj"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+                <EditText
+                    android:id="@+id/yfc_slkf_sb"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:text="办公等其它建筑" />
+                <EditText
+                    android:id="@+id/yfc_bgdqtjz_tj"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+                <EditText
+                    android:id="@+id/yfc_bgdqtjz_sb"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:text="小计" />
+                <EditText
+                    android:id="@+id/yfc_xj_tj"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+                <EditText
+                    android:id="@+id/yfc_xj_sb"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--" />
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:text="合计" />
+                <EditText
+                    android:id="@+id/yfc_hj"
+                    style="@style/edittext_style_zqjg"
+                    android:layout_weight="2"
+                    android:text="--" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    </ScrollView>
+
+    <include layout="@layout/left_right_button"
+        android:visibility="gone"/>
+</LinearLayout>

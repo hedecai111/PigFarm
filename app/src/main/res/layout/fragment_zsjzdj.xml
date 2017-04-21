@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_gray"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/title_textview_style"
+        android:text="猪舍建筑单价设置" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="请设置猪舍建筑单价 单位：元/平方米"
+            android:padding="10dp"
+            android:textSize="16sp"/>
+        <LinearLayout style="@style/linear_style_zsjz">
+
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style"
+                    android:text="后备母猪舍" />
+                <EditText
+                    android:id="@+id/hbmzs_d"
+                    style="@style/edittext_style"
+                    android:hint="请输入后备母猪舍单价"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style"
+                    android:text="公猪及配种妊检母猪舍" />
+                <EditText
+                    android:id="@+id/gzjpzrcmzs_d"
+                    style="@style/edittext_style"
+                    android:hint="请输入公猪及配种妊检母猪舍单价"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style"
+                    android:text="妊娠母猪舍" />
+                <EditText
+                    android:id="@+id/rcmzs_d"
+                    style="@style/edittext_style"
+                    android:hint="请输入妊娠母猪舍单价"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style"
+                    android:text="分娩舍" />
+                <EditText
+                    android:id="@+id/fws_d"
+                    style="@style/edittext_style"
+                    android:hint="请输入分娩舍单价"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style"
+                    android:text="保育舍" />
+                <EditText
+                    android:id="@+id/bys_d"
+                    style="@style/edittext_style"
+                    android:hint="请输入保育舍单价"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style"
+                    android:text="生长育肥猪舍" />
+                <EditText
+                    android:id="@+id/szyfs_d"
+                    style="@style/edittext_style"
+                    android:hint="请输入生长育肥猪舍单价"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style"
+                    android:text="病猪隔离舍" />
+                <EditText
+                    android:id="@+id/bzgls_d"
+                    style="@style/edittext_style"
+                    android:hint="请输入病猪隔离舍单价"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style"
+                    android:text="引种隔离舍" />
+                <EditText
+                    android:id="@+id/yzgls_d"
+                    style="@style/edittext_style"
+                    android:hint="请输入引种隔离舍单价"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style"
+                    android:text="沼气池" />
+                <EditText
+                    android:id="@+id/zqc_d"
+                    style="@style/edittext_style"
+                    android:hint="请输入沼气池单价"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style"
+                    android:text="沼液池" />
+                <EditText
+                    android:id="@+id/zyc_d"
+                    style="@style/edittext_style"
+                    android:hint="请输入沼液池单价"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style"
+                    android:text="辅助物建筑面积" />
+                <EditText
+                    android:id="@+id/fzwjzmj_d"
+                    style="@style/edittext_style"
+                    android:hint="请输入辅助物建筑面积单价"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style"
+                    android:text="饲料库房" />
+                <EditText
+                    android:id="@+id/slkf_d"
+                    style="@style/edittext_style"
+                    android:hint="请输入饲料库房单价"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+            <TextView style="@style/textview_driver" />
+
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style"
+                    android:text="办公等其它建筑" />
+                <EditText
+                    android:id="@+id/bgdqtjz_d"
+                    style="@style/edittext_style"
+                    android:hint="请输入办公等其它建筑单价"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+    </ScrollView>
+
+    <include layout="@layout/left_right_button" />
+</LinearLayout>
