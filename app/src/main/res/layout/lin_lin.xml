@@ -1,0 +1,14 @@
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/linear_style">
+<TextView
+    android:id="@+id/name"
+    style="@style/textview_style"
+    android:text="小麦（Kg/亩*季" />
+<EditText
+    android:id="@+id/sdl"
+    style="@style/edittext_style"
+    android:hint="请输入小麦施氮量"
+    android:layout_weight="1"/>
+</LinearLayout>

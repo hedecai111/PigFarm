@@ -61,7 +61,7 @@ public class GsyyscwlyfcFragment extends BaseFragment {
 
             Constant.yfc_gsl = Utils.keep2Wdouble(Constant.clspzs * Constant.zzgs_szyfz / 1000, 0);
 
-            Constant.yfc_ysl = Utils.keep2Wdouble(Constant.clspzs * Constant.zzys_szyfz_zd / 1000, 0);
+            Constant.yfc_ysl = Utils.keep2Wdouble(Constant.clspzs * Constant.zzys_szyfz_zd / 1000, 1);
 
             Constant.yfc_f = Utils.keep2Wdouble(Constant.clspzs * Constant.szyfz_f_xf, 0);
 
@@ -92,7 +92,7 @@ public class GsyyscwlyfcFragment extends BaseFragment {
 
         yfc_f.setText(Constant.yfc_f + "");
 
-        yfc_ysl.setText(Constant.yfc_ysl + "");
+        yfc_l.setText(Constant.yfc_l + "");
 
         yfc_zqlqfl.setText(Constant.yfc_zqlqfl + "");
 

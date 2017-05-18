@@ -174,7 +174,7 @@ public class ZsjzmjFragment extends BaseFragment {
 
             Constant.zfzyc_gzjpzrjmzs_gye = Utils.keep2Wdouble(Constant.zfzyc_pzrjmzl_gye * Constant.gzjxqsyj_mj, 0);
 
-            Constant.zfzyc_gzjpzrjmzs_gyy = Utils.keep2Wdouble((Constant.zfzyc_gzlzrgsj_gyy + Constant.zfzyc_pzrjmzl_gyy) * Constant.fwl_mj, 0);
+            Constant.zfzyc_gzjpzrjmzs_gyy = Utils.keep2Wdouble((Constant.zfzyc_gzlzrgsj_gyy + Constant.zfzyc_pzrjmzl_gyy) * Constant.rcl_mj, 0);
 
             Constant.zfzyc_rcmzs_gye = Utils.keep2Wdouble(Constant.zfzyc_rcmzl_gye * Constant.rcl_mj, 0);
 
@@ -216,9 +216,9 @@ public class ZsjzmjFragment extends BaseFragment {
 
             Constant.dnzzfzc_pzrjmzs_gye = Utils.keep2Wdouble(Constant.zfzyc_gzjpzrjmzs_gye, 0);
 
-            Constant.dnzzfzc_pzrjmzs_gyy = Utils.keep2Wdouble(Constant.zfzyc_gzjpzrjmzs_gye, 0);
+            Constant.dnzzfzc_pzrjmzs_gyy = Utils.keep2Wdouble(Constant.zfzyc_gzjpzrjmzs_gyy, 0);
 
-            Constant.dnzzfzc_hbmzs_gyy = Utils.keep2Wdouble(Constant.zfzyc_gzjpzrjmzs_gyy, 0);
+           // Constant.dnzzfzc_hbmzs_gyy = Utils.keep2Wdouble(Constant.zfzyc_gzjpzrjmzs_gyy, 0);
 
             Constant.dnzzfzc_rcmzs_gye = Utils.keep2Wdouble(Constant.zfzyc_rcmzs_gye, 0);
 
@@ -252,9 +252,9 @@ public class ZsjzmjFragment extends BaseFragment {
 
             Constant.byzzfzc_pzrjmzs_gye = Utils.keep2Wdouble(Constant.zfzyc_gzjpzrjmzs_gye, 0);
 
-            Constant.byzzfzc_pzrjmzs_gyy = Utils.keep2Wdouble(Constant.zfzyc_gzjpzrjmzs_gye, 0);
+            Constant.byzzfzc_pzrjmzs_gyy = Utils.keep2Wdouble(Constant.zfzyc_gzjpzrjmzs_gyy, 0);
 
-            Constant.byzzfzc_hbmzs_gyy = Utils.keep2Wdouble(Constant.zfzyc_gzjpzrjmzs_gyy, 0);
+           // Constant.byzzfzc_hbmzs_gyy = Utils.keep2Wdouble(Constant.zfzyc_gzjpzrjmzs_gyy, 0);
 
             Constant.byzzfzc_rcmzs_gye = Utils.keep2Wdouble(Constant.zfzyc_rcmzs_gye, 0);
 
@@ -302,9 +302,11 @@ public class ZsjzmjFragment extends BaseFragment {
 
         zfzyc_gzjpzrjmzs_gye.setText(Constant.zfzyc_gzjpzrjmzs_gye + "");
 
-        zfzyc_gzjpzrjmzs_gyy.setText(Constant.zfzyc_gzjpzrjmzs_gyy + "");
+        zfzyc_gzjpzrjmzs_gyy.setText("↓");
 
         zfzyc_rcmzs_gye.setText(Constant.zfzyc_rcmzs_gye + "");
+
+        zfzyc_rcmzs_gyy.setText(Constant.zfzyc_rcmzs_gyy+"");
 
         zfzyc_fws_gyy.setText(Constant.zfzyc_fws_gyy + "");
 
@@ -346,7 +348,7 @@ public class ZsjzmjFragment extends BaseFragment {
 
         dnzzfzc_pzrjmzs_gye.setText(Constant.dnzzfzc_pzrjmzs_gye + "");
 
-        dnzzfzc_pzrjmzs_gyy.setText(Constant.dnzzfzc_pzrjmzs_gyy + "");
+        dnzzfzc_pzrjmzs_gyy.setText("↓");
 
         dnzzfzc_hbmzs_gyy.setText(Constant.dnzzfzc_hbmzs_gyy + "");
 
@@ -381,7 +383,7 @@ public class ZsjzmjFragment extends BaseFragment {
 
         byzzfzc_pzrjmzs_gye.setText(Constant.byzzfzc_pzrjmzs_gye + "");
 
-        byzzfzc_pzrjmzs_gyy.setText(Constant.byzzfzc_pzrjmzs_gyy + "");
+        byzzfzc_pzrjmzs_gyy.setText("↓");
 
         byzzfzc_hbmzs_gyy.setText(Constant.byzzfzc_hbmzs_gyy + "");
 

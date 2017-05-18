@@ -92,7 +92,7 @@ public class LogUtil {
         if (customLogger != null) {
             customLogger.d(tag, content);
         } else {
-            Log.d(tag, content);
+            Log.d(tag, content+"");
         }
     }
 
@@ -105,9 +105,9 @@ public class LogUtil {
         String tag = generateTag(caller);
 
         if (customLogger != null) {
-            customLogger.d(tag, content, e);
+            customLogger.d(tag, content+"", e);
         } else {
-            Log.d(tag, content, e);
+            Log.d(tag, content+"", e);
         }
     }
 
@@ -120,12 +120,12 @@ public class LogUtil {
         String tag = generateTag(caller);
 
         if (customLogger != null) {
-            customLogger.e(tag, content);
+            customLogger.e(tag, content+"");
         } else {
-            Log.e(tag, content);
+            Log.e(tag, content+"");
         }
         if (isSaveLog) {
-            point(LOG_PATH, tag, content);
+            point(LOG_PATH, tag, content+"");
         }
     }
 
@@ -156,9 +156,9 @@ public class LogUtil {
         String tag = generateTag(caller);
 
         if (customLogger != null) {
-            customLogger.e(tag, content, e);
+            customLogger.e(tag, content+"", e);
         } else {
-            Log.e(tag, content, e);
+            Log.e(tag, content+"", e);
         }
         if (isSaveLog) {
             point(LOG_PATH, tag, e.getMessage());
@@ -174,12 +174,12 @@ public class LogUtil {
         String tag = generateTag(caller);
 
         if (customLogger != null) {
-            customLogger.i(tag, content);
+            customLogger.i(tag, content+"");
         } else {
-            Log.i(tag, content);
+            Log.i(tag, content+"");
         }
         if (isSaveLog) {
-            point(LOG_PATH, tag, content);
+            point(LOG_PATH, tag, content+"");
         }
     }
 
@@ -192,12 +192,12 @@ public class LogUtil {
         String tag = generateTag(caller);
 
         if (customLogger != null) {
-            customLogger.i(tag, content, e);
+            customLogger.i(tag, content+"", e);
         } else {
-            Log.i(tag, content, e);
+            Log.i(tag, content+"", e);
         }
         if (isSaveLog) {
-            point(LOG_PATH, tag, content);
+            point(LOG_PATH, tag, content+"");
         }
     }
 
@@ -210,12 +210,12 @@ public class LogUtil {
         String tag = generateTag(caller);
 
         if (customLogger != null) {
-            customLogger.v(tag, content);
+            customLogger.v(tag, content+"");
         } else {
-            Log.v(tag, content);
+            Log.v(tag, content+"");
         }
         if (isSaveLog) {
-            point(LOG_PATH, tag, content);
+            point(LOG_PATH, tag, content+"");
         }
     }
 
@@ -228,12 +228,12 @@ public class LogUtil {
         String tag = generateTag(caller);
 
         if (customLogger != null) {
-            customLogger.v(tag, content, e);
+            customLogger.v(tag, content+"", e);
         } else {
-            Log.v(tag, content, e);
+            Log.v(tag, content+"", e);
         }
         if (isSaveLog) {
-            point(LOG_PATH, tag, content);
+            point(LOG_PATH, tag, content+"");
         }
     }
 
@@ -246,12 +246,12 @@ public class LogUtil {
         String tag = generateTag(caller);
 
         if (customLogger != null) {
-            customLogger.w(tag, content);
+            customLogger.w(tag, content+"");
         } else {
-            Log.w(tag, content);
+            Log.w(tag, content+"");
         }
         if (isSaveLog) {
-            point(LOG_PATH, tag, content);
+            point(LOG_PATH, tag, content+"");
         }
     }
 
@@ -264,12 +264,12 @@ public class LogUtil {
         String tag = generateTag(caller);
 
         if (customLogger != null) {
-            customLogger.w(tag, content, e);
+            customLogger.w(tag, content+"", e);
         } else {
-            Log.w(tag, content, e);
+            Log.w(tag, content+"", e);
         }
         if (isSaveLog) {
-            point(LOG_PATH, tag, content);
+            point(LOG_PATH, tag, content+"");
         }
     }
 

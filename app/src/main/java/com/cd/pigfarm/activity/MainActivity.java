@@ -1,25 +1,32 @@
 package com.cd.pigfarm.activity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.cd.pigfarm.R;
 import com.cd.pigfarm.adapter.ListAdapter;
 import com.cd.pigfarm.base.BaseFragment;
 import com.cd.pigfarm.base.InterActivity;
+import com.cd.pigfarm.fragment.AboutFragment;
 import com.cd.pigfarm.fragment.ClmzFragment;
 import com.cd.pigfarm.fragment.FsclFragment;
 import com.cd.pigfarm.fragment.GslyyscwlFragment;
@@ -50,6 +57,7 @@ import com.cd.pigfarm.fyfragment.ZsjzmjyfcFragment;
 import com.cd.pigfarm.fyfragment.ZsjzyflFragment;
 import com.cd.pigfarm.fyfragment.ZzysfycFragment;
 import com.cd.pigfarm.util.Utils;
+import com.cd.pigfarm.view.PopMenus;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
 
@@ -97,6 +105,14 @@ public class MainActivity extends SlidingFragmentActivity implements View.OnClic
 
     private Handler handler;
 
+    private boolean isExit = false;
+
+    private LinearLayout menu_Lin;
+
+    private PopMenus popMenus1,popMenus2;
+
+    private AboutFragment aboutFragment;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -108,7 +124,7 @@ public class MainActivity extends SlidingFragmentActivity implements View.OnClic
         //设置显示模式
         slidingMenu.setMode(SlidingMenu.LEFT);
         //设置滑动模式，滑动边缘，全屏滑动，不可以滑动
-        slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
+        slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_NONE);
         //设置主页页面宽度
         slidingMenu.setBehindOffset(Utils.dip2px(this,150));
         initView();
@@ -123,7 +139,30 @@ public class MainActivity extends SlidingFragmentActivity implements View.OnClic
         setFragment(0);
         listView.setSelection(0);
 
-        handler = new Handler();
+        handler = new Handler(){
+            @Override
+            public void handleMessage(Message msg) {
+                isExit = false;
+                handler.removeCallbacksAndMessages(null);
+            }
+        };
+
+        addMenu();
+        initPop();
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN){
+            if (!isExit){
+                isExit = true;
+                Toast.makeText(getApplicationContext(),"再按一次返回键回到桌面",Toast.LENGTH_SHORT).show();
+                handler.sendEmptyMessageDelayed(1,1500);
+            }else {
+                System.exit(-1);
+            }
+        }
+        return true;
     }
 
     @Override
@@ -139,6 +178,7 @@ public class MainActivity extends SlidingFragmentActivity implements View.OnClic
         yfc_Tex = (TextView) findViewById(R.id.yfc_Tex);
         menu_Img = (ImageView) findViewById(R.id.menu);
 
+        menu_Lin = (LinearLayout) findViewById(R.id.layout_custommenu);
 
         //左侧菜单的控件
         titleTex = (TextView) findViewById(R.id.title);
@@ -148,6 +188,75 @@ public class MainActivity extends SlidingFragmentActivity implements View.OnClic
         contentFra = (FrameLayout) findViewById(R.id.content_Fra);
 
     }
+
+    private LinearLayout layout1,layout2,layout3,layout4;
+
+    private void addMenu(){
+
+        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT, 1.0f);
+        layout1 = (LinearLayout) ((LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.item_custommenu, null);
+        layout1.setLayoutParams(lp);
+        TextView tv_custommenu_name1 = (TextView) layout1.findViewById(R.id.tv_custommenu_name);
+        tv_custommenu_name1.setText("参数设置");
+        tv_custommenu_name1.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_arrow_up_black, 0);
+        layout1.setOnClickListener(this);
+        menu_Lin.addView(layout1);
+
+        layout2 = (LinearLayout) ((LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.item_custommenu, null);
+        layout2.setLayoutParams(lp);
+        TextView tv_custommenu_name2 = (TextView) layout2.findViewById(R.id.tv_custommenu_name);
+        tv_custommenu_name2.setText("结果查询");
+        tv_custommenu_name2.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_arrow_up_black, 0);
+        layout2.setOnClickListener(this);
+        menu_Lin.addView(layout2);
+
+        layout3 = (LinearLayout) ((LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.item_custommenu, null);
+        layout3.setLayoutParams(lp);
+        TextView tv_custommenu_name3 = (TextView) layout3.findViewById(R.id.tv_custommenu_name);
+        tv_custommenu_name3.setText("相关信息");
+        layout3.setOnClickListener(this);
+        menu_Lin.addView(layout3);
+
+        layout4 = (LinearLayout) ((LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.item_custommenu, null);
+        layout4.setLayoutParams(lp);
+        TextView tv_custommenu_name4 = (TextView) layout4.findViewById(R.id.tv_custommenu_name);
+        tv_custommenu_name4.setText("关于我们");
+        layout4.setOnClickListener(this);
+        menu_Lin.addView(layout4);
+        
+        
+        
+    }
+
+
+    private String[] zzc_csszList = new String[]{"存栏母猪","基本参数","猪舍建筑面积设计参数","猪只饮水","粪氮含量","粪尿产生量","沼气池容量",
+            "农作物施氮量","猪舍建筑单价","各猪舍设备参数"};
+    private String[] yfc_csszList=new String[]{"存栏商品猪","猪舍建筑面积参数","粪氮含量","猪只饮水","粪尿产生量","沼气池容量","农作物施氮量","猪舍建筑单价"
+            ,"各猪舍设备参数"};
+
+    private String[] zzc_jgcxList=new String[]{"工艺","猪群结构","猪栏数","猪舍建筑面积","供水量与饮水产污量","消纳面积","投资估算"};
+    private String[] yfc_jgcxList=new String[]{"猪栏数","猪舍建筑面积","供水量与饮水产污量","消纳面积","投资估算"};
+
+
+    PopMenus.OnItemClickListener popMenus1LItem = new PopMenus.OnItemClickListener() {
+        @Override
+        public void onItemClick(View v, int position) {
+            //Toast.makeText(getApplicationContext(),position+"",Toast.LENGTH_LONG).show();
+            setFragment(position);
+        }
+    };
+    PopMenus.OnItemClickListener popMenus2LItem = new PopMenus.OnItemClickListener() {
+        @Override
+        public void onItemClick(View v, int position) {
+            //Toast.makeText(getApplicationContext(),position+"",Toast.LENGTH_LONG).show();
+            if (flag == 0){
+                setFragment(position+10);
+            }else if (flag == 1){
+                setFragment(position+9);
+            }
+
+        }
+    };
 
     /**
      * 计算数据，提供给Fragment调用
@@ -200,6 +309,8 @@ public class MainActivity extends SlidingFragmentActivity implements View.OnClic
 
     }
 
+
+
     private void setLeftTitle(int flag){
         if (flag == 0){
             titleTex.setText("种猪场");
@@ -230,6 +341,8 @@ public class MainActivity extends SlidingFragmentActivity implements View.OnClic
     }
 
     private void initFragment(){
+
+        aboutFragment = new AboutFragment();
         //种猪场
         zzcFragmentList = new ArrayList<>();
         ClmzFragment clmzFragment = new ClmzFragment();
@@ -250,6 +363,8 @@ public class MainActivity extends SlidingFragmentActivity implements View.OnClic
         zzcFragmentList.add(nzwsdlFragment);
         ZsjzdjFragment zsjzdjFragment = new ZsjzdjFragment();
         zzcFragmentList.add(zsjzdjFragment);
+        GzssbcsFragment gzssbcsFragment = new GzssbcsFragment();
+        zzcFragmentList.add(gzssbcsFragment);
 
         GyFragment gyFragment = new GyFragment();
         zzcFragmentList.add(gyFragment);
@@ -263,8 +378,7 @@ public class MainActivity extends SlidingFragmentActivity implements View.OnClic
         zzcFragmentList.add(gslyyscwlFragment);
         XnmjFragment xnmjFragment = new XnmjFragment();
         zzcFragmentList.add(xnmjFragment);
-        GzssbcsFragment gzssbcsFragment = new GzssbcsFragment();
-        zzcFragmentList.add(gzssbcsFragment);
+
         TzgsFragment tzgsFragment = new TzgsFragment();
         zzcFragmentList.add(tzgsFragment);
         //育肥场
@@ -285,6 +399,8 @@ public class MainActivity extends SlidingFragmentActivity implements View.OnClic
         yfcFragment.add(nzwsdlFragment);
         ZsjzdjyfcFragment zsjzdjyfcFragment = new ZsjzdjyfcFragment();
         yfcFragment.add(zsjzdjyfcFragment);
+        GzssbcsYfcFragment gzssbcsYfcFragment = new GzssbcsYfcFragment();
+        yfcFragment.add(gzssbcsYfcFragment);
         ZlsyfcFragment zlsyfcFragment = new ZlsyfcFragment();
         yfcFragment.add(zlsyfcFragment);
         ZsjzmjyfcFragment zsjzmjyfcFragment = new ZsjzmjyfcFragment();
@@ -293,19 +409,50 @@ public class MainActivity extends SlidingFragmentActivity implements View.OnClic
         yfcFragment.add(gsyyscwlyfcFragment);
         XnmjYfcFragment xnmjYfcFragment = new XnmjYfcFragment();
         yfcFragment.add(xnmjYfcFragment);
-        GzssbcsYfcFragment gzssbcsYfcFragment = new GzssbcsYfcFragment();
-        yfcFragment.add(gzssbcsYfcFragment);
         TzgsYfcFragment tzgsYfcFragment = new TzgsYfcFragment();
         yfcFragment.add(tzgsYfcFragment); 
         
     }
 
 
+    private void initPop(){
+        popMenus1 = new PopMenus(MainActivity.this,zzc_csszList,getWindowManager().getDefaultDisplay().getWidth()/4+10,0);
+        popMenus2 = new PopMenus(MainActivity.this,zzc_jgcxList,getWindowManager().getDefaultDisplay().getWidth()/4+10,0);
+        popMenus1.setItemClickListener(popMenus1LItem);
+        popMenus2.setItemClickListener(popMenus2LItem);
+    }
+
     @Override
     public void onClick(View v) {
         if (v == menu_Img){
             showMenu();
-        }else
+        }else if(v == layout1){
+            if (flag == 0){
+                popMenus1.setDataList(zzc_csszList);
+                popMenus1.showAtLocation(v);
+            }else {
+                popMenus1.setDataList(yfc_csszList);
+                popMenus1.showAtLocation(v);
+            }
+        }else if(v == layout2){
+            if (flag == 0){
+               popMenus2.setDataList(zzc_jgcxList);
+                popMenus2.showAtLocation(v);
+            }else {
+                popMenus2.setDataList(yfc_jgcxList);
+                popMenus2.showAtLocation(v);
+            }
+        }else if(v == layout3){
+           Toast.makeText(getApplicationContext(),"相关信息功能模块开发中...",Toast.LENGTH_SHORT).show();
+        }else if(v == layout4){
+            FragmentManager fm = getSupportFragmentManager();
+            FragmentTransaction ft = fm.beginTransaction();
+            ft.replace(R.id.content_Fra,aboutFragment).commit();
+        }
+
+
+
+        else
             setSelect(v);
     }
 
@@ -375,6 +522,9 @@ public class MainActivity extends SlidingFragmentActivity implements View.OnClic
 
     }
 
-
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        handler.removeCallbacksAndMessages(null);
+    }
 }

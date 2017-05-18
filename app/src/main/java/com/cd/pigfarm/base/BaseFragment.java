@@ -56,8 +56,8 @@ public class BaseFragment extends Fragment implements View.OnClickListener{
         leftButton = (Button) view.findViewById(R.id.left_But);
         rightButton = (Button) view.findViewById(R.id.right_But);
         saveButton = (Button) view.findViewById(R.id.save_But);
-        leftButton.setOnClickListener(this);
-        rightButton.setOnClickListener(this);
+       // leftButton.setOnClickListener(this);
+       // rightButton.setOnClickListener(this);
         saveButton.setOnClickListener(this);
         //jsDatas();
         //refreshViews();

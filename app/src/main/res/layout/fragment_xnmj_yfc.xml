@@ -626,5 +626,6 @@
         </LinearLayout>
     </ScrollView>
 
-    <include layout="@layout/left_right_button" />
+    <include layout="@layout/left_right_button"
+        android:visibility="gone"/>
 </LinearLayout>

@@ -138,11 +138,11 @@ public class GyFragment extends BaseFragment {
 
         mGye_zzby_zysj.setText(Constant.gye_zzby_zysj + "");
 
-        mGye_szyf_scrl.setText(Constant.gye_zzby_zysj + "");
+        mGye_szyf_scrl.setText(Constant.gye_szyf_scrl + "");
 
-        mGye_szyf_zysj.setText(gye_szyf_zysj + "");
+        mGye_szyf_zysj.setText(Constant.gye_szyf_zysj + "");
 
-        mGye_fzzq.setText(gye_fzzq + "");
+        mGye_fzzq.setText(Constant.gye_fzzq + "");
 
     }
 

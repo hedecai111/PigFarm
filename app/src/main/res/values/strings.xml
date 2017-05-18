@@ -9,4 +9,60 @@
         <item>14</item>
         <item>21</item>
     </string-array>
+
+    <string-array name="spingarr22">
+        <item>20%</item>
+        <item>30%</item>
+        <item>40%</item>
+        <item>50%</item>
+        <item>60%</item>
+        <item>70%</item>
+        <item>80%</item>
+        <item>90%</item>
+    </string-array>
+
+    <string-array name="spingarr_tab1">
+        <item>默认设置</item>
+        <item>存栏母猪</item>
+        <item>基本参数</item>
+        <item>猪舍建筑面积参数</item>
+        <item>猪只饮水参数</item>
+        <item>粪尿氮含量</item>
+        <item>粪尿产生量</item>
+        <item>沼气池容量</item>
+        <item>猪只饮水参数</item>
+        <item>农作物施氮量</item>
+        <item>猪舍建筑单价</item>
+    </string-array>
+    <string-array name="spingarr_tab2">
+        <item>工艺</item>
+        <item>猪群结构</item>
+        <item>猪栏数</item>
+        <item>猪舍建筑面积</item>
+        <item>供水量与饮水产污量</item>
+        <item>消纳面积</item>
+        <item>投资估算</item>
+    </string-array>
+    <string-array name="spingarr_tab3">
+        <item>相关信息</item>
+
+    </string-array>
+    <string-array name="spingarr_tab4">
+        <item>关于我们</item>
+
+    </string-array>
+
+    <string-array name="spingarr_sbcs">
+        <item>后备母猪舍</item>
+        <item>公猪及配种妊检母猪舍</item>
+        <item>妊娠母猪舍</item>
+        <item>分娩舍</item>
+        <item>保育舍</item>
+        <item>生长育肥舍</item>
+        <item>病猪隔离舍</item>
+        <item>引种隔离舍</item>
+
+    </string-array>
+
+
 </resources>

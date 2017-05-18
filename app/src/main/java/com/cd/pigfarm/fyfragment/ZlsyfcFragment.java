@@ -73,7 +73,6 @@ public class ZlsyfcFragment extends BaseFragment {
     public void refreshViews() {
 
         if (Constant.spzyfl == 0){
-            Toast.makeText(getContext(),"请先设置存栏商品猪数和猪场设计参数",Toast.LENGTH_SHORT).show();
             return;
         }
         spzyfl.setText(Constant.spzyfl + "");

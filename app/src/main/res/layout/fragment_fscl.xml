@@ -474,7 +474,8 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <LinearLayout style="@style/linear_style_zsjz">
+            <LinearLayout style="@style/linear_style_zsjz"
+                android:visibility="gone">
 
                 <TextView
                     style="@style/zs_title"

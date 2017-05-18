@@ -2,113 +2,191 @@
 <resources>
 
 
-        <color name="selected">#f6f5ec</color>
-        <color name="restult_text">#C5C5C7</color>
-        <color name="div">#E9E9EA</color>
-        <color name="jkda_background">#FDFDFE</color>
-        <color name="text_black">#000000</color>
-        <color name="colorPrimary">#3F51B5</color>
-        <color name="colorPrimaryDark">#3F51B5</color>
-        <color name="colorAccent">#FF4081</color>
+    <color name="selected">#f6f5ec</color>
+    <color name="restult_text">#C5C5C7</color>
+    <color name="div">#E9E9EA</color>
+    <color name="jkda_background">#FDFDFE</color>
+    <color name="text_black">#000000</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#3F51B5</color>
+    <color name="colorAccent">#FF4081</color>
 
-        <color name="color_383838">#383838</color>
-        <color name="color_262626">#262626</color>
-        <color name="color_220000">#22000000</color>
-        <color name="color_a000000">#a0000000</color>
+    <color name="color_383838">#383838</color>
+    <color name="color_262626">#262626</color>
+    <color name="color_220000">#22000000</color>
+    <color name="color_a000000">#a0000000</color>
 
-        <color name="edit_text">#000000</color>
-        <color name="edit_hint_text">#ffacacac</color>
-        <color name="albumback">#E1E0DE</color>
-
-
-        <color name="textColorPrimary">@color/colorWhite</color>
-        <!-- system color-->
-        <color name="colorWhite">#ffffff</color>
-
-        <color name="text_hint">#ffb0b0b0</color>
-        <!-- app color-->
-        <color name="titlebar_bg_color">#8AC24A</color>
-        <color name="titlebar_text_color">#EEEEEE</color>
-        <color name="app_bg_color">#fbfcfc</color>
-
-        <color name="text_blue">#0b86ee</color>
-        <color name="text_white">#ffffff</color>
-        <color name="text_hint_normal_color">#494a4d</color>
-
-        <color name="titlebar_bg_color3">#ff1930</color>
-        <color name="titlebar_bg_color4">#0b86ee</color>
-        <color name="main_layout_bg_color">#f5f5f9</color>
+    <color name="edit_text">#000000</color>
+    <color name="edit_hint_text">#ffacacac</color>
+    <color name="albumback">#E1E0DE</color>
 
 
-        <color name="color_a1a2a6">#a1a2a6</color>
-        <color name="color_494a4d">#494a4d</color>
-        <color name="color_cccccc">#cccccc</color>
-        <color name="color_47a2c1">#47a2c1</color>
-        <color name="color_f0f2f5">#f0f2f5</color>
-        <color name="color_e1e1e1">#e1e1e1</color>
-        <color name="color_eaeaea">#eaeaea</color>
-        <color name="color_d55548">#d55548</color>
-        <color name="color_e97529">#e97529</color>
-        <color name="color_ebcbc8">#ebcbc8</color>
-        <color name="color_d7665b">#d7665b</color>
-        <color name="color_eff1f4">#EFF1F4</color>
-        <color name="color_1a7796">#1a7796</color>
-        <color name="color_47a3c2">#47a3c2</color>
-        <color name="color_f1f8fa">#f1f8fa</color>
-        <color name="color_2b8fb0">#2b8fb0</color>
-        <color name="color_484849">#484849</color>
-        <color name="color_dee3e7">#dee3e7</color>
-        <color name="color_9aa7b3">#9aa7b3</color>
-        <color name="color_f0f7f9">#f0f7f9</color>
-        <color name="color_fdfdfd">#fdfdfd</color>
-        <color name="color_eb1b05">#eb1b05</color>
-        <color name="color_fd6c01">#fd6c01</color>
-        <color name="color_fdba02">#fdba02</color>
-        <color name="color_e5e5e5">#e5e5e5</color>
-        <color name="color_a0a0a0">#a0a0a0</color>
-        <color name="color_000000">#000000</color>
-        <color name="color_f1f2f2">#f1f2f2</color>
-        <color name="color_3896b6">#3896b6</color>
-        <color name="color_58a9c5">#58a9c5</color>
-        <color name="color_d7ecf2">#d7ecf2</color>
-        <color name="color_53a9ff">#53a9ff</color>
-        <color name="color_577fd3">#577fd3</color>
-        <color name="color_5aaac5">#5aaac5</color>
-        <color name="color_4ca4c2">#4ca4c2</color>
-        <color name="login_button_nomal">#6cb236</color>
-        <color name="login_button_pressed">#2baf2b</color>
-        <color name="forget_password_textcolor_nomal">#8bc34a</color>
-        <color name="forget_password_textcolor_pressed">#2baf2b</color>
-        <color name="line_color">#e0e0e0</color>
+    <color name="textColorPrimary">@color/colorWhite</color>
+    <!-- system color-->
+    <color name="colorWhite">#ffffff</color>
 
-        <color name="code_background">#d71345</color>
+    <color name="text_hint">#ffb0b0b0</color>
+    <!-- app color-->
+    <color name="titlebar_bg_color">#8AC24A</color>
+    <color name="titlebar_text_color">#EEEEEE</color>
+    <color name="app_bg_color">#fbfcfc</color>
 
-        <!--底部tab文字颜色-->
-        <color name="bottom_tab_nomal_color">#5bb531</color>
-        <color name="bottom_tab_checked_color">#5bb531</color>
+    <color name="text_blue">#0b86ee</color>
+    <color name="text_white">#ffffff</color>
+    <color name="text_hint_normal_color">#494a4d</color>
 
-        <!--APP的整体布局颜色-->
-        <color name="app_base_color">#6cb236</color>
-        <color name="app_base_color_green">#2fb884</color>
+    <color name="titlebar_bg_color3">#ff1930</color>
+    <color name="titlebar_bg_color4">#0b86ee</color>
+    <color name="main_layout_bg_color">#f5f5f9</color>
 
-        <color name="background_tab_pressed">#6633B5E5</color>
-        <color name="setting_text_color">#424242</color>
-        <color name="afgx_color">#fbbd51</color>
-        <color name="login_fail_textcolor">#f54337</color>
 
-        <!-- background header -->
-        <color name="bg_layout">#f0f0f2</color>
-        <color name="bg_layout_header">#6cb236</color>
-        <color name="text_user">#101010</color>
-        <color name="gray">#5C5C5C</color>
-        <color name="gray_little">#dcdcdf</color>
-        <color name="background_dialog_safe">#60000000</color>
+    <color name="color_a1a2a6">#a1a2a6</color>
+    <color name="color_494a4d">#494a4d</color>
+    <color name="color_cccccc">#cccccc</color>
+    <color name="color_47a2c1">#47a2c1</color>
+    <color name="color_f0f2f5">#f0f2f5</color>
+    <color name="color_e1e1e1">#e1e1e1</color>
+    <color name="color_eaeaea">#eaeaea</color>
+    <color name="color_d55548">#d55548</color>
+    <color name="color_e97529">#e97529</color>
+    <color name="color_ebcbc8">#ebcbc8</color>
+    <color name="color_d7665b">#d7665b</color>
+    <color name="color_eff1f4">#EFF1F4</color>
+    <color name="color_1a7796">#1a7796</color>
+    <color name="color_47a3c2">#47a3c2</color>
+    <color name="color_f1f8fa">#f1f8fa</color>
+    <color name="color_2b8fb0">#2b8fb0</color>
+    <color name="color_484849">#484849</color>
+    <color name="color_dee3e7">#dee3e7</color>
+    <color name="color_9aa7b3">#9aa7b3</color>
+    <color name="color_f0f7f9">#f0f7f9</color>
+    <color name="color_fdfdfd">#fdfdfd</color>
+    <color name="color_eb1b05">#eb1b05</color>
+    <color name="color_fd6c01">#fd6c01</color>
+    <color name="color_fdba02">#fdba02</color>
+    <color name="color_e5e5e5">#e5e5e5</color>
+    <color name="color_a0a0a0">#a0a0a0</color>
+    <color name="color_000000">#000000</color>
+    <color name="color_f1f2f2">#f1f2f2</color>
+    <color name="color_3896b6">#3896b6</color>
+    <color name="color_58a9c5">#58a9c5</color>
+    <color name="color_d7ecf2">#d7ecf2</color>
+    <color name="color_53a9ff">#53a9ff</color>
+    <color name="color_577fd3">#577fd3</color>
+    <color name="color_5aaac5">#5aaac5</color>
+    <color name="color_4ca4c2">#4ca4c2</color>
+    <color name="login_button_nomal">#6cb236</color>
+    <color name="login_button_pressed">#2baf2b</color>
+    <color name="forget_password_textcolor_nomal">#8bc34a</color>
+    <color name="forget_password_textcolor_pressed">#2baf2b</color>
+    <color name="line_color">#e0e0e0</color>
 
-        <color name="black_overlay">#66000000</color>
-        <color name="black_overlay_44">#22000000</color>
-        <color name="gray_shape">#DBDBDB</color>
-        <color name="fjx">#E5E5E5</color>
+    <color name="code_background">#d71345</color>
+
+    <!--底部tab文字颜色-->
+    <color name="bottom_tab_nomal_color">#5bb531</color>
+    <color name="bottom_tab_checked_color">#5bb531</color>
+
+    <!--APP的整体布局颜色-->
+    <color name="app_base_color">#6cb236</color>
+    <color name="app_base_color_green">#2fb884</color>
+
+    <color name="background_tab_pressed">#6633B5E5</color>
+    <color name="setting_text_color">#424242</color>
+    <color name="afgx_color">#fbbd51</color>
+    <color name="login_fail_textcolor">#f54337</color>
+
+    <!-- background header -->
+    <color name="bg_layout">#f0f0f2</color>
+    <color name="bg_layout_header">#6cb236</color>
+    <color name="text_user">#101010</color>
+    <color name="gray">#5C5C5C</color>
+    <color name="gray_little">#dcdcdf</color>
+    <color name="background_dialog_safe">#60000000</color>
+
+    <color name="black_overlay">#66000000</color>
+    <color name="black_overlay_44">#22000000</color>
+    <color name="gray_shape">#DBDBDB</color>
+    <color name="fjx">#E5E5E5</color>
     <color name="bg_gray">#ebebeb</color>
+
+
+    <color name="contents_text">#ff000000</color>
+    <color name="encode_view">#ffffffff</color>
+    <color name="help_button_view">#ffcccccc</color>
+    <color name="help_view">#ff404040</color>
+    <color name="possible_result_points">#c0ffff00</color>
+    <color name="result_image_border">#ffffffff</color>
+    <color name="result_minor_text">#ffc0c0c0</color>
+    <color name="result_points">#c000ff00</color>
+    <color name="result_text">#ffffffff</color>
+    <color name="result_view">#b0000000</color>
+    <color name="sbc_header_text">#ff808080</color>
+    <color name="sbc_header_view">#ffffffff</color>
+    <color name="sbc_list_item">#fffff0e0</color>
+    <color name="sbc_layout_view">#ffffffff</color>
+    <color name="sbc_page_number_text">#ff000000</color>
+    <color name="sbc_snippet_text">#ff4b4b4b</color>
+    <color name="share_text">#ff000000</color>
+    <color name="share_view">#ffffffff</color>
+    <color name="status_view">#50000000</color>
+    <color name="status_text">#ffffffff</color>
+    <color name="transparent">#00000000</color>
+    <color name="white">#ffffff</color>
+    <color name="gold">#FDB00B</color>
+
+    <color name="golden">#FCE300</color>
+    <color name="green">#39941C</color>
+    <color name="gray_white">#999999</color>
+    <color name="gray_white2">#f7f7f7</color>
+    <color name="gray_black">#333333</color>
+    <color name="gray_black2">#666666</color>
+    <color name="viewfinder_frame">#ff000000</color>
+    <color name="viewfinder_laser">#ffff0000</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="bgColor">#000000</color>
+    <color name="pagebg">#ECEDEE</color>
+    <color name="AppBackgroundColor">#FFC0E7FA</color>
+    <color name="TextColorBlack">#FF000000</color>
+    <color name="TextColorWhite">#FFFFFFFF</color>
+    <color name="TextColorBlue">#0066CC</color>
+    <color name="TextColorGray">#FF505050</color>
+    <color name="TextColorRed">#FFE26926</color>
+    <color name="BgColor">#ffd1dce9</color>
+    <color name="lightgray">#acacac</color>
+    <color name="black">#ff646464</color>
+    <color name="app_bg">#ececec</color>
+    <color name="app_bg2">#f4f4f4</color>
+    <color name="tab_item_default">#fafafa</color>
+    <color name="tab_item_selected">#f0f1f2</color>
+    <color name="tab_text_selected">#f8597c</color>
+    <color name="tab_text_default">#bbbbbb</color>
+    <color name="background_color">#fbfbfb</color>
+    <color name="title_text_color">#333</color>
+    <color name="title_right_text_color">#DA251D</color>
+    <color name="red">#D50005</color>
+    <color name="border_color">#cccccc</color>
+    <!-- 透明色 -->
+    <color name="fuxk_settle_black_mark">#1A000000</color>
+
+    <!-- 分割线 -->
+    <color name="fuxk_base_divide_line_color">#dcdcdc</color>
+
+    <!-- 按钮正常 -->
+    <color name="btn_small_normal">#df3434</color>
+    <!-- 按钮按下 -->
+    <color name="btn_small_select">#c21c1c</color>
+
+    <color name="txt_gray">#263238</color>
+    <color name="txt_light_gray">#b0bec5</color>
+
+    <color name="dark_bg">#8000</color>
+
+    <color name="popup_left_bg">#eee</color>
+    <color name="popup_right_bg">#ddd</color>
+    <color name="popup_right_bg_selected">#ccc</color>
+
+    <color name="div_gray">#ccc</color>
 
 
 </resources>

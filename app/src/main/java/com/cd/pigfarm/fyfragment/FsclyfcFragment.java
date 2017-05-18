@@ -93,10 +93,10 @@ public class FsclyfcFragment extends BaseFragment {
     public void jsDatas() {
         try {
             //生长育肥猪
-            Constant.szyfz_f_gwz = Utils.keep2Wdouble(Constant.szyfz_f_xf * Constant.ycz_f_gwz, 2);
-            Constant.szyfz_l_gwz = Utils.keep2Wdouble(Constant.szyfz_l_l * Constant.ycz_l_gwz, 2);
-            Constant.szyfz_flhj = Utils.keep2Wdouble(Constant.szyfz_f_gwz * Constant.ycz_f_gwzhdl + Constant.szyfz_l_l * Constant.ycz_l_ld / 1000 / 1000, 3);
-            Constant.szyfz_gwz = Utils.keep2Wdouble(Constant.szyfz_f_gwz + Constant.ycz_l_gwz, 2);
+           // Constant.szyfz_f_gwz = Utils.keep2Wdouble(Constant.szyfz_f_xf * Constant.ycz_f_gwz, 2);
+            //Constant.szyfz_l_gwz = Utils.keep2Wdouble(Constant.szyfz_l_l * Constant.ycz_l_gwz, 2);
+           // Constant.szyfz_flhj = Utils.keep2Wdouble(Constant.szyfz_f_gwz * Constant.ycz_f_gwzhdl + Constant.szyfz_l_l * Constant.ycz_l_ld / 1000 / 1000, 3);
+            //Constant.szyfz_gwz = Utils.keep2Wdouble(Constant.szyfz_f_gwz + Constant.ycz_l_gwz, 2);
         } catch (Exception e) {
             Log.e("error", e.getMessage());
         }

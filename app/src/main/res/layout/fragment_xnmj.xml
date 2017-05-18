@@ -53,11 +53,11 @@
 
                     <TextView
                         style="@style/textview_style_zqjg"
-                        android:text="季数或年数" />
+                        android:text="季/年" />
 
                     <TextView
                         style="@style/textview_style_zqjg"
-                        android:text="面积（亩）" />
+                        android:text="面积(亩)" />
 
                     <TextView
                         style="@style/textview_style_zqjg"
@@ -628,7 +628,7 @@
 
                 <TextView
                     style="@style/zs_title"
-                    android:text="仔猪繁殖场氮平衡" />
+                    android:text="保育仔猪繁殖场氮平衡" />
 
                 <TextView style="@style/textview_driver" />
 
@@ -658,11 +658,11 @@
 
                     <TextView
                         style="@style/textview_style_zqjg"
-                        android:text="季数或年数" />
+                        android:text="季/年" />
 
                     <TextView
                         style="@style/textview_style_zqjg"
-                        android:text="面积（亩）" />
+                        android:text="面积(亩)" />
 
                     <TextView
                         style="@style/textview_style_zqjg"
@@ -1263,11 +1263,11 @@
 
                     <TextView
                         style="@style/textview_style_zqjg"
-                        android:text="季数或年数" />
+                        android:text="季/年" />
 
                     <TextView
                         style="@style/textview_style_zqjg"
-                        android:text="面积（亩）" />
+                        android:text="面积(亩)" />
 
                     <TextView
                         style="@style/textview_style_zqjg"
@@ -1836,5 +1836,6 @@
         </LinearLayout>
     </ScrollView>
 
-    <include layout="@layout/left_right_button" />
+    <include layout="@layout/left_right_button"
+        android:visibility="gone"/>
 </LinearLayout>

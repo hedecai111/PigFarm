@@ -24,6 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="请输入存栏母猪数"
+            android:text="1000"
             android:inputType="number"/>
     </LinearLayout>
 

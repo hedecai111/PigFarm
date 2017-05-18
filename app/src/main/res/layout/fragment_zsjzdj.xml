@@ -148,11 +148,13 @@
             <LinearLayout style="@style/linear_style">
                 <TextView
                     style="@style/textview_style"
-                    android:text="辅助物建筑面积" />
+                    android:text="辅助物建筑面积"
+                    android:textColor="@color/gray_little"/>
                 <EditText
                     android:id="@+id/fzwjzmj_d"
                     style="@style/edittext_style"
                     android:hint="请输入辅助物建筑面积单价"
+                    android:visibility="gone"
                     android:layout_weight="1"/>
             </LinearLayout>
             <TextView style="@style/textview_driver" />

@@ -112,19 +112,19 @@ public class GzssbcsYfcFragment extends BaseFragment{
 
         Constant.yfc_fyfj_tz =Utils.keep2Wdouble( (Constant.yfc_fyfj_sl*Constant.yfc_fyfj_dj)/10000,2);
 
-        Constant.yfc_znhjkzq_sl =Utils.keep2Wdouble( Math.round(Constant.yfc_fyfj_sl/4+0.5),2);
+        Constant.yfc_znhjkzq_sl =Utils.keep2Wdouble( Math.round(Constant.yfc_fyfj_sl/4-0.5),2);
 
         Constant.yfc_znhjkzq_dj = 20000;
 
         Constant.yfc_znhjkzq_tz =Utils.keep2Wdouble( (Constant.yfc_znhjkzq_sl*Constant.yfc_znhjkzq_dj)/10000,2);
 
-        Constant.yfc_lfdb_sl =Utils.keep2Wdouble( Constant.zfzyc_hbmzl_gyy/5,2);
+        Constant.yfc_lfdb_sl =Utils.keep2Wdouble( Constant.yfc_szyfs_mj/5,0);
 
         Constant.yfc_lfdb_dj = 160;
 
         Constant.yfc_lfdb_tz =Utils.keep2Wdouble( (Constant.yfc_lfdb_sl*Constant.yfc_lfdb_dj)/10000,2);
 
-        Constant.yfc_ysq_sl =Utils.keep2Wdouble( Constant.zfzyc_hbmzl_gyy*2,2);
+        Constant.yfc_ysq_sl =Utils.keep2Wdouble( Constant.spzyfl*2,2);
 
         Constant.yfc_ysq_dj = 60;
 

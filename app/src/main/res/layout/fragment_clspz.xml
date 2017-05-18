@@ -13,7 +13,6 @@
         android:layout_below="@id/title"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
         android:orientation="horizontal">
         <EditText
             android:id="@+id/clspz_Edi"
@@ -22,6 +21,7 @@
             android:layout_weight="1"
             android:padding="10dp"
             android:hint="请输入存栏商品猪数"
+            android:text="1000"
             android:inputType="number"/>
     </LinearLayout>
 

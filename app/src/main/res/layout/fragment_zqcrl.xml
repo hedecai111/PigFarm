@@ -55,7 +55,8 @@
 
             <TextView style="@style/textview_driver" />
 
-            <LinearLayout style="@style/linear_style">
+            <LinearLayout style="@style/linear_style"
+                android:visibility="gone">
 
                 <TextView
                     style="@style/textview_style"

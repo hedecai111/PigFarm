@@ -181,7 +181,7 @@
         <LinearLayout style="@style/linear_style_zsjz">
             <TextView
                 style="@style/zs_title"
-                android:text="仔猪繁殖场（仅在产仔部分）" />
+                android:text="保育仔猪繁殖场" />
             <TextView style="@style/textview_driver" />
             <LinearLayout style="@style/linear_style">
                 <TextView
@@ -313,7 +313,7 @@
         <LinearLayout style="@style/linear_style_zsjz">
             <TextView
                 style="@style/zs_title"
-                android:text="仔猪繁殖场（含仔猪保育部分）" />
+                android:text="断奶仔猪繁殖场" />
             <TextView style="@style/textview_driver" />
             <LinearLayout style="@style/linear_style">
                 <TextView

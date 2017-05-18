@@ -23,7 +23,8 @@
             android:text="请设置农作物应施氮量"
             android:padding="10dp"
             android:textSize="16sp"/>
-        <LinearLayout style="@style/linear_style_zsjz">
+        <LinearLayout style="@style/linear_style_zsjz"
+            android:id="@+id/totle_Lin">
 
             <LinearLayout style="@style/linear_style">
                 <TextView
@@ -221,5 +222,29 @@
     </LinearLayout>
     </ScrollView>
 
-    <include layout="@layout/left_right_button" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/save_But"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/text_white"
+            android:background="@drawable/left_right_button_selecotr"
+            android:text="保存"/>
+        <Button
+            android:id="@+id/add_But"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:textColor="@color/text_white"
+            android:background="@drawable/left_right_button_selecotr"
+            android:text="添加"/>
+    </LinearLayout>
+
 </LinearLayout>

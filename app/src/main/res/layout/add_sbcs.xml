@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--添加农作物-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="添加设备参数"
+        android:textSize="16sp"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/white"
+        android:gravity="center"/>
+
+    <TextView style="@style/textview_driver"
+        android:layout_marginTop="10dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="猪舍类型："/>
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:entries="@array/spingarr_sbcs"></Spinner>
+    </LinearLayout>
+    <TextView style="@style/textview_driver" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="设备名称："/>
+        <EditText
+            android:id="@+id/sbmc"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/transparent"
+            android:textSize="@dimen/sp_14"
+            android:hint="请输入设备名称"/>
+    </LinearLayout>
+    <TextView style="@style/textview_driver"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="规模型号："/>
+        <EditText
+            android:id="@+id/sbxh"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/transparent"
+            android:textSize="@dimen/sp_14"
+            android:hint="请输入规模型号"/>
+    </LinearLayout>
+    <TextView style="@style/textview_driver" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="单        位："/>
+        <EditText
+            android:id="@+id/dw"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/transparent"
+            android:textSize="@dimen/sp_14"
+            android:hint="请输入单位"/>
+    </LinearLayout>
+    <TextView style="@style/textview_driver" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="数量(个) ："/>
+        <EditText
+            android:id="@+id/sl"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/transparent"
+            android:textSize="@dimen/sp_14"
+            android:hint="请输入数量"/>
+    </LinearLayout>
+    <TextView style="@style/textview_driver" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="单价(元) ："/>
+        <EditText
+            android:id="@+id/dj"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/transparent"
+            android:textSize="@dimen/sp_14"
+            android:hint="请输入单价"/>
+    </LinearLayout>
+    <TextView style="@style/textview_driver" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
+        <Button
+            android:id="@+id/save_But"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_gravity="center"
+            android:textColor="@color/text_white"
+            android:background="@drawable/left_right_button_selecotr"
+            android:text="保存"/>
+        <Button
+            android:id="@+id/cancel_But"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_gravity="center"
+            android:textColor="@color/text_white"
+            android:background="@drawable/left_right_button_selecotr"
+            android:text="取消"/>
+    </LinearLayout>
+
+
+</LinearLayout>

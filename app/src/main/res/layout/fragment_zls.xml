@@ -21,7 +21,7 @@
             <LinearLayout style="@style/linear_style">
                 <TextView
                     style="@style/textview_style_zqjg"
-                    android:text="工艺1配种妊娠单元数" />
+                    android:text="工艺1配种妊娠母猪单元数" />
                 <EditText
                     android:id="@+id/gyypzrcdys"
                     style="@style/edittext_style_zqjg"
@@ -31,7 +31,7 @@
             <LinearLayout style="@style/linear_style">
                 <TextView
                     style="@style/textview_style_zqjg"
-                    android:text="配种妊检舍单元数" />
+                    android:text="工艺2配种妊检母猪单元数" />
                 <EditText
                     android:id="@+id/pzrjdys"
                     style="@style/edittext_style_zqjg"
@@ -41,7 +41,7 @@
             <LinearLayout style="@style/linear_style">
                 <TextView
                     style="@style/textview_style_zqjg"
-                    android:text="妊娠母猪单元数" />
+                    android:text="工艺2妊娠母猪舍单元数" />
                 <EditText
                     android:id="@+id/rcmzdys"
                     style="@style/edittext_style_zqjg"
@@ -71,7 +71,7 @@
             <LinearLayout style="@style/linear_style">
                 <TextView
                     style="@style/textview_style_zqjg"
-                    android:text="生长育肥猪单元数" />
+                    android:text="生长育肥猪舍单元数" />
                 <EditText
                     android:id="@+id/szyfzdys"
                     style="@style/edittext_style_zqjg"
@@ -244,7 +244,7 @@
         <LinearLayout style="@style/linear_style_zsjz">
             <TextView
                 style="@style/zs_title"
-                android:text="仔猪繁殖场（仅在产仔部分）" />
+                android:text="断奶仔猪繁殖场" />
             <TextView style="@style/textview_driver" />
             <LinearLayout style="@style/linear_style">
                 <TextView
@@ -343,8 +343,9 @@
                     style="@style/edittext_style_zqjg"
                     android:text="--" />
             </LinearLayout>
-            <TextView style="@style/textview_driver" />
-            <LinearLayout style="@style/linear_style">
+           <!-- <TextView style="@style/textview_driver" />-->
+            <LinearLayout style="@style/linear_style"
+                android:visibility="gone">
                 <TextView
                     style="@style/textview_style_zqjg"
                     android:text="分娩舍单元数" />
@@ -390,7 +391,7 @@
         <LinearLayout style="@style/linear_style_zsjz">
             <TextView
                 style="@style/zs_title"
-                android:text="仔猪繁殖场（含仔猪保育部分）" />
+                android:text="保育仔猪繁殖场" />
             <TextView style="@style/textview_driver" />
             <LinearLayout style="@style/linear_style">
                 <TextView
@@ -503,8 +504,9 @@
                     style="@style/edittext_style_zqjg"
                     android:text="--" />
             </LinearLayout>
-            <TextView style="@style/textview_driver" />
-            <LinearLayout style="@style/linear_style">
+            <!--<TextView style="@style/textview_driver" />-->
+            <LinearLayout style="@style/linear_style"
+                android:visibility="gone">
                 <TextView
                     style="@style/textview_style_zqjg"
                     android:text="分娩舍单元数" />
@@ -517,8 +519,9 @@
                     style="@style/edittext_style_zqjg"
                     android:text="--" />
             </LinearLayout>
-            <TextView style="@style/textview_driver" />
-            <LinearLayout style="@style/linear_style">
+           <!-- <TextView style="@style/textview_driver" />-->
+            <LinearLayout style="@style/linear_style"
+                android:visibility="gone">
                 <TextView
                     style="@style/textview_style_zqjg"
                     android:text="保育舍单元数" />
@@ -559,6 +562,22 @@
                     style="@style/edittext_style_zqjg"
                     android:text="--" />
             </LinearLayout>
+        </LinearLayout>
+        <LinearLayout style="@style/linear_style_zsjz"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textColor="#ff0000"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="备注:"/>
+            <TextView
+                android:padding="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#ff0000"
+                android:text="工艺2中配种妊检母猪栏为4-6头小群母猪饲养栏"/>
         </LinearLayout>
     </LinearLayout>
     </ScrollView>

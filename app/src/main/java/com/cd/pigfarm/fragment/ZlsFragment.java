@@ -181,18 +181,18 @@ public class ZlsFragment extends BaseFragment {
         try {
 
 
-            Constant.gyypzrcdys = Utils.keep2Wdouble((Constant.gyy_pzrc_zysj + 7.0) / 7.0 + 0.5, 0);
+            Constant.gyypzrcdys = Utils.keep2Wdouble((Constant.gyy_pzrc_zysj + 7.0) / 7.0 , 0);
 
-            Constant.pzrjdys = Utils.keep2Wdouble((Constant.gye_dnzrc_zysj + 7) / 7 + 0.5, 0);
+            Constant.pzrjdys = Utils.keep2Wdouble((Constant.gye_dnzrc_zysj + 7) / 7 , 0);
 
-            Constant.rcmzdys = Utils.keep2Wdouble((Constant.gye_rcq_zysj + 7) / 7 + 0.5, 0);
+            Constant.rcmzdys = Utils.keep2Wdouble((Constant.gye_rcq_zysj + 7) / 7 , 0);
 
-            Constant.fwsdys = Utils.keep2Wdouble((Constant.gyy_dnrl_zysj + Constant.zlkzxdts) / Constant.fyjl + 0.5, 0);
+            Constant.fwsdys = Utils.keep2Wdouble((Constant.gyy_dnrl_zysj + Constant.zlkzxdts) / Constant.fyjl , 0);
             //Toast.makeText(getContext(),Constant.gyy_dnrl_zysj+"---"+Constant.zlkzxdts+"--"+Constant.fyjl,Toast.LENGTH_LONG).show();
 
-            Constant.bysdys = Utils.keep2Wdouble((Constant.gyy_zzby_zysj + Constant.zlkzxdts) / Constant.fyjl + 0.5, 0);
+            Constant.bysdys = Utils.keep2Wdouble((Constant.gyy_zzby_zysj + Constant.zlkzxdts) / Constant.fyjl , 0);
 
-            Constant.szyfzdys = Utils.keep2Wdouble((Constant.gyy_szyf_zysj + Constant.zlkzxdts) / Constant.fyjl + 0.5, 0);
+            Constant.szyfzdys = Utils.keep2Wdouble((Constant.gyy_szyf_zysj + Constant.zlkzxdts) / Constant.fyjl , 0);
 
             Constant.zfzyc_gzlzrjp_gye = Constant.clmzz * Constant.zrjpbl;
 
@@ -202,7 +202,7 @@ public class ZlsFragment extends BaseFragment {
 
             Constant.zfzyc_gzlzrgsj_gyy = Constant.zfzyc_gzlzrgsj_gye;
 
-            Constant.zfzyc_hbmzl_gye = Constant.clmzz * Constant.zznttgxl / Constant.hbzpypc / 4;
+            Constant.zfzyc_hbmzl_gye = Math.round(Constant.clmzz * Constant.zznttgxl / Constant.hbzpypc / 4);
 
             Constant.zfzyc_hbmzl_gyy = Constant.zfzyc_hbmzl_gye;
 
@@ -358,7 +358,7 @@ public class ZlsFragment extends BaseFragment {
 
         zfzyc_pzrjmzl_gye.setText(Constant.zfzyc_pzrjmzl_gye + "");
 
-        zfzyc_pzrjmzl_gyy.setText(Constant.zfzyc_pzrjmzl_gyy + "");
+        zfzyc_pzrjmzl_gyy.setText("↓");
 
         zfzyc_rcmzl_gye.setText(Constant.zfzyc_rcmzl_gye + "");
 
@@ -397,7 +397,7 @@ public class ZlsFragment extends BaseFragment {
 
         zzfzccz_hbmzl_gye.setText(Constant.zzfzccz_hbmzl_gye + "");
 
-        zzfzccz_pzrjmzl_gyy.setText(Constant.zzfzccz_pzrjmzl_gyy + "");
+        zzfzccz_pzrjmzl_gyy.setText("↓");
 
         zzfzccz_pzrjmzl_gye.setText(Constant.zzfzccz_pzrjmzl_gye + "");
 
@@ -434,7 +434,7 @@ public class ZlsFragment extends BaseFragment {
 
         zzfzcby_hbmzl_gye.setText(Constant.zzfzcby_hbmzl_gye + "");
 
-        zzfzcby_pzrjmzl_gyy.setText(Constant.zzfzcby_pzrjmzl_gyy + "");
+        zzfzcby_pzrjmzl_gyy.setText("↓");
 
         zzfzcby_pzrjmzl_gye.setText(Constant.zzfzcby_pzrjmzl_gye + "");
 

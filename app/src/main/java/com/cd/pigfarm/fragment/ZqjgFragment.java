@@ -228,16 +228,16 @@ public class ZqjgFragment extends BaseFragment {
 
            // Toast.makeText(getContext(),Constant.gyy_fzzq+"",Toast.LENGTH_SHORT).show();
             if (Constant.gyy_fzzq != 0) {
-                Constant.zfzyc_pzrcmz_gye = Utils.keep2Wdouble(Constant.clmzz * (Constant.gye_dnzrc_scrl + Constant.gye_dnzrc_zysj * (1 - Constant.mzphl) + Constant.gye_dnrl_scrl * (1 - Constant.rcmzfwl)) / Constant.gye_fzzq, 0);
+                Constant.zfzyc_pzrcmz_gye = Utils.keep2Wdouble(Constant.clmzz * (Constant.gye_dnzrc_scrl + Constant.gye_rcq_scrl * (1 - Constant.mzphl) + Constant.gye_dnrl_scrl * (1 - Constant.rcmzfwl)) / Constant.gye_fzzq, 0);
             }
             if (Constant.gyy_fzzq != 0) {
-                Constant.zfzyc_pzrcmz_gyy = Utils.keep2Wdouble(Constant.clmzz * (Constant.gyy_pzrc_scrl + Constant.gyy_pzrc_zysj * (1 - Constant.rcmzfwl)) / Constant.gyy_fzzq, 0);
+                Constant.zfzyc_pzrcmz_gyy = Utils.quWei(Constant.clmzz * (Constant.gyy_pzrc_scrl + Constant.gye_dnrl_zysj * (1 - Constant.rcmzfwl)) / Constant.gyy_fzzq);
             }
             if (Constant.gyy_fzzq != 0) {
                 Constant.zfzyc_rcmz_gye = Utils.keep2Wdouble(Constant.clmzz * Constant.gye_rcq_scrl * Constant.mzphl / Constant.gye_fzzq, 0);
             }
             if (Constant.gyy_fzzq != 0) {
-                Constant.zfzyc_rcmz_gyy = Utils.keep2Wdouble(Constant.clmzz * (Constant.gyy_pzrc_scrl + Constant.gyy_pzrc_zysj * (1 - Constant.rcmzfwl)) / Constant.gyy_fzzq, 0);
+                Constant.zfzyc_rcmz_gyy = Utils.quWei(Constant.clmzz * (Constant.gyy_pzrc_scrl + Constant.gye_dnrl_zysj * (1 - Constant.rcmzfwl)) / Constant.gyy_fzzq);
             }
             if (Constant.gyy_fzzq != 0) {
                 Constant.zfzyc_prmz_gye = Utils.keep2Wdouble(Constant.clmzz * Constant.gye_dnrl_scrl * Constant.rcmzfwl / Constant.gye_fzzq, 0);
@@ -279,7 +279,7 @@ public class ZqjgFragment extends BaseFragment {
 
             Constant.zzfzc_cz_rcmz_gye = Utils.keep2Wdouble(Constant.zfzyc_rcmz_gye, 0);
 
-            Constant.zzfzc_cz_rcmz_gyy = Utils.keep2Wdouble(Constant.zfzyc_rcmz_gye, 0);
+            Constant.zzfzc_cz_rcmz_gyy = Utils.keep2Wdouble(Constant.zfzyc_rcmz_gyy, 0);
 
             Constant.zzfzc_cz_prmz_gye = Utils.keep2Wdouble(Constant.zfzyc_prmz_gye, 0);
 
@@ -313,7 +313,7 @@ public class ZqjgFragment extends BaseFragment {
 
             Constant.zzfzc_by_rcmz_gye = Utils.keep2Wdouble(Constant.zfzyc_rcmz_gye, 0);
 
-            Constant.zzfzc_by_rcmz_gyy = Utils.keep2Wdouble(Constant.zfzyc_rcmz_gye, 0);
+            Constant.zzfzc_by_rcmz_gyy = Utils.keep2Wdouble(Constant.zfzyc_rcmz_gyy, 0);
 
             Constant.zzfzc_by_prmz_gye = Constant.zfzyc_prmz_gye;
 
@@ -323,12 +323,12 @@ public class ZqjgFragment extends BaseFragment {
 
             Constant.zzfzc_by_przz_gyy = Utils.keep2Wdouble(Constant.zzfzc_by_przz_gye, 0);
 
-            Constant.zzfzc_by_byzz_gye = Utils.keep2Wdouble(Constant.zfzyc_przz_gye, 0);
+            Constant.zzfzc_by_byzz_gye = Utils.keep2Wdouble(Constant.zfzyc_byzz_gye, 0);
 
-            Constant.zzfzc_by_byzz_gyy = Utils.keep2Wdouble(Constant.zzfzc_by_przz_gye, 0);
+            Constant.zzfzc_by_byzz_gyy = Utils.keep2Wdouble(Constant.zfzyc_byzz_gyy, 0);
 
 
-            Constant.zzfzc_by_ngbyzz_gyy = Utils.keep2Wdouble(Constant.zfzyc_przz_gyy * Constant.byqchl, 0);
+            Constant.zzfzc_by_ngbyzz_gyy = Utils.keep2Wdouble(Constant.zzfzc_cz_ngdnzz_gyy * Constant.byqchl, 0);
 
             Constant.zzfzc_by_ngbyzz_gye = Utils.keep2Wdouble(Constant.zzfzc_by_ngbyzz_gyy, 0);
 
@@ -360,7 +360,7 @@ public class ZqjgFragment extends BaseFragment {
 
         zfzyc_pzrcmz_gye.setText(Constant.zfzyc_pzrcmz_gye + "");
 
-        zfzyc_pzrcmz_gyy.setText(Constant.zfzyc_pzrcmz_gyy + "");
+        zfzyc_pzrcmz_gyy.setText("↓");
 
         zfzyc_rcmz_gye.setText(Constant.zfzyc_rcmz_gye + "");
 
@@ -371,6 +371,8 @@ public class ZqjgFragment extends BaseFragment {
         zfzyc_prmz_gyy.setText(Constant.zfzyc_prmz_gyy + "");
 
         zfzyc_przz_gye.setText(Constant.zfzyc_przz_gye + "");
+
+        zfzyc_przz_gyy.setText(Constant.zfzyc_przz_gyy+"");
 
         zfzyc_byzz_gye.setText(Constant.zfzyc_byzz_gye + "");
 
@@ -401,7 +403,7 @@ public class ZqjgFragment extends BaseFragment {
 
         zzfzc_cz_pzrjmz_gye.setText(Constant.zzfzc_cz_pzrjmz_gye + "");
 
-        zzfzc_cz_pzrjmz_gyy.setText(Constant.zzfzc_cz_pzrjmz_gyy + "");
+        zzfzc_cz_pzrjmz_gyy.setText("↓");
 
         zzfzc_cz_rcmz_gye.setText(Constant.zzfzc_cz_rcmz_gye + "");
 
@@ -433,7 +435,7 @@ public class ZqjgFragment extends BaseFragment {
 
         zzfzc_by_pzrjmz_gye.setText(Constant.zzfzc_by_pzrjmz_gye + "");
 
-        zzfzc_by_pzrjmz_gyy.setText(Constant.zzfzc_by_pzrjmz_gyy + "");
+        zzfzc_by_pzrjmz_gyy.setText("↓");
 
         zzfzc_by_rcmz_gye.setText(Constant.zzfzc_by_rcmz_gye + "");
 

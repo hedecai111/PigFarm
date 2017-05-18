@@ -43,6 +43,11 @@ public class Utils {
         return number;
     }
 
+    public static double quWei(double doubleNumber){
+        int number = (int)doubleNumber;
+        return number;
+    }
+
     public static int dip2px(Context context, float dpValue) {
         final float scale = context.getResources().getDisplayMetrics().density;
         return (int) (dpValue * scale + 0.5f);

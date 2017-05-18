@@ -1,18 +1,28 @@
 package com.cd.pigfarm.fragment;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.cd.pigfarm.R;
 import com.cd.pigfarm.base.BaseFragment;
 import com.cd.pigfarm.constant.Constant;
+import com.cd.pigfarm.entities.NzwEntity;
+import com.cd.pigfarm.sql.SqlOpenHelper;
 import com.cd.pigfarm.util.SpUtil;
+import com.cd.pigfarm.util.Utils;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
+
+import java.util.List;
 
 /**
  * @author hedecai
@@ -54,16 +64,89 @@ public class NzwsdlFragment extends BaseFragment {
     @NotEmpty
     private EditText mc;
 
+    private Button addButton;
+
+    private View alertView;
+
+    private EditText nwz,sdl;
+
+    AlertDialog alertDialog;
+
+    private LinearLayout to_Li;
+
+    private SqlOpenHelper sqlOpenHelper;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = View.inflate(getContext(), R.layout.fragment_nzwsdl,null);
         bindViews();
         bindButton();
+        if (sqlOpenHelper == null){
+            sqlOpenHelper = new SqlOpenHelper(getContext());
+        }
+        addView();
         return view;
     }
 
+    private void addView(){
+        List<NzwEntity> list = sqlOpenHelper.queryAllNzw();
+        if (list != null){
+            for (NzwEntity nzwEntity : list) {
+                TextView textView = (TextView) View.inflate(getContext(),R.layout.lin_textview,null);
+                to_Li.addView(textView,new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,1));
+                LinearLayout linearLayout = (LinearLayout) View.inflate(getContext(),R.layout.lin_lin,null);
+                TextView textView1 = (TextView) linearLayout.findViewById(R.id.name);
+                textView1.setText(nzwEntity.getName());
+                EditText editText = (EditText) linearLayout.findViewById(R.id.sdl);
+                editText.setText(nzwEntity.getSdl()+"");
+                to_Li.addView(linearLayout,new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, Utils.dip2px(getContext(),50f)));
+            }
+        }
+    }
+
     private void bindViews() {
+        to_Li = (LinearLayout) view.findViewById(R.id.totle_Lin);
+        addButton = (Button) view.findViewById(R.id.add_But);
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                alertView = View.inflate(getContext(),R.layout.add_nzw,null);
+                nwz = (EditText) alertView.findViewById(R.id.nzw);
+                sdl = (EditText) alertView.findViewById(R.id.sdl);
+                (alertView.findViewById(R.id.cancel_But)).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        alertDialog.dismiss();
+                    }
+                });
+                (alertView.findViewById(R.id.save_But)).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        String nzw_m = nwz.getText().toString();
+                        String sdl_m = sdl.getText().toString();
+                        if (nzw_m.equals("")){
+                            Toast.makeText(getContext(),"请输入农作物名称",Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+                        if (sdl_m.equals("")){
+                            Toast.makeText(getContext(),"请输入施氮量",Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+                        long id = sqlOpenHelper.addNzwsdl(nzw_m,Double.parseDouble(sdl_m));
+                        if (id < 0){
+                            Toast.makeText(getContext(),"添加失败",Toast.LENGTH_SHORT).show();
+                        }else {
+                            //List<NzwEntity> list = sqlOpenHelper.queryAllNzw();
+                            Toast.makeText(getContext(),"添加成功",Toast.LENGTH_SHORT).show();
+                            addView();
+                        }
+                    }
+                });
+                alertDialog =new AlertDialog.Builder(getContext()).setView(alertView).show();
+
+            }
+        });
 
         sd = (EditText) view.findViewById(R.id.sd);
         sd.setOnFocusChangeListener(focusListener);
@@ -144,6 +227,7 @@ public class NzwsdlFragment extends BaseFragment {
         mc.setOnFocusChangeListener(focusListener);
         if (Constant.mc != 0)
             mc.setText(Constant.mc+"");
+
     }
 
     @Override

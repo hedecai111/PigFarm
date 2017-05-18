@@ -103,15 +103,10 @@ public class JbcsFragment extends BaseFragment implements View.OnClickListener {
         view = View.inflate(getContext(), R.layout.fragment_jbcs, null);
         bindViews();
         bindButton();
-        Toast.makeText(getContext(),"---cr",Toast.LENGTH_SHORT).show();
         return view;
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        Toast.makeText(getContext(),"---re",Toast.LENGTH_SHORT).show();
-    }
+
 
     private void bindViews() {
 

@@ -223,6 +223,7 @@ public class TzgsFragment extends BaseFragment {
 
             Constant.zfzyc_fws_tj_gyy = Utils.keep2Wdouble(Constant.zfzyc_fws_gyy * Constant.fws_d / 10000, 2);
             Constant.zfzyc_fws_sb_gyy = Utils.keep2Wdouble(Constant.fws_tzze, 2);
+            LogUtil.e(Constant.fws_tzze+"");
             Constant.zfzyc_fws_tj_gye = Utils.keep2Wdouble(Constant.zfzyc_fws_gye * Constant.fws_d / 10000, 2);
             Constant.zfzyc_fws_sb_gye = Utils.keep2Wdouble(Constant.fws_tzze, 2);
 
@@ -261,7 +262,7 @@ public class TzgsFragment extends BaseFragment {
             Constant.zfzyc_bgdqtjz_tj_gye = Utils.keep2Wdouble(Constant.zfzyc_bgdqtjz_gye * Constant.bgdqtjz_d / 10000, 2);
 
 
-            Constant.zfzyc_xj_tj_gyy = Utils.keep2Wdouble(Constant.zfzyc_hbmzs_tj_gyy + Constant.zfzyc_gzjpzrjmzs_tj_gyy + Constant.zfzyc_rcmzs_tj_gyy
+            Constant.zfzyc_xj_tj_gyy = Utils.keep2Wdouble(Constant.zfzyc_hbmzs_tj_gyy  + Constant.zfzyc_rcmzs_tj_gyy
                     + Constant.zfzyc_fws_tj_gyy + Constant.zfzyc_bys_tj_gyy + Constant.zfzyc_szyfs_tj_gyy + Constant.zfzyc_bzgls_tj_gyy
                     + Constant.zfzyc_yzgls_tj_gyy + Constant.zfzyc_zqc_tj_gyy + Constant.zfzyc_zyc_tj_gyy + Constant.zfzyc_slkf_tj_gyy
                     + Constant.zfzyc_bgdqtjz_tj_gyy, 2);
@@ -278,8 +279,8 @@ public class TzgsFragment extends BaseFragment {
                     + Constant.zfzyc_yzgls_sb_gye + Constant.zfzyc_zqc_sb_gye + Constant.zfzyc_zyc_sb_gye + Constant.zfzyc_slkf_sb_gye
                     + Constant.zfzyc_bgdqtjz_sb_gye, 2);
 
-            Constant.zfzyc_hj_gyy = Utils.keep2Wdouble(Constant.zfzyc_xj_tj_gyy + Constant.zfzyc_xj_sb_gyy, 2);
-            Constant.zfzyc_hj_gye = Utils.keep2Wdouble(Constant.zfzyc_xj_tj_gye + Constant.zfzyc_xj_sb_gye, 2);
+            Constant.zfzyc_hj_gyy = Utils.keep2Wdouble(Constant.zfzyc_xj_tj_gyy + Constant.zfzyc_xj_sb_gyy, 0);
+            Constant.zfzyc_hj_gye = Utils.keep2Wdouble(Constant.zfzyc_xj_tj_gye + Constant.zfzyc_xj_sb_gye, 0);
             //断奶仔猪繁殖场（仅在产仔部分）
             Constant.dnzzfzccz_hbmzs_tj_gyy = Utils.keep2Wdouble(Constant.zfzyc_hbmzs_tj_gyy, 2);
             Constant.dnzzfzccz_hbmzs_sb_gyy = Utils.keep2Wdouble(Constant.hbmzs_tzze, 2);
@@ -326,7 +327,7 @@ public class TzgsFragment extends BaseFragment {
             Constant.dnzzfzccz_bgdqtjz_tj_gye = Utils.keep2Wdouble(Constant.dnzzfzc_bgdqtjz_gye * Constant.bgdqtjz_d / 10000, 2);
 
 
-            Constant.dnzzfzccz_xj_tj_gyy = Utils.keep2Wdouble(Constant.dnzzfzccz_hbmzs_tj_gyy + Constant.dnzzfzccz_pzrjmzs_tj_gyy + Constant.dnzzfzccz_rcmzs_tj_gyy
+            Constant.dnzzfzccz_xj_tj_gyy = Utils.keep2Wdouble(Constant.dnzzfzccz_hbmzs_tj_gyy  + Constant.dnzzfzccz_rcmzs_tj_gyy
                     + Constant.dnzzfzccz_fws_tj_gyy + Constant.dnzzfzccz_bzgls_tj_gyy + Constant.dnzzfzccz_yzgls_tj_gyy + Constant.dnzzfzccz_zqc_tj_gyy + Constant.dnzzfzccz_zyc_tj_gyy + Constant.dnzzfzccz_slkf_tj_gyy
                     + Constant.dnzzfzccz_bgdqtjz_tj_gyy, 2);
             Constant.dnzzfzccz_xj_sb_gyy = Utils.keep2Wdouble(Constant.dnzzfzccz_hbmzs_sb_gyy + Constant.dnzzfzccz_pzrjmzs_sb_gyy + Constant.dnzzfzccz_rcmzs_sb_gyy
@@ -342,8 +343,8 @@ public class TzgsFragment extends BaseFragment {
                     + Constant.dnzzfzccz_yzgls_sb_gye + Constant.dnzzfzccz_zqc_sb_gye + Constant.dnzzfzccz_zyc_sb_gye + Constant.dnzzfzccz_slkf_sb_gye
                     + Constant.dnzzfzccz_bgdqtjz_sb_gye, 2);
 
-            Constant.dnzzfzccz_hj_gyy = Utils.keep2Wdouble(Constant.dnzzfzccz_xj_tj_gyy + Constant.dnzzfzccz_xj_sb_gyy, 2);
-            Constant.dnzzfzccz_hj_gye = Utils.keep2Wdouble(Constant.dnzzfzccz_xj_tj_gye + Constant.dnzzfzccz_xj_sb_gye, 2);
+            Constant.dnzzfzccz_hj_gyy = Utils.keep2Wdouble(Constant.dnzzfzccz_xj_tj_gyy + Constant.dnzzfzccz_xj_sb_gyy, 0);
+            Constant.dnzzfzccz_hj_gye = Utils.keep2Wdouble(Constant.dnzzfzccz_xj_tj_gye + Constant.dnzzfzccz_xj_sb_gye, 0);
 
             //断奶仔猪繁殖场（仅在产仔部分）
             Constant.dnzzfzcby_hbmzs_tj_gyy = Utils.keep2Wdouble(Constant.zfzyc_hbmzs_tj_gyy, 2);
@@ -365,6 +366,11 @@ public class TzgsFragment extends BaseFragment {
             Constant.dnzzfzcby_fws_sb_gyy = Utils.keep2Wdouble(Constant.fws_tzze, 2);
             Constant.dnzzfzcby_fws_tj_gye = Utils.keep2Wdouble(Constant.zfzyc_fws_tj_gye, 2);
             Constant.dnzzfzcby_fws_sb_gye = Utils.keep2Wdouble(Constant.fws_tzze, 2);
+            
+            Constant.dnzzfzcby_byq_tj_gyy = Utils.keep2Wdouble(Constant.zfzyc_bys_tj_gyy, 2);
+            Constant.dnzzfzcby_byq_sb_gyy = Utils.keep2Wdouble(Constant.bys_tzze, 2);
+            Constant.dnzzfzcby_byq_tj_gye = Utils.keep2Wdouble(Constant.zfzyc_bys_tj_gye, 2);
+            Constant.dnzzfzcby_byq_sb_gye = Utils.keep2Wdouble(Constant.bys_tzze, 2);
 
             Constant.dnzzfzcby_bzgls_tj_gyy = Utils.keep2Wdouble(Constant.zfzyc_bzgls_gyy * Constant.bzgls_d / 10000, 2);
             Constant.dnzzfzcby_bzgls_sb_gyy = Utils.keep2Wdouble(Constant.bzgls_tzze, 2);
@@ -391,24 +397,24 @@ public class TzgsFragment extends BaseFragment {
             Constant.dnzzfzcby_bgdqtjz_tj_gye = Utils.keep2Wdouble(Constant.dnzzfzc_bgdqtjz_gye * Constant.bgdqtjz_d / 10000, 2);
 
 
-            Constant.dnzzfzcby_xj_tj_gyy = Utils.keep2Wdouble(Constant.dnzzfzcby_hbmzs_tj_gyy + Constant.dnzzfzcby_pzrjmzs_tj_gyy + Constant.dnzzfzcby_rcmzs_tj_gyy
+            Constant.dnzzfzcby_xj_tj_gyy = Utils.keep2Wdouble(Constant.dnzzfzcby_byq_tj_gyy  +Constant.dnzzfzcby_hbmzs_tj_gyy  + Constant.dnzzfzcby_rcmzs_tj_gyy
                     + Constant.dnzzfzcby_fws_tj_gyy + Constant.dnzzfzcby_bzgls_tj_gyy + Constant.dnzzfzcby_yzgls_tj_gyy + Constant.dnzzfzcby_zqc_tj_gyy + Constant.dnzzfzcby_zyc_tj_gyy + Constant.dnzzfzcby_slkf_tj_gyy
                     + Constant.dnzzfzcby_bgdqtjz_tj_gyy, 2);
-            Constant.dnzzfzcby_xj_sb_gyy = Utils.keep2Wdouble(Constant.dnzzfzcby_hbmzs_sb_gyy + Constant.dnzzfzcby_pzrjmzs_sb_gyy + Constant.dnzzfzcby_rcmzs_sb_gyy
+            Constant.dnzzfzcby_xj_sb_gyy = Utils.keep2Wdouble(Constant.dnzzfzcby_byq_sb_gyy  +Constant.dnzzfzcby_hbmzs_sb_gyy + Constant.dnzzfzcby_pzrjmzs_sb_gyy + Constant.dnzzfzcby_rcmzs_sb_gyy
                     + Constant.dnzzfzcby_fws_sb_gyy + Constant.dnzzfzcby_bzgls_sb_gyy
                     + Constant.dnzzfzcby_yzgls_sb_gyy + Constant.dnzzfzcby_zqc_sb_gyy + Constant.dnzzfzcby_zyc_sb_gyy + Constant.dnzzfzcby_slkf_sb_gyy
                     + Constant.dnzzfzcby_bgdqtjz_sb_gyy, 2);
-            Constant.dnzzfzcby_xj_tj_gye = Utils.keep2Wdouble(Constant.dnzzfzcby_hbmzs_tj_gye + Constant.dnzzfzcby_pzrjmzs_tj_gye + Constant.dnzzfzcby_rcmzs_tj_gye
+            Constant.dnzzfzcby_xj_tj_gye = Utils.keep2Wdouble(Constant.dnzzfzcby_byq_tj_gye  +Constant.dnzzfzcby_hbmzs_tj_gye + Constant.dnzzfzcby_pzrjmzs_tj_gye + Constant.dnzzfzcby_rcmzs_tj_gye
                     + Constant.dnzzfzcby_fws_tj_gye + Constant.dnzzfzcby_bzgls_tj_gye
                     + Constant.dnzzfzcby_yzgls_tj_gye + Constant.dnzzfzcby_zqc_tj_gye + Constant.dnzzfzcby_zyc_tj_gye + Constant.dnzzfzcby_slkf_tj_gye
                     + Constant.dnzzfzcby_bgdqtjz_tj_gye, 2);
-            Constant.dnzzfzcby_xj_sb_gye = Utils.keep2Wdouble(Constant.dnzzfzcby_hbmzs_sb_gye + Constant.dnzzfzcby_pzrjmzs_sb_gye + Constant.dnzzfzcby_rcmzs_sb_gye
+            Constant.dnzzfzcby_xj_sb_gye = Utils.keep2Wdouble(Constant.dnzzfzcby_byq_sb_gye  +Constant.dnzzfzcby_hbmzs_sb_gye + Constant.dnzzfzcby_pzrjmzs_sb_gye + Constant.dnzzfzcby_rcmzs_sb_gye
                     + Constant.dnzzfzcby_fws_sb_gye + Constant.dnzzfzcby_bzgls_sb_gye
                     + Constant.dnzzfzcby_yzgls_sb_gye + Constant.dnzzfzcby_zqc_sb_gye + Constant.dnzzfzcby_zyc_sb_gye + Constant.dnzzfzcby_slkf_sb_gye
                     + Constant.dnzzfzcby_bgdqtjz_sb_gye, 2);
 
-            Constant.dnzzfzcby_hj_gyy = Utils.keep2Wdouble(Constant.dnzzfzcby_xj_tj_gyy + Constant.dnzzfzcby_xj_sb_gyy, 2);
-            Constant.dnzzfzcby_hj_gye = Utils.keep2Wdouble(Constant.dnzzfzcby_xj_tj_gye + Constant.dnzzfzcby_xj_sb_gye, 2);
+            Constant.dnzzfzcby_hj_gyy = Utils.keep2Wdouble(Constant.dnzzfzcby_xj_tj_gyy + Constant.dnzzfzcby_xj_sb_gyy, 0);
+            Constant.dnzzfzcby_hj_gye = Utils.keep2Wdouble(Constant.dnzzfzcby_xj_tj_gye + Constant.dnzzfzcby_xj_sb_gye, 0);
         } catch (Exception e) {
             LogUtil.e( e.getMessage());
         }
@@ -427,7 +433,7 @@ public class TzgsFragment extends BaseFragment {
         zfzyc_hbmzs_tj_gye.setText(Constant.zfzyc_hbmzs_tj_gye + "");
         zfzyc_hbmzs_sb_gye.setText(Constant.zfzyc_hbmzs_sb_gye + "");
 
-        zfzyc_gzjpzrjmzs_tj_gyy.setText(Constant.zfzyc_gzjpzrjmzs_tj_gyy + "");
+        zfzyc_gzjpzrjmzs_tj_gyy.setText("↓");
         zfzyc_gzjpzrjmzs_sb_gyy.setText(Constant.zfzyc_gzjpzrjmzs_sb_gyy + "");
         zfzyc_gzjpzrjmzs_tj_gye.setText(Constant.zfzyc_gzjpzrjmzs_tj_gye + "");
         zfzyc_gzjpzrjmzs_sb_gye.setText(Constant.zfzyc_gzjpzrjmzs_sb_gye + "");
@@ -490,7 +496,7 @@ public class TzgsFragment extends BaseFragment {
         dnzzfzccz_hbmzs_tj_gye.setText(Constant.dnzzfzccz_hbmzs_tj_gye + "");
         dnzzfzccz_hbmzs_sb_gye.setText(Constant.dnzzfzccz_hbmzs_sb_gye + "");
 
-        dnzzfzccz_pzrjmzs_tj_gyy.setText(Constant.dnzzfzccz_pzrjmzs_tj_gyy + "");
+        dnzzfzccz_pzrjmzs_tj_gyy.setText("↓");
         dnzzfzccz_pzrjmzs_sb_gyy.setText(Constant.dnzzfzccz_pzrjmzs_sb_gyy + "");
         dnzzfzccz_pzrjmzs_tj_gye.setText(Constant.dnzzfzccz_pzrjmzs_tj_gye + "");
         dnzzfzccz_pzrjmzs_sb_gye.setText(Constant.dnzzfzccz_pzrjmzs_sb_gye + "");
@@ -544,7 +550,7 @@ public class TzgsFragment extends BaseFragment {
         dnzzfzcby_hbmzs_tj_gye.setText(Constant.dnzzfzcby_hbmzs_tj_gye + "");
         dnzzfzcby_hbmzs_sb_gye.setText(Constant.dnzzfzcby_hbmzs_sb_gye + "");
 
-        dnzzfzcby_pzrjmzs_tj_gyy.setText(Constant.dnzzfzcby_pzrjmzs_tj_gyy + "");
+        dnzzfzcby_pzrjmzs_tj_gyy.setText("↓");
         dnzzfzcby_pzrjmzs_sb_gyy.setText(Constant.dnzzfzcby_pzrjmzs_sb_gyy + "");
         dnzzfzcby_pzrjmzs_tj_gye.setText(Constant.dnzzfzcby_pzrjmzs_tj_gye + "");
         dnzzfzcby_pzrjmzs_sb_gye.setText(Constant.dnzzfzcby_pzrjmzs_sb_gye + "");
@@ -558,6 +564,11 @@ public class TzgsFragment extends BaseFragment {
         dnzzfzcby_fws_sb_gyy.setText(Constant.dnzzfzcby_fws_sb_gyy + "");
         dnzzfzcby_fws_tj_gye.setText(Constant.dnzzfzcby_fws_tj_gye + "");
         dnzzfzcby_fws_sb_gye.setText(Constant.dnzzfzcby_fws_sb_gye + "");
+
+        dnzzfzcby_byq_tj_gyy.setText(Constant.dnzzfzcby_byq_tj_gyy + "");
+        dnzzfzcby_byq_sb_gyy.setText(Constant.dnzzfzcby_byq_sb_gyy + "");
+        dnzzfzcby_byq_tj_gye.setText(Constant.dnzzfzcby_byq_tj_gye + "");
+        dnzzfzcby_byq_sb_gye.setText(Constant.dnzzfzcby_byq_sb_gye + "");
 
         dnzzfzcby_bzgls_tj_gyy.setText(Constant.dnzzfzcby_bzgls_tj_gyy + "");
         dnzzfzcby_bzgls_sb_gyy.setText(Constant.dnzzfzcby_bzgls_sb_gyy + "");

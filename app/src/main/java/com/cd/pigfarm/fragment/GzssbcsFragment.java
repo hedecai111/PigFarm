@@ -1,5 +1,6 @@
 package com.cd.pigfarm.fragment;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -222,6 +223,14 @@ public class GzssbcsFragment extends BaseFragment {
     private EditText yzgls_tzze;
     private Button next_But;
 
+    private Button addButton;
+
+    private View alertView;
+
+    private EditText nwz,sdl;
+
+    AlertDialog alertDialog;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -232,6 +241,31 @@ public class GzssbcsFragment extends BaseFragment {
     }
 
     private void findViews() {
+
+        addButton = (Button) view.findViewById(R.id.add_But);
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                alertView = View.inflate(getContext(),R.layout.add_sbcs,null);
+                nwz = (EditText) view.findViewById(R.id.nzw);
+                sdl = (EditText) view.findViewById(R.id.sdl);
+                (alertView.findViewById(R.id.cancel_But)).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        alertDialog.dismiss();
+                    }
+                });
+                (alertView.findViewById(R.id.save_But)).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        alertDialog.dismiss();
+                    }
+                });
+                alertDialog =new AlertDialog.Builder(getContext()).setView(alertView).show();
+
+            }
+        });
+
         hbmzs_xqjl_sl = (EditText) view.findViewById(R.id.hbmzs_xqjl_sl);
         hbmzs_xqjl_dj = (EditText) view.findViewById(R.id.hbmzs_xqjl_dj);
         hbmzs_xqjl_tz = (EditText) view.findViewById(R.id.hbmzs_xqjl_tz);
@@ -460,13 +494,13 @@ public class GzssbcsFragment extends BaseFragment {
 
             Constant.hbmzs_fyfj_tz = Utils.keep2Wdouble((Constant.hbmzs_fyfj_sl * Constant.hbmzs_fyfj_dj) / 10000, 2);
 
-            Constant.hbmzs_znhjkzq_sl = Utils.keep2Wdouble(Math.round(Constant.hbmzs_fyfj_sl / 4 + 0.5), 0);
+            Constant.hbmzs_znhjkzq_sl = Utils.keep2Wdouble(Math.round(Constant.hbmzs_fyfj_sl / 4 ), 0);
 
             Constant.hbmzs_znhjkzq_dj = 20000;
 
             Constant.hbmzs_znhjkzq_tz = Utils.keep2Wdouble((Constant.hbmzs_znhjkzq_sl * Constant.hbmzs_znhjkzq_dj) / 10000, 2);
 
-            Constant.hbmzs_lfdb_sl = Utils.keep2Wdouble(Constant.zfzyc_hbmzl_gyy / 5, 0);
+            Constant.hbmzs_lfdb_sl = Utils.keep2Wdouble(Constant.zfzyc_hbmzs_gyy / 5, 0);
 
             Constant.hbmzs_lfdb_dj = 160;
 
@@ -482,7 +516,7 @@ public class GzssbcsFragment extends BaseFragment {
                     + Constant.hbmzs_znhjkzq_tz + Constant.hbmzs_lfdb_tz + Constant.hbmzs_ysq_tz, 2);
 
             //公猪及配种壬检母猪舍
-            Constant.gzjpzrjmzs_bzj_sl = Utils.keep2Wdouble(Math.round(Constant.clmzz / 5), 0);
+            Constant.gzjpzrjmzs_bzj_sl = Utils.keep2Wdouble(Math.round(Constant.clmzz / 200), 0);
 
             Constant.gzjpzrjmzs_bzj_dj = 800;
 
@@ -518,26 +552,26 @@ public class GzssbcsFragment extends BaseFragment {
 
             Constant.gzjpzrjmzs_ltxx_tz = Utils.keep2Wdouble((Constant.gzjpzrjmzs_ltxx_sl * Constant.gzjpzrjmzs_ltxx_dj) / 10000, 2);
 
-            Constant.gzjpzrjmzs_sl_sl = Utils.keep2Wdouble(Constant.zfzyc_gzjpzrjmzs_gyy * 3 / 65, 0);
+            Constant.gzjpzrjmzs_sl_sl = Utils.keep2Wdouble(Constant.zfzyc_gzjpzrjmzs_gye * 3 / 65, 0);
 
             Constant.gzjpzrjmzs_sl_dj = Utils.keep2Wdouble(320, 2);
 
             Constant.gzjpzrjmzs_sl_tz = Utils.keep2Wdouble((Constant.gzjpzrjmzs_sl_sl * Constant.gzjpzrjmzs_sl_dj) / 10000, 2);
 
-            Constant.gzjpzrjmzs_fyfj_sl = Utils.keep2Wdouble(Math.round(Constant.gzjpzrjmzs_sl_sl / 2 + 0.5), 0);
+            Constant.gzjpzrjmzs_fyfj_sl = Utils.keep2Wdouble(Math.round(Constant.gzjpzrjmzs_sl_sl / 2 ), 0);
 
             Constant.gzjpzrjmzs_fyfj_dj = Utils.keep2Wdouble(2800, 2);
 
             Constant.gzjpzrjmzs_fyfj_tz = Utils.keep2Wdouble((Constant.gzjpzrjmzs_fyfj_sl * Constant.gzjpzrjmzs_fyfj_dj) / 10000, 2);
 
-            Constant.gzjpzrjmzs_znhjkzq_sl = Utils.keep2Wdouble(Math.round(Constant.gzjpzrjmzs_fyfj_sl / 4 + 0.5), 0);
+            Constant.gzjpzrjmzs_znhjkzq_sl = Utils.keep2Wdouble(Math.round(Constant.gzjpzrjmzs_fyfj_sl / 4 -0.5), 0);
 
             Constant.gzjpzrjmzs_znhjkzq_dj = Utils.keep2Wdouble(20000, 2);
 
             Constant.gzjpzrjmzs_znhjkzq_tz = Utils.keep2Wdouble((Constant.gzjpzrjmzs_znhjkzq_sl * Constant.gzjpzrjmzs_znhjkzq_dj) / 10000, 2);
 
 
-            Constant.gzjpzrjmzs_lfdb_sl = Utils.keep2Wdouble(Constant.zfzyc_gzjpzrjmzs_gyy / 5, 0);
+            Constant.gzjpzrjmzs_lfdb_sl = Utils.keep2Wdouble(Constant.zfzyc_gzjpzrjmzs_gye / 5, 0);
 
             Constant.gzjpzrjmzs_lfdb_dj = Utils.keep2Wdouble(160, 2);
 
@@ -562,43 +596,43 @@ public class GzssbcsFragment extends BaseFragment {
 
 
             //妊娠母猪舍
-            Constant.rcmzs_xwl_sl = Utils.keep2Wdouble(Constant.zfzyc_rcmzl_gyy, 0);
+            Constant.rcmzs_xwl_sl = Utils.keep2Wdouble(Constant.zfzyc_rcmzl_gye, 0);
 
-            Constant.rcmzs_xwl_dj = Utils.keep2Wdouble(Constant.gzjxqsyj_dj, 2);
+            Constant.rcmzs_xwl_dj = Utils.keep2Wdouble(680, 2);
 
             Constant.rcmzs_xwl_tz = Utils.keep2Wdouble((Constant.rcmzs_xwl_sl * Constant.rcmzs_xwl_dj) / 10000, 2);
 
-            Constant.rcmzs_ltlx_sl = Utils.keep2Wdouble(Constant.zfzyc_rcmzl_gyy, 0);
+            Constant.rcmzs_ltlx_sl = Utils.keep2Wdouble(Constant.zfzyc_rcmzl_gye, 0);
 
             Constant.rcmzs_ltlx_dj = Utils.keep2Wdouble(800, 2);
 
             Constant.rcmzs_ltlx_tz = Utils.keep2Wdouble((Constant.rcmzs_ltlx_sl * Constant.rcmzs_ltlx_dj) / 10000, 2);
 
-            Constant.rcmzs_sl_sl = Utils.keep2Wdouble(Constant.zfzyc_rcmzs_gyy * 3 / 65, 0);
+            Constant.rcmzs_sl_sl = Utils.keep2Wdouble(Constant.zfzyc_rcmzs_gye * 3 / 65, 0);
 
             Constant.rcmzs_sl_dj = Utils.keep2Wdouble(320, 2);
 
             Constant.rcmzs_sl_tz = Utils.keep2Wdouble((Constant.rcmzs_sl_sl * Constant.rcmzs_sl_dj) / 10000, 2);
 
-            Constant.rcmzs_fyfj_sl = Utils.keep2Wdouble(Math.round(Constant.rcmzs_sl_sl / 2 + 0.5), 0);
+            Constant.rcmzs_fyfj_sl = Utils.keep2Wdouble(Math.round(Constant.rcmzs_sl_sl / 2 ), 0);
 
             Constant.rcmzs_fyfj_dj = Utils.keep2Wdouble(2800, 2);
 
             Constant.rcmzs_fyfj_tz = Utils.keep2Wdouble((Constant.rcmzs_fyfj_sl * Constant.rcmzs_fyfj_dj) / 10000, 2);
 
-            Constant.rcmzs_znhjkzq_sl = Utils.keep2Wdouble(Math.round(Constant.rcmzs_fyfj_sl / 4 + 0.5), 0);
+            Constant.rcmzs_znhjkzq_sl = Utils.keep2Wdouble(Math.round(Constant.rcmzs_fyfj_sl / 4 -0.5), 0);
 
             Constant.rcmzs_znhjkzq_dj = Utils.keep2Wdouble(20000, 2);
 
             Constant.rcmzs_znhjkzq_tz = Utils.keep2Wdouble((Constant.rcmzs_znhjkzq_sl * Constant.rcmzs_znhjkzq_dj) / 10000, 2);
 
-            Constant.rcmzs_lfdb_sl = Utils.keep2Wdouble(Constant.zfzyc_rcmzl_gyy / 5, 0);
+            Constant.rcmzs_lfdb_sl = Utils.keep2Wdouble(Constant.zfzyc_fws_gye / 3, 0);
 
             Constant.rcmzs_lfdb_dj = Utils.keep2Wdouble(160, 2);
 
             Constant.rcmzs_lfdb_tz = Utils.keep2Wdouble((Constant.rcmzs_lfdb_sl * Constant.rcmzs_lfdb_dj) / 10000, 2);
 
-            Constant.rcmzs_ysq_sl = Utils.keep2Wdouble(Constant.zfzyc_rcmzl_gyy * 2, 0);
+            Constant.rcmzs_ysq_sl = Utils.keep2Wdouble(Constant.zfzyc_rcmzl_gye , 0);
 
             Constant.rcmzs_ysq_dj = Utils.keep2Wdouble(60, 2);
 
@@ -608,17 +642,20 @@ public class GzssbcsFragment extends BaseFragment {
                     + Constant.rcmzs_znhjkzq_tz + Constant.rcmzs_lfdb_tz + Constant.rcmzs_ysq_tz, 2);
 
             //分娩栏舍
-            Constant.fws_fwl_sl = Utils.keep2Wdouble(Constant.zfzyc_fwl_gyy, 0);
+            Constant.fws_fwl_sl = Utils.keep2Wdouble(Constant.zfzyc_fwl_gye, 0);
 
-            Constant.fws_fwl_dj = Utils.keep2Wdouble(Constant.gzjxqsyj_dj, 2);
+            Constant.fws_fwl_dj = Utils.keep2Wdouble(3200, 2);
 
             Constant.fws_fwl_tz = Utils.keep2Wdouble((Constant.fws_fwl_sl * Constant.fws_fwl_dj) / 10000, 2);
 
-            Constant.fws_ltlx_sl = Utils.keep2Wdouble(Constant.zfzyc_fwl_gyy, 0);
+
+            Constant.fws_ltlx_sl = Utils.keep2Wdouble(Constant.zfzyc_fwl_gye, 0);
 
             Constant.fws_ltlx_dj = Utils.keep2Wdouble(800, 2);
 
             Constant.fws_ltlx_tz = Utils.keep2Wdouble((Constant.fws_ltlx_sl * Constant.fws_ltlx_dj) / 10000, 2);
+           // LogUtil.e(Constant.fws_ltlx_sl+"---"+Constant.fws_ltlx_dj);
+
 
             Constant.fws_sl_sl = Utils.keep2Wdouble(Constant.zfzyc_fws_gyy * 3 / 65, 0);
 
@@ -626,73 +663,77 @@ public class GzssbcsFragment extends BaseFragment {
 
             Constant.fws_sl_tz = Utils.keep2Wdouble((Constant.fws_sl_sl * Constant.fws_sl_dj) / 10000, 2);
 
-            Constant.fws_ltlx_sl = Utils.keep2Wdouble(Math.round(Constant.fws_sl_sl / 2 + 0.5), 0);
+            Constant.fws_flsj_sl = Utils.keep2Wdouble(Math.round(Constant.fws_sl_sl / 2 ), 0);
 
-            Constant.fws_ltlx_dj = Utils.keep2Wdouble(2800, 2);
+            Constant.fws_flsj_dj = Utils.keep2Wdouble(2800, 2);
 
-            Constant.fws_ltlx_tz = Utils.keep2Wdouble((Constant.fws_ltlx_sl * Constant.fws_ltlx_dj) / 10000, 2);
+            Constant.fws_flsj_tz = Utils.keep2Wdouble((Constant.fws_flsj_sl * Constant.fws_flsj_dj) / 10000, 2);
 
-            Constant.fws_znhjkzq_sl = Utils.keep2Wdouble(Math.round(Constant.fws_ltlx_sl / 4 + 0.5), 0);
+            Constant.fws_znhjkzq_sl = Utils.keep2Wdouble(Math.round(Constant.fws_flsj_sl / 4 - 0.5), 0);
 
             Constant.fws_znhjkzq_dj = Utils.keep2Wdouble(20000, 2);
 
             Constant.fws_znhjkzq_tz = Utils.keep2Wdouble((Constant.fws_znhjkzq_sl * Constant.fws_znhjkzq_dj) / 10000, 2);
 
-            Constant.fws_ysq_sl = Utils.keep2Wdouble(Constant.zfzyc_fwl_gyy * 2, 0);
+            LogUtil.e(Constant.fws_znhjkzq_sl+"-----"+Constant.fws_znhjkzq_dj+"---"+Constant.fws_znhjkzq_tz);
+
+            Constant.fws_ysq_sl = Utils.keep2Wdouble(Constant.zfzyc_fwl_gye, 0);
 
             Constant.fws_ysq_dj = Utils.keep2Wdouble(60, 2);
 
             Constant.fws_ysq_tz = Utils.keep2Wdouble((Constant.fws_ysq_sl * Constant.fws_ysq_dj) / 10000, 2);
 
 
-            Constant.fws_znbwx_sl = Utils.keep2Wdouble(Constant.zfzyc_fwl_gyy, 0);
+            Constant.fws_znbwx_sl = Utils.keep2Wdouble(Constant.zfzyc_fwl_gye, 0);
 
             Constant.fws_znbwx_dj = Utils.keep2Wdouble(1500, 2);
 
             Constant.fws_znbwx_tz = Utils.keep2Wdouble((Constant.fws_znbwx_sl * Constant.fws_znbwx_dj) / 10000, 2);
 
 
-            Constant.fws_dhjbysb_sl = Utils.keep2Wdouble(Constant.zfzyc_fws_gyy, 0);
+            Constant.fws_dhjbysb_sl = Utils.keep2Wdouble(Constant.zfzyc_fws_gye, 0);
 
             Constant.fws_dhjbysb_dj = Utils.keep2Wdouble(150, 2);
 
             Constant.fws_dhjbysb_tz = Utils.keep2Wdouble((Constant.fws_dhjbysb_sl * Constant.fws_dhjbysb_dj) / 10000, 2);
 
-            Constant.fws_tzze = Utils.keep2Wdouble(Constant.fws_fwl_tz + Constant.fws_ltlx_tz + Constant.fws_sl_tz + Constant.fws_ltlx_tz
-                    + Constant.fws_znhjkzq_tz + Constant.fws_znbwx_tz + Constant.fws_ysq_tz + Constant.fws_dhjbysb_tz, 2);
+            Constant.fws_tzze = Utils.keep2Wdouble(Constant.fws_fwl_tz + Constant.fws_ltlx_tz + Constant.fws_sl_tz
+                    + Constant.fws_znhjkzq_tz + Constant.fws_znbwx_tz + Constant.fws_ysq_tz + Constant.fws_dhjbysb_tz+Constant.fws_flsj_tz, 2);
 
-            //分娩舍
-            Constant.bys_byl_sl = Utils.keep2Wdouble(Constant.zfzyc_byl_gyy, 0);
+            LogUtil.e(Constant.fws_fwl_tz +"---"+ Constant.fws_ltlx_tz +"---"+  Constant.fws_sl_tz
+                    +"---"+  Constant.fws_znhjkzq_tz +"---"+  Constant.fws_znbwx_tz+"---"+  Constant.fws_ysq_tz +"---"+  Constant.fws_dhjbysb_tz+"---"+ Constant.fws_flsj_tz);
+            //保育舍
+            Constant.bys_byl_sl = Utils.keep2Wdouble(Constant.zfzyc_byl_gye, 0);
 
-            Constant.bys_byl_dj = Utils.keep2Wdouble(Constant.gzjxqsyj_dj, 2);
+            Constant.bys_byl_dj = Utils.keep2Wdouble(1950, 2);
 
             Constant.bys_byl_tz = Utils.keep2Wdouble((Constant.bys_byl_sl * Constant.bys_byl_dj) / 10000, 2);
 
-            Constant.bys_ltlx_sl = Utils.keep2Wdouble(Constant.zfzyc_byl_gyy, 0);
+            Constant.bys_ltlx_sl = Utils.keep2Wdouble(Constant.zfzyc_byl_gye, 0);
 
             Constant.bys_ltlx_dj = Utils.keep2Wdouble(800, 2);
 
             Constant.bys_ltlx_tz = Utils.keep2Wdouble((Constant.bys_ltlx_sl * Constant.bys_ltlx_dj) / 10000, 2);
-
-            Constant.bys_sl_sl = Utils.keep2Wdouble(Constant.zfzyc_bys_gyy * 3 / 65, 0);
+            LogUtil.e(Constant.bys_ltlx_sl+"---"+Constant.bys_ltlx_dj);
+            Constant.bys_sl_sl = Utils.keep2Wdouble(Constant.zfzyc_bys_gyy * 3 / 65 +0.5, 0);
 
             Constant.bys_sl_dj = Utils.keep2Wdouble(320, 2);
 
             Constant.bys_sl_tz = Utils.keep2Wdouble((Constant.bys_sl_sl * Constant.bys_sl_dj) / 10000, 2);
 
-            Constant.bys_ltlx_sl = Utils.keep2Wdouble(Constant.bys_sl_sl / 2 + 0.5, 0);
+            Constant.bys_fyfj_sl = Utils.keep2Wdouble(Constant.bys_sl_sl / 2 , 0);
 
-            Constant.bys_ltlx_dj = Utils.keep2Wdouble(2800, 2);
+            Constant.bys_fyfj_dj = Utils.keep2Wdouble(2800, 2);
 
-            Constant.bys_ltlx_tz = Utils.keep2Wdouble((Constant.bys_ltlx_sl * Constant.bys_ltlx_dj) / 10000, 2);
+            Constant.bys_fyfj_tz = Utils.keep2Wdouble((Constant.bys_fyfj_sl * Constant.bys_fyfj_dj) / 10000, 2);
 
-            Constant.bys_znhjkzq_sl = Utils.keep2Wdouble(Math.round(Constant.bys_ltlx_sl / 4 + 0.5), 0);
+            Constant.bys_znhjkzq_sl = Utils.keep2Wdouble(Math.round(Constant.bys_fyfj_sl / 4 - 0.5), 0);
 
             Constant.bys_znhjkzq_dj = Utils.keep2Wdouble(20000, 2);
 
             Constant.bys_znhjkzq_tz = Utils.keep2Wdouble((Constant.bys_znhjkzq_sl * Constant.bys_znhjkzq_dj) / 10000, 2);
 
-            Constant.bys_ysq_sl = Utils.keep2Wdouble(Constant.zfzyc_byl_gyy * 2, 0);
+            Constant.bys_ysq_sl = Utils.keep2Wdouble(Constant.zfzyc_byl_gye, 0);
 
             Constant.bys_ysq_dj = Utils.keep2Wdouble(60, 2);
 
@@ -704,7 +745,7 @@ public class GzssbcsFragment extends BaseFragment {
 
             Constant.bys_dhjbwsb_tz = Utils.keep2Wdouble((Constant.bys_dhjbwsb_sl * Constant.bys_dhjbwsb_dj) / 10000, 2);
 
-            Constant.bys_tzze = Utils.keep2Wdouble(Constant.bys_byl_tz + Constant.bys_ltlx_tz + Constant.bys_sl_tz + Constant.bys_ltlx_tz
+            Constant.bys_tzze = Utils.keep2Wdouble(Constant.bys_byl_tz + Constant.bys_fyfj_tz + Constant.bys_sl_tz + Constant.bys_ltlx_tz
                     + Constant.bys_znhjkzq_tz + Constant.bys_ysq_tz + Constant.bys_dhjbwsb_tz, 2);
 
 
@@ -734,13 +775,13 @@ public class GzssbcsFragment extends BaseFragment {
 
             Constant.szyfs_fyfj_tz = Utils.keep2Wdouble((Constant.szyfs_fyfj_sl * Constant.szyfs_fyfj_dj) / 10000, 2);
 
-            Constant.szyfs_znhjkzq_sl = Utils.keep2Wdouble(Math.round(Constant.szyfs_fyfj_sl / 4 + 0.5), 0);
+            Constant.szyfs_znhjkzq_sl = Utils.keep2Wdouble(Math.round(Constant.szyfs_fyfj_sl / 4 - 0.5), 0);
 
             Constant.szyfs_znhjkzq_dj = Utils.keep2Wdouble(20000, 2);
 
             Constant.szyfs_znhjkzq_tz = Utils.keep2Wdouble((Constant.szyfs_znhjkzq_sl * Constant.szyfs_znhjkzq_dj) / 10000, 2);
 
-            Constant.szyfs_lfdb_sl = Utils.keep2Wdouble(Constant.zfzyc_szyfl_gyy / 5, 0);
+            Constant.szyfs_lfdb_sl = Utils.keep2Wdouble(Constant.zfzyc_szyfs_gyy / 5, 0);
 
             Constant.szyfs_lfdb_dj = Utils.keep2Wdouble(160, 2);
 
@@ -758,7 +799,7 @@ public class GzssbcsFragment extends BaseFragment {
             //病猪隔离舍
             Constant.bzgls_xqjl_sl = Utils.keep2Wdouble(Constant.zfzyc_bzgll_gyy, 0);
 
-            Constant.bzgls_xqjl_dj = Utils.keep2Wdouble(Constant.gzjxqsyj_dj, 2);
+            Constant.bzgls_xqjl_dj = Utils.keep2Wdouble(1950, 2);
 
             Constant.bzgls_xqjl_tz = Utils.keep2Wdouble((Constant.bzgls_xqjl_sl * Constant.bzgls_xqjl_dj) / 10000, 2);
 
@@ -781,13 +822,13 @@ public class GzssbcsFragment extends BaseFragment {
 
             Constant.bzgls_fyfj_tz = Utils.keep2Wdouble((Constant.bzgls_fyfj_sl * Constant.bzgls_fyfj_dj) / 10000, 2);
 
-            Constant.bzgls_znhjkzq_sl = Utils.keep2Wdouble(Math.round(Constant.bzgls_fyfj_sl / 4 + 0.5), 0);
+            Constant.bzgls_znhjkzq_sl = Utils.keep2Wdouble(Math.round(Constant.bzgls_fyfj_sl / 4 - 0.5), 0);
 
             Constant.bzgls_znhjkzq_dj = Utils.keep2Wdouble(20000, 2);
 
             Constant.bzgls_znhjkzq_tz = Utils.keep2Wdouble((Constant.bzgls_znhjkzq_sl * Constant.bzgls_znhjkzq_dj) / 10000, 2);
 
-            Constant.bzgls_lfdb_sl = Utils.keep2Wdouble(Constant.zfzyc_bzgll_gyy / 5, 0);
+            Constant.bzgls_lfdb_sl = Utils.keep2Wdouble(Constant.zfzyc_bzgls_gye / 5, 0);
 
             Constant.bzgls_lfdb_dj = Utils.keep2Wdouble(160, 2);
 
@@ -806,7 +847,7 @@ public class GzssbcsFragment extends BaseFragment {
             //引种隔离舍
             Constant.yzgls_xqjl_sl = Utils.keep2Wdouble(Constant.zfzyc_yzgll_gyy, 0);
 
-            Constant.yzgls_xqjl_dj = Utils.keep2Wdouble(Constant.gzjxqsyj_dj, 2);
+            Constant.yzgls_xqjl_dj = Utils.keep2Wdouble(1950, 2);
 
             Constant.yzgls_xqjl_tz = Utils.keep2Wdouble((Constant.yzgls_xqjl_sl * Constant.yzgls_xqjl_dj) / 10000, 2);
 
@@ -823,19 +864,19 @@ public class GzssbcsFragment extends BaseFragment {
             Constant.yzgls_sl_tz = Utils.keep2Wdouble((Constant.yzgls_sl_sl * Constant.yzgls_sl_dj) / 10000, 2);
 
 
-            Constant.yzgls_fyfj_sl = Utils.keep2Wdouble(Math.round(Constant.yzgls_sl_sl / 2 + 0.5), 0);
+            Constant.yzgls_fyfj_sl = Utils.keep2Wdouble(Math.round(Constant.yzgls_sl_sl / 2 ), 0);
 
             Constant.yzgls_fyfj_dj = Utils.keep2Wdouble(2800, 2);
 
             Constant.yzgls_fyfj_tz = Utils.keep2Wdouble((Constant.yzgls_fyfj_sl * Constant.yzgls_fyfj_dj) / 10000, 2);
 
-            Constant.yzgls_znhjkzq_sl = Utils.keep2Wdouble(Math.round(Constant.yzgls_fyfj_sl / 4 + 0.5), 0);
+            Constant.yzgls_znhjkzq_sl = Utils.keep2Wdouble(Math.round(Constant.yzgls_fyfj_sl / 4 - 0.5), 0);
 
             Constant.yzgls_znhjkzq_dj = Utils.keep2Wdouble(20000, 2);
 
             Constant.yzgls_znhjkzq_tz = Utils.keep2Wdouble((Constant.yzgls_znhjkzq_sl * Constant.yzgls_znhjkzq_dj) / 10000, 2);
 
-            Constant.yzgls_lfdb_sl = Utils.keep2Wdouble(Constant.zfzyc_yzgll_gyy / 5, 0);
+            Constant.yzgls_lfdb_sl = Utils.keep2Wdouble(Constant.zfzyc_yzgls_gye / 5, 0);
 
             Constant.yzgls_lfdb_dj = Utils.keep2Wdouble(160, 2);
 
@@ -962,7 +1003,6 @@ public class GzssbcsFragment extends BaseFragment {
 
         gzjpzrjmzs_znhjkzq_tz.setText(Constant.gzjpzrjmzs_znhjkzq_tz + "");
 
-
         gzjpzrjmzs_lfdb_sl.setText(Constant.gzjpzrjmzs_lfdb_sl + "");
 
         gzjpzrjmzs_lfdb_dj.setText(Constant.gzjpzrjmzs_lfdb_dj + "");
@@ -974,7 +1014,6 @@ public class GzssbcsFragment extends BaseFragment {
         gzjpzrjmzs_ysq_dj.setText(Constant.gzjpzrjmzs_ysq_dj + "");
 
         gzjpzrjmzs_ysq_tz.setText(Constant.gzjpzrjmzs_ysq_tz + "");
-
 
         gzjpzrjmzs_rcvczdy_sl.setText(Constant.gzjpzrjmzs_rcvczdy_sl + "");
 
@@ -1049,11 +1088,12 @@ public class GzssbcsFragment extends BaseFragment {
 
         fws_sl_tz.setText(Constant.fws_sl_tz + "");
 
-        fws_ltlx_sl.setText(Constant.fws_ltlx_sl + "");
+        fws_flsj_dj.setText(Constant.fws_flsj_dj + "");
 
-        fws_ltlx_dj.setText(Constant.fws_ltlx_dj + "");
+        fws_flsj_sl.setText(Constant.fws_flsj_sl + "");
 
-        fws_ltlx_tz.setText(Constant.fws_ltlx_tz + "");
+        fws_flsj_tz.setText(Constant.fws_flsj_tz + "");
+
 
         fws_znhjkzq_sl.setText(Constant.fws_znhjkzq_sl + "");
 
@@ -1102,11 +1142,11 @@ public class GzssbcsFragment extends BaseFragment {
 
         bys_sl_tz.setText(Constant.bys_sl_tz + "");
 
-        bys_ltlx_sl.setText(Constant.bys_ltlx_sl + "");
+        bys_fyfj_sl.setText(Constant.bys_fyfj_sl + "");
 
-        bys_ltlx_dj.setText(Constant.bys_ltlx_dj + "");
+        bys_fyfj_dj.setText(Constant.bys_fyfj_dj + "");
 
-        bys_ltlx_tz.setText(Constant.bys_ltlx_tz + "");
+        bys_fyfj_tz.setText(Constant.bys_fyfj_tz + "");
 
         bys_znhjkzq_sl.setText(Constant.bys_znhjkzq_sl + "");
 

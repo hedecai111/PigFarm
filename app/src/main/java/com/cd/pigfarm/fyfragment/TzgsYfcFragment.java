@@ -61,7 +61,7 @@ public class TzgsYfcFragment extends BaseFragment {
 
             Constant.yfc_szyfs_sb = Constant.yfc_tzze;
 
-            Constant.yfc_zyc_tj = Utils.keep2Wdouble(Constant.yfc_gqfzqcrl * Constant.zqc_d / 10000, 2);
+            Constant.yfc_zqc_tj = Utils.keep2Wdouble(Constant.yfc_gqfzqcrl * Constant.zqc_d / 10000, 2);
 
             Constant.yfc_zyc_tj = Utils.keep2Wdouble(Constant.yfc_zyc * Constant.zyc_d / 10000, 2);
 
@@ -73,7 +73,7 @@ public class TzgsYfcFragment extends BaseFragment {
 
             Constant.yfc_xj_sb = Constant.yfc_szyfs_sb;
 
-            Constant.yfc_hj = Utils.keep2Wdouble(Constant.yfc_xj_tj + Constant.yfc_xj_sb, 2);
+            Constant.yfc_hj = Utils.keep2Wdouble(Constant.yfc_xj_tj + Constant.yfc_xj_sb, 0);
 
         } catch (Exception e) {
             LogUtil.e(e.getMessage());
@@ -90,7 +90,7 @@ public class TzgsYfcFragment extends BaseFragment {
 
         yfc_szyfs_sb.setText(Constant.yfc_szyfs_sb + "");
 
-        yfc_zyc_tj.setText(Constant.yfc_zyc_tj + "");
+        yfc_zqc_tj.setText(Constant.yfc_zqc_tj + "");
 
         yfc_zyc_tj.setText(Constant.yfc_zyc_tj + "");
 
