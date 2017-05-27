@@ -1010,6 +1010,61 @@ public class Constant {
 
     //***************************************************************消纳面积******************************************************************
 
+
+    public static double zfzyc_sd_bfb;
+    public static double zfzyc_xm_bfb;
+    public static double zfzyc_ym_bfb;
+    public static double zfzyc_yc_bfb;
+    public static double zfzyc_gs_bfb;
+    public static double zfzyc_mls_bfb;
+    public static double zfzyc_qglsc_bfb;
+    public static double zfzyc_ggsc_bfb;
+    public static double zfzyc_yclsc_bfb;
+    public static double zfzyc_gclsc_bfb;
+    public static double zfzyc_dlsc_bfb;
+    public static double zfzyc_cslgs_bfb;
+    public static double zfzyc_lygs_bfb;
+    public static double zfzyc_clgs_bfb;
+    public static double zfzyc_cy_bfb;
+    public static double zfzyc_mc_bfb;
+
+    public static double byzzfzc_sd_bfb;
+    public static double byzzfzc_xm_bfb;
+    public static double byzzfzc_ym_bfb;
+    public static double byzzfzc_yc_bfb;
+    public static double byzzfzc_gs_bfb;
+    public static double byzzfzc_mls_bfb;
+    public static double byzzfzc_qglsc_bfb;
+    public static double byzzfzc_ggsc_bfb;
+    public static double byzzfzc_yclsc_bfb;
+    public static double byzzfzc_gclsc_bfb;
+    public static double byzzfzc_dlsc_bfb;
+    public static double byzzfzc_cslgs_bfb;
+    public static double byzzfzc_lygs_bfb;
+    public static double byzzfzc_clgs_bfb;
+    public static double byzzfzc_cy_bfb;
+    public static double byzzfzc_mc_bfb;
+
+    public static double dnzzfzc_sd_bfb;
+    public static double dnzzfzc_xm_bfb;
+    public static double dnzzfzc_ym_bfb;
+    public static double dnzzfzc_yc_bfb;
+    public static double dnzzfzc_gs_bfb;
+    public static double dnzzfzc_mls_bfb;
+    public static double dnzzfzc_qglsc_bfb;
+    public static double dnzzfzc_ggsc_bfb;
+    public static double dnzzfzc_yclsc_bfb;
+    public static double dnzzfzc_gclsc_bfb;
+    public static double dnzzfzc_dlsc_bfb;
+    public static double dnzzfzc_cslgs_bfb;
+    public static double dnzzfzc_lygs_bfb;
+    public static double dnzzfzc_clgs_bfb;
+    public static double dnzzfzc_cy_bfb;
+    public static double dnzzfzc_mc_bfb;
+
+    
+    
+    
     public static double zfzycnph_zcdl;
     public static double zfzycnph_sd_sdl;
     public static double zfzycnph_sd_jshns;

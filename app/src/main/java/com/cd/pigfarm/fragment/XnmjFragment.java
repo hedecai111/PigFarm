@@ -2,23 +2,27 @@ package com.cd.pigfarm.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.util.Log;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.AdapterView;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cd.pigfarm.R;
+import com.cd.pigfarm.app.App;
 import com.cd.pigfarm.base.BaseFragment;
 import com.cd.pigfarm.constant.Constant;
+import com.cd.pigfarm.entities.NzwEntity;
+import com.cd.pigfarm.entities.SbEntity;
 import com.cd.pigfarm.util.LogUtil;
 import com.cd.pigfarm.util.SpUtil;
 import com.cd.pigfarm.util.Utils;
-import com.mobsandgeeks.saripaar.ValidationError;
-import com.mobsandgeeks.saripaar.Validator;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 
 import java.util.List;
@@ -29,7 +33,7 @@ import java.util.List;
  * @date 2017/3/23 21:49
  * @Description: 消纳面积
  */
-public class XnmjFragment extends BaseFragment {
+public class XnmjFragment extends BaseFragment implements AdapterView.OnItemSelectedListener{
 
     @NotEmpty
     private EditText mZfzycnph_zcdl;
@@ -469,6 +473,61 @@ public class XnmjFragment extends BaseFragment {
     private EditText mDnzzfzcdph_cz_mj;
     @NotEmpty
     private EditText mDnzzfzcdph_cz_zsdl;
+    
+
+
+    private Spinner zfzyc_sd_bfb;
+    private Spinner zfzyc_xm_bfb;
+    private Spinner zfzyc_ym_bfb;
+    private Spinner zfzyc_yc_bfb;
+    private Spinner zfzyc_gs_bfb;
+    private Spinner zfzyc_mls_bfb;
+    private Spinner zfzyc_jglsc_bfb;
+    private Spinner zfzyc_yclsc_bfb;
+    private Spinner zfzyc_glsc_bfb;
+    private Spinner zfzyc_dlsc_bfb;
+    private Spinner zfzyc_cslsc_bfb;
+    private Spinner zfzyc_lygs_bfb;
+    private Spinner zfzyc_clgs_bfb;
+    private Spinner zfzyc_cy_bfb;
+    private Spinner zfzyc_mc_bfb;
+
+    private Spinner byzzfzc_sd_bfb;
+    private Spinner byzzfzc_xm_bfb;
+    private Spinner byzzfzc_ym_bfb;
+    private Spinner byzzfzc_yc_bfb;
+    private Spinner byzzfzc_gs_bfb;
+    private Spinner byzzfzc_mls_bfb;
+    private Spinner byzzfzc_jglsc_bfb;
+    private Spinner byzzfzc_yclsc_bfb;
+    private Spinner byzzfzc_glsc_bfb;
+    private Spinner byzzfzc_dlsc_bfb;
+    private Spinner byzzfzc_cslsc_bfb;
+    private Spinner byzzfzc_lygs_bfb;
+    private Spinner byzzfzc_clgs_bfb;
+    private Spinner byzzfzc_cy_bfb;
+    private Spinner byzzfzc_mc_bfb;
+
+    private Spinner dnzzfzc_sd_bfb;
+    private Spinner dnzzfzc_xm_bfb;
+    private Spinner dnzzfzc_ym_bfb;
+    private Spinner dnzzfzc_yc_bfb;
+    private Spinner dnzzfzc_gs_bfb;
+    private Spinner dnzzfzc_mls_bfb;
+    private Spinner dnzzfzc_jglsc_bfb;
+    private Spinner dnzzfzc_yclsc_bfb;
+    private Spinner dnzzfzc_glsc_bfb;
+    private Spinner dnzzfzc_dlsc_bfb;
+    private Spinner dnzzfzc_cslsc_bfb;
+    private Spinner dnzzfzc_lygs_bfb;
+    private Spinner dnzzfzc_clgs_bfb;
+    private Spinner dnzzfzc_cy_bfb;
+    private Spinner dnzzfzc_mc_bfb;
+
+
+    
+    
+    
 
     @Nullable
     @Override
@@ -479,7 +538,274 @@ public class XnmjFragment extends BaseFragment {
         return view;
     }
 
+
+
+    private LinearLayout zfzyc_Lin,byzzfzc_Lin,dnzzfzc_Lin;
+
+
+
+
+    private void addViewByType(LinearLayout lin,NzwEntity nzwEntity){
+
+        TextView textView = (TextView) View.inflate(getContext(),R.layout.lin_textview,null);
+        lin.addView(textView,new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,1));
+        LinearLayout linearLayout = (LinearLayout) View.inflate(getContext(),R.layout.xnmj_item,null);
+        TextView textView1 = (TextView) linearLayout.findViewById(R.id.name);
+        textView1.setText(nzwEntity.getName());
+        lin.addView(linearLayout,new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, Utils.dip2px(getContext(),50f)));
+    }
+
     private void bindViews() {
+
+        zfzyc_Lin = (LinearLayout) view.findViewById(R.id.zfzyc_Lin);
+        byzzfzc_Lin = (LinearLayout) view.findViewById(R.id.byzzfzc_Lin);
+        dnzzfzc_Lin = (LinearLayout) view.findViewById(R.id.dnzzfzc_Lin);
+
+
+        List<NzwEntity> nzwEntities = App.sqlOpenHelper.queryAllNzw();
+        Toast.makeText(getContext(),nzwEntities.size()+"",Toast.LENGTH_SHORT).show();
+        if (nzwEntities != null && nzwEntities.size() > 0){
+            Toast.makeText(getContext(),nzwEntities.size()+"",Toast.LENGTH_SHORT).show();
+            for (NzwEntity nzwEntity : nzwEntities){
+                addViewByType(zfzyc_Lin,nzwEntity);
+                addViewByType(byzzfzc_Lin,nzwEntity);
+                addViewByType(dnzzfzc_Lin,nzwEntity);
+            }
+        }
+
+        zfzyc_sd_bfb = (Spinner) view.findViewById(R.id.zfzyc_sd_bfb);
+        zfzyc_sd_bfb.setOnItemSelectedListener(this);
+
+        if (Constant.zfzyc_sd_bfb != 1){
+            zfzyc_sd_bfb.setSelection((int)(10 - Constant.zfzyc_sd_bfb*10));
+            //Toast.makeText(getContext(),(int)(10 - Constant.zfzyc_sd_bfb*10)+"",Toast.LENGTH_SHORT).show();
+        }
+        zfzyc_xm_bfb = (Spinner) view.findViewById(R.id.zfzyc_xm_bfb);
+        zfzyc_xm_bfb.setOnItemSelectedListener(this);
+        if (Constant.zfzyc_xm_bfb != 1){
+            zfzyc_xm_bfb.setSelection((int)(10 - Constant.zfzyc_xm_bfb*10));
+        }
+        zfzyc_ym_bfb = (Spinner) view.findViewById(R.id.zfzyc_ym_bfb);
+        zfzyc_ym_bfb.setOnItemSelectedListener(this);
+        if (Constant.zfzyc_ym_bfb != 1){
+            zfzyc_ym_bfb.setSelection((int)(10 - Constant.zfzyc_ym_bfb*10));
+        }
+        zfzyc_yc_bfb = (Spinner) view.findViewById(R.id.zfzyc_yc_bfb);
+        zfzyc_yc_bfb.setOnItemSelectedListener(this);
+        if (Constant.zfzyc_yc_bfb != 1){
+            zfzyc_yc_bfb.setSelection((int)(10 - Constant.zfzyc_yc_bfb*10));
+        }
+        zfzyc_gs_bfb = (Spinner) view.findViewById(R.id.zfzyc_gs_bfb);
+        zfzyc_gs_bfb.setOnItemSelectedListener(this);
+        if (Constant.zfzyc_gs_bfb != 1){
+            zfzyc_gs_bfb.setSelection((int)(10 - Constant.zfzyc_gs_bfb*10));
+        }
+        zfzyc_mls_bfb = (Spinner) view.findViewById(R.id.zfzyc_mls_bfb);
+        zfzyc_mls_bfb.setOnItemSelectedListener(this);
+        if (Constant.zfzyc_mls_bfb != 1){
+            zfzyc_mls_bfb.setSelection((int)(10 - Constant.zfzyc_mls_bfb*10));
+        }
+        zfzyc_jglsc_bfb = (Spinner) view.findViewById(R.id.zfzyc_qglsc_bfb);
+        zfzyc_jglsc_bfb.setOnItemSelectedListener(this);
+        if (Constant.zfzyc_qglsc_bfb != 1){
+            zfzyc_jglsc_bfb.setSelection((int)(10 - Constant.zfzyc_qglsc_bfb*10));
+        }
+        zfzyc_yclsc_bfb = (Spinner) view.findViewById(R.id.zfzyc_yclsc_bfb);
+        zfzyc_yclsc_bfb.setOnItemSelectedListener(this);
+        if (Constant.zfzyc_yclsc_bfb != 1){
+            zfzyc_yclsc_bfb.setSelection((int)(10 - Constant.zfzyc_yclsc_bfb*10));
+        }
+        zfzyc_glsc_bfb = (Spinner) view.findViewById(R.id.zfzyc_glsc_bfb);
+        zfzyc_glsc_bfb.setOnItemSelectedListener(this);
+        if (Constant.zfzyc_ggsc_bfb != 1){
+            zfzyc_glsc_bfb.setSelection((int)(10 - Constant.zfzyc_ggsc_bfb*10));
+        }
+        zfzyc_dlsc_bfb = (Spinner) view.findViewById(R.id.zfzyc_dlsc_bfb);
+        zfzyc_dlsc_bfb.setOnItemSelectedListener(this);
+        if (Constant.zfzyc_dlsc_bfb != 1){
+            zfzyc_dlsc_bfb.setSelection((int)(10 - Constant.zfzyc_dlsc_bfb*10));
+        }
+        zfzyc_cslsc_bfb = (Spinner) view.findViewById(R.id.zfzyc_cslsc_bfb);
+        zfzyc_cslsc_bfb.setOnItemSelectedListener(this);
+        if (Constant.zfzyc_cslgs_bfb != 1){
+            zfzyc_cslsc_bfb.setSelection((int)(10 - Constant.zfzyc_cslgs_bfb*10));
+        }
+        zfzyc_lygs_bfb = (Spinner) view.findViewById(R.id.zfzyc_lygs_bfb);
+        zfzyc_lygs_bfb.setOnItemSelectedListener(this);
+        if (Constant.zfzyc_lygs_bfb != 1){
+            zfzyc_lygs_bfb.setSelection((int)(10 - Constant.zfzyc_lygs_bfb*10));
+        }
+        zfzyc_clgs_bfb = (Spinner) view.findViewById(R.id.zfzyc_clgs_bfb);
+        zfzyc_clgs_bfb.setOnItemSelectedListener(this);
+        if (Constant.zfzyc_clgs_bfb != 1){
+            zfzyc_clgs_bfb.setSelection((int)(10 - Constant.zfzyc_clgs_bfb*10));
+        }
+        zfzyc_cy_bfb = (Spinner) view.findViewById(R.id.zfzyc_cy_bfb);
+        zfzyc_cy_bfb.setOnItemSelectedListener(this);
+        if (Constant.zfzyc_cy_bfb != 1){
+            zfzyc_cy_bfb.setSelection((int)(10 - Constant.zfzyc_cy_bfb*10));
+        }
+        zfzyc_mc_bfb = (Spinner) view.findViewById(R.id.zfzyc_mc_bfb);
+        zfzyc_mc_bfb.setOnItemSelectedListener(this);
+        if (Constant.zfzyc_mc_bfb != 1){
+            zfzyc_mc_bfb.setSelection((int)(10 - Constant.zfzyc_mc_bfb*10));
+        }
+
+
+
+        byzzfzc_sd_bfb = (Spinner) view.findViewById(R.id.byzzfzc_sd_bfb);
+        byzzfzc_sd_bfb.setOnItemSelectedListener(this);
+        if (Constant.byzzfzc_sd_bfb != 1){
+            byzzfzc_sd_bfb.setSelection((int)(10 - Constant.byzzfzc_sd_bfb*10));
+        }
+        byzzfzc_xm_bfb = (Spinner) view.findViewById(R.id.byzzfzc_xm_bfb);
+        byzzfzc_xm_bfb.setOnItemSelectedListener(this);
+        if (Constant.byzzfzc_xm_bfb != 1){
+            byzzfzc_xm_bfb.setSelection((int)(10 - Constant.byzzfzc_xm_bfb*10));
+        }
+        byzzfzc_ym_bfb = (Spinner) view.findViewById(R.id.byzzfzc_ym_bfb);
+        byzzfzc_ym_bfb.setOnItemSelectedListener(this);
+        if (Constant.byzzfzc_ym_bfb != 1){
+            byzzfzc_ym_bfb.setSelection((int)(10 - Constant.byzzfzc_ym_bfb*10));
+        }
+        byzzfzc_yc_bfb = (Spinner) view.findViewById(R.id.byzzfzc_yc_bfb);
+        byzzfzc_sd_bfb.setOnItemSelectedListener(this);
+        if (Constant.byzzfzc_sd_bfb != 1){
+            byzzfzc_sd_bfb.setSelection((int)(10 - Constant.byzzfzc_sd_bfb*10));
+        }
+        byzzfzc_gs_bfb = (Spinner) view.findViewById(R.id.byzzfzc_gs_bfb);
+        byzzfzc_gs_bfb.setOnItemSelectedListener(this);
+        if (Constant.byzzfzc_gs_bfb != 1){
+            byzzfzc_gs_bfb.setSelection((int)(10 - Constant.byzzfzc_gs_bfb*10));
+        }
+        byzzfzc_mls_bfb = (Spinner) view.findViewById(R.id.byzzfzc_mls_bfb);
+        byzzfzc_mls_bfb.setOnItemSelectedListener(this);
+        if (Constant.byzzfzc_mls_bfb != 1){
+            byzzfzc_mls_bfb.setSelection((int)(10 - Constant.byzzfzc_mls_bfb*10));
+        }
+        byzzfzc_jglsc_bfb = (Spinner) view.findViewById(R.id.byzzfzc_jglsc_bfb);
+        byzzfzc_jglsc_bfb.setOnItemSelectedListener(this);
+        if (Constant.byzzfzc_qglsc_bfb != 1){
+            byzzfzc_jglsc_bfb.setSelection((int)(10 - Constant.byzzfzc_qglsc_bfb*10));
+        }
+        byzzfzc_yclsc_bfb = (Spinner) view.findViewById(R.id.byzzfzc_yclsc_bfb);
+        byzzfzc_yclsc_bfb.setOnItemSelectedListener(this);
+        if (Constant.byzzfzc_yclsc_bfb != 1){
+            byzzfzc_yclsc_bfb.setSelection((int)(10 - Constant.byzzfzc_yclsc_bfb*10));
+        }
+        byzzfzc_glsc_bfb = (Spinner) view.findViewById(R.id.byzzfzc_glsc_bfb);
+        byzzfzc_glsc_bfb.setOnItemSelectedListener(this);
+        if (Constant.byzzfzc_ggsc_bfb != 1){
+            byzzfzc_glsc_bfb.setSelection((int)(10 - Constant.byzzfzc_ggsc_bfb*10));
+        }
+        byzzfzc_dlsc_bfb = (Spinner) view.findViewById(R.id.byzzfzc_dlsc_bfb);
+        byzzfzc_dlsc_bfb.setOnItemSelectedListener(this);
+        if (Constant.byzzfzc_dlsc_bfb != 1){
+            byzzfzc_dlsc_bfb.setSelection((int)(10 - Constant.byzzfzc_dlsc_bfb*10));
+        }
+        byzzfzc_cslsc_bfb = (Spinner) view.findViewById(R.id.byzzfzc_cslsc_bfb);
+        byzzfzc_cslsc_bfb.setOnItemSelectedListener(this);
+        if (Constant.byzzfzc_cslgs_bfb != 1){
+            byzzfzc_cslsc_bfb.setSelection((int)(10 - Constant.byzzfzc_cslgs_bfb*10));
+        }
+        byzzfzc_lygs_bfb = (Spinner) view.findViewById(R.id.byzzfzc_lygs_bfb);
+        byzzfzc_lygs_bfb.setOnItemSelectedListener(this);
+        if (Constant.byzzfzc_lygs_bfb != 1){
+            byzzfzc_lygs_bfb.setSelection((int)(10 - Constant.byzzfzc_lygs_bfb*10));
+        }
+        byzzfzc_clgs_bfb = (Spinner) view.findViewById(R.id.byzzfzc_clgs_bfb);
+        byzzfzc_clgs_bfb.setOnItemSelectedListener(this);
+        if (Constant.byzzfzc_clgs_bfb != 1){
+            byzzfzc_clgs_bfb.setSelection((int)(10 - Constant.byzzfzc_clgs_bfb*10));
+        }
+        byzzfzc_cy_bfb = (Spinner) view.findViewById(R.id.byzzfzc_cy_bfb);
+        byzzfzc_cy_bfb.setOnItemSelectedListener(this);
+        if (Constant.byzzfzc_cy_bfb != 1){
+            byzzfzc_cy_bfb.setSelection((int)(10 - Constant.byzzfzc_cy_bfb*10));
+        }
+        byzzfzc_mc_bfb = (Spinner) view.findViewById(R.id.byzzfzc_mc_bfb);
+        byzzfzc_mc_bfb.setOnItemSelectedListener(this);
+        if (Constant.byzzfzc_mc_bfb != 1){
+            byzzfzc_mc_bfb.setSelection((int)(10 - Constant.byzzfzc_mc_bfb*10));
+        }
+
+
+
+        dnzzfzc_sd_bfb = (Spinner) view.findViewById(R.id.dnzzfzc_sd_bfb);
+        dnzzfzc_sd_bfb.setOnItemSelectedListener(this);
+        if (Constant.dnzzfzc_sd_bfb != 1){
+            dnzzfzc_sd_bfb.setSelection((int)(10 - Constant.dnzzfzc_sd_bfb*10));
+        }
+        dnzzfzc_xm_bfb = (Spinner) view.findViewById(R.id.dnzzfzc_xm_bfb);
+        dnzzfzc_xm_bfb.setOnItemSelectedListener(this);
+        if (Constant.dnzzfzc_xm_bfb != 1){
+            dnzzfzc_xm_bfb.setSelection((int)(10 - Constant.dnzzfzc_xm_bfb*10));
+        }
+        dnzzfzc_ym_bfb = (Spinner) view.findViewById(R.id.dnzzfzc_ym_bfb);
+        dnzzfzc_ym_bfb.setOnItemSelectedListener(this);
+        if (Constant.dnzzfzc_ym_bfb != 1){
+            dnzzfzc_ym_bfb.setSelection((int)(10 - Constant.dnzzfzc_ym_bfb*10));
+        }
+        dnzzfzc_yc_bfb = (Spinner) view.findViewById(R.id.dnzzfzc_yc_bfb);
+        dnzzfzc_sd_bfb.setOnItemSelectedListener(this);
+        if (Constant.dnzzfzc_yc_bfb != 1){
+            zfzyc_sd_bfb.setSelection((int)(10 - Constant.dnzzfzc_yc_bfb*10));
+        }
+        dnzzfzc_gs_bfb = (Spinner) view.findViewById(R.id.dnzzfzc_gs_bfb);
+        dnzzfzc_gs_bfb.setOnItemSelectedListener(this);
+        if (Constant.dnzzfzc_gs_bfb != 1){
+            dnzzfzc_gs_bfb.setSelection((int)(10 - Constant.dnzzfzc_gs_bfb*10));
+        }
+        dnzzfzc_mls_bfb = (Spinner) view.findViewById(R.id.dnzzfzc_mls_bfb);
+        dnzzfzc_mls_bfb.setOnItemSelectedListener(this);
+        if (Constant.dnzzfzc_mls_bfb != 1){
+            dnzzfzc_mls_bfb.setSelection((int)(10 - Constant.dnzzfzc_mls_bfb*10));
+        }
+        dnzzfzc_jglsc_bfb = (Spinner) view.findViewById(R.id.dnzzfzc_jglsc_bfb);
+        dnzzfzc_jglsc_bfb.setOnItemSelectedListener(this);
+        if (Constant.dnzzfzc_qglsc_bfb != 1){
+            dnzzfzc_jglsc_bfb.setSelection((int)(10 - Constant.dnzzfzc_qglsc_bfb*10));
+        }
+        dnzzfzc_yclsc_bfb = (Spinner) view.findViewById(R.id.dnzzfzc_yclsc_bfb);
+        dnzzfzc_yclsc_bfb.setOnItemSelectedListener(this);
+        if (Constant.dnzzfzc_yclsc_bfb != 1){
+            dnzzfzc_yclsc_bfb.setSelection((int)(10 - Constant.dnzzfzc_yclsc_bfb*10));
+        }
+        dnzzfzc_glsc_bfb = (Spinner) view.findViewById(R.id.dnzzfzc_glsc_bfb);
+        dnzzfzc_glsc_bfb.setOnItemSelectedListener(this);
+        if (Constant.dnzzfzc_ggsc_bfb != 1){
+            dnzzfzc_glsc_bfb.setSelection((int)(10 - Constant.dnzzfzc_ggsc_bfb*10));
+        }
+        dnzzfzc_dlsc_bfb = (Spinner) view.findViewById(R.id.dnzzfzc_dlsc_bfb);
+        dnzzfzc_dlsc_bfb.setOnItemSelectedListener(this);
+        if (Constant.dnzzfzc_dlsc_bfb != 1){
+            dnzzfzc_dlsc_bfb.setSelection((int)(10 - Constant.dnzzfzc_dlsc_bfb*10));
+        }
+        dnzzfzc_cslsc_bfb = (Spinner) view.findViewById(R.id.dnzzfzc_cslsc_bfb);
+        dnzzfzc_cslsc_bfb.setOnItemSelectedListener(this);
+        if (Constant.dnzzfzc_cslgs_bfb != 1){
+            dnzzfzc_cslsc_bfb.setSelection((int)(10 - Constant.dnzzfzc_cslgs_bfb*10));
+        }
+        dnzzfzc_lygs_bfb = (Spinner) view.findViewById(R.id.dnzzfzc_lygs_bfb);
+        dnzzfzc_lygs_bfb.setOnItemSelectedListener(this);
+        if (Constant.dnzzfzc_lygs_bfb != 1){
+            dnzzfzc_lygs_bfb.setSelection((int)(10 - Constant.dnzzfzc_lygs_bfb*10));
+        }
+        dnzzfzc_clgs_bfb = (Spinner) view.findViewById(R.id.dnzzfzc_clgs_bfb);
+        dnzzfzc_clgs_bfb.setOnItemSelectedListener(this);
+        if (Constant.dnzzfzc_clgs_bfb != 1){
+            dnzzfzc_clgs_bfb.setSelection((int)(10 - Constant.dnzzfzc_clgs_bfb*10));
+        }
+        dnzzfzc_cy_bfb = (Spinner) view.findViewById(R.id.dnzzfzc_cy_bfb);
+        dnzzfzc_cy_bfb.setOnItemSelectedListener(this);
+        if (Constant.dnzzfzc_cy_bfb != 1){
+            dnzzfzc_cy_bfb.setSelection((int)(10 - Constant.dnzzfzc_cy_bfb*10));
+        }
+        dnzzfzc_mc_bfb = (Spinner) view.findViewById(R.id.dnzzfzc_mc_bfb);
+        dnzzfzc_mc_bfb.setOnItemSelectedListener(this);
+        if (Constant.dnzzfzc_mc_bfb != 1){
+            dnzzfzc_mc_bfb.setSelection((int)(10 - Constant.dnzzfzc_mc_bfb*10));
+        }
 
 
         mZzfzcdph_mls_sdl = (EditText) view.findViewById(R.id.zzfzcdph_mls_sdl);
@@ -2680,72 +3006,73 @@ public class XnmjFragment extends BaseFragment {
         }
 
 
+
+
     }
 
     @Override
     public void jsDatas() {
         try {
 
-            Constant.zfzycnph_zcdl = Utils.keep2Wdouble((Constant.zfzyc_gzslzrgsj_gye * Constant.qnjcngz_flhj + Constant.zfzyc_hbmz_gye * Constant.hbmz_flhj +
+            Constant.zfzycnph_zcdl = Utils.keep2Wdouble((Constant.zfzyc_gzslzrjp_gye * Constant.qnjcngz_flhj + Constant.zfzyc_hbmz_gye * Constant.hbmz_flhj +
                     Constant.zfzyc_pzrcmz_gye * Constant.pzrjmz_flhj + Constant.zfzyc_rcmz_gye * Constant.rcmz_flhj + Constant.zfzyc_prmz_gye * Constant.prmz_flhj +
                     Constant.zfzyc_byzz_gye * Constant.byzz_flhj + Constant.zfzyc_szyfz_gye * Constant.szyfz_flhj) * 365, 0);
             //SpUtil.saveSP(getContext(), "zfzycnph_zcdl", Constant.zfzycnph_zcdl);
-
-            Constant.zzfzcdph_zcdl = Utils.keep2Wdouble((Constant.zfzyc_gzslzrgsj_gye * Constant.qnjcngz_flhj + Constant.zfzyc_hbmz_gye * Constant.hbmz_flhj +
+            Constant.zzfzcdph_zcdl = Utils.keep2Wdouble((Constant.zfzyc_gzslzrjp_gye * Constant.qnjcngz_flhj + Constant.zfzyc_hbmz_gye * Constant.hbmz_flhj +
                     Constant.zfzyc_pzrcmz_gye * Constant.pzrjmz_flhj + Constant.zfzyc_rcmz_gye * Constant.rcmz_flhj + Constant.zfzyc_prmz_gye * Constant.prmz_flhj +
                     Constant.zfzyc_byzz_gye * Constant.byzz_flhj) * 365, 0);
             //SpUtil.saveSP(getContext(), "zzfzcdph_zcdl", Constant.zzfzcdph_zcdl);
 
-            Constant.dnzzfzcdph_zcdl = Utils.keep2Wdouble((Constant.zfzyc_gzslzrgsj_gye * Constant.qnjcngz_flhj + Constant.zfzyc_hbmz_gye * Constant.hbmz_flhj +
+            Constant.dnzzfzcdph_zcdl = Utils.keep2Wdouble((Constant.zfzyc_gzslzrjp_gye * Constant.qnjcngz_flhj + Constant.zfzyc_hbmz_gye * Constant.hbmz_flhj +
                     Constant.zfzyc_pzrcmz_gye * Constant.pzrjmz_flhj + Constant.zfzyc_rcmz_gye * Constant.rcmz_flhj + Constant.zfzyc_prmz_gye * Constant.prmz_flhj) * 365, 0);
             //SpUtil.saveSP(getContext(), "dnzzfzcdph_zcdl", Constant.dnzzfzcdph_zcdl);
 
-            Constant.zfzycnph_sd_zsdl = Utils.keep2Wdouble(Constant.sd * Constant.zfzycnph_sd_mj, 0);
+            Constant.zfzycnph_sd_zsdl = Utils.keep2Wdouble(Constant.sd * Constant.zfzycnph_sd_mj* Constant.zfzycnph_sd_jshns* Constant.zfzyc_sd_bfb, 0);
             //SpUtil.saveSP(getContext(), "zfzycnph_sd_zsdl", Constant.zfzycnph_sd_zsdl);
 
-            Constant.zfzycnph_xm_zsdl = Utils.keep2Wdouble(Constant.xm * Constant.zfzycnph_xm_mj, 0);
+            Constant.zfzycnph_xm_zsdl = Utils.keep2Wdouble(Constant.xm * Constant.zfzycnph_xm_mj* Constant.zfzycnph_xm_jshns* Constant.zfzyc_xm_bfb, 0);
             //SpUtil.saveSP(getContext(), "zfzycnph_xm_zsdl", Constant.zfzycnph_xm_zsdl);
 
-            Constant.zfzycnph_ym_zsdl = Utils.keep2Wdouble(Constant.ym * Constant.zfzycnph_ym_mj, 0);
+            Constant.zfzycnph_ym_zsdl = Utils.keep2Wdouble(Constant.ym * Constant.zfzycnph_ym_mj* Constant.zfzycnph_ym_jshns* Constant.zfzyc_ym_bfb, 0);
             //SpUtil.saveSP(getContext(), "zfzycnph_ym_zsdl", Constant.zfzycnph_ym_zsdl);
 
-            Constant.zfzycnph_yc_zsdl = Utils.keep2Wdouble(Constant.yc * Constant.zfzycnph_yc_mj, 0);
+            Constant.zfzycnph_yc_zsdl = Utils.keep2Wdouble(Constant.yc * Constant.zfzycnph_yc_mj* Constant.zfzycnph_yc_jshns* Constant.zfzyc_yc_bfb, 0);
             //SpUtil.saveSP(getContext(), "zfzycnph_yc_zsdl", Constant.zfzycnph_yc_zsdl);
 
-            Constant.zfzycnph_gs_zsdl = Utils.keep2Wdouble(Constant.gs * Constant.zfzycnph_gs_mj, 0);
+            Constant.zfzycnph_gs_zsdl = Utils.keep2Wdouble(Constant.gs * Constant.zfzycnph_gs_mj* Constant.zfzycnph_gs_jshns* Constant.zfzyc_gs_bfb, 0);
             //SpUtil.saveSP(getContext(), "zfzycnph_gs_zsdl", Constant.zfzycnph_gs_zsdl);
 
-            Constant.zfzycnph_mls_zsdl = Utils.keep2Wdouble(Constant.mls * Constant.zfzycnph_mls_mj, 0);
+            Constant.zfzycnph_mls_zsdl = Utils.keep2Wdouble(Constant.mls * Constant.zfzycnph_mls_mj* Constant.zfzycnph_mls_jshns* Constant.zfzyc_mls_bfb, 0);
             //SpUtil.saveSP(getContext(), "zfzycnph_mls_zsdl", Constant.zfzycnph_mls_zsdl);
 
-            Constant.zfzycnph_qglsc_zsdl = Utils.keep2Wdouble(Constant.qglsc * Constant.zfzycnph_qglsc_mj, 0);
+            Constant.zfzycnph_qglsc_zsdl = Utils.keep2Wdouble(Constant.qglsc * Constant.zfzycnph_qglsc_mj* Constant.zfzycnph_qglsc_jshns* Constant.zfzyc_qglsc_bfb, 0);
             //SpUtil.saveSP(getContext(), "zfzycnph_qglsc_zsdl", Constant.zfzycnph_qglsc_zsdl);
 
-            Constant.zfzycnph_ggsc_zsdl = Utils.keep2Wdouble(Constant.glsc * Constant.zfzycnph_ggsc_mj, 0);
+            Constant.zfzycnph_ggsc_zsdl = Utils.keep2Wdouble(Constant.glsc * Constant.zfzycnph_ggsc_mj* Constant.zfzycnph_ggsc_jshns* Constant.zfzyc_ggsc_bfb, 0);
             //SpUtil.saveSP(getContext(), "zfzycnph_ggsc_zsdl", Constant.zfzycnph_ggsc_zsdl);
 
-            Constant.zfzycnph_yclsc_zsdl = Utils.keep2Wdouble(Constant.yclsc * Constant.zfzycnph_yclsc_mj, 0);
+            Constant.zfzycnph_yclsc_zsdl = Utils.keep2Wdouble(Constant.yclsc * Constant.zfzycnph_yclsc_mj* Constant.zfzycnph_yclsc_jshns* Constant.zfzyc_yclsc_bfb, 0);
             //SpUtil.saveSP(getContext(), "zfzycnph_yclsc_zsdl", Constant.zfzycnph_yclsc_zsdl);
 
-            Constant.zfzycnph_gclsc_zsdl = Utils.keep2Wdouble(Constant.gclsc * Constant.zfzycnph_gclsc_mj, 0);
+            Constant.zfzycnph_gclsc_zsdl = Utils.keep2Wdouble(Constant.gclsc * Constant.zfzycnph_gclsc_mj* Constant.zfzycnph_gclsc_jshns* Constant.zfzyc_gclsc_bfb, 0);
             //SpUtil.saveSP(getContext(), "zfzycnph_gclsc_zsdl", Constant.zfzycnph_gclsc_zsdl);
 
-            Constant.zfzycnph_dlsc_zsdl = Utils.keep2Wdouble(Constant.dlsc * Constant.zfzycnph_dlsc_mj, 0);
+            Constant.zfzycnph_dlsc_zsdl = Utils.keep2Wdouble(Constant.dlsc * Constant.zfzycnph_dlsc_mj* Constant.zfzycnph_dlsc_jshns* Constant.zfzyc_dlsc_bfb, 0);
             //SpUtil.saveSP(getContext(), "zfzycnph_dlsc_zsdl", Constant.zfzycnph_dlsc_zsdl);
 
-            Constant.zfzycnph_cslsc_zsdl = Utils.keep2Wdouble(Constant.cslsc * Constant.zfzycnph_cslsc_mj, 0);
+            Constant.zfzycnph_cslsc_zsdl = Utils.keep2Wdouble(Constant.cslsc * Constant.zfzycnph_cslsc_mj* Constant.zfzycnph_cslsc_jshns* Constant.zfzyc_cslgs_bfb, 0);
             //SpUtil.saveSP(getContext(), "zfzycnph_cslsc_zsdl", Constant.zfzycnph_cslsc_zsdl);
 
-            Constant.zfzycnph_lygs_zsdl = Utils.keep2Wdouble(Constant.lygs * Constant.zfzycnph_lygs_mj, 0);
+            Constant.zfzycnph_lygs_zsdl = Utils.keep2Wdouble(Constant.lygs * Constant.zfzycnph_lygs_mj* Constant.zfzycnph_lygs_jshns* Constant.zfzyc_lygs_bfb, 0);
             //SpUtil.saveSP(getContext(), "zfzycnph_lygs_zsdl", Constant.zfzycnph_lygs_zsdl);
 
-            Constant.zfzycnph_clgs_zsdl = Utils.keep2Wdouble(Constant.clgs * Constant.zfzycnph_clgs_mj, 0);
+            Constant.zfzycnph_clgs_zsdl = Utils.keep2Wdouble(Constant.clgs * Constant.zfzycnph_clgs_mj* Constant.zfzycnph_clgs_jshns* Constant.zfzyc_clgs_bfb, 0);
             //SpUtil.saveSP(getContext(), "zfzycnph_clgs_zsdl", Constant.zfzycnph_clgs_zsdl);
 
-            Constant.zfzycnph_cy_zsdl = Utils.keep2Wdouble(Constant.cy * Constant.zfzycnph_cy_mj, 0);
+            Constant.zfzycnph_cy_zsdl = Utils.keep2Wdouble(Constant.cy * Constant.zfzycnph_cy_mj* Constant.zfzycnph_cy_jshns* Constant.zfzyc_cy_bfb, 0);
             //SpUtil.saveSP(getContext(), "zfzycnph_cy_zsdl", Constant.zfzycnph_cy_zsdl);
 
-            Constant.zfzycnph_mc_zsdl = Utils.keep2Wdouble(Constant.mc * Constant.zfzycnph_mc_mj, 0);
+            Constant.zfzycnph_mc_zsdl = Utils.keep2Wdouble(Constant.mc * Constant.zfzycnph_mc_mj* Constant.zfzycnph_mc_jshns* Constant.zfzyc_mc_bfb, 0);
             //SpUtil.saveSP(getContext(), "zfzycnph_mc_zsdl", Constant.zfzycnph_mc_zsdl);
 
             Constant.zfzycnph_hj_zsdl = Utils.keep2Wdouble(Constant.zfzycnph_sd_zsdl + Constant.zfzycnph_xm_zsdl + Constant.zfzycnph_ym_zsdl + Constant.zfzycnph_yc_zsdl +
@@ -2757,52 +3084,52 @@ public class XnmjFragment extends BaseFragment {
             Constant.zfzycnph_cz_zsdl = Utils.keep2Wdouble(Constant.zfzycnph_zcdl - Constant.zfzycnph_hj_zsdl, 0);
            // SpUtil.saveSP(getContext(), "zfzycnph_cz_zsdl", Constant.zfzycnph_cz_zsdl);
 
-            Constant.zzfzcdph_sd_zsdl = Utils.keep2Wdouble(Constant.sd * Constant.zzfzcdph_sd_mj, 0);
+            Constant.zzfzcdph_sd_zsdl = Utils.keep2Wdouble(Constant.sd * Constant.zzfzcdph_sd_mj* Constant.zzfzcdph_sd_jshns* Constant.byzzfzc_sd_bfb, 0);
             //SpUtil.saveSP(getContext(), "zzfzcdph_sd_zsdl", Constant.zzfzcdph_sd_zsdl);
 
-            Constant.zzfzcdph_xm_zsdl = Utils.keep2Wdouble(Constant.xm * Constant.zzfzcdph_xm_mj, 0);
+            Constant.zzfzcdph_xm_zsdl = Utils.keep2Wdouble(Constant.xm * Constant.zzfzcdph_xm_mj* Constant.zzfzcdph_xm_jshns* Constant.byzzfzc_xm_bfb, 0);
             //SpUtil.saveSP(getContext(), "zzfzcdph_xm_zsdl", Constant.zzfzcdph_xm_zsdl);
 
-            Constant.zzfzcdph_ym_zsdl = Utils.keep2Wdouble(Constant.ym * Constant.zzfzcdph_ym_mj, 0);
+            Constant.zzfzcdph_ym_zsdl = Utils.keep2Wdouble(Constant.ym * Constant.zzfzcdph_ym_mj* Constant.zzfzcdph_ym_jshns* Constant.byzzfzc_ym_bfb, 0);
            // SpUtil.saveSP(getContext(), "zzfzcdph_ym_zsdl", Constant.zzfzcdph_ym_zsdl);
 
-            Constant.zzfzcdph_yc_zsdl = Utils.keep2Wdouble(Constant.yc * Constant.zzfzcdph_yc_mj, 0);
+            Constant.zzfzcdph_yc_zsdl = Utils.keep2Wdouble(Constant.yc * Constant.zzfzcdph_yc_mj* Constant.zzfzcdph_yc_jshns* Constant.byzzfzc_yc_bfb, 0);
             //SpUtil.saveSP(getContext(), "zzfzcdph_yc_zsdl", Constant.zzfzcdph_yc_zsdl);
 
-            Constant.zzfzcdph_gs_zsdl = Utils.keep2Wdouble(Constant.gs * Constant.zzfzcdph_gs_mj, 0);
+            Constant.zzfzcdph_gs_zsdl = Utils.keep2Wdouble(Constant.gs * Constant.zzfzcdph_gs_mj* Constant.zzfzcdph_gs_jshns* Constant.byzzfzc_gs_bfb, 0);
             //SpUtil.saveSP(getContext(), "zzfzcdph_gs_zsdl", Constant.zzfzcdph_gs_zsdl);
 
-            Constant.zzfzcdph_mls_zsdl = Utils.keep2Wdouble(Constant.mls * Constant.zzfzcdph_mls_mj, 0);
+            Constant.zzfzcdph_mls_zsdl = Utils.keep2Wdouble(Constant.mls * Constant.zzfzcdph_mls_mj* Constant.zzfzcdph_mls_jshns* Constant.byzzfzc_mls_bfb, 0);
            // SpUtil.saveSP(getContext(), "zzfzcdph_mls_zsdl", Constant.zzfzcdph_mls_zsdl);
 
-            Constant.zzfzcdph_qglsc_zsdl = Utils.keep2Wdouble(Constant.qglsc * Constant.zzfzcdph_qglsc_mj, 0);
+            Constant.zzfzcdph_qglsc_zsdl = Utils.keep2Wdouble(Constant.qglsc * Constant.zzfzcdph_qglsc_mj* Constant.zzfzcdph_qglsc_jshns* Constant.byzzfzc_qglsc_bfb, 0);
            // SpUtil.saveSP(getContext(), "zzfzcdph_qglsc_zsdl", Constant.zzfzcdph_qglsc_zsdl);
 
-            Constant.zzfzcdph_ggsc_zsdl = Utils.keep2Wdouble(Constant.glsc * Constant.zzfzcdph_ggsc_mj, 0);
+            Constant.zzfzcdph_ggsc_zsdl = Utils.keep2Wdouble(Constant.glsc * Constant.zzfzcdph_ggsc_mj* Constant.zzfzcdph_ggsc_jshns* Constant.byzzfzc_ggsc_bfb, 0);
           //  SpUtil.saveSP(getContext(), "zzfzcdph_ggsc_zsdl", Constant.zzfzcdph_ggsc_zsdl);
 
-            Constant.zzfzcdph_yclsc_zsdl = Utils.keep2Wdouble(Constant.yclsc * Constant.zzfzcdph_yclsc_mj, 0);
+            Constant.zzfzcdph_yclsc_zsdl = Utils.keep2Wdouble(Constant.yclsc * Constant.zzfzcdph_yclsc_mj* Constant.zzfzcdph_yclsc_jshns* Constant.byzzfzc_yclsc_bfb, 0);
            // SpUtil.saveSP(getContext(), "zzfzcdph_yclsc_zsdl", Constant.zzfzcdph_yclsc_zsdl);
 
-            Constant.zzfzcdph_gclsc_zsdl = Utils.keep2Wdouble(Constant.gclsc * Constant.zzfzcdph_gclsc_mj, 0);
+            Constant.zzfzcdph_gclsc_zsdl = Utils.keep2Wdouble(Constant.gclsc * Constant.zzfzcdph_gclsc_mj* Constant.zzfzcdph_gclsc_jshns* Constant.byzzfzc_gclsc_bfb, 0);
            // SpUtil.saveSP(getContext(), "zzfzcdph_gclsc_zsdl", Constant.zzfzcdph_gclsc_zsdl);
 
-            Constant.zzfzcdph_dlsc_zsdl = Utils.keep2Wdouble(Constant.dlsc * Constant.zzfzcdph_dlsc_mj, 0);
+            Constant.zzfzcdph_dlsc_zsdl = Utils.keep2Wdouble(Constant.dlsc * Constant.zzfzcdph_dlsc_mj* Constant.zzfzcdph_dlsc_jshns* Constant.byzzfzc_dlsc_bfb, 0);
             //SpUtil.saveSP(getContext(), "zzfzcdph_dlsc_zsdl", Constant.zzfzcdph_dlsc_zsdl);
 
-            Constant.zzfzcdph_cslsc_zsdl = Utils.keep2Wdouble(Constant.cslsc * Constant.zzfzcdph_cslsc_mj, 0);
+            Constant.zzfzcdph_cslsc_zsdl = Utils.keep2Wdouble(Constant.cslsc * Constant.zzfzcdph_cslsc_mj* Constant.zzfzcdph_cslsc_jshns* Constant.byzzfzc_cslgs_bfb, 0);
            // SpUtil.saveSP(getContext(), "zzfzcdph_cslsc_zsdl", Constant.zzfzcdph_cslsc_zsdl);
 
-            Constant.zzfzcdph_lygs_zsdl = Utils.keep2Wdouble(Constant.lygs * Constant.zzfzcdph_lygs_mj, 0);
+            Constant.zzfzcdph_lygs_zsdl = Utils.keep2Wdouble(Constant.lygs * Constant.zzfzcdph_lygs_mj* Constant.zzfzcdph_lygs_jshns* Constant.byzzfzc_lygs_bfb, 0);
             //SpUtil.saveSP(getContext(), "zzfzcdph_lygs_zsdl", Constant.zzfzcdph_lygs_zsdl);
 
-            Constant.zzfzcdph_clgs_zsdl = Utils.keep2Wdouble(Constant.clgs * Constant.zzfzcdph_clgs_mj, 0);
+            Constant.zzfzcdph_clgs_zsdl = Utils.keep2Wdouble(Constant.clgs * Constant.zzfzcdph_clgs_mj* Constant.zzfzcdph_clgs_jshns* Constant.byzzfzc_clgs_bfb, 0);
             //SpUtil.saveSP(getContext(), "zzfzcdph_clgs_zsdl", Constant.zzfzcdph_clgs_zsdl);
 
-            Constant.zzfzcdph_cy_zsdl = Utils.keep2Wdouble(Constant.cy * Constant.zzfzcdph_cy_mj, 0);
+            Constant.zzfzcdph_cy_zsdl = Utils.keep2Wdouble(Constant.cy * Constant.zzfzcdph_cy_mj* Constant.zzfzcdph_cy_jshns* Constant.byzzfzc_cy_bfb, 0);
             //SpUtil.saveSP(getContext(), "zzfzcdph_cy_zsdl", Constant.zzfzcdph_cy_zsdl);
 
-            Constant.zzfzcdph_mc_zsdl = Utils.keep2Wdouble(Constant.mc * Constant.zzfzcdph_mc_mj, 0);
+            Constant.zzfzcdph_mc_zsdl = Utils.keep2Wdouble(Constant.mc * Constant.zzfzcdph_mc_mj* Constant.zzfzcdph_mc_jshns* Constant.byzzfzc_mc_bfb, 0);
            // SpUtil.saveSP(getContext(), "zzfzcdph_mc_zsdl", Constant.zzfzcdph_mc_zsdl);
 
             Constant.zzfzcdph_hj_zsdl = Utils.keep2Wdouble(Constant.zzfzcdph_sd_zsdl + Constant.zzfzcdph_xm_zsdl + Constant.zzfzcdph_ym_zsdl + Constant.zzfzcdph_yc_zsdl +
@@ -2814,52 +3141,52 @@ public class XnmjFragment extends BaseFragment {
             Constant.zzfzcdph_cz_zsdl = Utils.keep2Wdouble(Constant.zzfzcdph_zcdl - Constant.zzfzcdph_hj_zsdl, 0);
             //SpUtil.saveSP(getContext(), "zzfzcdph_cz_zsdl", Constant.zzfzcdph_cz_zsdl);
 
-            Constant.dnzzfzcdph_sd_zsdl = Utils.keep2Wdouble(Constant.sd * Constant.dnzzfzcdph_sd_mj, 0);
+            Constant.dnzzfzcdph_sd_zsdl = Utils.keep2Wdouble(Constant.sd * Constant.dnzzfzcdph_sd_mj* Constant.dnzzfzcdph_sd_jshns* Constant.dnzzfzc_sd_bfb, 0);
            // SpUtil.saveSP(getContext(), "dnzzfzcdph_sd_zsdl", Constant.dnzzfzcdph_sd_zsdl);
 
-            Constant.dnzzfzcdph_xm_zsdl = Utils.keep2Wdouble(Constant.xm * Constant.dnzzfzcdph_xm_mj, 0);
+            Constant.dnzzfzcdph_xm_zsdl = Utils.keep2Wdouble(Constant.xm * Constant.dnzzfzcdph_xm_mj* Constant.dnzzfzcdph_xm_jshns* Constant.dnzzfzc_xm_bfb, 0);
            // SpUtil.saveSP(getContext(), "dnzzfzcdph_xm_zsdl", Constant.dnzzfzcdph_xm_zsdl);
 
-            Constant.dnzzfzcdph_ym_zsdl = Utils.keep2Wdouble(Constant.ym * Constant.dnzzfzcdph_ym_mj, 0);
+            Constant.dnzzfzcdph_ym_zsdl = Utils.keep2Wdouble(Constant.ym * Constant.dnzzfzcdph_ym_mj* Constant.dnzzfzcdph_ym_jshns* Constant.dnzzfzc_ym_bfb, 0);
            // SpUtil.saveSP(getContext(), "dnzzfzcdph_ym_zsdl", Constant.dnzzfzcdph_ym_zsdl);
 
-            Constant.dnzzfzcdph_yc_zsdl = Utils.keep2Wdouble(Constant.yc * Constant.dnzzfzcdph_yc_mj, 0);
+            Constant.dnzzfzcdph_yc_zsdl = Utils.keep2Wdouble(Constant.yc * Constant.dnzzfzcdph_yc_mj* Constant.dnzzfzcdph_yc_jshns* Constant.dnzzfzc_yc_bfb, 0);
            // SpUtil.saveSP(getContext(), "dnzzfzcdph_yc_zsdl", Constant.dnzzfzcdph_yc_zsdl);
 
-            Constant.dnzzfzcdph_gs_zsdl = Utils.keep2Wdouble(Constant.gs * Constant.dnzzfzcdph_gs_mj, 0);
+            Constant.dnzzfzcdph_gs_zsdl = Utils.keep2Wdouble(Constant.gs * Constant.dnzzfzcdph_gs_mj* Constant.dnzzfzcdph_gs_jshns* Constant.dnzzfzc_gs_bfb, 0);
            // SpUtil.saveSP(getContext(), "dnzzfzcdph_gs_zsdl", Constant.dnzzfzcdph_gs_zsdl);
 
-            Constant.dnzzfzcdph_mls_zsdl = Utils.keep2Wdouble(Constant.mls * Constant.dnzzfzcdph_mls_mj, 0);
+            Constant.dnzzfzcdph_mls_zsdl = Utils.keep2Wdouble(Constant.mls * Constant.dnzzfzcdph_mls_mj* Constant.dnzzfzcdph_mls_jshns* Constant.dnzzfzc_mls_bfb, 0);
             //saveSP(getContext(), "dnzzfzcdph_mls_zsdl", Constant.dnzzfzcdph_mls_zsdl);
 
-            Constant.dnzzfzcdph_qglsc_zsdl = Utils.keep2Wdouble(Constant.qglsc * Constant.dnzzfzcdph_qglsc_mj, 0);
+            Constant.dnzzfzcdph_qglsc_zsdl = Utils.keep2Wdouble(Constant.qglsc * Constant.dnzzfzcdph_qglsc_mj* Constant.dnzzfzcdph_qglsc_jshns* Constant.dnzzfzc_qglsc_bfb, 0);
            // SpUtil.saveSP(getContext(), "dnzzfzcdph_qglsc_zsdl", Constant.dnzzfzcdph_qglsc_zsdl);
 
-            Constant.dnzzfzcdph_ggsc_zsdl = Utils.keep2Wdouble(Constant.glsc * Constant.dnzzfzcdph_ggsc_mj, 0);
+            Constant.dnzzfzcdph_ggsc_zsdl = Utils.keep2Wdouble(Constant.glsc * Constant.dnzzfzcdph_ggsc_mj* Constant.dnzzfzcdph_ggsc_jshns* Constant.dnzzfzc_ggsc_bfb, 0);
             //SpUtil.saveSP(getContext(), "dnzzfzcdph_ggsc_zsdl", Constant.dnzzfzcdph_ggsc_zsdl);
 
-            Constant.dnzzfzcdph_yclsc_zsdl = Utils.keep2Wdouble(Constant.yclsc * Constant.dnzzfzcdph_yclsc_mj, 0);
+            Constant.dnzzfzcdph_yclsc_zsdl = Utils.keep2Wdouble(Constant.yclsc * Constant.dnzzfzcdph_yclsc_mj* Constant.dnzzfzcdph_yclsc_jshns* Constant.dnzzfzc_yclsc_bfb, 0);
            // SpUtil.saveSP(getContext(), "dnzzfzcdph_yclsc_zsdl", Constant.dnzzfzcdph_yclsc_zsdl);
 
-            Constant.dnzzfzcdph_gclsc_zsdl = Utils.keep2Wdouble(Constant.gclsc * Constant.dnzzfzcdph_gclsc_mj, 0);
+            Constant.dnzzfzcdph_gclsc_zsdl = Utils.keep2Wdouble(Constant.gclsc * Constant.dnzzfzcdph_gclsc_mj* Constant.dnzzfzcdph_gclsc_jshns* Constant.dnzzfzc_gclsc_bfb, 0);
            // SpUtil.saveSP(getContext(), "dnzzfzcdph_gclsc_zsdl", Constant.dnzzfzcdph_gclsc_zsdl);
 
-            Constant.dnzzfzcdph_dlsc_zsdl = Utils.keep2Wdouble(Constant.dlsc * Constant.dnzzfzcdph_dlsc_mj, 0);
+            Constant.dnzzfzcdph_dlsc_zsdl = Utils.keep2Wdouble(Constant.dlsc * Constant.dnzzfzcdph_dlsc_mj* Constant.dnzzfzcdph_dlsc_jshns* Constant.dnzzfzc_dlsc_bfb, 0);
             //SpUtil.saveSP(getContext(), "dnzzfzcdph_dlsc_zsdl", Constant.dnzzfzcdph_dlsc_zsdl);
 
-            Constant.dnzzfzcdph_cslsc_zsdl = Utils.keep2Wdouble(Constant.cslsc * Constant.dnzzfzcdph_cslsc_mj, 0);
+            Constant.dnzzfzcdph_cslsc_zsdl = Utils.keep2Wdouble(Constant.cslsc * Constant.dnzzfzcdph_cslsc_mj* Constant.dnzzfzcdph_cslsc_jshns* Constant.dnzzfzc_cslgs_bfb, 0);
             //SpUtil.saveSP(getContext(), "dnzzfzcdph_cslsc_zsdl", Constant.dnzzfzcdph_cslsc_zsdl);
 
-            Constant.dnzzfzcdph_lygs_zsdl = Utils.keep2Wdouble(Constant.lygs * Constant.dnzzfzcdph_lygs_mj, 0);
+            Constant.dnzzfzcdph_lygs_zsdl = Utils.keep2Wdouble(Constant.lygs * Constant.dnzzfzcdph_lygs_mj* Constant.dnzzfzcdph_lygs_jshns* Constant.dnzzfzc_lygs_bfb, 0);
            // SpUtil.saveSP(getContext(), "dnzzfzcdph_lygs_zsdl", Constant.dnzzfzcdph_lygs_zsdl);
 
-            Constant.dnzzfzcdph_clgs_zsdl = Utils.keep2Wdouble(Constant.clgs * Constant.dnzzfzcdph_clgs_mj, 0);
+            Constant.dnzzfzcdph_clgs_zsdl = Utils.keep2Wdouble(Constant.clgs * Constant.dnzzfzcdph_clgs_mj* Constant.dnzzfzcdph_clgs_jshns* Constant.dnzzfzc_clgs_bfb, 0);
            // SpUtil.saveSP(getContext(), "dnzzfzcdph_clgs_zsdl", Constant.dnzzfzcdph_clgs_zsdl);
 
-            Constant.dnzzfzcdph_cy_zsdl = Utils.keep2Wdouble(Constant.cy * Constant.dnzzfzcdph_cy_mj, 0);
+            Constant.dnzzfzcdph_cy_zsdl = Utils.keep2Wdouble(Constant.cy * Constant.dnzzfzcdph_cy_mj* Constant.dnzzfzcdph_cy_jshns* Constant.dnzzfzc_cy_bfb, 0);
             //SpUtil.saveSP(getContext(), "dnzzfzcdph_cy_zsdl", Constant.dnzzfzcdph_cy_zsdl);
 
-            Constant.dnzzfzcdph_mc_zsdl = Utils.keep2Wdouble(Constant.mc * Constant.dnzzfzcdph_mc_mj, 0);
+            Constant.dnzzfzcdph_mc_zsdl = Utils.keep2Wdouble(Constant.mc * Constant.dnzzfzcdph_mc_mj* Constant.dnzzfzcdph_mc_jshns* Constant.dnzzfzc_mc_bfb, 0);
            // SpUtil.saveSP(getContext(), "dnzzfzcdph_mc_zsdl", Constant.dnzzfzcdph_mc_zsdl);
 
             Constant.dnzzfzcdph_hj_zsdl = Utils.keep2Wdouble(Constant.dnzzfzcdph_sd_zsdl + Constant.dnzzfzcdph_xm_zsdl + Constant.dnzzfzcdph_ym_zsdl + Constant.dnzzfzcdph_yc_zsdl +
@@ -2996,5 +3323,151 @@ public class XnmjFragment extends BaseFragment {
         mDnzzfzcdph_hj_zsdl.setText(Constant.dnzzfzcdph_hj_zsdl + "");
 
         mDnzzfzcdph_cz_zsdl.setText(Constant.dnzzfzcdph_cz_zsdl + "");
+    }
+
+    private double[] arr = new double[]{1,0.9,0.8,0.7,0.6,0.5,0.4,0.2,0.1};
+
+    private boolean isFirst = true;
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        double temp = arr[position];
+        if (isFirst){
+           if (parent == dnzzfzc_mc_bfb){
+               isFirst = false;
+           }
+            return;
+        }
+        if (parent == zfzyc_sd_bfb){
+            Constant.zfzyc_sd_bfb = temp;
+            //Toast.makeText(getContext(),Constant.zfzyc_sd_bfb+"-----1",Toast.LENGTH_SHORT).show();
+            SpUtil.saveSP(getContext(),"zfzyc_sd_bfb",Constant.zfzyc_sd_bfb);
+        }else if(parent == zfzyc_xm_bfb){
+            Constant.zfzyc_xm_bfb = temp;
+            SpUtil.saveSP(getContext(),"zfzyc_xm_bfb",Constant.zfzyc_xm_bfb);
+        }else if(parent == zfzyc_ym_bfb){
+            Constant.zfzyc_ym_bfb = temp;
+            SpUtil.saveSP(getContext(),"zfzyc_ym_bfb",Constant.zfzyc_ym_bfb);
+        }else if(parent == zfzyc_yc_bfb){
+            Constant.zfzyc_yc_bfb = temp;
+            SpUtil.saveSP(getContext(),"zfzyc_yc_bfb",Constant.zfzyc_yc_bfb);
+        }else if(parent == zfzyc_gs_bfb){
+            Constant.zfzyc_gs_bfb = temp;
+            SpUtil.saveSP(getContext(),"zfzyc_gs_bfb",Constant.zfzyc_gs_bfb);
+        }else if(parent == zfzyc_mls_bfb){
+            Constant.zfzyc_mls_bfb = temp;
+            SpUtil.saveSP(getContext(),"zfzyc_mls_bfb",Constant.zfzyc_mls_bfb);
+        }else if(parent == zfzyc_jglsc_bfb){
+            Constant.zfzyc_qglsc_bfb = temp;
+            SpUtil.saveSP(getContext(),"zfzyc_qglsc_bfb",Constant.zfzyc_qglsc_bfb);
+        }else if(parent == zfzyc_glsc_bfb){
+            Constant.zfzyc_ggsc_bfb = temp;
+            SpUtil.saveSP(getContext(),"zfzyc_ggsc_bfb",Constant.zfzyc_ggsc_bfb);
+        }else if(parent == zfzyc_dlsc_bfb){
+            Constant.zfzyc_dlsc_bfb = temp;
+            SpUtil.saveSP(getContext(),"zfzyc_dlsc_bfb",Constant.zfzyc_dlsc_bfb);
+        }else if(parent == zfzyc_cslsc_bfb){
+            Constant.zfzyc_cslgs_bfb = temp;
+            SpUtil.saveSP(getContext(),"zfzyc_cslgs_bfb",Constant.zfzyc_cslgs_bfb);
+        }else if(parent == zfzyc_clgs_bfb){
+            Constant.zfzyc_clgs_bfb = temp;
+            SpUtil.saveSP(getContext(),"zfzyc_clgs_bfb",Constant.zfzyc_clgs_bfb);
+        }else if(parent == zfzyc_cy_bfb){
+            Constant.zfzyc_cy_bfb = temp;
+            SpUtil.saveSP(getContext(),"zfzyc_cy_bfb",Constant.zfzyc_cy_bfb);
+        }else if(parent == zfzyc_mc_bfb){
+            Constant.zfzyc_mc_bfb = temp;
+            SpUtil.saveSP(getContext(),"zfzyc_mc_bfb",Constant.zfzyc_mc_bfb);
+        }
+
+        if (parent == byzzfzc_sd_bfb){
+            Constant.byzzfzc_sd_bfb = temp;
+            SpUtil.saveSP(getContext(),"byzzfzc_xm_bfb",Constant.byzzfzc_xm_bfb);
+        }else if(parent == byzzfzc_xm_bfb){
+            Constant.byzzfzc_xm_bfb = temp;
+            SpUtil.saveSP(getContext(),"byzzfzc_xm_bfb",Constant.byzzfzc_xm_bfb);
+        }else if(parent == byzzfzc_ym_bfb){
+            Constant.byzzfzc_ym_bfb = temp;
+            SpUtil.saveSP(getContext(),"byzzfzc_ym_bfb",Constant.byzzfzc_ym_bfb);
+        }else if(parent == byzzfzc_yc_bfb){
+            Constant.byzzfzc_yc_bfb = temp;
+            SpUtil.saveSP(getContext(),"byzzfzc_yc_bfb",Constant.byzzfzc_yc_bfb);
+        }else if(parent == byzzfzc_gs_bfb){
+            Constant.byzzfzc_gs_bfb = temp;
+            SpUtil.saveSP(getContext(),"byzzfzc_gs_bfb",Constant.byzzfzc_gs_bfb);
+        }else if(parent == byzzfzc_mls_bfb){
+            Constant.byzzfzc_mls_bfb = temp;
+            SpUtil.saveSP(getContext(),"byzzfzc_mls_bfb",Constant.byzzfzc_mls_bfb);
+        }else if(parent == byzzfzc_jglsc_bfb){
+            Constant.byzzfzc_qglsc_bfb = temp;
+            SpUtil.saveSP(getContext(),"byzzfzc_qglsc_bfb",Constant.byzzfzc_qglsc_bfb);
+        }else if(parent == byzzfzc_glsc_bfb){
+            Constant.byzzfzc_ggsc_bfb = temp;
+            SpUtil.saveSP(getContext(),"byzzfzc_ggsc_bfb",Constant.byzzfzc_ggsc_bfb);
+        }else if(parent == byzzfzc_dlsc_bfb){
+            Constant.byzzfzc_dlsc_bfb = temp;
+            SpUtil.saveSP(getContext(),"byzzfzc_dlsc_bfb",Constant.byzzfzc_dlsc_bfb);
+        }else if(parent == byzzfzc_cslsc_bfb){
+            Constant.byzzfzc_cslgs_bfb = temp;
+            SpUtil.saveSP(getContext(),"byzzfzc_cslgs_bfb",Constant.byzzfzc_cslgs_bfb);
+        }else if(parent == byzzfzc_clgs_bfb){
+            Constant.byzzfzc_clgs_bfb = temp;
+            SpUtil.saveSP(getContext(),"byzzfzc_clgs_bfb",Constant.byzzfzc_clgs_bfb);
+        }else if(parent == byzzfzc_cy_bfb){
+            Constant.byzzfzc_cy_bfb = temp;
+            SpUtil.saveSP(getContext(),"byzzfzc_cy_bfb",Constant.byzzfzc_cy_bfb);
+        }else if(parent == byzzfzc_mc_bfb){
+            Constant.byzzfzc_mc_bfb = temp;
+            SpUtil.saveSP(getContext(),"byzzfzc_mc_bfb",Constant.byzzfzc_mc_bfb);
+        }
+
+        if (parent == dnzzfzc_sd_bfb){
+            Constant.dnzzfzc_sd_bfb = temp;
+            SpUtil.saveSP(getContext(),"dnzzfzc_xm_bfb",Constant.dnzzfzc_xm_bfb);
+        }else if(parent == dnzzfzc_xm_bfb){
+            Constant.dnzzfzc_xm_bfb = temp;
+            SpUtil.saveSP(getContext(),"dnzzfzc_xm_bfb",Constant.dnzzfzc_xm_bfb);
+        }else if(parent == dnzzfzc_ym_bfb){
+            Constant.dnzzfzc_ym_bfb = temp;
+            SpUtil.saveSP(getContext(),"dnzzfzc_ym_bfb",Constant.dnzzfzc_ym_bfb);
+        }else if(parent == dnzzfzc_yc_bfb){
+            Constant.dnzzfzc_yc_bfb = temp;
+            SpUtil.saveSP(getContext(),"dnzzfzc_yc_bfb",Constant.dnzzfzc_yc_bfb);
+        }else if(parent == dnzzfzc_gs_bfb){
+            Constant.dnzzfzc_gs_bfb = temp;
+            SpUtil.saveSP(getContext(),"dnzzfzc_gs_bfb",Constant.dnzzfzc_gs_bfb);
+        }else if(parent == dnzzfzc_mls_bfb){
+            Constant.dnzzfzc_mls_bfb = temp;
+            SpUtil.saveSP(getContext(),"dnzzfzc_mls_bfb",Constant.dnzzfzc_mls_bfb);
+        }else if(parent == dnzzfzc_jglsc_bfb){
+            Constant.dnzzfzc_qglsc_bfb = temp;
+            SpUtil.saveSP(getContext(),"dnzzfzc_qglsc_bfb",Constant.dnzzfzc_qglsc_bfb);
+        }else if(parent == dnzzfzc_glsc_bfb){
+            Constant.dnzzfzc_ggsc_bfb = temp;
+            SpUtil.saveSP(getContext(),"dnzzfzc_ggsc_bfb",Constant.dnzzfzc_ggsc_bfb);
+        }else if(parent == dnzzfzc_dlsc_bfb){
+            Constant.dnzzfzc_dlsc_bfb = temp;
+            SpUtil.saveSP(getContext(),"dnzzfzc_dlsc_bfb",Constant.dnzzfzc_dlsc_bfb);
+        }else if(parent == dnzzfzc_cslsc_bfb){
+            Constant.dnzzfzc_cslgs_bfb = temp;
+            SpUtil.saveSP(getContext(),"dnzzfzc_cslgs_bfb",Constant.dnzzfzc_cslgs_bfb);
+        }else if(parent == dnzzfzc_clgs_bfb){
+            Constant.dnzzfzc_clgs_bfb = temp;
+            SpUtil.saveSP(getContext(),"dnzzfzc_clgs_bfb",Constant.dnzzfzc_clgs_bfb);
+        }else if(parent == dnzzfzc_cy_bfb){
+            Constant.dnzzfzc_cy_bfb = temp;
+            SpUtil.saveSP(getContext(),"dnzzfzc_cy_bfb",Constant.dnzzfzc_cy_bfb);
+        }else if(parent == dnzzfzc_mc_bfb){
+            Constant.dnzzfzc_mc_bfb = temp;
+            SpUtil.saveSP(getContext(),"dnzzfzc_mc_bfb",Constant.dnzzfzc_mc_bfb);
+        }
+
+
+        jsDatas();
+        refreshViews();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
     }
 }

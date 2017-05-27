@@ -21,6 +21,20 @@
         <item>90%</item>
     </string-array>
 
+    <string-array name="spingarr33">
+        <item>100%</item>
+        <item>90%</item>
+        <item>80%</item>
+        <item>70%</item>
+        <item>60%</item>
+        <item>50%</item>
+        <item>40%</item>
+        <item>30%</item>
+        <item>20%</item>
+        <item>10%</item>
+        <item>0%</item>
+    </string-array>
+
     <string-array name="spingarr_tab1">
         <item>默认设置</item>
         <item>存栏母猪</item>

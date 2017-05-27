@@ -15,6 +15,7 @@ public class SbEntity {
     private int sl;
     private double dj;
 
+
     public int getSblx() {
         return sblx;
     }
@@ -61,5 +62,17 @@ public class SbEntity {
 
     public void setDj(double dj) {
         this.dj = dj;
+    }
+
+    public SbEntity(int sblx, String sbmc, String sbxh, String dw, int sl, double dj) {
+        this.sblx = sblx;
+        this.sbmc = sbmc;
+        this.sbxh = sbxh;
+        this.dw = dw;
+        this.sl = sl;
+        this.dj = dj;
+    }
+
+    public SbEntity() {
     }
 }

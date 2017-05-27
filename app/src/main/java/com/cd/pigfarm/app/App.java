@@ -4,6 +4,7 @@ import android.app.Application;
 
 
 import com.cd.pigfarm.constant.Constant;
+import com.cd.pigfarm.sql.SqlOpenHelper;
 import com.cd.pigfarm.util.SpUtil;
 
 /**
@@ -13,10 +14,14 @@ import com.cd.pigfarm.util.SpUtil;
  * @Description: 全局类
  */
 public class App extends Application {
+
+    public static SqlOpenHelper sqlOpenHelper;
+
     @Override
     public void onCreate() {
         super.onCreate();
 
+        sqlOpenHelper = new SqlOpenHelper(this);
         //初始化数据
         initData();
     }
@@ -380,8 +385,108 @@ public class App extends Application {
         Constant.mnzs = 52;
         Constant.mzncts =Constant.mnts/145;
 
-        //*********************************************************消纳面积***********************************************//
+        /// /*********************************************************消纳面积***********************************************//
+        
+        Constant. zfzyc_sd_bfb =SpUtil.getSpDouble(this,"zfzyc_sd_bfb",1);
+        Constant. zfzyc_xm_bfb =SpUtil.getSpDouble(this,"zfzyc_xm_bfb",1);
+        Constant. zfzyc_ym_bfb =SpUtil.getSpDouble(this,"zfzyc_ym_bfb",1);
+        Constant. zfzyc_yc_bfb =SpUtil.getSpDouble(this,"zfzyc_yc_bfb",1);
+        Constant. zfzyc_gs_bfb =SpUtil.getSpDouble(this,"zfzyc_gs_bfb",1);
+        Constant. zfzyc_mls_bfb =SpUtil.getSpDouble(this,"zfzyc_mls_bfb",1);
+        Constant. zfzyc_qglsc_bfb =SpUtil.getSpDouble(this,"zfzyc_qglsc_bfb",1);
+        Constant. zfzyc_ggsc_bfb =SpUtil.getSpDouble(this,"zfzyc_ggsc_bfb",1);
+        Constant. zfzyc_yclsc_bfb =SpUtil.getSpDouble(this,"zfzyc_yclsc_bfb",1);
+        Constant. zfzyc_gclsc_bfb =SpUtil.getSpDouble(this,"zfzyc_gclsc_bfb",1);
+        Constant. zfzyc_lygs_bfb =SpUtil.getSpDouble(this,"zfzyc_lygs_bfb",1);
+        Constant. zfzyc_clgs_bfb =SpUtil.getSpDouble(this,"zfzyc_clgs_bfb",1);
+        Constant. zfzyc_cy_bfb =SpUtil.getSpDouble(this,"zfzyc_cy_bfb",1);
+        Constant. zfzyc_mc_bfb =SpUtil.getSpDouble(this,"zfzyc_mc_bfb",1);
+        Constant. zfzyc_dlsc_bfb =SpUtil.getSpDouble(this,"zfzyc_dlsc_bfb",1);
+        Constant. zfzyc_cslgs_bfb =SpUtil.getSpDouble(this,"zfzyc_cslgs_bfb",1);
 
+        Constant. byzzfzc_sd_bfb =SpUtil.getSpDouble(this,"byzzfzc_sd_bfb",1);
+        Constant. byzzfzc_xm_bfb =SpUtil.getSpDouble(this,"byzzfzc_xm_bfb",1);
+        Constant. byzzfzc_ym_bfb =SpUtil.getSpDouble(this,"byzzfzc_ym_bfb",1);
+        Constant. byzzfzc_yc_bfb =SpUtil.getSpDouble(this,"byzzfzc_yc_bfb",1);
+        Constant. byzzfzc_gs_bfb =SpUtil.getSpDouble(this,"byzzfzc_gs_bfb",1);
+        Constant. byzzfzc_mls_bfb =SpUtil.getSpDouble(this,"byzzfzc_mls_bfb",1);
+        Constant. byzzfzc_qglsc_bfb =SpUtil.getSpDouble(this,"byzzfzc_qglsc_bfb",1);
+        Constant. byzzfzc_ggsc_bfb =SpUtil.getSpDouble(this,"byzzfzc_ggsc_bfb",1);
+        Constant. byzzfzc_yclsc_bfb =SpUtil.getSpDouble(this,"byzzfzc_yclsc_bfb",1);
+        Constant. byzzfzc_gclsc_bfb =SpUtil.getSpDouble(this,"byzzfzc_gclsc_bfb",1);
+        Constant. byzzfzc_lygs_bfb =SpUtil.getSpDouble(this,"byzzfzc_lygs_bfb",1);
+        Constant. byzzfzc_clgs_bfb =SpUtil.getSpDouble(this,"byzzfzc_clgs_bfb",1);
+        Constant. byzzfzc_cy_bfb =SpUtil.getSpDouble(this,"byzzfzc_cy_bfb",1);
+        Constant. byzzfzc_mc_bfb =SpUtil.getSpDouble(this,"byzzfzc_mc_bfb",1);
+        Constant. byzzfzc_dlsc_bfb =SpUtil.getSpDouble(this,"byzzfzc_dlsc_bfb",1);
+        Constant. byzzfzc_cslgs_bfb =SpUtil.getSpDouble(this,"byzzfzc_cslgs_bfb",1);
+
+        Constant. dnzzfzc_sd_bfb =SpUtil.getSpDouble(this,"dnzzfzc_sd_bfb",1);
+        Constant. dnzzfzc_xm_bfb =SpUtil.getSpDouble(this,"dnzzfzc_xm_bfb",1);
+        Constant. dnzzfzc_ym_bfb =SpUtil.getSpDouble(this,"dnzzfzc_ym_bfb",1);
+        Constant. dnzzfzc_yc_bfb =SpUtil.getSpDouble(this,"dnzzfzc_yc_bfb",1);
+        Constant. dnzzfzc_gs_bfb =SpUtil.getSpDouble(this,"dnzzfzc_gs_bfb",1);
+        Constant. dnzzfzc_mls_bfb =SpUtil.getSpDouble(this,"dnzzfzc_mls_bfb",1);
+        Constant. dnzzfzc_qglsc_bfb =SpUtil.getSpDouble(this,"dnzzfzc_qglsc_bfb",1);
+        Constant. dnzzfzc_ggsc_bfb =SpUtil.getSpDouble(this,"dnzzfzc_ggsc_bfb",1);
+        Constant. dnzzfzc_yclsc_bfb =SpUtil.getSpDouble(this,"dnzzfzc_yclsc_bfb",1);
+        Constant. dnzzfzc_gclsc_bfb =SpUtil.getSpDouble(this,"dnzzfzc_gclsc_bfb",1);
+        Constant. dnzzfzc_lygs_bfb =SpUtil.getSpDouble(this,"dnzzfzc_lygs_bfb",1);
+        Constant. dnzzfzc_clgs_bfb =SpUtil.getSpDouble(this,"dnzzfzc_clgs_bfb",1);
+        Constant. dnzzfzc_cy_bfb =SpUtil.getSpDouble(this,"dnzzfzc_cy_bfb",1);
+        Constant. dnzzfzc_mc_bfb =SpUtil.getSpDouble(this,"dnzzfzc_mc_bfb",1);
+        Constant. dnzzfzc_dlsc_bfb =SpUtil.getSpDouble(this,"dnzzfzc_dlsc_bfb",1);
+        Constant. dnzzfzc_cslgs_bfb =SpUtil.getSpDouble(this,"dnzzfzc_cslgs_bfb",1);
+
+        Constant. zfzycnph_sd_jshns =SpUtil.getSpDouble(this,"zfzycnph_sd_jshns",1);
+        Constant. zfzycnph_xm_jshns =SpUtil.getSpDouble(this,"zfzycnph_xm_jshns",1);
+        Constant. zfzycnph_ym_jshns =SpUtil.getSpDouble(this,"zfzycnph_ym_jshns",1);
+        Constant. zfzycnph_yc_jshns =SpUtil.getSpDouble(this,"zfzycnph_yc_jshns",1);
+        Constant. zfzycnph_gs_jshns =SpUtil.getSpDouble(this,"zfzycnph_gs_jshns",1);
+        Constant. zfzycnph_mls_jshns =SpUtil.getSpDouble(this,"zfzycnph_mls_jshns",1);
+        Constant. zfzycnph_qglsc_jshns =SpUtil.getSpDouble(this,"zfzycnph_jglsc_jshns",1);
+        Constant. zfzycnph_ggsc_jshns =SpUtil.getSpDouble(this,"zfzycnph_ggsc_jshns",1);
+        Constant. zfzycnph_yclsc_jshns =SpUtil.getSpDouble(this,"zfzycnph_yclsc_jshns",1);
+        Constant. zfzycnph_gclsc_jshns =SpUtil.getSpDouble(this,"zfzycnph_gclsc_jshns",1);
+        Constant. zfzycnph_lygs_jshns =SpUtil.getSpDouble(this,"zfzycnph_lygs_jshns",1);
+        Constant. zfzycnph_clgs_jshns =SpUtil.getSpDouble(this,"zfzycnph_clgs_jshns",1);
+        Constant. zfzycnph_yc_jshns =SpUtil.getSpDouble(this,"zfzycnph_cy_jshns",1);
+        Constant. zfzycnph_mc_jshns =SpUtil.getSpDouble(this,"zfzycnph_mc_jshns",1);
+
+        Constant. zzfzcdph_sd_jshns =SpUtil.getSpDouble(this,"zzfzcdph_sd_jshns",1);
+        Constant. zzfzcdph_xm_jshns =SpUtil.getSpDouble(this,"zzfzcdph_xm_jshns",1);
+        Constant. zzfzcdph_ym_jshns =SpUtil.getSpDouble(this,"zzfzcdph_ym_jshns",1);
+        Constant. zzfzcdph_yc_jshns =SpUtil.getSpDouble(this,"zzfzcdph_yc_jshns",1);
+        Constant. zzfzcdph_gs_jshns =SpUtil.getSpDouble(this,"zzfzcdph_gs_jshns",1);
+        Constant. zzfzcdph_mls_jshns =SpUtil.getSpDouble(this,"zzfzcdph_mls_jshns",1);
+        Constant. zzfzcdph_qglsc_jshns =SpUtil.getSpDouble(this,"zzfzcdph_qglsc_jshns",1);
+        Constant. zzfzcdph_ggsc_jshns =SpUtil.getSpDouble(this,"zzfzcdph_ggsc_jshns",1);
+        Constant. zzfzcdph_yclsc_jshns =SpUtil.getSpDouble(this,"zzfzcdph_yclsc_jshns",1);
+        Constant. zzfzcdph_gclsc_jshns =SpUtil.getSpDouble(this,"zzfzcdph_gclsc_jshns",1);
+        Constant. zzfzcdph_lygs_jshns =SpUtil.getSpDouble(this,"zzfzcdph_lygs_jshns",1);
+        Constant. zzfzcdph_clgs_jshns =SpUtil.getSpDouble(this,"zzfzcdph_clgs_jshns",1);
+        Constant. zzfzcdph_yc_jshns =SpUtil.getSpDouble(this,"zzfzcdph_cy_jshns",1);
+        Constant. zzfzcdph_mc_jshns =SpUtil.getSpDouble(this,"zzfzcdph_mc_jshns",1);
+
+        Constant. dnzzfzcdph_sd_jshns =SpUtil.getSpDouble(this,"dnzzfzcdph_sd_jshns",1);
+        Constant. dnzzfzcdph_xm_jshns =SpUtil.getSpDouble(this,"dnzzfzcdph_xm_jshns",1);
+        Constant. dnzzfzcdph_ym_jshns =SpUtil.getSpDouble(this,"dnzzfzcdph_ym_jshns",1);
+        Constant. dnzzfzcdph_yc_jshns =SpUtil.getSpDouble(this,"dnzzfzcdph_yc_jshns",1);
+        Constant. dnzzfzcdph_gs_jshns =SpUtil.getSpDouble(this,"dnzzfzcdph_gs_jshns",1);
+        Constant. dnzzfzcdph_mls_jshns =SpUtil.getSpDouble(this,"dnzzfzcdph_mls_jshns",1);
+        Constant. dnzzfzcdph_qglsc_jshns =SpUtil.getSpDouble(this,"dnzzfzcdph_qglsc_jshns",1);
+        Constant. dnzzfzcdph_ggsc_jshns =SpUtil.getSpDouble(this,"dnzzfzcdph_ggsc_jshns",1);
+        Constant. dnzzfzcdph_yclsc_jshns =SpUtil.getSpDouble(this,"dnzzfzcdph_yclsc_jshns",1);
+        Constant. dnzzfzcdph_gclsc_jshns =SpUtil.getSpDouble(this,"dnzzfzcdph_gclsc_jshns",1);
+        Constant. dnzzfzcdph_lygs_jshns =SpUtil.getSpDouble(this,"dnzzfzcdph_lygs_jshns",1);
+        Constant. dnzzfzcdph_clgs_jshns =SpUtil.getSpDouble(this,"dnzzfzcdph_clgs_jshns",1);
+        Constant. dnzzfzcdph_yc_jshns =SpUtil.getSpDouble(this,"dnzzfzcdph_cy_jshns",1);
+        Constant. dnzzfzcdph_mc_jshns =SpUtil.getSpDouble(this,"dnzzfzcdph_mc_jshns",1);
+       
+        
+        
+        
+        
         Constant. zfzycnph_sd_mj =SpUtil.getSpDouble(this,"zfzycnph_sd_mj",150);
         Constant. zfzycnph_xm_mj =SpUtil.getSpDouble(this,"zfzycnph_xm_mj",200);
         Constant. zfzycnph_ym_mj =SpUtil.getSpDouble(this,"zfzycnph_ym_mj",300);

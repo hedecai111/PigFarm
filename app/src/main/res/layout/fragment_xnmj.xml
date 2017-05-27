@@ -19,7 +19,8 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <LinearLayout style="@style/linear_style_zsjz">
+            <LinearLayout style="@style/linear_style_zsjz"
+                android:id="@+id/zfzyc_Lin">
 
                 <TextView
                     style="@style/zs_title"
@@ -39,8 +40,39 @@
                         android:text="--" />
                 </LinearLayout>
 
+
+
                 <TextView style="@style/textview_driver" />
 
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style_zqjg"
+                        android:layout_weight="1"
+                        android:text="总施氮量合计" />
+
+                    <EditText
+                        android:id="@+id/zfzycnph_hj_sdl"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/zfzycnph_hj_jshns"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/zfzycnph_hj_mj"
+                        style="@style/edittext_style_zqjg"
+                        android:enabled="true"
+                        android:hint="面积" />
+
+                    <EditText
+                        android:id="@+id/zfzycnph_hj_zsdl"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+                </LinearLayout>
+                <TextView style="@style/textview_driver" />
                 <LinearLayout style="@style/linear_style">
 
                     <TextView
@@ -76,12 +108,18 @@
                     <EditText
                         android:id="@+id/zfzycnph_sd_sdl"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:text="--"
+                        android:visibility="gone"/>
+                    <Spinner
+                        android:id="@+id/zfzyc_sd_bfb"
+                        style="@style/spinner_style"></Spinner>
 
                     <EditText
+                        android:text="1"
+                        android:enabled="true"
                         android:id="@+id/zfzycnph_sd_jshns"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                         />
 
                     <EditText
                         android:id="@+id/zfzycnph_sd_mj"
@@ -107,12 +145,17 @@
                     <EditText
                         android:id="@+id/zfzycnph_xm_sdl"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:text="--"
+                        android:visibility="gone"/>
+                    <Spinner
+                        android:id="@+id/zfzyc_xm_bfb"
+                        style="@style/spinner_style"></Spinner>
 
                     <EditText
+                        android:text="1"
+                        android:enabled="true"
                         android:id="@+id/zfzycnph_xm_jshns"
-                        style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        style="@style/edittext_style_zqjg" />
 
                     <EditText
                         android:id="@+id/zfzycnph_xm_mj"
@@ -138,12 +181,17 @@
                     <EditText
                         android:id="@+id/zfzycnph_ym_sdl"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:text="--"
+                        android:visibility="gone"/>
+                    <Spinner
+                        android:id="@+id/zfzyc_ym_bfb"
+                        style="@style/spinner_style"></Spinner>
 
                     <EditText
+                        android:text="1"
+                        android:enabled="true"
                         android:id="@+id/zfzycnph_ym_jshns"
-                        style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        style="@style/edittext_style_zqjg" />
 
                     <EditText
                         android:id="@+id/zfzycnph_ym_mj"
@@ -169,12 +217,18 @@
                     <EditText
                         android:id="@+id/zfzycnph_yc_sdl"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:text="--"
+                        android:visibility="gone"/>
+                    <Spinner
+                        android:id="@+id/zfzyc_yc_bfb"
+                        style="@style/spinner_style"></Spinner>
 
                     <EditText
+                        android:text="1"
+                        android:enabled="true"
                         android:id="@+id/zfzycnph_yc_jshns"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                         />
 
                     <EditText
                         android:id="@+id/zfzycnph_yc_mj"
@@ -200,12 +254,18 @@
                     <EditText
                         android:id="@+id/zfzycnph_gs_sdl"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:text="--"
+                        android:visibility="gone"/>
+                    <Spinner
+                        android:id="@+id/zfzyc_gs_bfb"
+                        style="@style/spinner_style"></Spinner>
 
                     <EditText
+                        android:text="1"
+                        android:enabled="true"
                         android:id="@+id/zfzycnph_gs_jshns"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        />
 
                     <EditText
                         android:id="@+id/zfzycnph_gs_mj"
@@ -231,12 +291,18 @@
                     <EditText
                         android:id="@+id/zfzycnph_mls_sdl"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:text="--"
+                        android:visibility="gone"/>
+                    <Spinner
+                        android:id="@+id/zfzyc_mls_bfb"
+                        style="@style/spinner_style"></Spinner>
 
                     <EditText
+                        android:text="1"
+                        android:enabled="true"
                         android:id="@+id/zfzycnph_mls_jshns"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                         />
 
                     <EditText
                         android:id="@+id/zfzycnph_mls_mj"
@@ -262,12 +328,18 @@
                     <EditText
                         android:id="@+id/zfzycnph_qglsc_sdl"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:text="--"
+                        android:visibility="gone"/>
+                    <Spinner
+                        android:id="@+id/zfzyc_qglsc_bfb"
+                        style="@style/spinner_style"></Spinner>
 
                     <EditText
+                        android:text="1"
+                        android:enabled="true"
                         android:id="@+id/zfzycnph_qglsc_jshns"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                         />
 
                     <EditText
                         android:id="@+id/zfzycnph_qglsc_mj"
@@ -293,12 +365,18 @@
                     <EditText
                         android:id="@+id/zfzycnph_ggsc_sdl"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:text="--"
+                        android:visibility="gone"/>
+                    <Spinner
+                        android:id="@+id/zfzyc_glsc_bfb"
+                        style="@style/spinner_style"></Spinner>
 
                     <EditText
+                        android:text="1"
+                        android:enabled="true"
                         android:id="@+id/zfzycnph_ggsc_jshns"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        />
 
                     <EditText
                         android:id="@+id/zfzycnph_ggsc_mj"
@@ -324,12 +402,17 @@
                     <EditText
                         android:id="@+id/zfzycnph_yclsc_sdl"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:text="--"
+                        android:visibility="gone"/>
+                    <Spinner
+                        android:id="@+id/zfzyc_yclsc_bfb"
+                        style="@style/spinner_style"></Spinner>
 
                     <EditText
+                        android:text="1"
+                        android:enabled="true"
                         android:id="@+id/zfzycnph_yclsc_jshns"
-                        style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        style="@style/edittext_style_zqjg" />
 
                     <EditText
                         android:id="@+id/zfzycnph_yclsc_mj"
@@ -355,12 +438,17 @@
                     <EditText
                         android:id="@+id/zfzycnph_gclsc_sdl"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:text="--"
+                        android:visibility="gone"/>
+                    <Spinner
+                        android:id="@+id/zfzyc_gclsc_bfb"
+                        style="@style/spinner_style"></Spinner>
 
                     <EditText
+                        android:text="1"
+                        android:enabled="true"
                         android:id="@+id/zfzycnph_gclsc_jshns"
-                        style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        style="@style/edittext_style_zqjg" />
 
                     <EditText
                         android:id="@+id/zfzycnph_gclsc_mj"
@@ -386,12 +474,18 @@
                     <EditText
                         android:id="@+id/zfzycnph_dlsc_sdl"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:text="--"
+                        android:visibility="gone"/>
+                    <Spinner
+                        android:id="@+id/zfzyc_dlsc_bfb"
+                        style="@style/spinner_style"></Spinner>
 
                     <EditText
+                        android:text="1"
+                        android:enabled="true"
                         android:id="@+id/zfzycnph_dlsc_jshns"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                         />
 
                     <EditText
                         android:id="@+id/zfzycnph_dlsc_mj"
@@ -417,12 +511,17 @@
                     <EditText
                         android:id="@+id/zfzycnph_cslsc_sdl"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:text="--"
+                        android:visibility="gone"/>
+                    <Spinner
+                        android:id="@+id/zfzyc_cslsc_bfb"
+                        style="@style/spinner_style"></Spinner>
 
                     <EditText
+                        android:text="1"
+                        android:enabled="true"
                         android:id="@+id/zfzycnph_cslsc_jshns"
-                        style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        style="@style/edittext_style_zqjg" />
 
                     <EditText
                         android:id="@+id/zfzycnph_cslsc_mj"
@@ -448,12 +547,17 @@
                     <EditText
                         android:id="@+id/zfzycnph_lygs_sdl"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:text="--"
+                        android:visibility="gone"/>
+                    <Spinner
+                        android:id="@+id/zfzyc_lygs_bfb"
+                        style="@style/spinner_style"></Spinner>
 
                     <EditText
+                        android:text="1"
+                        android:enabled="true"
                         android:id="@+id/zfzycnph_lygs_jshns"
-                        style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        style="@style/edittext_style_zqjg" />
 
                     <EditText
                         android:id="@+id/zfzycnph_lygs_mj"
@@ -479,12 +583,17 @@
                     <EditText
                         android:id="@+id/zfzycnph_clgs_sdl"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:text="--"
+                        android:visibility="gone"/>
+                    <Spinner
+                        android:id="@+id/zfzyc_clgs_bfb"
+                        style="@style/spinner_style"></Spinner>
 
                     <EditText
+                        android:text="1"
+                        android:enabled="true"
                         android:id="@+id/zfzycnph_clgs_jshns"
-                        style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        style="@style/edittext_style_zqjg" />
 
                     <EditText
                         android:id="@+id/zfzycnph_clgs_mj"
@@ -510,12 +619,18 @@
                     <EditText
                         android:id="@+id/zfzycnph_cy_sdl"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:text="--"
+                        android:visibility="gone"/>
+                    <Spinner
+                        android:id="@+id/zfzyc_cy_bfb"
+                        style="@style/spinner_style"></Spinner>
 
                     <EditText
+                        android:text="1"
+                        android:enabled="true"
                         android:id="@+id/zfzycnph_cy_jshns"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                         />
 
                     <EditText
                         android:id="@+id/zfzycnph_cy_mj"
@@ -541,12 +656,18 @@
                     <EditText
                         android:id="@+id/zfzycnph_mc_sdl"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:text="--"
+                        android:visibility="gone"/>
+                    <Spinner
+                        android:id="@+id/zfzyc_mc_bfb"
+                        style="@style/spinner_style"></Spinner>
 
                     <EditText
+                        android:text="1"
+                        android:enabled="true"
                         android:id="@+id/zfzycnph_mc_jshns"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                         />
 
                     <EditText
                         android:id="@+id/zfzycnph_mc_mj"
@@ -560,42 +681,15 @@
                         android:text="--" />
                 </LinearLayout>
 
-                <TextView style="@style/textview_driver" />
 
-                <LinearLayout style="@style/linear_style">
-
-                    <TextView
-                        style="@style/textview_style_zqjg"
-                        android:layout_weight="1"
-                        android:text="合计" />
-
-                    <EditText
-                        android:id="@+id/zfzycnph_hj_sdl"
-                        style="@style/edittext_style_zqjg"
-                        android:text="--" />
-
-                    <EditText
-                        android:id="@+id/zfzycnph_hj_jshns"
-                        style="@style/edittext_style_zqjg"
-                        android:text="--" />
-
-                    <EditText
-                        android:id="@+id/zfzycnph_hj_mj"
-                        style="@style/edittext_style_zqjg"
-                        android:enabled="true"
-                        android:hint="面积" />
-
-                    <EditText
-                        android:id="@+id/zfzycnph_hj_zsdl"
-                        style="@style/edittext_style_zqjg"
-                        android:text="--" />
-                </LinearLayout>
 
                 <TextView style="@style/textview_driver" />
 
-                <LinearLayout style="@style/linear_style">
+                <LinearLayout style="@style/linear_style"
+                    android:visibility="gone">
 
                     <TextView
+
                         style="@style/textview_style_zqjg"
                         android:layout_weight="1"
                         android:text="差值" />
@@ -624,7 +718,8 @@
 
             </LinearLayout>
 
-            <LinearLayout style="@style/linear_style_zsjz">
+            <LinearLayout style="@style/linear_style_zsjz"
+                android:id="@+id/byzzfzc_Lin">
 
                 <TextView
                     style="@style/zs_title"
@@ -640,6 +735,36 @@
 
                     <EditText
                         android:id="@+id/zzfzcdph_zcdl"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+                </LinearLayout>
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style_zqjg"
+                        android:layout_weight="1"
+                        android:text="总施氮量合计" />
+
+                    <EditText
+                        android:id="@+id/zzfzcdph_hj_sdl"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/zzfzcdph_hj_jshns"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/zzfzcdph_hj_mj"
+                        style="@style/edittext_style_zqjg"
+                        android:enabled="true"
+                        android:hint="面积" />
+
+                    <EditText
+                        android:id="@+id/zzfzcdph_hj_zsdl"
                         style="@style/edittext_style_zqjg"
                         android:text="--" />
                 </LinearLayout>
@@ -681,12 +806,18 @@
                     <EditText
                         android:id="@+id/zzfzcdph_sd_sdl"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:text="--"
+                        android:visibility="gone"/>
+                    <Spinner
+                        android:id="@+id/byzzfzc_sd_bfb"
+                        style="@style/spinner_style"></Spinner>
 
                     <EditText
+                        android:text="1"
+                        android:enabled="true"
                         android:id="@+id/zzfzcdph_sd_jshns"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                         />
 
                     <EditText
                         android:id="@+id/zzfzcdph_sd_mj"
@@ -712,12 +843,18 @@
                     <EditText
                         android:id="@+id/zzfzcdph_xm_sdl"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:text="--"
+                        android:visibility="gone"/>
+                    <Spinner
+                        android:id="@+id/byzzfzc_xm_bfb"
+                        style="@style/spinner_style"></Spinner>
 
                     <EditText
+                        android:text="1"
+                        android:enabled="true"
                         android:id="@+id/zzfzcdph_xm_jshns"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                         />
 
                     <EditText
                         android:id="@+id/zzfzcdph_xm_mj"
@@ -743,12 +880,18 @@
                     <EditText
                         android:id="@+id/zzfzcdph_ym_sdl"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:text="--"
+                        android:visibility="gone"/>
+                    <Spinner
+                        android:id="@+id/byzzfzc_ym_bfb"
+                        style="@style/spinner_style"></Spinner>
 
                     <EditText
+                        android:text="1"
+                        android:enabled="true"
                         android:id="@+id/zzfzcdph_ym_jshns"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                         />
 
                     <EditText
                         android:id="@+id/zzfzcdph_ym_mj"
@@ -774,12 +917,18 @@
                     <EditText
                         android:id="@+id/zzfzcdph_yc_sdl"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:text="--"
+                        android:visibility="gone"/>
+                    <Spinner
+                        android:id="@+id/byzzfzc_yc_bfb"
+                        style="@style/spinner_style"></Spinner>
 
                     <EditText
+                        android:text="1"
+                        android:enabled="true"
                         android:id="@+id/zzfzcdph_yc_jshns"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                         />
 
                     <EditText
                         android:id="@+id/zzfzcdph_yc_mj"
@@ -805,12 +954,18 @@
                     <EditText
                         android:id="@+id/zzfzcdph_gs_sdl"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:text="--"
+                        android:visibility="gone"/>
+                    <Spinner
+                        android:id="@+id/byzzfzc_gs_bfb"
+                        style="@style/spinner_style"></Spinner>
 
                     <EditText
+                        android:text="1"
+                        android:enabled="true"
                         android:id="@+id/zzfzcdph_gs_jshns"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                         />
 
                     <EditText
                         android:id="@+id/zzfzcdph_gs_mj"
@@ -836,12 +991,18 @@
                     <EditText
                         android:id="@+id/zzfzcdph_mls_sdl"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:text="--"
+                        android:visibility="gone"/>
+                    <Spinner
+                        android:id="@+id/byzzfzc_mls_bfb"
+                        style="@style/spinner_style"></Spinner>
 
                     <EditText
+                        android:text="1"
+                        android:enabled="true"
                         android:id="@+id/zzfzcdph_mls_jshns"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                         />
 
                     <EditText
                         android:id="@+id/zzfzcdph_mls_mj"
@@ -867,12 +1028,18 @@
                     <EditText
                         android:id="@+id/zzfzcdph_qglsc_sdl"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:text="--"
+                        android:visibility="gone"/>
+                    <Spinner
+                        android:id="@+id/byzzfzc_jglsc_bfb"
+                        style="@style/spinner_style"></Spinner>
 
                     <EditText
+                        android:text="1"
+                        android:enabled="true"
                         android:id="@+id/zzfzcdph_qglsc_jshns"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                         />
 
                     <EditText
                         android:id="@+id/zzfzcdph_qglsc_mj"
@@ -898,12 +1065,18 @@
                     <EditText
                         android:id="@+id/zzfzcdph_ggsc_sdl"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:text="--"
+                        android:visibility="gone"/>
+                    <Spinner
+                        android:id="@+id/byzzfzc_glsc_bfb"
+                        style="@style/spinner_style"></Spinner>
 
                     <EditText
+                        android:text="1"
+                        android:enabled="true"
                         android:id="@+id/zzfzcdph_ggsc_jshns"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                         />
 
                     <EditText
                         android:id="@+id/zzfzcdph_ggsc_mj"
@@ -929,12 +1102,18 @@
                     <EditText
                         android:id="@+id/zzfzcdph_yclsc_sdl"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:text="--"
+                        android:visibility="gone"/>
+                    <Spinner
+                        android:id="@+id/byzzfzc_yclsc_bfb"
+                        style="@style/spinner_style"></Spinner>
 
                     <EditText
+                        android:text="1"
+                        android:enabled="true"
                         android:id="@+id/zzfzcdph_yclsc_jshns"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        />
 
                     <EditText
                         android:id="@+id/zzfzcdph_yclsc_mj"
@@ -960,12 +1139,18 @@
                     <EditText
                         android:id="@+id/zzfzcdph_gclsc_sdl"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:text="--"
+                        android:visibility="gone"/>
+                    <Spinner
+                        android:id="@+id/byzzfzc_gclsc_bfb"
+                        style="@style/spinner_style"></Spinner>
 
                     <EditText
+                        android:text="1"
+                        android:enabled="true"
                         android:id="@+id/zzfzcdph_gclsc_jshns"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                         />
 
                     <EditText
                         android:id="@+id/zzfzcdph_gclsc_mj"
@@ -991,12 +1176,18 @@
                     <EditText
                         android:id="@+id/zzfzcdph_dlsc_sdl"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:text="--"
+                        android:visibility="gone"/>
+                    <Spinner
+                        android:id="@+id/byzzfzc_dlsc_bfb"
+                        style="@style/spinner_style"></Spinner>
 
                     <EditText
+                        android:text="1"
+                        android:enabled="true"
                         android:id="@+id/zzfzcdph_dlsc_jshns"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                         />
 
                     <EditText
                         android:id="@+id/zzfzcdph_dlsc_mj"
@@ -1022,12 +1213,18 @@
                     <EditText
                         android:id="@+id/zzfzcdph_cslsc_sdl"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:text="--"
+                        android:visibility="gone"/>
+                    <Spinner
+                        android:id="@+id/byzzfzc_cslsc_bfb"
+                        style="@style/spinner_style"></Spinner>
 
                     <EditText
+                        android:text="1"
+                        android:enabled="true"
                         android:id="@+id/zzfzcdph_cslsc_jshns"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                         />
 
                     <EditText
                         android:id="@+id/zzfzcdph_cslsc_mj"
@@ -1053,12 +1250,18 @@
                     <EditText
                         android:id="@+id/zzfzcdph_lygs_sdl"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:text="--"
+                        android:visibility="gone"/>
+                    <Spinner
+                        android:id="@+id/byzzfzc_lygs_bfb"
+                        style="@style/spinner_style"></Spinner>
 
                     <EditText
+                        android:text="1"
+                        android:enabled="true"
                         android:id="@+id/zzfzcdph_lygs_jshns"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        />
 
                     <EditText
                         android:id="@+id/zzfzcdph_lygs_mj"
@@ -1084,12 +1287,18 @@
                     <EditText
                         android:id="@+id/zzfzcdph_clgs_sdl"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:text="--"
+                        android:visibility="gone"/>
+                    <Spinner
+                        android:id="@+id/byzzfzc_clgs_bfb"
+                        style="@style/spinner_style"></Spinner>
 
                     <EditText
+                        android:text="1"
+                        android:enabled="true"
                         android:id="@+id/zzfzcdph_clgs_jshns"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                         />
 
                     <EditText
                         android:id="@+id/zzfzcdph_clgs_mj"
@@ -1115,12 +1324,18 @@
                     <EditText
                         android:id="@+id/zzfzcdph_cy_sdl"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:text="--"
+                        android:visibility="gone"/>
+                    <Spinner
+                        android:id="@+id/byzzfzc_cy_bfb"
+                        style="@style/spinner_style"></Spinner>
 
                     <EditText
+                        android:text="1"
+                        android:enabled="true"
                         android:id="@+id/zzfzcdph_cy_jshns"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        />
 
                     <EditText
                         android:id="@+id/zzfzcdph_cy_mj"
@@ -1146,12 +1361,18 @@
                     <EditText
                         android:id="@+id/zzfzcdph_mc_sdl"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:text="--"
+                        android:visibility="gone"/>
+                    <Spinner
+                        android:id="@+id/byzzfzc_mc_bfb"
+                        style="@style/spinner_style"></Spinner>
 
                     <EditText
+                        android:text="1"
+                        android:enabled="true"
                         android:id="@+id/zzfzcdph_mc_jshns"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                         />
 
                     <EditText
                         android:id="@+id/zzfzcdph_mc_mj"
@@ -1165,40 +1386,12 @@
                         android:text="--" />
                 </LinearLayout>
 
-                <TextView style="@style/textview_driver" />
 
-                <LinearLayout style="@style/linear_style">
-
-                    <TextView
-                        style="@style/textview_style_zqjg"
-                        android:layout_weight="1"
-                        android:text="合计" />
-
-                    <EditText
-                        android:id="@+id/zzfzcdph_hj_sdl"
-                        style="@style/edittext_style_zqjg"
-                        android:text="--" />
-
-                    <EditText
-                        android:id="@+id/zzfzcdph_hj_jshns"
-                        style="@style/edittext_style_zqjg"
-                        android:text="--" />
-
-                    <EditText
-                        android:id="@+id/zzfzcdph_hj_mj"
-                        style="@style/edittext_style_zqjg"
-                        android:enabled="true"
-                        android:hint="面积" />
-
-                    <EditText
-                        android:id="@+id/zzfzcdph_hj_zsdl"
-                        style="@style/edittext_style_zqjg"
-                        android:text="--" />
-                </LinearLayout>
 
                 <TextView style="@style/textview_driver" />
 
-                <LinearLayout style="@style/linear_style">
+                <LinearLayout style="@style/linear_style"
+                    android:visibility="gone">
 
                     <TextView
                         style="@style/textview_style_zqjg"
@@ -1229,7 +1422,8 @@
 
             </LinearLayout>
 
-            <LinearLayout style="@style/linear_style_zsjz">
+            <LinearLayout style="@style/linear_style_zsjz"
+                android:id="@+id/dnzzfzc_Lin">
 
                 <TextView
                     style="@style/zs_title"
@@ -1248,6 +1442,37 @@
                         style="@style/edittext_style_zqjg"
                         android:text="--" />
                 </LinearLayout>
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style_zqjg"
+                        android:layout_weight="1"
+                        android:text="总施氮量合计" />
+
+                    <EditText
+                        android:id="@+id/dnzzfzcdph_hj_sdl"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/dnzzfzcdph_hj_jshns"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/dnzzfzcdph_hj_mj"
+                        style="@style/edittext_style_zqjg"
+                        android:enabled="true"
+                        android:hint="面积" />
+
+                    <EditText
+                        android:id="@+id/dnzzfzcdph_hj_zsdl"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
+                </LinearLayout>
+
 
                 <TextView style="@style/textview_driver" />
 
@@ -1286,12 +1511,18 @@
                     <EditText
                         android:id="@+id/dnzzfzcdph_sd_sdl"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:text="--"
+                        android:visibility="gone"/>
+                    <Spinner
+                        android:id="@+id/dnzzfzc_sd_bfb"
+                        style="@style/spinner_style"></Spinner>
 
                     <EditText
+                        android:text="1"
+                        android:enabled="true"
                         android:id="@+id/dnzzfzcdph_sd_jshns"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                         />
 
                     <EditText
                         android:id="@+id/dnzzfzcdph_sd_mj"
@@ -1317,12 +1548,18 @@
                     <EditText
                         android:id="@+id/dnzzfzcdph_xm_sdl"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:text="--"
+                        android:visibility="gone"/>
+                    <Spinner
+                        android:id="@+id/dnzzfzc_xm_bfb"
+                        style="@style/spinner_style"></Spinner>
 
                     <EditText
+                        android:text="1"
+                        android:enabled="true"
                         android:id="@+id/dnzzfzcdph_xm_jshns"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                         />
 
                     <EditText
                         android:id="@+id/dnzzfzcdph_xm_mj"
@@ -1348,12 +1585,18 @@
                     <EditText
                         android:id="@+id/dnzzfzcdph_ym_sdl"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:text="--"
+                        android:visibility="gone"/>
+                    <Spinner
+                        android:id="@+id/dnzzfzc_ym_bfb"
+                        style="@style/spinner_style"></Spinner>
 
                     <EditText
+                        android:text="1"
+                        android:enabled="true"
                         android:id="@+id/dnzzfzcdph_ym_jshns"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                         />
 
                     <EditText
                         android:id="@+id/dnzzfzcdph_ym_mj"
@@ -1379,12 +1622,18 @@
                     <EditText
                         android:id="@+id/dnzzfzcdph_yc_sdl"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:text="--"
+                        android:visibility="gone"/>
+                    <Spinner
+                        android:id="@+id/dnzzfzc_yc_bfb"
+                        style="@style/spinner_style"></Spinner>
 
                     <EditText
+                        android:text="1"
+                        android:enabled="true"
                         android:id="@+id/dnzzfzcdph_yc_jshns"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        />
 
                     <EditText
                         android:id="@+id/dnzzfzcdph_yc_mj"
@@ -1410,12 +1659,18 @@
                     <EditText
                         android:id="@+id/dnzzfzcdph_gs_sdl"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:text="--"
+                        android:visibility="gone"/>
+                    <Spinner
+                        android:id="@+id/dnzzfzc_gs_bfb"
+                        style="@style/spinner_style"></Spinner>
 
                     <EditText
+                        android:text="1"
+                        android:enabled="true"
                         android:id="@+id/dnzzfzcdph_gs_jshns"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                         />
 
                     <EditText
                         android:id="@+id/dnzzfzcdph_gs_mj"
@@ -1441,12 +1696,18 @@
                     <EditText
                         android:id="@+id/dnzzfzcdph_mls_sdl"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:text="--"
+                        android:visibility="gone"/>
+                    <Spinner
+                        android:id="@+id/dnzzfzc_mls_bfb"
+                        style="@style/spinner_style"></Spinner>
 
                     <EditText
+                        android:text="1"
+                        android:enabled="true"
                         android:id="@+id/dnzzfzcdph_mls_jshns"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                         />
 
                     <EditText
                         android:id="@+id/dnzzfzcdph_mls_mj"
@@ -1472,12 +1733,18 @@
                     <EditText
                         android:id="@+id/dnzzfzcdph_qglsc_sdl"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:text="--"
+                        android:visibility="gone"/>
+                    <Spinner
+                        android:id="@+id/dnzzfzc_jglsc_bfb"
+                        style="@style/spinner_style"></Spinner>
 
                     <EditText
+                        android:text="1"
+                        android:enabled="true"
                         android:id="@+id/dnzzfzcdph_qglsc_jshns"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        />
 
                     <EditText
                         android:id="@+id/dnzzfzcdph_qglsc_mj"
@@ -1503,12 +1770,18 @@
                     <EditText
                         android:id="@+id/dnzzfzcdph_ggsc_sdl"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:text="--"
+                        android:visibility="gone"/>
+                    <Spinner
+                        android:id="@+id/dnzzfzc_glsc_bfb"
+                        style="@style/spinner_style"></Spinner>
 
                     <EditText
+                        android:text="1"
+                        android:enabled="true"
                         android:id="@+id/dnzzfzcdph_ggsc_jshns"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                         />
 
                     <EditText
                         android:id="@+id/dnzzfzcdph_ggsc_mj"
@@ -1534,12 +1807,18 @@
                     <EditText
                         android:id="@+id/dnzzfzcdph_yclsc_sdl"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:text="--"
+                        android:visibility="gone"/>
+                    <Spinner
+                        android:id="@+id/dnzzfzc_yclsc_bfb"
+                        style="@style/spinner_style"></Spinner>
 
                     <EditText
+                        android:text="1"
+                        android:enabled="true"
                         android:id="@+id/dnzzfzcdph_yclsc_jshns"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                         />
 
                     <EditText
                         android:id="@+id/dnzzfzcdph_yclsc_mj"
@@ -1565,12 +1844,18 @@
                     <EditText
                         android:id="@+id/dnzzfzcdph_gclsc_sdl"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:text="--"
+                        android:visibility="gone"/>
+                    <Spinner
+                        android:id="@+id/dnzzfzc_gclsc_bfb"
+                        style="@style/spinner_style"></Spinner>
 
                     <EditText
+                        android:text="1"
+                        android:enabled="true"
                         android:id="@+id/dnzzfzcdph_gclsc_jshns"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        />
 
                     <EditText
                         android:id="@+id/dnzzfzcdph_gclsc_mj"
@@ -1596,12 +1881,18 @@
                     <EditText
                         android:id="@+id/dnzzfzcdph_dlsc_sdl"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:text="--"
+                        android:visibility="gone"/>
+                    <Spinner
+                        android:id="@+id/dnzzfzc_dlsc_bfb"
+                        style="@style/spinner_style"></Spinner>
 
                     <EditText
+                        android:text="1"
+                        android:enabled="true"
                         android:id="@+id/dnzzfzcdph_dlsc_jshns"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        />
 
                     <EditText
                         android:id="@+id/dnzzfzcdph_dlsc_mj"
@@ -1627,12 +1918,18 @@
                     <EditText
                         android:id="@+id/dnzzfzcdph_cslsc_sdl"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:text="--"
+                        android:visibility="gone"/>
+                    <Spinner
+                        android:id="@+id/dnzzfzc_cslsc_bfb"
+                        style="@style/spinner_style"></Spinner>
 
                     <EditText
+                        android:text="1"
+                        android:enabled="true"
                         android:id="@+id/dnzzfzcdph_cslsc_jshns"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        />
 
                     <EditText
                         android:id="@+id/dnzzfzcdph_cslsc_mj"
@@ -1658,12 +1955,18 @@
                     <EditText
                         android:id="@+id/dnzzfzcdph_lygs_sdl"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:text="--"
+                        android:visibility="gone"/>
+                    <Spinner
+                        android:id="@+id/dnzzfzc_lygs_bfb"
+                        style="@style/spinner_style"></Spinner>
 
                     <EditText
+                        android:text="1"
+                        android:enabled="true"
                         android:id="@+id/dnzzfzcdph_lygs_jshns"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                         />
 
                     <EditText
                         android:id="@+id/dnzzfzcdph_lygs_mj"
@@ -1689,12 +1992,18 @@
                     <EditText
                         android:id="@+id/dnzzfzcdph_clgs_sdl"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:text="--"
+                        android:visibility="gone"/>
+                    <Spinner
+                        android:id="@+id/dnzzfzc_clgs_bfb"
+                        style="@style/spinner_style"></Spinner>
 
                     <EditText
+                        android:text="1"
+                        android:enabled="true"
                         android:id="@+id/dnzzfzcdph_clgs_jshns"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                         />
 
                     <EditText
                         android:id="@+id/dnzzfzcdph_clgs_mj"
@@ -1720,12 +2029,18 @@
                     <EditText
                         android:id="@+id/dnzzfzcdph_cy_sdl"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:text="--"
+                        android:visibility="gone"/>
+                    <Spinner
+                        android:id="@+id/dnzzfzc_cy_bfb"
+                        style="@style/spinner_style"></Spinner>
 
                     <EditText
+                        android:text="1"
+                        android:enabled="true"
                         android:id="@+id/dnzzfzcdph_cy_jshns"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        />
 
                     <EditText
                         android:id="@+id/dnzzfzcdph_cy_mj"
@@ -1751,12 +2066,18 @@
                     <EditText
                         android:id="@+id/dnzzfzcdph_mc_sdl"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:text="--"
+                        android:visibility="gone"/>
+                    <Spinner
+                        android:id="@+id/dnzzfzc_mc_bfb"
+                        style="@style/spinner_style"></Spinner>
 
                     <EditText
+                        android:text="1"
+                        android:enabled="true"
                         android:id="@+id/dnzzfzcdph_mc_jshns"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                         />
 
                     <EditText
                         android:id="@+id/dnzzfzcdph_mc_mj"
@@ -1770,40 +2091,11 @@
                         android:text="--" />
                 </LinearLayout>
 
-                <TextView style="@style/textview_driver" />
-
-                <LinearLayout style="@style/linear_style">
-
-                    <TextView
-                        style="@style/textview_style_zqjg"
-                        android:layout_weight="1"
-                        android:text="合计" />
-
-                    <EditText
-                        android:id="@+id/dnzzfzcdph_hj_sdl"
-                        style="@style/edittext_style_zqjg"
-                        android:text="--" />
-
-                    <EditText
-                        android:id="@+id/dnzzfzcdph_hj_jshns"
-                        style="@style/edittext_style_zqjg"
-                        android:text="--" />
-
-                    <EditText
-                        android:id="@+id/dnzzfzcdph_hj_mj"
-                        style="@style/edittext_style_zqjg"
-                        android:enabled="true"
-                        android:hint="面积" />
-
-                    <EditText
-                        android:id="@+id/dnzzfzcdph_hj_zsdl"
-                        style="@style/edittext_style_zqjg"
-                        android:text="--" />
-                </LinearLayout>
 
                 <TextView style="@style/textview_driver" />
 
-                <LinearLayout style="@style/linear_style">
+                <LinearLayout style="@style/linear_style"
+                    android:visibility="gone">
 
                     <TextView
                         style="@style/textview_style_zqjg"

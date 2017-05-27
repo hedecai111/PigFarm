@@ -87,9 +87,12 @@ public class SqlOpenHelper extends SQLiteOpenHelper {
      *
      */
     public long addSb(int sblx,String sbmc,String sbxh,String dw,int sl,double dj){
+        if (querySbByName(sbmc)){//如果是返回0，则说明已经添加过了
+            return 0;
+        }
         SQLiteDatabase db = getReadableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put("sblx",sblx);
+        contentValues.put("zslx",sblx);
         contentValues.put("sbmc",sbmc);
         contentValues.put("sbxh",sbxh);
         contentValues.put("dw",dw);
@@ -105,7 +108,7 @@ public class SqlOpenHelper extends SQLiteOpenHelper {
      */
     public List<SbEntity> querySbByLx(int sblx){
         SQLiteDatabase db = getReadableDatabase();
-        Cursor cursor = db.query("sbcs",new String[]{"sblx","sbmc","sbxh","dw","sl","sbcs"},"sblx="+sblx,null,null,null,null,null);
+        Cursor cursor = db.query("sbcs",new String[]{"zslx","sbmc","sbxh","dw","sl","dj"},"sblx='"+sblx+"'",null,null,null,null,null);
 
         if (cursor != null && cursor.getCount() > 0){
             List<SbEntity> list = new ArrayList<>();
@@ -122,6 +125,62 @@ public class SqlOpenHelper extends SQLiteOpenHelper {
             return list;
         }else {
             return null;
+        }
+    }
+
+    /**
+     * 根据类型查询设备参数
+     * @return
+     */
+    public List<SbEntity> queryAllSb(){
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.query("sbcs",new String[]{"zslx","sbmc","sbxh","dw","sl","dj"},null,null,null,null,null,null);
+
+        if (cursor != null && cursor.getCount() > 0){
+            List<SbEntity> list = new ArrayList<>();
+            while (cursor.moveToNext()){
+                SbEntity sbEntity = new SbEntity();
+                sbEntity.setSblx(cursor.getInt(0));
+                sbEntity.setSbmc(cursor.getString(1));
+                sbEntity.setSbxh(cursor.getString(2));
+                sbEntity.setDw(cursor.getString(3));
+                sbEntity.setSl(cursor.getInt(4));
+                sbEntity.setDj(cursor.getDouble(5));
+                list.add(sbEntity);
+            }
+            cursor.close();
+            return list;
+        }else {
+            if (cursor != null){
+                cursor.close();
+            }
+            return null;
+        }
+    }
+
+    public long updateSb(SbEntity sbEntity){
+        SQLiteDatabase db = getReadableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("zslx",sbEntity.getSblx());
+        contentValues.put("sbmc",sbEntity.getSbmc());
+        contentValues.put("sbxh",sbEntity.getSbxh());
+        contentValues.put("dw",sbEntity.getDw());
+        contentValues.put("sl",sbEntity.getSl());
+        contentValues.put("dj",sbEntity.getDj());
+        long count = db.update("sbcs",contentValues,"sbmc='"+sbEntity.getSbmc()+"' ",null);
+        return count;
+    }
+    public boolean querySbByName(String name){
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.query("sbcs",new String[]{"zslx","sbmc","sbxh","dw","sl","dj"},"sbmc='"+name+"'",null,null,null,null,null);
+
+        if (cursor != null && cursor.getCount() > 0){
+            cursor.close();
+            return true;
+        }else {
+            if (cursor != null)
+                cursor.close();
+            return false;
         }
     }
 }

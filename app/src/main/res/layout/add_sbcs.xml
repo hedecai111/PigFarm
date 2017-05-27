@@ -27,6 +27,7 @@
             android:padding="10dp"
             android:text="猪舍类型："/>
         <Spinner
+            android:id="@+id/zslx"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center"
@@ -107,6 +108,7 @@
             android:layout_weight="1"
             android:background="@color/transparent"
             android:textSize="@dimen/sp_14"
+            android:inputType="number"
             android:hint="请输入数量"/>
     </LinearLayout>
     <TextView style="@style/textview_driver" />
@@ -126,6 +128,7 @@
             android:layout_weight="1"
             android:background="@color/transparent"
             android:textSize="@dimen/sp_14"
+            android:inputType="number"
             android:hint="请输入单价"/>
     </LinearLayout>
     <TextView style="@style/textview_driver" />
