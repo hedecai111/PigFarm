@@ -39,9 +39,6 @@ public class ClspzsFragment extends BaseFragment {
                              Bundle savedInstanceState) {
         view =  inflater.inflate(R.layout.fragment_clspz, container, false);
         clspzs_Edi = (EditText) view.findViewById(R.id.clspz_Edi);
-        Constant.clspzs= SpUtil.getSpLong(getContext(),"clspzs",200);
-        if (Constant.clspzs != 0)
-        clspzs_Edi.setText( Constant.clspzs+"");
         bindButton();
         return  view;
     }
@@ -62,5 +59,10 @@ public class ClspzsFragment extends BaseFragment {
         saveData(clspzs_Edi,clspzs_Edi.getText().toString());
         super.onClick(v);
 
+    }
+
+    @Override
+    public void refreshViews() {
+        clspzs_Edi.setText(Constant.clspzs+"");
     }
 }

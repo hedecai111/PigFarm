@@ -108,7 +108,7 @@ public class SqlOpenHelper extends SQLiteOpenHelper {
      */
     public List<SbEntity> querySbByLx(int sblx){
         SQLiteDatabase db = getReadableDatabase();
-        Cursor cursor = db.query("sbcs",new String[]{"zslx","sbmc","sbxh","dw","sl","dj"},"sblx='"+sblx+"'",null,null,null,null,null);
+        Cursor cursor = db.query("sbcs",new String[]{"zslx","sbmc","sbxh","dw","sl","dj"},"zslx="+sblx,null,null,null,null,null);
 
         if (cursor != null && cursor.getCount() > 0){
             List<SbEntity> list = new ArrayList<>();
@@ -182,5 +182,14 @@ public class SqlOpenHelper extends SQLiteOpenHelper {
                 cursor.close();
             return false;
         }
+    }
+
+    /**
+     * 删除所有数据
+     */
+    public void deleteAll(){
+        SQLiteDatabase db = getReadableDatabase();
+        db.delete("sbcs","1=1",null);
+        db.delete("nzwsdl","1=1",null);
     }
 }

@@ -24,6 +24,7 @@ import android.widget.Toast;
 
 import com.cd.pigfarm.R;
 import com.cd.pigfarm.adapter.ListAdapter;
+import com.cd.pigfarm.app.App;
 import com.cd.pigfarm.base.BaseFragment;
 import com.cd.pigfarm.base.InterActivity;
 import com.cd.pigfarm.fragment.AboutFragment;
@@ -36,6 +37,7 @@ import com.cd.pigfarm.fragment.JbcsFragment;
 import com.cd.pigfarm.fragment.LdhlFragment;
 import com.cd.pigfarm.fragment.NzwsdlFragment;
 import com.cd.pigfarm.fragment.TzgsFragment;
+import com.cd.pigfarm.fragment.XgxxFragment;
 import com.cd.pigfarm.fragment.XnmjFragment;
 import com.cd.pigfarm.fragment.ZlsFragment;
 import com.cd.pigfarm.fragment.ZqcrlFragment;
@@ -56,6 +58,7 @@ import com.cd.pigfarm.fyfragment.ZsjzdjyfcFragment;
 import com.cd.pigfarm.fyfragment.ZsjzmjyfcFragment;
 import com.cd.pigfarm.fyfragment.ZsjzyflFragment;
 import com.cd.pigfarm.fyfragment.ZzysfycFragment;
+import com.cd.pigfarm.util.SpUtil;
 import com.cd.pigfarm.util.Utils;
 import com.cd.pigfarm.view.PopMenus;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
@@ -112,6 +115,10 @@ public class MainActivity extends SlidingFragmentActivity implements View.OnClic
     private PopMenus popMenus1,popMenus2;
 
     private AboutFragment aboutFragment;
+
+    private XgxxFragment xgxxFragment;
+
+    private BaseFragment dqFragment;
 
 
     @Override
@@ -230,9 +237,9 @@ public class MainActivity extends SlidingFragmentActivity implements View.OnClic
 
 
     private String[] zzc_csszList = new String[]{"存栏母猪","基本参数","猪舍建筑面积设计参数","猪只饮水","粪氮含量","粪尿产生量","沼气池容量",
-            "农作物施氮量","猪舍建筑单价","各猪舍设备参数"};
+            "农作物施氮量","猪舍建筑单价","各猪舍设备参数","恢复默认"};
     private String[] yfc_csszList=new String[]{"存栏商品猪","猪舍建筑面积参数","粪氮含量","猪只饮水","粪尿产生量","沼气池容量","农作物施氮量","猪舍建筑单价"
-            ,"各猪舍设备参数"};
+            ,"各猪舍设备参数","恢复默认"};
 
     private String[] zzc_jgcxList=new String[]{"工艺","猪群结构","猪栏数","猪舍建筑面积","供水量与饮水产污量","消纳面积","投资估算"};
     private String[] yfc_jgcxList=new String[]{"猪栏数","猪舍建筑面积","供水量与饮水产污量","消纳面积","投资估算"};
@@ -242,7 +249,22 @@ public class MainActivity extends SlidingFragmentActivity implements View.OnClic
         @Override
         public void onItemClick(View v, int position) {
             //Toast.makeText(getApplicationContext(),position+"",Toast.LENGTH_LONG).show();
-            setFragment(position);
+            if ((flag == 0 && position == 10) || (flag == 1 && position == 9)){
+                //点击恢复默认
+                Toast.makeText(getApplicationContext(),"恢复默认中...",Toast.LENGTH_LONG).show();
+                App app = (App) getApplication();
+                app.sqlOpenHelper.deleteAll();
+                SpUtil.clear(getApplicationContext());
+                app.initData();
+                jsDatas();
+                dqFragment.jsDatas();
+                dqFragment.refreshViews();
+                setFragment(0);
+
+            }else {
+                setFragment(position);
+            }
+
         }
     };
     PopMenus.OnItemClickListener popMenus2LItem = new PopMenus.OnItemClickListener() {
@@ -262,11 +284,29 @@ public class MainActivity extends SlidingFragmentActivity implements View.OnClic
      * 计算数据，提供给Fragment调用
      */
     public void jsDatas(){
+        BaseFragment gzssbcsFragment = null;
         for (BaseFragment fragment : zzcFragmentList){
-            fragment.jsDatas();
+            if (fragment instanceof GzssbcsFragment){
+                gzssbcsFragment = fragment;
+            }else if(fragment instanceof GslyyscwlFragment){
+                fragment.jsDatas();
+                gzssbcsFragment.jsDatas();
+            }else {
+                fragment.jsDatas();
+            }
+
         }
+        BaseFragment gzssbcsyfcFragment = null;
         for (BaseFragment fragment : yfcFragment){
-            fragment.jsDatas();
+            if (fragment instanceof GzssbcsYfcFragment){
+                gzssbcsyfcFragment = fragment;
+            }else if(fragment instanceof XnmjYfcFragment){
+                fragment.jsDatas();
+                gzssbcsyfcFragment.jsDatas();
+            }else {
+                fragment.jsDatas();
+            }
+
         }
     }
 
@@ -324,25 +364,25 @@ public class MainActivity extends SlidingFragmentActivity implements View.OnClic
      */
     private void setFragment(int position){
 
-        Fragment fragment = null;
         if (flag == 0){
             if (position <= zzcFragmentList.size())
-                fragment = zzcFragmentList.get(position);
+                dqFragment = zzcFragmentList.get(position);
         }
         else if (flag == 1){
             if (position <= yfcFragment.size())
-                fragment = yfcFragment.get(position);
+                dqFragment = yfcFragment.get(position);
         }
 
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
-        ft.replace(R.id.content_Fra,fragment).commit();
+        ft.replace(R.id.content_Fra,dqFragment).commit();
 
     }
 
     private void initFragment(){
 
         aboutFragment = new AboutFragment();
+        xgxxFragment = new XgxxFragment();
         //种猪场
         zzcFragmentList = new ArrayList<>();
         ClmzFragment clmzFragment = new ClmzFragment();
@@ -443,7 +483,9 @@ public class MainActivity extends SlidingFragmentActivity implements View.OnClic
                 popMenus2.showAtLocation(v);
             }
         }else if(v == layout3){
-           Toast.makeText(getApplicationContext(),"相关信息功能模块开发中...",Toast.LENGTH_SHORT).show();
+            FragmentManager fm = getSupportFragmentManager();
+            FragmentTransaction ft = fm.beginTransaction();
+            ft.replace(R.id.content_Fra,xgxxFragment).commit();
         }else if(v == layout4){
             FragmentManager fm = getSupportFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();

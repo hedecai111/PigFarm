@@ -77,6 +77,7 @@
                     <EditText
                         android:id="@+id/gzjxqsyj_mj_Edi"
                         style="@style/edittext_style"
+                        android:enabled="false"
                         android:hint="面积" />
                 </LinearLayout>
 
@@ -155,6 +156,7 @@
                     <EditText
                         android:id="@+id/rcl_mj_Edi"
                         style="@style/edittext_style"
+                        android:enabled="false"
                         android:hint="面积" />
                 </LinearLayout>
 
@@ -233,6 +235,7 @@
                     <EditText
                         android:id="@+id/fwl_mj_Edi"
                         style="@style/edittext_style"
+                        android:enabled="false"
                         android:hint="面积" />
                 </LinearLayout>
 
@@ -311,6 +314,7 @@
                     <EditText
                         android:id="@+id/byl_mj_Edi"
                         style="@style/edittext_style"
+                        android:enabled="false"
                         android:hint="面积" />
                 </LinearLayout>
 
@@ -389,6 +393,7 @@
                     <EditText
                         android:id="@+id/szyfl_mj_Edi"
                         style="@style/edittext_style"
+                        android:enabled="false"
                         android:hint="面积" />
                 </LinearLayout>
 

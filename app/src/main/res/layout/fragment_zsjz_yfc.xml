@@ -78,6 +78,7 @@
                 <EditText
                     android:id="@+id/szyfl_mj_Edi"
                     style="@style/edittext_style"
+                    android:enabled="false"
                     android:hint="面积" />
             </LinearLayout>
 

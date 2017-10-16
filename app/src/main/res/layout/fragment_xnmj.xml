@@ -39,9 +39,6 @@
                         style="@style/edittext_style_zqjg"
                         android:text="--" />
                 </LinearLayout>
-
-
-
                 <TextView style="@style/textview_driver" />
 
                 <LinearLayout style="@style/linear_style">
@@ -49,29 +46,80 @@
                     <TextView
                         style="@style/textview_style_zqjg"
                         android:layout_weight="1"
-                        android:text="总施氮量合计" />
-
-                    <EditText
-                        android:id="@+id/zfzycnph_hj_sdl"
-                        style="@style/edittext_style_zqjg"
-                        android:text="--" />
-
-                    <EditText
-                        android:id="@+id/zfzycnph_hj_jshns"
-                        style="@style/edittext_style_zqjg"
-                        android:text="--" />
-
-                    <EditText
-                        android:id="@+id/zfzycnph_hj_mj"
-                        style="@style/edittext_style_zqjg"
-                        android:enabled="true"
-                        android:hint="面积" />
+                        android:text="施氮量合计" />
 
                     <EditText
                         android:id="@+id/zfzycnph_hj_zsdl"
                         style="@style/edittext_style_zqjg"
                         android:text="--" />
+
+                    <EditText
+                        android:id="@+id/zfzycnph_hj_sdl"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--"
+                        android:visibility="gone"/>
+
+                    <EditText
+                        android:id="@+id/zfzycnph_hj_jshns"
+                        style="@style/edittext_style_zqjg"
+                        android:textColor="#000000"
+                        android:text="面积合计" />
+
+                    <EditText
+                        android:id="@+id/zfzycnph_hj_mj"
+                        style="@style/edittext_style_zqjg"
+                        android:enabled="false"
+                        android:hint="面积" />
+
+
                 </LinearLayout>
+
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+
+                        style="@style/textview_style_zqjg"
+                        android:layout_weight="1"
+                        android:textColor="@color/red"
+                        android:text="差值" />
+
+                    <EditText
+                        android:id="@+id/zfzycnph_cz_sdl"
+                        style="@style/edittext_style_zqjg"
+                        android:textColor="@color/red"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/zfzycnph_cz_jshns"
+                        style="@style/edittext_style_zqjg"
+                        android:textColor="@color/red"
+                        android:visibility="gone"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/zfzycnph_cz_mj"
+                        style="@style/edittext_style_zqjg"
+                        android:enabled="true"
+                        android:textColor="@color/red"
+                        android:visibility="gone"
+                        android:hint="--" />
+
+                    <EditText
+                        android:id="@+id/zfzycnph_cz_zsdl"
+                        style="@style/edittext_style_zqjg"
+                        android:textColor="@color/red"
+                        android:text="--" />
+                    <Button
+                        android:id="@+id/zfzyc_czjs"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="14sp"
+                        android:text="差值分配"/>
+                </LinearLayout>
+
                 <TextView style="@style/textview_driver" />
                 <LinearLayout style="@style/linear_style">
 
@@ -81,7 +129,7 @@
 
                     <TextView
                         style="@style/textview_style_zqjg"
-                        android:text="施氮量" />
+                        android:text="有机施氮比" />
 
                     <TextView
                         style="@style/textview_style_zqjg"
@@ -683,38 +731,7 @@
 
 
 
-                <TextView style="@style/textview_driver" />
 
-                <LinearLayout style="@style/linear_style"
-                    android:visibility="gone">
-
-                    <TextView
-
-                        style="@style/textview_style_zqjg"
-                        android:layout_weight="1"
-                        android:text="差值" />
-
-                    <EditText
-                        android:id="@+id/zfzycnph_cz_sdl"
-                        style="@style/edittext_style_zqjg"
-                        android:text="--" />
-
-                    <EditText
-                        android:id="@+id/zfzycnph_cz_jshns"
-                        style="@style/edittext_style_zqjg"
-                        android:text="--" />
-
-                    <EditText
-                        android:id="@+id/zfzycnph_cz_mj"
-                        style="@style/edittext_style_zqjg"
-                        android:enabled="true"
-                        android:hint="--" />
-
-                    <EditText
-                        android:id="@+id/zfzycnph_cz_zsdl"
-                        style="@style/edittext_style_zqjg"
-                        android:text="--" />
-                </LinearLayout>
 
             </LinearLayout>
 
@@ -745,30 +762,76 @@
                     <TextView
                         style="@style/textview_style_zqjg"
                         android:layout_weight="1"
-                        android:text="总施氮量合计" />
+                        android:text="施氮量合计" />
+                    <EditText
+                        android:id="@+id/zzfzcdph_hj_zsdl"
+                        style="@style/edittext_style_zqjg"
+                        android:text="--" />
 
                     <EditText
                         android:id="@+id/zzfzcdph_hj_sdl"
                         style="@style/edittext_style_zqjg"
+                        android:visibility="gone"
                         android:text="--" />
 
                     <EditText
                         android:id="@+id/zzfzcdph_hj_jshns"
                         style="@style/edittext_style_zqjg"
-                        android:text="--" />
+                        android:textColor="#000000"
+                        android:text="面积合计" />
 
                     <EditText
                         android:id="@+id/zzfzcdph_hj_mj"
                         style="@style/edittext_style_zqjg"
-                        android:enabled="true"
+                        android:enabled="false"
                         android:hint="面积" />
 
+
+                </LinearLayout>
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style_zqjg"
+                        android:layout_weight="1"
+                        android:textColor="@color/red"
+                        android:text="差值" />
+
                     <EditText
-                        android:id="@+id/zzfzcdph_hj_zsdl"
+                        android:id="@+id/zzfzcdph_cz_sdl"
+                        style="@style/edittext_style_zqjg"
+                        android:textColor="@color/red"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/zzfzcdph_cz_jshns"
+                        style="@style/edittext_style_zqjg"
+                        android:textColor="@color/red"
+                        android:visibility="gone"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/zzfzcdph_cz_mj"
+                        style="@style/edittext_style_zqjg"
+                        android:textColor="@color/red"
+                        android:enabled="true"
+                        android:visibility="gone"
+                        android:hint="--" />
+
+                    <EditText
+                        android:id="@+id/zzfzcdph_cz_zsdl"
+                        android:textColor="@color/red"
                         style="@style/edittext_style_zqjg"
                         android:text="--" />
+                    <Button
+                        android:id="@+id/zzdzc_czjs"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="14sp"
+                        android:text="差值分配"/>
                 </LinearLayout>
-
                 <TextView style="@style/textview_driver" />
 
                 <LinearLayout style="@style/linear_style">
@@ -779,7 +842,7 @@
 
                     <TextView
                         style="@style/textview_style_zqjg"
-                        android:text="施氮量" />
+                        android:text="有机施氮比" />
 
                     <TextView
                         style="@style/textview_style_zqjg"
@@ -1388,37 +1451,7 @@
 
 
 
-                <TextView style="@style/textview_driver" />
 
-                <LinearLayout style="@style/linear_style"
-                    android:visibility="gone">
-
-                    <TextView
-                        style="@style/textview_style_zqjg"
-                        android:layout_weight="1"
-                        android:text="差值" />
-
-                    <EditText
-                        android:id="@+id/zzfzcdph_cz_sdl"
-                        style="@style/edittext_style_zqjg"
-                        android:text="--" />
-
-                    <EditText
-                        android:id="@+id/zzfzcdph_cz_jshns"
-                        style="@style/edittext_style_zqjg"
-                        android:text="--" />
-
-                    <EditText
-                        android:id="@+id/zzfzcdph_cz_mj"
-                        style="@style/edittext_style_zqjg"
-                        android:enabled="true"
-                        android:hint="--" />
-
-                    <EditText
-                        android:id="@+id/zzfzcdph_cz_zsdl"
-                        style="@style/edittext_style_zqjg"
-                        android:text="--" />
-                </LinearLayout>
 
             </LinearLayout>
 
@@ -1449,30 +1482,78 @@
                     <TextView
                         style="@style/textview_style_zqjg"
                         android:layout_weight="1"
-                        android:text="总施氮量合计" />
-
-                    <EditText
-                        android:id="@+id/dnzzfzcdph_hj_sdl"
-                        style="@style/edittext_style_zqjg"
-                        android:text="--" />
-
-                    <EditText
-                        android:id="@+id/dnzzfzcdph_hj_jshns"
-                        style="@style/edittext_style_zqjg"
-                        android:text="--" />
-
-                    <EditText
-                        android:id="@+id/dnzzfzcdph_hj_mj"
-                        style="@style/edittext_style_zqjg"
-                        android:enabled="true"
-                        android:hint="面积" />
+                        android:text="施氮量合计" />
 
                     <EditText
                         android:id="@+id/dnzzfzcdph_hj_zsdl"
                         style="@style/edittext_style_zqjg"
                         android:text="--" />
-                </LinearLayout>
 
+                    <EditText
+                        android:id="@+id/dnzzfzcdph_hj_sdl"
+                        style="@style/edittext_style_zqjg"
+                        android:visibility="gone"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/dnzzfzcdph_hj_jshns"
+                        style="@style/edittext_style_zqjg"
+                        android:textColor="#000000"
+                        android:text="面积合计" />
+
+                    <EditText
+                        android:id="@+id/dnzzfzcdph_hj_mj"
+                        style="@style/edittext_style_zqjg"
+                        android:enabled="false"
+                        android:hint="面积" />
+
+
+                </LinearLayout>
+                <TextView style="@style/textview_driver" />
+
+                <LinearLayout style="@style/linear_style">
+
+                    <TextView
+                        style="@style/textview_style_zqjg"
+                        android:layout_weight="1"
+                        android:textColor="@color/red"
+                        android:text="差值" />
+
+                    <EditText
+                        android:id="@+id/dnzzfzcdph_cz_sdl"
+                        style="@style/edittext_style_zqjg"
+                        android:textColor="@color/red"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/dnzzfzcdph_cz_jshns"
+                        style="@style/edittext_style_zqjg"
+                        android:textColor="@color/red"
+                        android:visibility="gone"
+                        android:text="--" />
+
+                    <EditText
+                        android:id="@+id/dnzzfzcdph_cz_mj"
+                        style="@style/edittext_style_zqjg"
+                        android:enabled="true"
+                        android:textColor="@color/red"
+                        android:visibility="gone"
+                        android:hint="--" />
+
+                    <EditText
+                        android:id="@+id/dnzzfzcdph_cz_zsdl"
+                        style="@style/edittext_style_zqjg"
+                        android:textColor="@color/red"
+                        android:text="--" />
+                    <Button
+                        android:id="@+id/dnzzfzc_czjs"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="14sp"
+                        android:text="差值分配"/>
+                </LinearLayout>
+                <TextView style="@style/textview_driver" />
 
                 <TextView style="@style/textview_driver" />
 
@@ -1484,7 +1565,7 @@
 
                     <TextView
                         style="@style/textview_style_zqjg"
-                        android:text="施氮量" />
+                        android:text="有机施氮比" />
 
                     <TextView
                         style="@style/textview_style_zqjg"
@@ -1499,7 +1580,6 @@
                         android:text="总施氮量" />
                 </LinearLayout>
 
-                <TextView style="@style/textview_driver" />
 
                 <LinearLayout style="@style/linear_style">
 
@@ -2092,37 +2172,7 @@
                 </LinearLayout>
 
 
-                <TextView style="@style/textview_driver" />
 
-                <LinearLayout style="@style/linear_style"
-                    android:visibility="gone">
-
-                    <TextView
-                        style="@style/textview_style_zqjg"
-                        android:layout_weight="1"
-                        android:text="差值" />
-
-                    <EditText
-                        android:id="@+id/dnzzfzcdph_cz_sdl"
-                        style="@style/edittext_style_zqjg"
-                        android:text="--" />
-
-                    <EditText
-                        android:id="@+id/dnzzfzcdph_cz_jshns"
-                        style="@style/edittext_style_zqjg"
-                        android:text="--" />
-
-                    <EditText
-                        android:id="@+id/dnzzfzcdph_cz_mj"
-                        style="@style/edittext_style_zqjg"
-                        android:enabled="true"
-                        android:hint="--" />
-
-                    <EditText
-                        android:id="@+id/dnzzfzcdph_cz_zsdl"
-                        style="@style/edittext_style_zqjg"
-                        android:text="--" />
-                </LinearLayout>
 
             </LinearLayout>
         </LinearLayout>

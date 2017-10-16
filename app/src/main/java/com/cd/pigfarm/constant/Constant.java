@@ -1062,6 +1062,25 @@ public class Constant {
     public static double dnzzfzc_cy_bfb;
     public static double dnzzfzc_mc_bfb;
 
+
+    public static double yfc_sd_bfb;
+    public static double yfc_xm_bfb;
+    public static double yfc_ym_bfb;
+    public static double yfc_yc_bfb;
+    public static double yfc_gs_bfb;
+    public static double yfc_mls_bfb;
+    public static double yfc_qglsc_bfb;
+    public static double yfc_ggsc_bfb;
+    public static double yfc_yclsc_bfb;
+    public static double yfc_gclsc_bfb;
+    public static double yfc_dlsc_bfb;
+    public static double yfc_cslgs_bfb;
+    public static double yfc_lygs_bfb;
+    public static double yfc_clgs_bfb;
+    public static double yfc_cy_bfb;
+    public static double yfc_mc_bfb;
+    
+    
     
     
     

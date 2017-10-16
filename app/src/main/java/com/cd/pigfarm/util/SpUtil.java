@@ -87,4 +87,8 @@ public class SpUtil {
     public static long getSpLong(Context context ,String key,long defaultValue){
         return context.getSharedPreferences(SP_NAME,Context.MODE_PRIVATE).getLong(key,defaultValue);
     }
+
+    public static void clear(Context context){
+        context.getSharedPreferences(SP_NAME,Context.MODE_PRIVATE).edit().clear().commit();
+    }
 }

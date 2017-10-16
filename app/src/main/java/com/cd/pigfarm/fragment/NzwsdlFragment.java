@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cd.pigfarm.R;
+import com.cd.pigfarm.app.App;
 import com.cd.pigfarm.base.BaseFragment;
 import com.cd.pigfarm.constant.Constant;
 import com.cd.pigfarm.entities.NzwEntity;
@@ -22,6 +23,7 @@ import com.cd.pigfarm.util.SpUtil;
 import com.cd.pigfarm.util.Utils;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -74,7 +76,9 @@ public class NzwsdlFragment extends BaseFragment {
 
     private LinearLayout to_Li;
 
-    private SqlOpenHelper sqlOpenHelper;
+
+
+
 
     @Nullable
     @Override
@@ -82,31 +86,51 @@ public class NzwsdlFragment extends BaseFragment {
         view = View.inflate(getContext(), R.layout.fragment_nzwsdl,null);
         bindViews();
         bindButton();
-        if (sqlOpenHelper == null){
-            sqlOpenHelper = new SqlOpenHelper(getContext());
-        }
-        addView();
+
+
+
         return view;
     }
 
+    private int addViewSzie;
+    private List<View> viewList = new ArrayList<>();
+    private void removeView(){
+        if (to_Li != null &&viewList.size() > 0){
+            for (View view : viewList){
+                to_Li.removeView(view);
+            }
+        }
+        viewList.clear();
+    }
+
     private void addView(){
-        List<NzwEntity> list = sqlOpenHelper.queryAllNzw();
+        List<NzwEntity> list = App.sqlOpenHelper.queryAllNzw();
         if (list != null){
+            addViewSzie = list.size();
             for (NzwEntity nzwEntity : list) {
                 TextView textView = (TextView) View.inflate(getContext(),R.layout.lin_textview,null);
                 to_Li.addView(textView,new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,1));
+                viewList.add(textView);
                 LinearLayout linearLayout = (LinearLayout) View.inflate(getContext(),R.layout.lin_lin,null);
                 TextView textView1 = (TextView) linearLayout.findViewById(R.id.name);
                 textView1.setText(nzwEntity.getName());
                 EditText editText = (EditText) linearLayout.findViewById(R.id.sdl);
                 editText.setText(nzwEntity.getSdl()+"");
                 to_Li.addView(linearLayout,new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, Utils.dip2px(getContext(),50f)));
+                viewList.add(linearLayout);
             }
         }
     }
 
+
+
+
+
+
+
     private void bindViews() {
         to_Li = (LinearLayout) view.findViewById(R.id.totle_Lin);
+        removeView();
         addButton = (Button) view.findViewById(R.id.add_But);
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -133,13 +157,14 @@ public class NzwsdlFragment extends BaseFragment {
                             Toast.makeText(getContext(),"请输入施氮量",Toast.LENGTH_SHORT).show();
                             return;
                         }
-                        long id = sqlOpenHelper.addNzwsdl(nzw_m,Double.parseDouble(sdl_m));
+                        long id = App.sqlOpenHelper.addNzwsdl(nzw_m,Double.parseDouble(sdl_m));
                         if (id < 0){
                             Toast.makeText(getContext(),"添加失败",Toast.LENGTH_SHORT).show();
                         }else {
                             //List<NzwEntity> list = sqlOpenHelper.queryAllNzw();
                             Toast.makeText(getContext(),"添加成功",Toast.LENGTH_SHORT).show();
                             addView();
+                            alertDialog.dismiss();
                         }
                     }
                 });
@@ -228,6 +253,7 @@ public class NzwsdlFragment extends BaseFragment {
         if (Constant.mc != 0)
             mc.setText(Constant.mc+"");
 
+        addView();
     }
 
     @Override
@@ -282,5 +308,10 @@ public class NzwsdlFragment extends BaseFragment {
             Constant.mc = textdouble;
             SpUtil.saveSP(getContext(),"mc",Constant.mc);
         }
+    }
+
+    @Override
+    public void refreshViews() {
+        bindViews();
     }
 }

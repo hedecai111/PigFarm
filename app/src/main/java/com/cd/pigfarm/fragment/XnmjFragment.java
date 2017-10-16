@@ -1,5 +1,7 @@
 package com.cd.pigfarm.fragment;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.text.Editable;
@@ -8,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
@@ -524,10 +527,668 @@ public class XnmjFragment extends BaseFragment implements AdapterView.OnItemSele
     private Spinner dnzzfzc_cy_bfb;
     private Spinner dnzzfzc_mc_bfb;
 
+    private Button zfzyc_czjs;
+    private Button zzfzc_czjs;
+    private Button dnzzfzc_czjs;
 
+    private OnClickListener listener;
     
-    
-    
+    class OnClickListener implements View.OnClickListener{
+
+        @Override
+        public void onClick(View v) {
+            if (v == zfzyc_czjs){
+                czjsZfzyc();
+            }else  if (v == zzfzc_czjs){
+                czjsbyzzfzc();
+            }else if (v == dnzzfzc_czjs){
+                czjsDnzzfzc();
+            }
+        }
+    }
+
+    AlertDialog alertDialog;
+
+    String[] items = {"水稻","小麦","玉米","油菜","甘薯","马铃薯","茄果类蔬菜","瓜类蔬菜","叶菜类蔬菜","根菜类蔬菜",
+            "豆类蔬菜","葱蒜类蔬菜","落叶果树","常绿果树","茶叶","牧草"};
+
+    private void czjsZfzyc() {
+        if (Constant.zfzycnph_cz_zsdl <= 0){
+            Toast.makeText(getContext(),"差值小于或等于0,无法分配",Toast.LENGTH_SHORT).show();
+            return;
+        }
+        alertDialog = new AlertDialog.Builder(getContext()).setTitle("请选择差值分配农作物")
+                .setSingleChoiceItems(items, 0, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        if (which == 0){
+                            //水稻
+                            if (Constant.zfzycnph_sd_mj == 0){
+                                Constant.zfzycnph_sd_mj = Constant.zfzycnph_cz_zsdl/Constant.sd/Constant.zfzycnph_sd_jshns/Constant.zfzyc_sd_bfb;
+                                Constant.zfzycnph_sd_zsdl = Constant.zfzycnph_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"zfzycnph_sd_mj",Constant.zfzycnph_sd_mj);
+                                Constant.zfzycnph_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else if (which == 1){
+                            //水稻
+                            if (Constant.zfzycnph_xm_mj == 0){
+                                Constant.zfzycnph_xm_mj = Constant.zfzycnph_cz_zsdl/Constant.xm/Constant.zfzycnph_xm_jshns/Constant.zfzyc_xm_bfb;
+                                Constant.zfzycnph_xm_zsdl = Constant.zfzycnph_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"zfzycnph_xm_mj",Constant.zfzycnph_xm_mj);
+                                Constant.zfzycnph_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else  if (which == 2){
+                            //水稻
+                            if (Constant.zfzycnph_ym_mj == 0){
+                                Constant.zfzycnph_ym_mj = Constant.zfzycnph_cz_zsdl/Constant.ym/Constant.zfzycnph_ym_jshns/Constant.zfzyc_ym_bfb;
+                                Constant.zfzycnph_ym_zsdl = Constant.zfzycnph_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"zfzycnph_ym_mj",Constant.zfzycnph_ym_mj);
+                                Constant.zfzycnph_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else if (which == 3){
+                            //水稻
+                            if (Constant.zfzycnph_yc_mj == 0){
+                                Constant.zfzycnph_yc_mj = Constant.zfzycnph_cz_zsdl/Constant.yc/Constant.zfzycnph_yc_jshns/Constant.zfzyc_yc_bfb;
+                                Constant.zfzycnph_yc_zsdl = Constant.zfzycnph_cz_zsdl;
+                                Constant.zfzycnph_cz_zsdl = 0;
+                                SpUtil.saveSP(getContext(),"zfzycnph_yc_mj",Constant.zfzycnph_yc_mj);
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else if (which == 4){
+                            //水稻
+                            if (Constant.zfzycnph_gs_mj == 0){
+                                Constant.zfzycnph_gs_mj = Constant.zfzycnph_cz_zsdl/Constant.gs/Constant.zfzycnph_gs_jshns/Constant.zfzyc_gs_bfb;
+                                Constant.zfzycnph_gs_zsdl = Constant.zfzycnph_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"zfzycnph_gs_mj",Constant.zfzycnph_gs_mj);
+                                Constant.zfzycnph_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else if (which == 5){
+                            //水稻
+                            if (Constant.zfzycnph_mls_mj == 0){
+                                Constant.zfzycnph_mls_mj = Constant.zfzycnph_cz_zsdl/Constant.mls/Constant.zfzycnph_mls_jshns/Constant.zfzyc_mls_bfb;
+                                Constant.zfzycnph_mls_zsdl = Constant.zfzycnph_cz_zsdl;
+                                Toast.makeText(getContext(),Constant.zfzycnph_mls_mj+"",Toast.LENGTH_SHORT).show();
+                                SpUtil.saveSP(getContext(),"zfzycnph_mls_mj",Constant.zfzycnph_mls_mj);
+                                Constant.zfzycnph_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else  if (which == 6){
+                            //水稻
+                            if (Constant.zfzycnph_qglsc_mj == 0){
+                                Constant.zfzycnph_qglsc_mj = Constant.zfzycnph_cz_zsdl/Constant.qglsc/Constant.zfzycnph_qglsc_jshns/Constant.zfzyc_qglsc_bfb;
+                                Constant.zfzycnph_qglsc_zsdl = Constant.zfzycnph_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"zfzycnph_qglsc_mj",Constant.zfzycnph_qglsc_mj);
+                                Constant.zfzycnph_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else  if (which == 7){
+                            //水稻
+                            if (Constant.zfzycnph_ggsc_mj == 0){
+                                Constant.zfzycnph_ggsc_mj = Constant.zfzycnph_cz_zsdl/Constant.glsc/Constant.zfzycnph_ggsc_jshns/Constant.zfzyc_ggsc_bfb;
+                                Constant.zfzycnph_ggsc_zsdl = Constant.zfzycnph_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"zfzycnph_ggsc_mj",Constant.zfzycnph_ggsc_mj);
+                                Constant.zfzycnph_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else if (which == 8){
+                            //水稻
+                            if (Constant.zfzycnph_yclsc_mj == 0){
+                                Constant.zfzycnph_yclsc_mj = Constant.zfzycnph_cz_zsdl/Constant.yclsc/Constant.zfzycnph_yclsc_jshns/Constant.zfzyc_yclsc_bfb;
+                                Constant.zfzycnph_yclsc_zsdl = Constant.zfzycnph_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"zfzycnph_yclsc_mj",Constant.zfzycnph_yclsc_mj);
+                                Constant.zfzycnph_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else if (which == 9){
+                            //水稻
+                            if (Constant.zfzycnph_gclsc_mj == 0){
+                                Constant.zfzycnph_gclsc_mj = Constant.zfzycnph_cz_zsdl/Constant.gclsc/Constant.zfzycnph_gclsc_jshns/Constant.zfzyc_gclsc_bfb;
+                                Constant.zfzycnph_gclsc_zsdl = Constant.zfzycnph_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"zfzycnph_gclsc_mj",Constant.zfzycnph_gclsc_mj);
+                                Constant.zfzycnph_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else  if (which == 10){
+                            //水稻
+                            if (Constant.zfzycnph_dlsc_mj == 0){
+                                Constant.zfzycnph_dlsc_mj = Constant.zfzycnph_cz_zsdl/Constant.dlsc/Constant.zfzycnph_dlsc_jshns/Constant.zfzyc_dlsc_bfb;
+                                LogUtil.e(Constant.zfzycnph_cz_zsdl+"--"+Constant.dlsc+"--"+Constant.zfzycnph_dlsc_jshns+"--"+Constant.zfzyc_dlsc_bfb);
+                                Constant.zfzycnph_dlsc_zsdl = Constant.zfzycnph_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"zfzycnph_dlsc_mj",Constant.zfzycnph_dlsc_mj);
+                                Constant.zfzycnph_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else if (which == 11){
+                            //水稻
+                            if (Constant.zfzycnph_cslsc_mj == 0){
+                                Constant.zfzycnph_cslsc_mj = Constant.zfzycnph_cz_zsdl/Constant.cslsc/Constant.zfzycnph_cslsc_jshns/Constant.zfzyc_cslgs_bfb;
+                                Constant.zfzycnph_cslsc_zsdl = Constant.zfzycnph_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"zfzycnph_cslsc_mj",Constant.zfzycnph_cslsc_mj);
+                                Constant.zfzycnph_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else if (which == 12){
+                            //水稻
+                            if (Constant.zfzycnph_lygs_mj == 0){
+                                Constant.zfzycnph_lygs_mj = Constant.zfzycnph_cz_zsdl/Constant.lygs/Constant.zfzycnph_lygs_jshns/Constant.zfzyc_lygs_bfb;
+                                Constant.zfzycnph_lygs_zsdl = Constant.zfzycnph_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"zfzycnph_lygs_mj",Constant.zfzycnph_lygs_mj);
+                                Constant.zfzycnph_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else if (which == 13){
+                            //水稻
+                            if (Constant.zfzycnph_clgs_mj == 0){
+                                Constant.zfzycnph_clgs_mj = Constant.zfzycnph_cz_zsdl/Constant.clgs/Constant.zfzycnph_clgs_jshns/Constant.zfzyc_clgs_bfb;
+                                Constant.zfzycnph_clgs_zsdl = Constant.zfzycnph_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"zfzycnph_clgs_mj",Constant.zfzycnph_clgs_mj);
+                                Constant.zfzycnph_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else if (which == 14){
+                            //水稻
+                            if (Constant.zfzycnph_cy_mj == 0){
+                                Constant.zfzycnph_cy_mj = Constant.zfzycnph_cz_zsdl/Constant.cy/Constant.zfzycnph_cy_jshns/Constant.zfzyc_cy_bfb;
+                                Constant.zfzycnph_cy_zsdl = Constant.zfzycnph_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"zfzycnph_cy_mj",Constant.zfzycnph_cy_mj);
+                                Constant.zfzycnph_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+
+                            }
+                        }
+
+                        else if (which == 15){
+                            //水稻
+                            if (Constant.zfzycnph_mc_mj == 0){
+                                Constant.zfzycnph_mc_mj = Constant.zfzycnph_cz_zsdl/Constant.mc/Constant.zfzycnph_mc_jshns/Constant.zfzyc_mc_bfb;
+                                Constant.zfzycnph_mc_zsdl = Constant.zfzycnph_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"zfzycnph_mc_mj",Constant.zfzycnph_mc_mj);
+                                Constant.zfzycnph_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                        jsDatas();
+                        refreshViews();
+
+                        alertDialog.dismiss();
+                    }
+                }).show();
+    }
+
+    private void czjsDnzzfzc() {
+        if (Constant.dnzzfzcdph_cz_zsdl <= 0){
+            Toast.makeText(getContext(),"差值小于或等于0,无法分配",Toast.LENGTH_SHORT).show();
+            return;
+        }
+        alertDialog = new AlertDialog.Builder(getContext()).setTitle("请选择差值分配农作物")
+                .setSingleChoiceItems(items, 0, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        if (which == 0){
+                            //水稻
+                            if (Constant.dnzzfzcdph_sd_mj == 0){
+                                Constant.dnzzfzcdph_sd_mj = Constant.dnzzfzcdph_cz_zsdl/Constant.sd/Constant.dnzzfzcdph_sd_jshns/Constant.dnzzfzc_sd_bfb;
+                                Constant.dnzzfzcdph_sd_zsdl = Constant.dnzzfzcdph_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"dnzzfzcdph_sd_mj",Constant.dnzzfzcdph_sd_mj);
+                                Constant.dnzzfzcdph_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else if (which == 1){
+                            //水稻
+                            if (Constant.dnzzfzcdph_xm_mj == 0){
+                                Constant.dnzzfzcdph_xm_mj = Constant.dnzzfzcdph_cz_zsdl/Constant.xm/Constant.dnzzfzcdph_xm_jshns/Constant.dnzzfzc_xm_bfb;
+                                Constant.dnzzfzcdph_xm_zsdl = Constant.dnzzfzcdph_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"dnzzfzcdph_xm_mj",Constant.dnzzfzcdph_xm_mj);
+                                Constant.dnzzfzcdph_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else  if (which == 2){
+                            //水稻
+                            if (Constant.dnzzfzcdph_ym_mj == 0){
+                                Constant.dnzzfzcdph_ym_mj = Constant.dnzzfzcdph_cz_zsdl/Constant.ym/Constant.dnzzfzcdph_ym_jshns/Constant.dnzzfzc_ym_bfb;
+                                Constant.dnzzfzcdph_ym_zsdl = Constant.dnzzfzcdph_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"dnzzfzcdph_ym_mj",Constant.dnzzfzcdph_ym_mj);
+                                Constant.dnzzfzcdph_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else if (which == 3){
+                            //水稻
+                            if (Constant.dnzzfzcdph_yc_mj == 0){
+                                Constant.dnzzfzcdph_yc_mj = Constant.dnzzfzcdph_cz_zsdl/Constant.yc/Constant.dnzzfzcdph_yc_jshns/Constant.dnzzfzc_yc_bfb;
+                                Constant.dnzzfzcdph_yc_zsdl = Constant.dnzzfzcdph_cz_zsdl;
+                                Constant.dnzzfzcdph_cz_zsdl = 0;
+                                SpUtil.saveSP(getContext(),"dnzzfzcdph_yc_mj",Constant.dnzzfzcdph_yc_mj);
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else if (which == 4){
+                            //水稻
+                            if (Constant.dnzzfzcdph_gs_mj == 0){
+                                Constant.dnzzfzcdph_gs_mj = Constant.dnzzfzcdph_cz_zsdl/Constant.gs/Constant.dnzzfzcdph_gs_jshns/Constant.dnzzfzc_gs_bfb;
+                                Constant.dnzzfzcdph_gs_zsdl = Constant.dnzzfzcdph_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"dnzzfzcdph_gs_mj",Constant.dnzzfzcdph_gs_mj);
+                                Constant.dnzzfzcdph_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else if (which == 5){
+                            //水稻
+                            if (Constant.dnzzfzcdph_mls_mj == 0){
+                                Constant.dnzzfzcdph_mls_mj = Constant.dnzzfzcdph_cz_zsdl/Constant.mls/Constant.dnzzfzcdph_mls_jshns/Constant.dnzzfzc_mls_bfb;
+                                Constant.dnzzfzcdph_mls_zsdl = Constant.dnzzfzcdph_cz_zsdl;
+                                Toast.makeText(getContext(),Constant.dnzzfzcdph_mls_mj+"",Toast.LENGTH_SHORT).show();
+                                SpUtil.saveSP(getContext(),"dnzzfzcdph_mls_mj",Constant.dnzzfzcdph_mls_mj);
+                                Constant.dnzzfzcdph_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else  if (which == 6){
+                            //水稻
+                            if (Constant.dnzzfzcdph_qglsc_mj == 0){
+                                Constant.dnzzfzcdph_qglsc_mj = Constant.dnzzfzcdph_cz_zsdl/Constant.qglsc/Constant.dnzzfzcdph_qglsc_jshns/Constant.dnzzfzc_qglsc_bfb;
+                                Constant.dnzzfzcdph_qglsc_zsdl = Constant.dnzzfzcdph_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"dnzzfzcdph_qglsc_mj",Constant.dnzzfzcdph_qglsc_mj);
+                                Constant.dnzzfzcdph_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else  if (which == 7){
+                            //水稻
+                            if (Constant.dnzzfzcdph_ggsc_mj == 0){
+                                Constant.dnzzfzcdph_ggsc_mj = Constant.dnzzfzcdph_cz_zsdl/Constant.glsc/Constant.dnzzfzcdph_ggsc_jshns/Constant.dnzzfzc_ggsc_bfb;
+                                Constant.dnzzfzcdph_ggsc_zsdl = Constant.dnzzfzcdph_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"dnzzfzcdph_ggsc_mj",Constant.dnzzfzcdph_ggsc_mj);
+                                Constant.dnzzfzcdph_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else if (which == 8){
+                            //水稻
+                            if (Constant.dnzzfzcdph_yclsc_mj == 0){
+                                Constant.dnzzfzcdph_yclsc_mj = Constant.dnzzfzcdph_cz_zsdl/Constant.yclsc/Constant.dnzzfzcdph_yclsc_jshns/Constant.dnzzfzc_yclsc_bfb;
+                                Constant.dnzzfzcdph_yclsc_zsdl = Constant.dnzzfzcdph_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"dnzzfzcdph_yclsc_mj",Constant.dnzzfzcdph_yclsc_mj);
+                                Constant.dnzzfzcdph_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else if (which == 9){
+                            //水稻
+                            if (Constant.dnzzfzcdph_gclsc_mj == 0){
+                                Constant.dnzzfzcdph_gclsc_mj = Constant.dnzzfzcdph_cz_zsdl/Constant.gclsc/Constant.dnzzfzcdph_gclsc_jshns/Constant.dnzzfzc_gclsc_bfb;
+                                Constant.dnzzfzcdph_gclsc_zsdl = Constant.dnzzfzcdph_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"dnzzfzcdph_gclsc_mj",Constant.dnzzfzcdph_gclsc_mj);
+                                Constant.dnzzfzcdph_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else  if (which == 10){
+                            //水稻
+                            if (Constant.dnzzfzcdph_dlsc_mj == 0){
+                                Constant.dnzzfzcdph_dlsc_mj = Constant.dnzzfzcdph_cz_zsdl/Constant.dlsc/Constant.dnzzfzcdph_dlsc_jshns/Constant.dnzzfzc_dlsc_bfb;
+                                Constant.dnzzfzcdph_dlsc_zsdl = Constant.dnzzfzcdph_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"dnzzfzcdph_dlsc_mj",Constant.dnzzfzcdph_dlsc_mj);
+                                Constant.dnzzfzcdph_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else if (which == 11){
+                            //水稻
+                            if (Constant.dnzzfzcdph_cslsc_mj == 0){
+                                Constant.dnzzfzcdph_cslsc_mj = Constant.dnzzfzcdph_cz_zsdl/Constant.cslsc/Constant.dnzzfzcdph_cslsc_jshns/Constant.dnzzfzc_cslgs_bfb;
+                                Constant.dnzzfzcdph_cslsc_zsdl = Constant.dnzzfzcdph_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"dnzzfzcdph_cslsc_mj",Constant.dnzzfzcdph_cslsc_mj);
+                                Constant.dnzzfzcdph_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else if (which == 12){
+                            //水稻
+                            if (Constant.dnzzfzcdph_lygs_mj == 0){
+                                Constant.dnzzfzcdph_lygs_mj = Constant.dnzzfzcdph_cz_zsdl/Constant.lygs/Constant.dnzzfzcdph_lygs_jshns/Constant.dnzzfzc_lygs_bfb;
+                                Constant.dnzzfzcdph_lygs_zsdl = Constant.dnzzfzcdph_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"dnzzfzcdph_lygs_mj",Constant.dnzzfzcdph_lygs_mj);
+                                Constant.dnzzfzcdph_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else if (which == 13){
+                            //水稻
+                            if (Constant.dnzzfzcdph_clgs_mj == 0){
+                                Constant.dnzzfzcdph_clgs_mj = Constant.dnzzfzcdph_cz_zsdl/Constant.clgs/Constant.dnzzfzcdph_clgs_jshns/Constant.dnzzfzc_clgs_bfb;
+                                Constant.dnzzfzcdph_clgs_zsdl = Constant.dnzzfzcdph_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"dnzzfzcdph_clgs_mj",Constant.dnzzfzcdph_clgs_mj);
+                                Constant.dnzzfzcdph_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else if (which == 14){
+                            //水稻
+                            if (Constant.dnzzfzcdph_cy_mj == 0){
+                                Constant.dnzzfzcdph_cy_mj = Constant.dnzzfzcdph_cz_zsdl/Constant.cy/Constant.dnzzfzcdph_cy_jshns/Constant.dnzzfzc_cy_bfb;
+                                Constant.dnzzfzcdph_cy_zsdl = Constant.dnzzfzcdph_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"dnzzfzcdph_cy_mj",Constant.dnzzfzcdph_cy_mj);
+                                Constant.dnzzfzcdph_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+
+                            }
+                        }
+
+                        else if (which == 15){
+                            //水稻
+                            if (Constant.dnzzfzcdph_mc_mj == 0){
+                                Constant.dnzzfzcdph_mc_mj = Constant.dnzzfzcdph_cz_zsdl/Constant.mc/Constant.dnzzfzcdph_mc_jshns/Constant.dnzzfzc_mc_bfb;
+                                Constant.dnzzfzcdph_mc_zsdl = Constant.dnzzfzcdph_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"dnzzfzcdph_mc_mj",Constant.dnzzfzcdph_mc_mj);
+                                Constant.dnzzfzcdph_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                        jsDatas();
+                        refreshViews();
+
+                        alertDialog.dismiss();
+                    }
+                }).show();
+    }
+
+    private void czjsbyzzfzc() {
+        if (Constant.zzfzcdph_cz_zsdl <= 0){
+            Toast.makeText(getContext(),"差值小于或等于0,无法分配",Toast.LENGTH_SHORT).show();
+            return;
+        }
+        alertDialog = new AlertDialog.Builder(getContext()).setTitle("请选择差值分配农作物")
+                .setSingleChoiceItems(items, 0, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        if (which == 0){
+                            //水稻
+                            if (Constant.zzfzcdph_sd_mj == 0){
+                                Constant.zzfzcdph_sd_mj = Constant.zzfzcdph_cz_zsdl/Constant.sd/Constant.zzfzcdph_sd_jshns/Constant.byzzfzc_sd_bfb;
+                                Constant.zzfzcdph_sd_zsdl = Constant.zzfzcdph_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"zzfzcdph_sd_mj",Constant.zzfzcdph_sd_mj);
+                                Constant.zzfzcdph_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else if (which == 1){
+                            //水稻
+                            if (Constant.zzfzcdph_xm_mj == 0){
+                                Constant.zzfzcdph_xm_mj = Constant.zzfzcdph_cz_zsdl/Constant.xm/Constant.zzfzcdph_xm_jshns/Constant.byzzfzc_xm_bfb;
+                                Constant.zzfzcdph_xm_zsdl = Constant.zzfzcdph_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"zzfzcdph_xm_mj",Constant.zzfzcdph_xm_mj);
+                                Constant.zzfzcdph_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else  if (which == 2){
+                            //水稻
+                            if (Constant.zzfzcdph_ym_mj == 0){
+                                Constant.zzfzcdph_ym_mj = Constant.zzfzcdph_cz_zsdl/Constant.ym/Constant.zzfzcdph_ym_jshns/Constant.byzzfzc_ym_bfb;
+                                Constant.zzfzcdph_ym_zsdl = Constant.zzfzcdph_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"zzfzcdph_ym_mj",Constant.zzfzcdph_ym_mj);
+                                Constant.zzfzcdph_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else if (which == 3){
+                            //水稻
+                            if (Constant.zzfzcdph_yc_mj == 0){
+                                Constant.zzfzcdph_yc_mj = Constant.zzfzcdph_cz_zsdl/Constant.yc/Constant.zzfzcdph_yc_jshns/Constant.byzzfzc_yc_bfb;
+                                Constant.zzfzcdph_yc_zsdl = Constant.zzfzcdph_cz_zsdl;
+                                Constant.zzfzcdph_cz_zsdl = 0;
+                                SpUtil.saveSP(getContext(),"zzfzcdph_yc_mj",Constant.zzfzcdph_yc_mj);
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else if (which == 4){
+                            //水稻
+                            if (Constant.zzfzcdph_gs_mj == 0){
+                                Constant.zzfzcdph_gs_mj = Constant.zzfzcdph_cz_zsdl/Constant.gs/Constant.zzfzcdph_gs_jshns/Constant.byzzfzc_gs_bfb;
+                                Constant.zzfzcdph_gs_zsdl = Constant.zzfzcdph_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"zzfzcdph_gs_mj",Constant.zzfzcdph_gs_mj);
+                                Constant.zzfzcdph_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else if (which == 5){
+                            //水稻
+                            if (Constant.zzfzcdph_mls_mj == 0){
+                                Constant.zzfzcdph_mls_mj = Constant.zzfzcdph_cz_zsdl/Constant.mls/Constant.zzfzcdph_mls_jshns/Constant.byzzfzc_mls_bfb;
+                                Constant.zzfzcdph_mls_zsdl = Constant.zzfzcdph_cz_zsdl;
+                                Toast.makeText(getContext(),Constant.zzfzcdph_mls_mj+"",Toast.LENGTH_SHORT).show();
+                                SpUtil.saveSP(getContext(),"zzfzcdph_mls_mj",Constant.zzfzcdph_mls_mj);
+                                Constant.zzfzcdph_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else  if (which == 6){
+                            //水稻
+                            if (Constant.zzfzcdph_qglsc_mj == 0){
+                                Constant.zzfzcdph_qglsc_mj = Constant.zzfzcdph_cz_zsdl/Constant.qglsc/Constant.zzfzcdph_qglsc_jshns/Constant.byzzfzc_qglsc_bfb;
+                                Constant.zzfzcdph_qglsc_zsdl = Constant.zzfzcdph_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"zzfzcdph_qglsc_mj",Constant.zzfzcdph_qglsc_mj);
+                                Constant.zzfzcdph_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else  if (which == 7){
+                            //水稻
+                            if (Constant.zzfzcdph_ggsc_mj == 0){
+                                Constant.zzfzcdph_ggsc_mj = Constant.zzfzcdph_cz_zsdl/Constant.glsc/Constant.zzfzcdph_ggsc_jshns/Constant.byzzfzc_ggsc_bfb;
+                                Constant.zzfzcdph_ggsc_zsdl = Constant.zzfzcdph_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"zzfzcdph_ggsc_mj",Constant.zzfzcdph_ggsc_mj);
+                                Constant.zzfzcdph_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else if (which == 8){
+                            //水稻
+                            if (Constant.zzfzcdph_yclsc_mj == 0){
+                                Constant.zzfzcdph_yclsc_mj = Constant.zzfzcdph_cz_zsdl/Constant.yclsc/Constant.zzfzcdph_yclsc_jshns/Constant.byzzfzc_yclsc_bfb;
+                                Constant.zzfzcdph_yclsc_zsdl = Constant.zzfzcdph_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"zzfzcdph_yclsc_mj",Constant.zzfzcdph_yclsc_mj);
+                                Constant.zzfzcdph_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else if (which == 9){
+                            //水稻
+                            if (Constant.zzfzcdph_gclsc_mj == 0){
+                                Constant.zzfzcdph_gclsc_mj = Constant.zzfzcdph_cz_zsdl/Constant.gclsc/Constant.zzfzcdph_gclsc_jshns/Constant.byzzfzc_gclsc_bfb;
+                                Constant.zzfzcdph_gclsc_zsdl = Constant.zzfzcdph_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"zzfzcdph_gclsc_mj",Constant.zzfzcdph_gclsc_mj);
+                                Constant.zzfzcdph_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else  if (which == 10){
+                            //水稻
+                            if (Constant.zzfzcdph_dlsc_mj == 0){
+                                Constant.zzfzcdph_dlsc_mj = Constant.zzfzcdph_cz_zsdl/Constant.dlsc/Constant.zzfzcdph_dlsc_jshns/Constant.byzzfzc_dlsc_bfb;
+                                Constant.zzfzcdph_dlsc_zsdl = Constant.zzfzcdph_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"zzfzcdph_dlsc_mj",Constant.zzfzcdph_dlsc_mj);
+                                Constant.zzfzcdph_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else if (which == 11){
+                            //水稻
+                            if (Constant.zzfzcdph_cslsc_mj == 0){
+                                Constant.zzfzcdph_cslsc_mj = Constant.zzfzcdph_cz_zsdl/Constant.cslsc/Constant.zzfzcdph_cslsc_jshns/Constant.byzzfzc_cslgs_bfb;
+                                Constant.zzfzcdph_cslsc_zsdl = Constant.zzfzcdph_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"zzfzcdph_cslsc_mj",Constant.zzfzcdph_cslsc_mj);
+                                Constant.zzfzcdph_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else if (which == 12){
+                            //水稻
+                            if (Constant.zzfzcdph_lygs_mj == 0){
+                                Constant.zzfzcdph_lygs_mj = Constant.zzfzcdph_cz_zsdl/Constant.lygs/Constant.zzfzcdph_lygs_jshns/Constant.byzzfzc_lygs_bfb;
+                                Constant.zzfzcdph_lygs_zsdl = Constant.zzfzcdph_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"zzfzcdph_lygs_mj",Constant.zzfzcdph_lygs_mj);
+                                Constant.zzfzcdph_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else if (which == 13){
+                            //水稻
+                            if (Constant.zzfzcdph_clgs_mj == 0){
+                                Constant.zzfzcdph_clgs_mj = Constant.zzfzcdph_cz_zsdl/Constant.clgs/Constant.zzfzcdph_clgs_jshns/Constant.byzzfzc_clgs_bfb;
+                                Constant.zzfzcdph_clgs_zsdl = Constant.zzfzcdph_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"zzfzcdph_clgs_mj",Constant.zzfzcdph_clgs_mj);
+                                Constant.zzfzcdph_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else if (which == 14){
+                            //水稻
+                            if (Constant.zzfzcdph_cy_mj == 0){
+                                Constant.zzfzcdph_cy_mj = Constant.zzfzcdph_cz_zsdl/Constant.cy/Constant.zzfzcdph_cy_jshns/Constant.byzzfzc_cy_bfb;
+                                Constant.zzfzcdph_cy_zsdl = Constant.zzfzcdph_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"zzfzcdph_cy_mj",Constant.zzfzcdph_cy_mj);
+                                Constant.zzfzcdph_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+
+                            }
+                        }
+
+                        else if (which == 15){
+                            //水稻
+                            if (Constant.zzfzcdph_mc_mj == 0){
+                                Constant.zzfzcdph_mc_mj = Constant.zzfzcdph_cz_zsdl/Constant.mc/Constant.zzfzcdph_mc_jshns/Constant.byzzfzc_mc_bfb;
+                                Constant.zzfzcdph_mc_zsdl = Constant.zzfzcdph_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"zzfzcdph_mc_mj",Constant.zzfzcdph_mc_mj);
+                                Constant.zzfzcdph_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                        jsDatas();
+                        refreshViews();
+
+                        alertDialog.dismiss();
+                    }
+                }).show();
+    }
+
+
+
+
 
     @Nullable
     @Override
@@ -556,6 +1217,14 @@ public class XnmjFragment extends BaseFragment implements AdapterView.OnItemSele
     }
 
     private void bindViews() {
+        listener = new OnClickListener();
+        zfzyc_czjs = (Button) view.findViewById(R.id.zfzyc_czjs);
+        zzfzc_czjs = (Button) view.findViewById(R.id.zzdzc_czjs);
+        dnzzfzc_czjs = (Button) view.findViewById(R.id.dnzzfzc_czjs);
+        zfzyc_czjs.setOnClickListener(listener);
+        zzfzc_czjs.setOnClickListener(listener);
+        dnzzfzc_czjs.setOnClickListener(listener);
+
 
         zfzyc_Lin = (LinearLayout) view.findViewById(R.id.zfzyc_Lin);
         byzzfzc_Lin = (LinearLayout) view.findViewById(R.id.byzzfzc_Lin);
@@ -563,9 +1232,9 @@ public class XnmjFragment extends BaseFragment implements AdapterView.OnItemSele
 
 
         List<NzwEntity> nzwEntities = App.sqlOpenHelper.queryAllNzw();
-        Toast.makeText(getContext(),nzwEntities.size()+"",Toast.LENGTH_SHORT).show();
+       // Toast.makeText(getContext(),nzwEntities.size()+"",Toast.LENGTH_SHORT).show();
         if (nzwEntities != null && nzwEntities.size() > 0){
-            Toast.makeText(getContext(),nzwEntities.size()+"",Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getContext(),nzwEntities.size()+"",Toast.LENGTH_SHORT).show();
             for (NzwEntity nzwEntity : nzwEntities){
                 addViewByType(zfzyc_Lin,nzwEntity);
                 addViewByType(byzzfzc_Lin,nzwEntity);
@@ -577,78 +1246,78 @@ public class XnmjFragment extends BaseFragment implements AdapterView.OnItemSele
         zfzyc_sd_bfb.setOnItemSelectedListener(this);
 
         if (Constant.zfzyc_sd_bfb != 1){
-            zfzyc_sd_bfb.setSelection((int)(10 - Constant.zfzyc_sd_bfb*10));
-            //Toast.makeText(getContext(),(int)(10 - Constant.zfzyc_sd_bfb*10)+"",Toast.LENGTH_SHORT).show();
+            zfzyc_sd_bfb.setSelection((int)(10-1 - Constant.zfzyc_sd_bfb*10));
+            //Toast.makeText(getContext(),(int)(10-1 - Constant.zfzyc_sd_bfb*10)+"",Toast.LENGTH_SHORT).show();
         }
         zfzyc_xm_bfb = (Spinner) view.findViewById(R.id.zfzyc_xm_bfb);
         zfzyc_xm_bfb.setOnItemSelectedListener(this);
         if (Constant.zfzyc_xm_bfb != 1){
-            zfzyc_xm_bfb.setSelection((int)(10 - Constant.zfzyc_xm_bfb*10));
+            zfzyc_xm_bfb.setSelection((int)(10-1 - Constant.zfzyc_xm_bfb*10));
         }
         zfzyc_ym_bfb = (Spinner) view.findViewById(R.id.zfzyc_ym_bfb);
         zfzyc_ym_bfb.setOnItemSelectedListener(this);
         if (Constant.zfzyc_ym_bfb != 1){
-            zfzyc_ym_bfb.setSelection((int)(10 - Constant.zfzyc_ym_bfb*10));
+            zfzyc_ym_bfb.setSelection((int)(10-1 - Constant.zfzyc_ym_bfb*10));
         }
         zfzyc_yc_bfb = (Spinner) view.findViewById(R.id.zfzyc_yc_bfb);
         zfzyc_yc_bfb.setOnItemSelectedListener(this);
         if (Constant.zfzyc_yc_bfb != 1){
-            zfzyc_yc_bfb.setSelection((int)(10 - Constant.zfzyc_yc_bfb*10));
+            zfzyc_yc_bfb.setSelection((int)(10-1 - Constant.zfzyc_yc_bfb*10));
         }
         zfzyc_gs_bfb = (Spinner) view.findViewById(R.id.zfzyc_gs_bfb);
         zfzyc_gs_bfb.setOnItemSelectedListener(this);
         if (Constant.zfzyc_gs_bfb != 1){
-            zfzyc_gs_bfb.setSelection((int)(10 - Constant.zfzyc_gs_bfb*10));
+            zfzyc_gs_bfb.setSelection((int)(10-1 - Constant.zfzyc_gs_bfb*10));
         }
         zfzyc_mls_bfb = (Spinner) view.findViewById(R.id.zfzyc_mls_bfb);
         zfzyc_mls_bfb.setOnItemSelectedListener(this);
         if (Constant.zfzyc_mls_bfb != 1){
-            zfzyc_mls_bfb.setSelection((int)(10 - Constant.zfzyc_mls_bfb*10));
+            zfzyc_mls_bfb.setSelection((int)(10-1 - Constant.zfzyc_mls_bfb*10));
         }
         zfzyc_jglsc_bfb = (Spinner) view.findViewById(R.id.zfzyc_qglsc_bfb);
         zfzyc_jglsc_bfb.setOnItemSelectedListener(this);
         if (Constant.zfzyc_qglsc_bfb != 1){
-            zfzyc_jglsc_bfb.setSelection((int)(10 - Constant.zfzyc_qglsc_bfb*10));
+            zfzyc_jglsc_bfb.setSelection((int)(10-1 - Constant.zfzyc_qglsc_bfb*10));
         }
         zfzyc_yclsc_bfb = (Spinner) view.findViewById(R.id.zfzyc_yclsc_bfb);
         zfzyc_yclsc_bfb.setOnItemSelectedListener(this);
         if (Constant.zfzyc_yclsc_bfb != 1){
-            zfzyc_yclsc_bfb.setSelection((int)(10 - Constant.zfzyc_yclsc_bfb*10));
+            zfzyc_yclsc_bfb.setSelection((int)(10-1 - Constant.zfzyc_yclsc_bfb*10));
         }
         zfzyc_glsc_bfb = (Spinner) view.findViewById(R.id.zfzyc_glsc_bfb);
         zfzyc_glsc_bfb.setOnItemSelectedListener(this);
         if (Constant.zfzyc_ggsc_bfb != 1){
-            zfzyc_glsc_bfb.setSelection((int)(10 - Constant.zfzyc_ggsc_bfb*10));
+            zfzyc_glsc_bfb.setSelection((int)(10-1 - Constant.zfzyc_ggsc_bfb*10));
         }
         zfzyc_dlsc_bfb = (Spinner) view.findViewById(R.id.zfzyc_dlsc_bfb);
         zfzyc_dlsc_bfb.setOnItemSelectedListener(this);
         if (Constant.zfzyc_dlsc_bfb != 1){
-            zfzyc_dlsc_bfb.setSelection((int)(10 - Constant.zfzyc_dlsc_bfb*10));
+            zfzyc_dlsc_bfb.setSelection((int)(10-1 - Constant.zfzyc_dlsc_bfb*10));
         }
         zfzyc_cslsc_bfb = (Spinner) view.findViewById(R.id.zfzyc_cslsc_bfb);
         zfzyc_cslsc_bfb.setOnItemSelectedListener(this);
         if (Constant.zfzyc_cslgs_bfb != 1){
-            zfzyc_cslsc_bfb.setSelection((int)(10 - Constant.zfzyc_cslgs_bfb*10));
+            zfzyc_cslsc_bfb.setSelection((int)(10-1 - Constant.zfzyc_cslgs_bfb*10));
         }
         zfzyc_lygs_bfb = (Spinner) view.findViewById(R.id.zfzyc_lygs_bfb);
         zfzyc_lygs_bfb.setOnItemSelectedListener(this);
         if (Constant.zfzyc_lygs_bfb != 1){
-            zfzyc_lygs_bfb.setSelection((int)(10 - Constant.zfzyc_lygs_bfb*10));
+            zfzyc_lygs_bfb.setSelection((int)(10-1 - Constant.zfzyc_lygs_bfb*10));
         }
         zfzyc_clgs_bfb = (Spinner) view.findViewById(R.id.zfzyc_clgs_bfb);
         zfzyc_clgs_bfb.setOnItemSelectedListener(this);
         if (Constant.zfzyc_clgs_bfb != 1){
-            zfzyc_clgs_bfb.setSelection((int)(10 - Constant.zfzyc_clgs_bfb*10));
+            zfzyc_clgs_bfb.setSelection((int)(10-1 - Constant.zfzyc_clgs_bfb*10));
         }
         zfzyc_cy_bfb = (Spinner) view.findViewById(R.id.zfzyc_cy_bfb);
         zfzyc_cy_bfb.setOnItemSelectedListener(this);
         if (Constant.zfzyc_cy_bfb != 1){
-            zfzyc_cy_bfb.setSelection((int)(10 - Constant.zfzyc_cy_bfb*10));
+            zfzyc_cy_bfb.setSelection((int)(10-1 - Constant.zfzyc_cy_bfb*10));
         }
         zfzyc_mc_bfb = (Spinner) view.findViewById(R.id.zfzyc_mc_bfb);
         zfzyc_mc_bfb.setOnItemSelectedListener(this);
         if (Constant.zfzyc_mc_bfb != 1){
-            zfzyc_mc_bfb.setSelection((int)(10 - Constant.zfzyc_mc_bfb*10));
+            zfzyc_mc_bfb.setSelection((int)(10-1 - Constant.zfzyc_mc_bfb*10));
         }
 
 
@@ -656,77 +1325,77 @@ public class XnmjFragment extends BaseFragment implements AdapterView.OnItemSele
         byzzfzc_sd_bfb = (Spinner) view.findViewById(R.id.byzzfzc_sd_bfb);
         byzzfzc_sd_bfb.setOnItemSelectedListener(this);
         if (Constant.byzzfzc_sd_bfb != 1){
-            byzzfzc_sd_bfb.setSelection((int)(10 - Constant.byzzfzc_sd_bfb*10));
+            byzzfzc_sd_bfb.setSelection((int)(10-1 - Constant.byzzfzc_sd_bfb*10));
         }
         byzzfzc_xm_bfb = (Spinner) view.findViewById(R.id.byzzfzc_xm_bfb);
         byzzfzc_xm_bfb.setOnItemSelectedListener(this);
         if (Constant.byzzfzc_xm_bfb != 1){
-            byzzfzc_xm_bfb.setSelection((int)(10 - Constant.byzzfzc_xm_bfb*10));
+            byzzfzc_xm_bfb.setSelection((int)(10-1 - Constant.byzzfzc_xm_bfb*10));
         }
         byzzfzc_ym_bfb = (Spinner) view.findViewById(R.id.byzzfzc_ym_bfb);
         byzzfzc_ym_bfb.setOnItemSelectedListener(this);
         if (Constant.byzzfzc_ym_bfb != 1){
-            byzzfzc_ym_bfb.setSelection((int)(10 - Constant.byzzfzc_ym_bfb*10));
+            byzzfzc_ym_bfb.setSelection((int)(10-1 - Constant.byzzfzc_ym_bfb*10));
         }
         byzzfzc_yc_bfb = (Spinner) view.findViewById(R.id.byzzfzc_yc_bfb);
         byzzfzc_sd_bfb.setOnItemSelectedListener(this);
         if (Constant.byzzfzc_sd_bfb != 1){
-            byzzfzc_sd_bfb.setSelection((int)(10 - Constant.byzzfzc_sd_bfb*10));
+            byzzfzc_sd_bfb.setSelection((int)(10-1 - Constant.byzzfzc_sd_bfb*10));
         }
         byzzfzc_gs_bfb = (Spinner) view.findViewById(R.id.byzzfzc_gs_bfb);
         byzzfzc_gs_bfb.setOnItemSelectedListener(this);
         if (Constant.byzzfzc_gs_bfb != 1){
-            byzzfzc_gs_bfb.setSelection((int)(10 - Constant.byzzfzc_gs_bfb*10));
+            byzzfzc_gs_bfb.setSelection((int)(10-1 - Constant.byzzfzc_gs_bfb*10));
         }
         byzzfzc_mls_bfb = (Spinner) view.findViewById(R.id.byzzfzc_mls_bfb);
         byzzfzc_mls_bfb.setOnItemSelectedListener(this);
         if (Constant.byzzfzc_mls_bfb != 1){
-            byzzfzc_mls_bfb.setSelection((int)(10 - Constant.byzzfzc_mls_bfb*10));
+            byzzfzc_mls_bfb.setSelection((int)(10-1 - Constant.byzzfzc_mls_bfb*10));
         }
         byzzfzc_jglsc_bfb = (Spinner) view.findViewById(R.id.byzzfzc_jglsc_bfb);
         byzzfzc_jglsc_bfb.setOnItemSelectedListener(this);
         if (Constant.byzzfzc_qglsc_bfb != 1){
-            byzzfzc_jglsc_bfb.setSelection((int)(10 - Constant.byzzfzc_qglsc_bfb*10));
+            byzzfzc_jglsc_bfb.setSelection((int)(10-1 - Constant.byzzfzc_qglsc_bfb*10));
         }
         byzzfzc_yclsc_bfb = (Spinner) view.findViewById(R.id.byzzfzc_yclsc_bfb);
         byzzfzc_yclsc_bfb.setOnItemSelectedListener(this);
         if (Constant.byzzfzc_yclsc_bfb != 1){
-            byzzfzc_yclsc_bfb.setSelection((int)(10 - Constant.byzzfzc_yclsc_bfb*10));
+            byzzfzc_yclsc_bfb.setSelection((int)(10-1 - Constant.byzzfzc_yclsc_bfb*10));
         }
         byzzfzc_glsc_bfb = (Spinner) view.findViewById(R.id.byzzfzc_glsc_bfb);
         byzzfzc_glsc_bfb.setOnItemSelectedListener(this);
         if (Constant.byzzfzc_ggsc_bfb != 1){
-            byzzfzc_glsc_bfb.setSelection((int)(10 - Constant.byzzfzc_ggsc_bfb*10));
+            byzzfzc_glsc_bfb.setSelection((int)(10-1 - Constant.byzzfzc_ggsc_bfb*10));
         }
         byzzfzc_dlsc_bfb = (Spinner) view.findViewById(R.id.byzzfzc_dlsc_bfb);
         byzzfzc_dlsc_bfb.setOnItemSelectedListener(this);
         if (Constant.byzzfzc_dlsc_bfb != 1){
-            byzzfzc_dlsc_bfb.setSelection((int)(10 - Constant.byzzfzc_dlsc_bfb*10));
+            byzzfzc_dlsc_bfb.setSelection((int)(10-1 - Constant.byzzfzc_dlsc_bfb*10));
         }
         byzzfzc_cslsc_bfb = (Spinner) view.findViewById(R.id.byzzfzc_cslsc_bfb);
         byzzfzc_cslsc_bfb.setOnItemSelectedListener(this);
         if (Constant.byzzfzc_cslgs_bfb != 1){
-            byzzfzc_cslsc_bfb.setSelection((int)(10 - Constant.byzzfzc_cslgs_bfb*10));
+            byzzfzc_cslsc_bfb.setSelection((int)(10-1 - Constant.byzzfzc_cslgs_bfb*10));
         }
         byzzfzc_lygs_bfb = (Spinner) view.findViewById(R.id.byzzfzc_lygs_bfb);
         byzzfzc_lygs_bfb.setOnItemSelectedListener(this);
         if (Constant.byzzfzc_lygs_bfb != 1){
-            byzzfzc_lygs_bfb.setSelection((int)(10 - Constant.byzzfzc_lygs_bfb*10));
+            byzzfzc_lygs_bfb.setSelection((int)(10-1 - Constant.byzzfzc_lygs_bfb*10));
         }
         byzzfzc_clgs_bfb = (Spinner) view.findViewById(R.id.byzzfzc_clgs_bfb);
         byzzfzc_clgs_bfb.setOnItemSelectedListener(this);
         if (Constant.byzzfzc_clgs_bfb != 1){
-            byzzfzc_clgs_bfb.setSelection((int)(10 - Constant.byzzfzc_clgs_bfb*10));
+            byzzfzc_clgs_bfb.setSelection((int)(10-1 - Constant.byzzfzc_clgs_bfb*10));
         }
         byzzfzc_cy_bfb = (Spinner) view.findViewById(R.id.byzzfzc_cy_bfb);
         byzzfzc_cy_bfb.setOnItemSelectedListener(this);
         if (Constant.byzzfzc_cy_bfb != 1){
-            byzzfzc_cy_bfb.setSelection((int)(10 - Constant.byzzfzc_cy_bfb*10));
+            byzzfzc_cy_bfb.setSelection((int)(10-1 - Constant.byzzfzc_cy_bfb*10));
         }
         byzzfzc_mc_bfb = (Spinner) view.findViewById(R.id.byzzfzc_mc_bfb);
         byzzfzc_mc_bfb.setOnItemSelectedListener(this);
         if (Constant.byzzfzc_mc_bfb != 1){
-            byzzfzc_mc_bfb.setSelection((int)(10 - Constant.byzzfzc_mc_bfb*10));
+            byzzfzc_mc_bfb.setSelection((int)(10-1 - Constant.byzzfzc_mc_bfb*10));
         }
 
 
@@ -734,77 +1403,77 @@ public class XnmjFragment extends BaseFragment implements AdapterView.OnItemSele
         dnzzfzc_sd_bfb = (Spinner) view.findViewById(R.id.dnzzfzc_sd_bfb);
         dnzzfzc_sd_bfb.setOnItemSelectedListener(this);
         if (Constant.dnzzfzc_sd_bfb != 1){
-            dnzzfzc_sd_bfb.setSelection((int)(10 - Constant.dnzzfzc_sd_bfb*10));
+            dnzzfzc_sd_bfb.setSelection((int)(10-1 - Constant.dnzzfzc_sd_bfb*10));
         }
         dnzzfzc_xm_bfb = (Spinner) view.findViewById(R.id.dnzzfzc_xm_bfb);
         dnzzfzc_xm_bfb.setOnItemSelectedListener(this);
         if (Constant.dnzzfzc_xm_bfb != 1){
-            dnzzfzc_xm_bfb.setSelection((int)(10 - Constant.dnzzfzc_xm_bfb*10));
+            dnzzfzc_xm_bfb.setSelection((int)(10-1 - Constant.dnzzfzc_xm_bfb*10));
         }
         dnzzfzc_ym_bfb = (Spinner) view.findViewById(R.id.dnzzfzc_ym_bfb);
         dnzzfzc_ym_bfb.setOnItemSelectedListener(this);
         if (Constant.dnzzfzc_ym_bfb != 1){
-            dnzzfzc_ym_bfb.setSelection((int)(10 - Constant.dnzzfzc_ym_bfb*10));
+            dnzzfzc_ym_bfb.setSelection((int)(10-1 - Constant.dnzzfzc_ym_bfb*10));
         }
         dnzzfzc_yc_bfb = (Spinner) view.findViewById(R.id.dnzzfzc_yc_bfb);
         dnzzfzc_sd_bfb.setOnItemSelectedListener(this);
         if (Constant.dnzzfzc_yc_bfb != 1){
-            zfzyc_sd_bfb.setSelection((int)(10 - Constant.dnzzfzc_yc_bfb*10));
+            zfzyc_sd_bfb.setSelection((int)(10-1 - Constant.dnzzfzc_yc_bfb*10));
         }
         dnzzfzc_gs_bfb = (Spinner) view.findViewById(R.id.dnzzfzc_gs_bfb);
         dnzzfzc_gs_bfb.setOnItemSelectedListener(this);
         if (Constant.dnzzfzc_gs_bfb != 1){
-            dnzzfzc_gs_bfb.setSelection((int)(10 - Constant.dnzzfzc_gs_bfb*10));
+            dnzzfzc_gs_bfb.setSelection((int)(10-1 - Constant.dnzzfzc_gs_bfb*10));
         }
         dnzzfzc_mls_bfb = (Spinner) view.findViewById(R.id.dnzzfzc_mls_bfb);
         dnzzfzc_mls_bfb.setOnItemSelectedListener(this);
         if (Constant.dnzzfzc_mls_bfb != 1){
-            dnzzfzc_mls_bfb.setSelection((int)(10 - Constant.dnzzfzc_mls_bfb*10));
+            dnzzfzc_mls_bfb.setSelection((int)(10-1 - Constant.dnzzfzc_mls_bfb*10));
         }
         dnzzfzc_jglsc_bfb = (Spinner) view.findViewById(R.id.dnzzfzc_jglsc_bfb);
         dnzzfzc_jglsc_bfb.setOnItemSelectedListener(this);
         if (Constant.dnzzfzc_qglsc_bfb != 1){
-            dnzzfzc_jglsc_bfb.setSelection((int)(10 - Constant.dnzzfzc_qglsc_bfb*10));
+            dnzzfzc_jglsc_bfb.setSelection((int)(10-1 - Constant.dnzzfzc_qglsc_bfb*10));
         }
         dnzzfzc_yclsc_bfb = (Spinner) view.findViewById(R.id.dnzzfzc_yclsc_bfb);
         dnzzfzc_yclsc_bfb.setOnItemSelectedListener(this);
         if (Constant.dnzzfzc_yclsc_bfb != 1){
-            dnzzfzc_yclsc_bfb.setSelection((int)(10 - Constant.dnzzfzc_yclsc_bfb*10));
+            dnzzfzc_yclsc_bfb.setSelection((int)(10-1 - Constant.dnzzfzc_yclsc_bfb*10));
         }
         dnzzfzc_glsc_bfb = (Spinner) view.findViewById(R.id.dnzzfzc_glsc_bfb);
         dnzzfzc_glsc_bfb.setOnItemSelectedListener(this);
         if (Constant.dnzzfzc_ggsc_bfb != 1){
-            dnzzfzc_glsc_bfb.setSelection((int)(10 - Constant.dnzzfzc_ggsc_bfb*10));
+            dnzzfzc_glsc_bfb.setSelection((int)(10-1 - Constant.dnzzfzc_ggsc_bfb*10));
         }
         dnzzfzc_dlsc_bfb = (Spinner) view.findViewById(R.id.dnzzfzc_dlsc_bfb);
         dnzzfzc_dlsc_bfb.setOnItemSelectedListener(this);
         if (Constant.dnzzfzc_dlsc_bfb != 1){
-            dnzzfzc_dlsc_bfb.setSelection((int)(10 - Constant.dnzzfzc_dlsc_bfb*10));
+            dnzzfzc_dlsc_bfb.setSelection((int)(10-1 - Constant.dnzzfzc_dlsc_bfb*10));
         }
         dnzzfzc_cslsc_bfb = (Spinner) view.findViewById(R.id.dnzzfzc_cslsc_bfb);
         dnzzfzc_cslsc_bfb.setOnItemSelectedListener(this);
         if (Constant.dnzzfzc_cslgs_bfb != 1){
-            dnzzfzc_cslsc_bfb.setSelection((int)(10 - Constant.dnzzfzc_cslgs_bfb*10));
+            dnzzfzc_cslsc_bfb.setSelection((int)(10-1 - Constant.dnzzfzc_cslgs_bfb*10));
         }
         dnzzfzc_lygs_bfb = (Spinner) view.findViewById(R.id.dnzzfzc_lygs_bfb);
         dnzzfzc_lygs_bfb.setOnItemSelectedListener(this);
         if (Constant.dnzzfzc_lygs_bfb != 1){
-            dnzzfzc_lygs_bfb.setSelection((int)(10 - Constant.dnzzfzc_lygs_bfb*10));
+            dnzzfzc_lygs_bfb.setSelection((int)(10-1 - Constant.dnzzfzc_lygs_bfb*10));
         }
         dnzzfzc_clgs_bfb = (Spinner) view.findViewById(R.id.dnzzfzc_clgs_bfb);
         dnzzfzc_clgs_bfb.setOnItemSelectedListener(this);
         if (Constant.dnzzfzc_clgs_bfb != 1){
-            dnzzfzc_clgs_bfb.setSelection((int)(10 - Constant.dnzzfzc_clgs_bfb*10));
+            dnzzfzc_clgs_bfb.setSelection((int)(10-1 - Constant.dnzzfzc_clgs_bfb*10));
         }
         dnzzfzc_cy_bfb = (Spinner) view.findViewById(R.id.dnzzfzc_cy_bfb);
         dnzzfzc_cy_bfb.setOnItemSelectedListener(this);
         if (Constant.dnzzfzc_cy_bfb != 1){
-            dnzzfzc_cy_bfb.setSelection((int)(10 - Constant.dnzzfzc_cy_bfb*10));
+            dnzzfzc_cy_bfb.setSelection((int)(10-1 - Constant.dnzzfzc_cy_bfb*10));
         }
         dnzzfzc_mc_bfb = (Spinner) view.findViewById(R.id.dnzzfzc_mc_bfb);
         dnzzfzc_mc_bfb.setOnItemSelectedListener(this);
         if (Constant.dnzzfzc_mc_bfb != 1){
-            dnzzfzc_mc_bfb.setSelection((int)(10 - Constant.dnzzfzc_mc_bfb*10));
+            dnzzfzc_mc_bfb.setSelection((int)(10-1 - Constant.dnzzfzc_mc_bfb*10));
         }
 
 
@@ -1281,10 +1950,10 @@ public class XnmjFragment extends BaseFragment implements AdapterView.OnItemSele
         if (Constant.zzfzcdph_gs_zsdl != 0)
             mZzfzcdph_gs_zsdl.setText(Constant.zzfzcdph_gs_zsdl + "");
 
-        mZzfzcdph_gs_zsdl = (EditText) view.findViewById(R.id.zzfzcdph_mls_sdl);
+        /*mZzfzcdph_gs_zsdl = (EditText) view.findViewById(R.id.zzfzcdph_mls_sdl);
         mZzfzcdph_gs_zsdl.setOnFocusChangeListener(focusListener);
         if (Constant.zzfzcdph_gs_zsdl != 0)
-            mZzfzcdph_gs_zsdl.setText(Constant.zzfzcdph_gs_zsdl + "");
+            mZzfzcdph_gs_zsdl.setText(Constant.zzfzcdph_gs_zsdl + "");*/
 
         mZzfzcdph_mls_jshns = (EditText) view.findViewById(R.id.zzfzcdph_mls_jshns);
         mZzfzcdph_mls_jshns.setOnFocusChangeListener(focusListener);
@@ -3013,6 +3682,8 @@ public class XnmjFragment extends BaseFragment implements AdapterView.OnItemSele
     @Override
     public void jsDatas() {
         try {
+            
+            
 
             Constant.zfzycnph_zcdl = Utils.keep2Wdouble((Constant.zfzyc_gzslzrjp_gye * Constant.qnjcngz_flhj + Constant.zfzyc_hbmz_gye * Constant.hbmz_flhj +
                     Constant.zfzyc_pzrcmz_gye * Constant.pzrjmz_flhj + Constant.zfzyc_rcmz_gye * Constant.rcmz_flhj + Constant.zfzyc_prmz_gye * Constant.prmz_flhj +
@@ -3071,7 +3742,7 @@ public class XnmjFragment extends BaseFragment implements AdapterView.OnItemSele
 
             Constant.zfzycnph_cy_zsdl = Utils.keep2Wdouble(Constant.cy * Constant.zfzycnph_cy_mj* Constant.zfzycnph_cy_jshns* Constant.zfzyc_cy_bfb, 0);
             //SpUtil.saveSP(getContext(), "zfzycnph_cy_zsdl", Constant.zfzycnph_cy_zsdl);
-
+            //LogUtil.e(Constant.cy+"---"+ Constant.zfzycnph_cy_mj+"---"+ Constant.zfzycnph_cy_jshns+"---"+ Constant.zfzyc_cy_bfb);
             Constant.zfzycnph_mc_zsdl = Utils.keep2Wdouble(Constant.mc * Constant.zfzycnph_mc_mj* Constant.zfzycnph_mc_jshns* Constant.zfzyc_mc_bfb, 0);
             //SpUtil.saveSP(getContext(), "zfzycnph_mc_zsdl", Constant.zfzycnph_mc_zsdl);
 
@@ -3079,6 +3750,14 @@ public class XnmjFragment extends BaseFragment implements AdapterView.OnItemSele
                     Constant.zfzycnph_gs_zsdl + Constant.zfzycnph_mls_zsdl + Constant.zfzycnph_qglsc_zsdl + Constant.zfzycnph_ggsc_zsdl +
                     Constant.zfzycnph_yclsc_zsdl + Constant.zfzycnph_gclsc_zsdl + Constant.zfzycnph_dlsc_zsdl + Constant.zfzycnph_cslsc_zsdl +
                     Constant.zfzycnph_lygs_zsdl + Constant.zfzycnph_clgs_zsdl + Constant.zfzycnph_cy_zsdl + Constant.zfzycnph_mc_zsdl, 0);
+
+            Constant.zfzycnph_hj_mj = Utils.keep2Wdouble(Constant.zfzycnph_sd_mj + Constant.zfzycnph_xm_mj + Constant.zfzycnph_ym_mj + Constant.zfzycnph_yc_mj +
+                    Constant.zfzycnph_gs_mj + Constant.zfzycnph_mls_mj + Constant.zfzycnph_qglsc_mj + Constant.zfzycnph_ggsc_mj +
+                    Constant.zfzycnph_yclsc_mj + Constant.zfzycnph_gclsc_mj + Constant.zfzycnph_dlsc_mj + Constant.zfzycnph_cslsc_mj +
+                    Constant.zfzycnph_lygs_mj + Constant.zfzycnph_clgs_mj + Constant.zfzycnph_cy_mj + Constant.zfzycnph_mc_mj, 0);
+            
+            
+            
             //SpUtil.saveSP(getContext(), "zfzycnph_hj_zsdl", Constant.zfzycnph_hj_zsdl);
 
             Constant.zfzycnph_cz_zsdl = Utils.keep2Wdouble(Constant.zfzycnph_zcdl - Constant.zfzycnph_hj_zsdl, 0);
@@ -3136,6 +3815,11 @@ public class XnmjFragment extends BaseFragment implements AdapterView.OnItemSele
                     Constant.zzfzcdph_gs_zsdl + Constant.zzfzcdph_mls_zsdl + Constant.zzfzcdph_qglsc_zsdl + Constant.zzfzcdph_ggsc_zsdl +
                     Constant.zzfzcdph_yclsc_zsdl + Constant.zzfzcdph_gclsc_zsdl + Constant.zzfzcdph_dlsc_zsdl + Constant.zzfzcdph_cslsc_zsdl +
                     Constant.zzfzcdph_lygs_zsdl + Constant.zzfzcdph_clgs_zsdl + Constant.zzfzcdph_cy_zsdl + Constant.zzfzcdph_mc_zsdl, 0);
+           
+            Constant.zzfzcdph_hj_mj = Utils.keep2Wdouble(Constant.zzfzcdph_sd_mj + Constant.zzfzcdph_xm_mj + Constant.zzfzcdph_ym_mj + Constant.zzfzcdph_yc_mj +
+                    Constant.zzfzcdph_gs_mj + Constant.zzfzcdph_mls_mj + Constant.zzfzcdph_qglsc_mj + Constant.zzfzcdph_ggsc_mj +
+                    Constant.zzfzcdph_yclsc_mj + Constant.zzfzcdph_gclsc_mj + Constant.zzfzcdph_dlsc_mj + Constant.zzfzcdph_cslsc_mj +
+                    Constant.zzfzcdph_lygs_mj + Constant.zzfzcdph_clgs_mj + Constant.zzfzcdph_cy_mj + Constant.zzfzcdph_mc_mj, 0);
             //SpUtil.saveSP(getContext(), "zzfzcdph_hj_zsdl", Constant.zzfzcdph_hj_zsdl);
 
             Constant.zzfzcdph_cz_zsdl = Utils.keep2Wdouble(Constant.zzfzcdph_zcdl - Constant.zzfzcdph_hj_zsdl, 0);
@@ -3185,7 +3869,7 @@ public class XnmjFragment extends BaseFragment implements AdapterView.OnItemSele
 
             Constant.dnzzfzcdph_cy_zsdl = Utils.keep2Wdouble(Constant.cy * Constant.dnzzfzcdph_cy_mj* Constant.dnzzfzcdph_cy_jshns* Constant.dnzzfzc_cy_bfb, 0);
             //SpUtil.saveSP(getContext(), "dnzzfzcdph_cy_zsdl", Constant.dnzzfzcdph_cy_zsdl);
-
+            LogUtil.e(Constant.cy+"---"+Constant.dnzzfzcdph_cy_mj+"---"+Constant.dnzzfzcdph_cy_jshns+"---"+Constant.dnzzfzc_cy_bfb);
             Constant.dnzzfzcdph_mc_zsdl = Utils.keep2Wdouble(Constant.mc * Constant.dnzzfzcdph_mc_mj* Constant.dnzzfzcdph_mc_jshns* Constant.dnzzfzc_mc_bfb, 0);
            // SpUtil.saveSP(getContext(), "dnzzfzcdph_mc_zsdl", Constant.dnzzfzcdph_mc_zsdl);
 
@@ -3193,6 +3877,11 @@ public class XnmjFragment extends BaseFragment implements AdapterView.OnItemSele
                     Constant.dnzzfzcdph_gs_zsdl + Constant.dnzzfzcdph_mls_zsdl + Constant.dnzzfzcdph_qglsc_zsdl + Constant.dnzzfzcdph_ggsc_zsdl +
                     Constant.dnzzfzcdph_yclsc_zsdl + Constant.dnzzfzcdph_gclsc_zsdl + Constant.dnzzfzcdph_dlsc_zsdl + Constant.dnzzfzcdph_cslsc_zsdl +
                     Constant.dnzzfzcdph_lygs_zsdl + Constant.dnzzfzcdph_clgs_zsdl + Constant.dnzzfzcdph_cy_zsdl + Constant.dnzzfzcdph_mc_zsdl, 0);
+
+            Constant.dnzzfzcdph_hj_mj = Utils.keep2Wdouble(Constant.dnzzfzcdph_sd_mj + Constant.dnzzfzcdph_xm_mj + Constant.dnzzfzcdph_ym_mj + Constant.dnzzfzcdph_yc_mj +
+                    Constant.dnzzfzcdph_gs_mj + Constant.dnzzfzcdph_mls_mj + Constant.dnzzfzcdph_qglsc_mj + Constant.dnzzfzcdph_ggsc_mj +
+                    Constant.dnzzfzcdph_yclsc_mj + Constant.dnzzfzcdph_gclsc_mj + Constant.dnzzfzcdph_dlsc_mj + Constant.dnzzfzcdph_cslsc_mj +
+                    Constant.dnzzfzcdph_lygs_mj + Constant.dnzzfzcdph_clgs_mj + Constant.dnzzfzcdph_cy_mj + Constant.dnzzfzcdph_mc_mj, 0);
             //SpUtil.saveSP(getContext(), "dnzzfzcdph_hj_zsdl", Constant.dnzzfzcdph_hj_zsdl);
 
             Constant.dnzzfzcdph_cz_zsdl = Utils.keep2Wdouble(Constant.dnzzfzcdph_zcdl - Constant.dnzzfzcdph_hj_zsdl, 0);
@@ -3250,6 +3939,8 @@ public class XnmjFragment extends BaseFragment implements AdapterView.OnItemSele
 
         mZfzycnph_hj_zsdl.setText(Constant.zfzycnph_hj_zsdl + "");
 
+        mZfzycnph_hj_mj.setText(Constant.zfzycnph_hj_mj + "");
+
         mZfzycnph_cz_zsdl.setText(Constant.zfzycnph_cz_zsdl + "");
 
         mZzfzcdph_sd_zsdl.setText(Constant.zzfzcdph_sd_zsdl + "");
@@ -3285,6 +3976,8 @@ public class XnmjFragment extends BaseFragment implements AdapterView.OnItemSele
         mZzfzcdph_mc_zsdl.setText(Constant.zzfzcdph_mc_zsdl + "");
 
         mZzfzcdph_hj_zsdl.setText(Constant.zzfzcdph_hj_zsdl + "");
+
+        mZzfzcdph_hj_mj.setText(Constant.zzfzcdph_hj_mj + "");
 
         mZzfzcdph_cz_zsdl.setText(Constant.zzfzcdph_cz_zsdl + "");
 
@@ -3322,10 +4015,123 @@ public class XnmjFragment extends BaseFragment implements AdapterView.OnItemSele
 
         mDnzzfzcdph_hj_zsdl.setText(Constant.dnzzfzcdph_hj_zsdl + "");
 
+        mDnzzfzcdph_hj_mj.setText(Constant.dnzzfzcdph_hj_mj + "");
+
         mDnzzfzcdph_cz_zsdl.setText(Constant.dnzzfzcdph_cz_zsdl + "");
+
+
+
+
+        mZfzycnph_sd_mj.setText(Constant.zfzycnph_sd_mj + "");
+
+        mZfzycnph_xm_mj.setText(Constant.zfzycnph_xm_mj + "");
+
+        mZfzycnph_ym_mj.setText(Constant.zfzycnph_ym_mj + "");
+
+        mZfzycnph_yc_mj.setText(Constant.zfzycnph_yc_mj + "");
+
+        mZfzycnph_gs_mj.setText(Constant.zfzycnph_gs_mj + "");
+
+        mZfzycnph_mls_mj.setText(Constant.zfzycnph_mls_mj + "");
+
+        mZfzycnph_qglsc_mj.setText(Constant.zfzycnph_qglsc_mj + "");
+
+        mZfzycnph_ggsc_mj.setText(Constant.zfzycnph_ggsc_mj + "");
+
+        mZfzycnph_yclsc_mj.setText(Constant.zfzycnph_yclsc_mj + "");
+
+        mZfzycnph_gclsc_mj.setText(Constant.zfzycnph_gclsc_mj + "");
+
+        mZfzycnph_dlsc_mj.setText(Constant.zfzycnph_dlsc_mj + "");
+
+        mZfzycnph_cslsc_mj.setText(Constant.zfzycnph_cslsc_mj + "");
+
+        mZfzycnph_lygs_mj.setText(Constant.zfzycnph_lygs_mj + "");
+
+        mZfzycnph_clgs_mj.setText(Constant.zfzycnph_clgs_mj + "");
+
+        mZfzycnph_cy_mj.setText(Constant.zfzycnph_cy_mj + "");
+
+        mZfzycnph_mc_mj.setText(Constant.zfzycnph_mc_mj + "");
+
+        mZfzycnph_hj_mj.setText(Constant.zfzycnph_hj_mj + "");
+
+        mZfzycnph_cz_mj.setText(Constant.zfzycnph_cz_mj + "");
+
+        mZzfzcdph_sd_mj.setText(Constant.zzfzcdph_sd_mj + "");
+
+        mZzfzcdph_xm_mj.setText(Constant.zzfzcdph_xm_mj + "");
+
+        mZzfzcdph_ym_mj.setText(Constant.zzfzcdph_ym_mj + "");
+
+        mZzfzcdph_yc_mj.setText(Constant.zzfzcdph_yc_mj + "");
+
+        mZzfzcdph_gs_mj.setText(Constant.zzfzcdph_gs_mj + "");
+
+        mZzfzcdph_mls_mj.setText(Constant.zzfzcdph_mls_mj + "");
+
+        mZzfzcdph_qglsc_mj.setText(Constant.zzfzcdph_qglsc_mj + "");
+
+        mZzfzcdph_ggsc_mj.setText(Constant.zzfzcdph_ggsc_mj + "");
+
+        mZzfzcdph_yclsc_mj.setText(Constant.zzfzcdph_yclsc_mj + "");
+
+        mZzfzcdph_gclsc_mj.setText(Constant.zzfzcdph_gclsc_mj + "");
+
+        mZzfzcdph_dlsc_mj.setText(Constant.zzfzcdph_dlsc_mj + "");
+
+        mZzfzcdph_cslsc_mj.setText(Constant.zzfzcdph_cslsc_mj + "");
+
+        mZzfzcdph_lygs_mj.setText(Constant.zzfzcdph_lygs_mj + "");
+
+        mZzfzcdph_clgs_mj.setText(Constant.zzfzcdph_clgs_mj + "");
+
+        mZzfzcdph_cy_mj.setText(Constant.zzfzcdph_cy_mj + "");
+
+        mZzfzcdph_mc_mj.setText(Constant.zzfzcdph_mc_mj + "");
+
+        mZzfzcdph_hj_mj.setText(Constant.zzfzcdph_hj_mj + "");
+
+        mZzfzcdph_cz_mj.setText(Constant.zzfzcdph_cz_mj + "");
+
+        mDnzzfzcdph_sd_mj.setText(Constant.dnzzfzcdph_sd_mj + "");
+
+        mDnzzfzcdph_xm_mj.setText(Constant.dnzzfzcdph_xm_mj + "");
+
+        mDnzzfzcdph_ym_mj.setText(Constant.dnzzfzcdph_ym_mj + "");
+
+        mDnzzfzcdph_yc_mj.setText(Constant.dnzzfzcdph_yc_mj + "");
+
+        mDnzzfzcdph_gs_mj.setText(Constant.dnzzfzcdph_gs_mj + "");
+
+        mDnzzfzcdph_mls_mj.setText(Constant.dnzzfzcdph_mls_mj + "");
+
+        mDnzzfzcdph_qglsc_mj.setText(Constant.dnzzfzcdph_qglsc_mj + "");
+
+        mDnzzfzcdph_ggsc_mj.setText(Constant.dnzzfzcdph_ggsc_mj + "");
+
+        mDnzzfzcdph_yclsc_mj.setText(Constant.dnzzfzcdph_yclsc_mj + "");
+
+        mDnzzfzcdph_gclsc_mj.setText(Constant.dnzzfzcdph_gclsc_mj + "");
+
+        mDnzzfzcdph_dlsc_mj.setText(Constant.dnzzfzcdph_dlsc_mj + "");
+
+        mDnzzfzcdph_cslsc_mj.setText(Constant.dnzzfzcdph_cslsc_mj + "");
+
+        mDnzzfzcdph_lygs_mj.setText(Constant.dnzzfzcdph_lygs_mj + "");
+
+        mDnzzfzcdph_clgs_mj.setText(Constant.dnzzfzcdph_clgs_mj + "");
+
+        mDnzzfzcdph_cy_mj.setText(Constant.dnzzfzcdph_cy_mj + "");
+
+        mDnzzfzcdph_mc_mj.setText(Constant.dnzzfzcdph_mc_mj + "");
+
+        mDnzzfzcdph_hj_mj.setText(Constant.dnzzfzcdph_hj_mj + "");
+
+        mDnzzfzcdph_cz_mj.setText(Constant.dnzzfzcdph_cz_mj + "");
     }
 
-    private double[] arr = new double[]{1,0.9,0.8,0.7,0.6,0.5,0.4,0.2,0.1};
+    private double[] arr = new double[]{1,0.9,0.8,0.7,0.6,0.5,0.4,0.2,0.1,0};
 
     private boolean isFirst = true;
     @Override

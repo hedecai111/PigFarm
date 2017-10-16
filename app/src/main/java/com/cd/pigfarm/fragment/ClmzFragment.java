@@ -34,11 +34,10 @@ public class ClmzFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-       view =  inflater.inflate(R.layout.fragment_clmz, container, false);
+       view =  View.inflate(getContext(), R.layout.fragment_clmz, null);
         clmzs_Edi = (EditText) view.findViewById(R.id.clmzs_Edi);
-        long l = SpUtil.getSpLong(getContext(),"clmzz",0);
-        if (l != 0)
-            clmzs_Edi.setText(l+"");
+        //Toast.makeText(getContext(),Constant.clmzz+"---",Toast.LENGTH_LONG).show();
+        clmzs_Edi.setText(Constant.clmzz+"");
         bindButton();
         return  view;
     }
@@ -62,5 +61,10 @@ public class ClmzFragment extends BaseFragment {
     public void onClick(View v) {
         saveData(clmzs_Edi,clmzs_Edi.getText().toString());
         super.onClick(v);
+    }
+
+    @Override
+    public void refreshViews() {
+        clmzs_Edi.setText(Constant.clmzz+"");
     }
 }

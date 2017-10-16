@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="相关信息"
+            android:textSize="18sp"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingTop="5dp"
+            android:text="        该软件集成了最新科研项目的相关科技成果与现代猪场设计技术，在查阅了大量文献资料，结合生产实际的基础之上，推出的一款基于安卓系统开发的手机APP软件。它集成了猪场设计参数、猪场工艺、猪群结构、猪栏数、猪场建筑面积、猪只饮水量、供水量、产污量、粪污处理设施、消纳面积、投资估算等内容，涉及面广，内容丰富，自主参与性强，适合广大业主、科研人员、畜牧主管人员、基层兽医人员、以及其他决策人员。该软件的基本参数可以自行修改，计算的结果仅作为猪场建设的参考依据，具体应根据生产实际调整。该软件主要支撑项目、标准及参考的文献资料如下：\n
+一、支撑项目
+\n
+1. 国家现代农业产业技术体系四川生猪创新团队标准化生产工艺技术研究岗位\n
+2. 四川省科技支撑计划——生猪安全高效养殖关键技术研究与示范\n
+3. 四川省科技支撑计划——主要畜禽标准化养殖技术研究与示范\n
+4. 国家生猪产业技术体系-成都综合试验站\n
+二、相关标准\n
+1. 规模猪场建设技术规范（DB 51/ T1073—2010）\n
+2. 猪场废弃物处理与利用技术规范（DB 51/ T1075—2010）\n
+3. 规模猪场建设（GB/T 17824.3-2008）\n
+三、参考文献\n
+1. 龚建军，吕学斌，何志平. 适度规模猪场标准化设计[J]. 规模养猪，2010（3）：6-9\n
+2. 何志平，曾凯，吕学斌，等. 四川规模猪场产排污系数测定[J]. 中国沼气，2010, 28(4)：10-14.\n
+3. 何志平，曾凯，陶　璇，等. 不同养殖模式下生猪排污系数测定[J]. 西南农业学报，2010，23（3）：897-902.\n
+4. 付秀琴，陈子爱，邓良伟. 规模化猪场粪污处理沼气池容积确定[J]. 中国沼气，2002, 20(2)：24-27." />\n
+
+    </LinearLayout>
+</ScrollView>

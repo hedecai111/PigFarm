@@ -33,6 +33,7 @@ import com.cd.pigfarm.util.SpUtil;
 import com.cd.pigfarm.util.Utils;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -275,6 +276,8 @@ public class GzssbcsFragment extends BaseFragment {
         bindButton();
         return view;
     }
+
+
 
     private void findViews() {
 
@@ -746,6 +749,17 @@ public class GzssbcsFragment extends BaseFragment {
         }
     }
 
+    private int addViewSzie;
+    private List<View> viewList = new ArrayList<>();
+
+    private void removeView(LinearLayout linearLayout){
+        if (linearLayout != null &&viewList.size() > 0){
+            for (View view : viewList){
+                linearLayout.removeView(view);
+            }
+        }
+        viewList.clear();
+    }
 
     private void addTz(SbEntity sbEntity){
         if(sbEntity.getSblx() == 0){
@@ -897,7 +911,7 @@ public class GzssbcsFragment extends BaseFragment {
     public void saveData(EditText view, String text) {
         double d = Double.parseDouble(text);
         if (view == hbmzs_xqjl_sl){
-            SpUtil.saveSP(getContext(),"hbmzs_xqjl_sl",d);
+            //SpUtil.saveSP(getContext(),"hbmzs_xqjl_sl",d);
 
         }
         else if (view == hbmzs_xqjl_dj){
@@ -905,7 +919,7 @@ public class GzssbcsFragment extends BaseFragment {
 
         }
         else if (view == hbmzs_ltlx_sl){
-            SpUtil.saveSP(getContext(),"hbmzs_ltlx_sl",d);
+           // SpUtil.saveSP(getContext(),"hbmzs_ltlx_sl",d);
 
         }
         else if (view == hbmzs_ltlx_dj){
@@ -913,7 +927,7 @@ public class GzssbcsFragment extends BaseFragment {
 
         }
         else if (view == hbmzs_sl_sl){
-            SpUtil.saveSP(getContext(),"hbmzs_sl_sl",d);
+            //SpUtil.saveSP(getContext(),"hbmzs_sl_sl",d);
 
         }
         else if (view == hbmzs_sl_dj){
@@ -921,7 +935,7 @@ public class GzssbcsFragment extends BaseFragment {
 
         }
         else if (view == hbmzs_fyfj_sl){
-            SpUtil.saveSP(getContext(),"hbmzs_fyfj_sl",d);
+            //SpUtil.saveSP(getContext(),"hbmzs_fyfj_sl",d);
 
         }
         else if (view == hbmzs_fyfj_dj){
@@ -929,7 +943,7 @@ public class GzssbcsFragment extends BaseFragment {
 
         }
         else if (view == hbmzs_znhjkzq_sl){
-            SpUtil.saveSP(getContext(),"hbmzs_znhjkzq_sl",d);
+            //SpUtil.saveSP(getContext(),"hbmzs_znhjkzq_sl",d);
 
         }
         else if (view == hbmzs_znhjkzq_dj){
@@ -937,34 +951,34 @@ public class GzssbcsFragment extends BaseFragment {
 
         }
         else if (view == hbmzs_lfdb_sl){
-            SpUtil.saveSP(getContext(),"hbmzs_lfdb_sl",d);
+            //SpUtil.saveSP(getContext(),"hbmzs_lfdb_sl",d);
 
         }else if (view == hbmzs_lfdb_dj){
             SpUtil.saveSP(getContext(),"hbmzs_lfdb_dj",d);
 
         }
         else if (view == hbmzs_ysq_sl){
-            SpUtil.saveSP(getContext(),"hbmzs_ysq_sl",d);
+           // SpUtil.saveSP(getContext(),"hbmzs_ysq_sl",d);
 
         }else if (view == hbmzs_ysq_dj){
             SpUtil.saveSP(getContext(),"hbmzs_ysq_dj",d);
 
         }
         else if (view == gzjpzrjmzs_bzj_sl){
-            SpUtil.saveSP(getContext(),"gzjpzrjmzs_bzj_sl",d);
+            //SpUtil.saveSP(getContext(),"gzjpzrjmzs_bzj_sl",d);
 
         }else if (view == gzjpzrjmzs_bzj_dj){
             SpUtil.saveSP(getContext(),"gzjpzrjmzs_bzj_dj",d);
 
         }else if (view == gzjpzrjmzs_jyzlzdfxy_sl){
-            SpUtil.saveSP(getContext(),"gzjpzrjmzs_jyzlzdfxy_sl",d);
+            //SpUtil.saveSP(getContext(),"gzjpzrjmzs_jyzlzdfxy_sl",d);
 
         }else if (view == gzjpzrjmzs_jyzlzdfxy_dj){
             SpUtil.saveSP(getContext(),"gzjpzrjmzs_jyzlzdfxy_dj",d);
 
         }
         else if (view == gzjpzrjmzs_szsj_sl){
-            SpUtil.saveSP(getContext(),"gzjpzrjmzs_szsj_sl",d);
+            //SpUtil.saveSP(getContext(),"gzjpzrjmzs_szsj_sl",d);
 
         }
         else if (view == gzjpzrjmzs_szsj_dj){
@@ -972,69 +986,69 @@ public class GzssbcsFragment extends BaseFragment {
 
         }
         else if (view == gzjpzrjmzs_szysjybzdgzj_sl){
-            SpUtil.saveSP(getContext(),"gzjpzrjmzs_szysjybzdgzj_sl",d);
+            //SpUtil.saveSP(getContext(),"gzjpzrjmzs_szysjybzdgzj_sl",d);
 
         }else if (view == gzjpzrjmzs_szysjybzdgzj_dj){
             SpUtil.saveSP(getContext(),"gzjpzrjmzs_szysjybzdgzj_dj",d);
 
         }else if (view == gzjpzrjmzs_xqjl_sl){
-            SpUtil.saveSP(getContext(),"gzjpzrjmzs_xqjl_sl",d);
+            //SpUtil.saveSP(getContext(),"gzjpzrjmzs_xqjl_sl",d);
 
         }else if (view == gzjpzrjmzs_xqjl_dj){
             SpUtil.saveSP(getContext(),"gzjpzrjmzs_xqjl_dj",d);
 
         }else if (view == gzjpzrjmzs_ltxx_sl){
-            SpUtil.saveSP(getContext(),"gzjpzrjmzs_ltxx_sl",d);
+            //SpUtil.saveSP(getContext(),"gzjpzrjmzs_ltxx_sl",d);
 
         }else if (view == gzjpzrjmzs_ltxx_dj){
             SpUtil.saveSP(getContext(),"gzjpzrjmzs_ltxx_dj",d);
 
         }else if (view == gzjpzrjmzs_sl_sl){
-            SpUtil.saveSP(getContext(),"gzjpzrjmzs_sl_sl",d);
+           // SpUtil.saveSP(getContext(),"gzjpzrjmzs_sl_sl",d);
 
         }else if (view == gzjpzrjmzs_sl_dj){
             SpUtil.saveSP(getContext(),"gzjpzrjmzs_sl_dj",d);
 
         }else if (view == gzjpzrjmzs_fyfj_sl){
-            SpUtil.saveSP(getContext(),"gzjpzrjmzs_fyfj_sl",d);
+            //SpUtil.saveSP(getContext(),"gzjpzrjmzs_fyfj_sl",d);
 
         }
         else if (view == gzjpzrjmzs_fyfj_dj){
             SpUtil.saveSP(getContext(),"gzjpzrjmzs_fyfj_dj",d);
 
         }else if (view == gzjpzrjmzs_znhjkzq_sl){
-            SpUtil.saveSP(getContext(),"gzjpzrjmzs_znhjkzq_sl",d);
+            //SpUtil.saveSP(getContext(),"gzjpzrjmzs_znhjkzq_sl",d);
 
         }else if (view == gzjpzrjmzs_znhjkzq_dj){
             SpUtil.saveSP(getContext(),"gzjpzrjmzs_znhjkzq_dj",d);
 
         }else if (view == gzjpzrjmzs_lfdb_sl){
-            SpUtil.saveSP(getContext(),"gzjpzrjmzs_lfdb_sl",d);
+            //SpUtil.saveSP(getContext(),"gzjpzrjmzs_lfdb_sl",d);
 
         }else if (view == gzjpzrjmzs_lfdb_dj){
             SpUtil.saveSP(getContext(),"gzjpzrjmzs_lfdb_dj",d);
 
         }else if (view == gzjpzrjmzs_ysq_sl){
-            SpUtil.saveSP(getContext(),"gzjpzrjmzs_ysq_sl",d);
+           // SpUtil.saveSP(getContext(),"gzjpzrjmzs_ysq_sl",d);
 
         }else if (view == gzjpzrjmzs_ysq_dj){
             SpUtil.saveSP(getContext(),"gzjpzrjmzs_ysq_dj",d);
 
         }else if (view == gzjpzrjmzs_rcvczdy_sl){
-            SpUtil.saveSP(getContext(),"gzjpzrjmzs_rcvczdy_sl",d);
+            //SpUtil.saveSP(getContext(),"gzjpzrjmzs_rcvczdy_sl",d);
 
         }else if (view == gzjpzrjmzs_rcvczdy_dj){
             SpUtil.saveSP(getContext(),"gzjpzrjmzs_rcvczdy_dj",d);
 
         }
         else if (view == rcmzs_xwl_sl){
-            SpUtil.saveSP(getContext(),"rcmzs_xwl_sl",d);
+            //SpUtil.saveSP(getContext(),"rcmzs_xwl_sl",d);
 
         }else if (view == rcmzs_xwl_dj){
             SpUtil.saveSP(getContext(),"rcmzs_xwl_dj",d);
 
         }else if (view == rcmzs_ltlx_sl){
-            SpUtil.saveSP(getContext(),"rcmzs_ltlx_sl",d);
+           // SpUtil.saveSP(getContext(),"rcmzs_ltlx_sl",d);
 
         }else if (view == rcmzs_ltlx_dj){
             SpUtil.saveSP(getContext(),"rcmzs_ltlx_dj",d);
@@ -1046,242 +1060,242 @@ public class GzssbcsFragment extends BaseFragment {
             SpUtil.saveSP(getContext(),"rcmzs_sl_dj",d);
 
         }else if (view == rcmzs_fyfj_sl){
-            SpUtil.saveSP(getContext(),"rcmzs_fyfj_sl",d);
+            //SpUtil.saveSP(getContext(),"rcmzs_fyfj_sl",d);
 
         }else if (view == rcmzs_fyfj_dj){
             SpUtil.saveSP(getContext(),"rcmzs_fyfj_dj",d);
 
         }else if (view == rcmzs_znhjkzq_sl){
-            SpUtil.saveSP(getContext(),"rcmzs_znhjkzq_sl",d);
+            //SpUtil.saveSP(getContext(),"rcmzs_znhjkzq_sl",d);
 
         }else if (view == rcmzs_znhjkzq_dj){
             SpUtil.saveSP(getContext(),"rcmzs_znhjkzq_dj",d);
 
         }else if (view == rcmzs_lfdb_sl){
-            SpUtil.saveSP(getContext(),"rcmzs_lfdb_sl",d);
+            //SpUtil.saveSP(getContext(),"rcmzs_lfdb_sl",d);
 
         }else if (view == rcmzs_lfdb_dj){
             SpUtil.saveSP(getContext(),"rcmzs_lfdb_dj",d);
 
         }else if (view == rcmzs_ysq_sl){
-            SpUtil.saveSP(getContext(),"rcmzs_ysq_sl",d);
+            //SpUtil.saveSP(getContext(),"rcmzs_ysq_sl",d);
 
         }else if (view == rcmzs_ysq_dj){
             SpUtil.saveSP(getContext(),"rcmzs_ysq_dj",d);
 
         }else if (view == fws_fwl_sl){
-            SpUtil.saveSP(getContext(),"fws_fwl_sl",d);
+           // SpUtil.saveSP(getContext(),"fws_fwl_sl",d);
 
         }else if (view == fws_fwl_dj){
             SpUtil.saveSP(getContext(),"fws_fwl_dj",d);
 
         }else if (view == fws_ltlx_sl){
-            SpUtil.saveSP(getContext(),"fws_ltlx_sl",d);
+            //SpUtil.saveSP(getContext(),"fws_ltlx_sl",d);
 
         }else if (view == fws_ltlx_dj){
             SpUtil.saveSP(getContext(),"fws_ltlx_dj",d);
 
         }else if (view == fws_sl_sl){
-            SpUtil.saveSP(getContext(),"fws_sl_sl",d);
+            //SpUtil.saveSP(getContext(),"fws_sl_sl",d);
 
         }else if (view == fws_sl_dj){
             SpUtil.saveSP(getContext(),"fws_sl_dj",d);
 
         }else if (view == fws_flsj_sl){
-            SpUtil.saveSP(getContext(),"fws_flsj_sl",d);
+           // SpUtil.saveSP(getContext(),"fws_flsj_sl",d);
 
         }else if (view == fws_flsj_dj){
             SpUtil.saveSP(getContext(),"fws_flsj_dj",d);
 
         }else if (view == fws_znhjkzq_sl){
-            SpUtil.saveSP(getContext(),"fws_znhjkzq_sl",d);
+            //SpUtil.saveSP(getContext(),"fws_znhjkzq_sl",d);
 
         }else if (view == fws_znhjkzq_dj){
             SpUtil.saveSP(getContext(),"fws_znhjkzq_dj",d);
 
         }else if (view == fws_ysq_sl){
-            SpUtil.saveSP(getContext(),"fws_ysq_sl",d);
+            //SpUtil.saveSP(getContext(),"fws_ysq_sl",d);
 
         }else if (view == fws_ysq_dj){
             SpUtil.saveSP(getContext(),"fws_ysq_dj",d);
 
         }else if (view == fws_znbwx_sl){
-            SpUtil.saveSP(getContext(),"fws_znbwx_sl",d);
+            //SpUtil.saveSP(getContext(),"fws_znbwx_sl",d);
 
         }else if (view == fws_znbwx_dj){
             SpUtil.saveSP(getContext(),"fws_znbwx_dj",d);
 
         }else if (view == fws_dhjbysb_sl){
-            SpUtil.saveSP(getContext(),"fws_dhjbysb_sl",d);
+            //SpUtil.saveSP(getContext(),"fws_dhjbysb_sl",d);
 
         }else if (view == fws_dhjbysb_dj){
             SpUtil.saveSP(getContext(),"fws_dhjbysb_dj",d);
 
         }else if (view == bys_byl_sl){
-            SpUtil.saveSP(getContext(),"bys_byl_sl",d);
+           // SpUtil.saveSP(getContext(),"bys_byl_sl",d);
 
         }else if (view == bys_byl_dj){
             SpUtil.saveSP(getContext(),"bys_byl_dj",d);
 
         }else if (view == bys_ltlx_sl){
-            SpUtil.saveSP(getContext(),"bys_ltlx_sl",d);
+           // SpUtil.saveSP(getContext(),"bys_ltlx_sl",d);
 
         }else if (view == bys_ltlx_dj){
             SpUtil.saveSP(getContext(),"bys_ltlx_dj",d);
 
         }else if (view == bys_sl_sl){
-            SpUtil.saveSP(getContext(),"bys_sl_sl",d);
+            //SpUtil.saveSP(getContext(),"bys_sl_sl",d);
 
         }else if (view == bys_sl_dj){
             SpUtil.saveSP(getContext(),"bys_sl_dj",d);
 
         }else if (view == bys_fyfj_sl){
-            SpUtil.saveSP(getContext(),"bys_fyfj_sl",d);
+            //SpUtil.saveSP(getContext(),"bys_fyfj_sl",d);
 
         }else if (view == bys_fyfj_dj){
             SpUtil.saveSP(getContext(),"bys_fyfj_dj",d);
 
         }else if (view == bys_znhjkzq_sl){
-            SpUtil.saveSP(getContext(),"bys_znhjkzq_sl",d);
+            //SpUtil.saveSP(getContext(),"bys_znhjkzq_sl",d);
 
         }else if (view == bys_znhjkzq_dj){
             SpUtil.saveSP(getContext(),"bys_znhjkzq_dj",d);
 
         }else if (view == bys_ysq_sl){
-            SpUtil.saveSP(getContext(),"bys_ysq_sl",d);
+            //SpUtil.saveSP(getContext(),"bys_ysq_sl",d);
 
         }else if (view == bys_ysq_dj){
             SpUtil.saveSP(getContext(),"bys_ysq_dj",d);
 
         }else if (view == bys_dhjbwsb_sl){
-            SpUtil.saveSP(getContext(),"bys_dhjbwsb_sl",d);
+           // SpUtil.saveSP(getContext(),"bys_dhjbwsb_sl",d);
 
         }else if (view == bys_dhjbwsb_dj){
             SpUtil.saveSP(getContext(),"bys_dhjbwsb_dj",d);
 
         }else if (view == szyfs_xqjl_sl){
-            SpUtil.saveSP(getContext(),"szyfs_xqjl_sl",d);
+            //SpUtil.saveSP(getContext(),"szyfs_xqjl_sl",d);
 
         }else if (view == szyfs_xqjl_dj){
             SpUtil.saveSP(getContext(),"szyfs_xqjl_dj",d);
 
         }else if (view == szyfs_ltlx_sl){
-            SpUtil.saveSP(getContext(),"szyfs_ltlx_sl",d);
+           // SpUtil.saveSP(getContext(),"szyfs_ltlx_sl",d);
 
         }else if (view == szyfs_ltlx_dj){
             SpUtil.saveSP(getContext(),"szyfs_ltlx_dj",d);
 
         }else if (view == szyfs_sl_sl){
-            SpUtil.saveSP(getContext(),"szyfs_sl_sl",d);
+           // SpUtil.saveSP(getContext(),"szyfs_sl_sl",d);
 
         }else if (view == szyfs_sl_dj){
             SpUtil.saveSP(getContext(),"szyfs_sl_dj",d);
 
         }else if (view == szyfs_fyfj_sl){
-            SpUtil.saveSP(getContext(),"szyfs_fyfj_sl",d);
+           // SpUtil.saveSP(getContext(),"szyfs_fyfj_sl",d);
 
         }else if (view == szyfs_fyfj_dj){
             SpUtil.saveSP(getContext(),"szyfs_fyfj_dj",d);
 
         }else if (view == szyfs_znhjkzq_sl){
-            SpUtil.saveSP(getContext(),"szyfs_znhjkzq_sl",d);
+            //SpUtil.saveSP(getContext(),"szyfs_znhjkzq_sl",d);
 
         }else if (view == szyfs_znhjkzq_dj){
             SpUtil.saveSP(getContext(),"szyfs_znhjkzq_dj",d);
 
         }else if (view == szyfs_lfdb_sl){
-            SpUtil.saveSP(getContext(),"szyfs_lfdb_sl",d);
+            //SpUtil.saveSP(getContext(),"szyfs_lfdb_sl",d);
 
         }else if (view == szyfs_lfdb_dj){
             SpUtil.saveSP(getContext(),"szyfs_lfdb_dj",d);
 
         }else if (view == szyfs_ysq_sl){
-            SpUtil.saveSP(getContext(),"szyfs_ysq_sl",d);
+            //SpUtil.saveSP(getContext(),"szyfs_ysq_sl",d);
 
         }else if (view == szyfs_ysq_dj){
             SpUtil.saveSP(getContext(),"szyfs_ysq_dj",d);
 
         }else if (view == bzgls_xqjl_sl){
-            SpUtil.saveSP(getContext(),"bzgls_xqjl_sl",d);
+            //SpUtil.saveSP(getContext(),"bzgls_xqjl_sl",d);
 
         }else if (view == bzgls_xqjl_dj){
             SpUtil.saveSP(getContext(),"bzgls_xqjl_dj",d);
 
         }else if (view == bzgls_ltlx_sl){
-            SpUtil.saveSP(getContext(),"bzgls_ltlx_sl",d);
+            //SpUtil.saveSP(getContext(),"bzgls_ltlx_sl",d);
 
         }else if (view == bzgls_ltlx_dj){
             SpUtil.saveSP(getContext(),"bzgls_ltlx_dj",d);
 
         }else if (view == bzgls_sl_sl){
-            SpUtil.saveSP(getContext(),"bzgls_sl_sl",d);
+            //SpUtil.saveSP(getContext(),"bzgls_sl_sl",d);
 
         }else if (view == bzgls_sl_dj){
             SpUtil.saveSP(getContext(),"bzgls_sl_dj",d);
 
         }else if (view == bzgls_fyfj_sl){
-            SpUtil.saveSP(getContext(),"bzgls_fyfj_sl",d);
+           // SpUtil.saveSP(getContext(),"bzgls_fyfj_sl",d);
 
         }else if (view == bzgls_fyfj_dj){
             SpUtil.saveSP(getContext(),"bzgls_fyfj_dj",d);
 
         }else if (view == bzgls_znhjkzq_sl){
-            SpUtil.saveSP(getContext(),"bzgls_znhjkzq_sl",d);
+            //SpUtil.saveSP(getContext(),"bzgls_znhjkzq_sl",d);
 
         }else if (view == bzgls_znhjkzq_dj){
             SpUtil.saveSP(getContext(),"bzgls_znhjkzq_dj",d);
 
         }else if (view == bzgls_lfdb_sl){
-            SpUtil.saveSP(getContext(),"bzgls_lfdb_sl",d);
+            //SpUtil.saveSP(getContext(),"bzgls_lfdb_sl",d);
 
         }else if (view == bzgls_lfdb_dj){
             SpUtil.saveSP(getContext(),"bzgls_lfdb_dj",d);
 
         }else if (view == bzgls_ysq_sl){
-            SpUtil.saveSP(getContext(),"bzgls_ysq_sl",d);
+           // SpUtil.saveSP(getContext(),"bzgls_ysq_sl",d);
 
         }else if (view == bzgls_ysq_dj){
             SpUtil.saveSP(getContext(),"bzgls_ysq_dj",d);
 
         }
         else if (view == yzgls_xqjl_sl){
-            SpUtil.saveSP(getContext(),"yzgls_xqjl_sl",d);
+            //SpUtil.saveSP(getContext(),"yzgls_xqjl_sl",d);
 
         }else if (view == yzgls_xqjl_dj){
             SpUtil.saveSP(getContext(),"yzgls_xqjl_dj",d);
 
         }else if (view == yzgls_ltlx_sl){
-            SpUtil.saveSP(getContext(),"yzgls_ltlx_sl",d);
+            //SpUtil.saveSP(getContext(),"yzgls_ltlx_sl",d);
 
         }else if (view == yzgls_ltlx_dj){
             SpUtil.saveSP(getContext(),"yzgls_ltlx_dj",d);
 
         }else if (view == yzgls_sl_sl){
-            SpUtil.saveSP(getContext(),"yzgls_sl_sl",d);
+            //SpUtil.saveSP(getContext(),"yzgls_sl_sl",d);
 
         }else if (view == yzgls_sl_dj){
             SpUtil.saveSP(getContext(),"yzgls_sl_dj",d);
 
         }else if (view == yzgls_fyfj_sl){
-            SpUtil.saveSP(getContext(),"yzgls_fyfj_sl",d);
+            //SpUtil.saveSP(getContext(),"yzgls_fyfj_sl",d);
 
         }else if (view == yzgls_fyfj_dj){
             SpUtil.saveSP(getContext(),"yzgls_fyfj_dj",d);
 
         }else if (view == yzgls_znhjkzq_sl){
-            SpUtil.saveSP(getContext(),"yzgls_znhjkzq_sl",d);
+           // SpUtil.saveSP(getContext(),"yzgls_znhjkzq_sl",d);
 
         }else if (view == yzgls_znhjkzq_dj){
             SpUtil.saveSP(getContext(),"yzgls_znhjkzq_dj",d);
 
         }else if (view == yzgls_lfdb_sl){
-            SpUtil.saveSP(getContext(),"yzgls_lfdb_sl",d);
+            //SpUtil.saveSP(getContext(),"yzgls_lfdb_sl",d);
 
         }else if (view == yzgls_lfdb_dj){
             SpUtil.saveSP(getContext(),"yzgls_lfdb_dj",d);
 
         }else if (view == yzgls_ysq_sl){
-            SpUtil.saveSP(getContext(),"yzgls_ysq_sl",d);
+            //SpUtil.saveSP(getContext(),"yzgls_ysq_sl",d);
 
         }else if (view == yzgls_ysq_dj){
             SpUtil.saveSP(getContext(),"yzgls_ysq_dj",d);
@@ -1306,73 +1320,66 @@ public class GzssbcsFragment extends BaseFragment {
             //后备母猪舍
 
             Constant.hbmzs_xqjl_sl = Utils.keep2Wdouble(Constant.zfzyc_hbmzl_gyy, 0);
-            if (SpUtil.getSpDouble(getContext(),"hbmzs_xqjl_sl",0) != 0)
-                Constant.hbmzs_xqjl_sl = SpUtil.getSpDouble(getContext(),"hbmzs_xqjl_sl",0);
 
+            LogUtil.e(Constant.hbmzs_xqjl_sl+"--------------->"+Constant.zfzyc_hbmzl_gyy);
             Constant.hbmzs_xqjl_dj = Utils.keep2Wdouble(Constant.gzjxqsyj_dj, 2);
-            if (SpUtil.getSpDouble(getContext(),"hbmzs_xqjl_dj",0) != 0)
-                Constant.hbmzs_xqjl_dj = SpUtil.getSpDouble(getContext(),"hbmzs_xqjl_dj",0);
+            if (SpUtil.getSpDouble(App.context,"hbmzs_xqjl_dj",0) != 0)
+                Constant.hbmzs_xqjl_dj = SpUtil.getSpDouble(App.context,"hbmzs_xqjl_dj",0);
 
             Constant.hbmzs_xqjl_tz = Utils.keep2Wdouble((Constant.hbmzs_xqjl_sl * Constant.hbmzs_xqjl_dj) / 10000, 2);
 
             Constant.hbmzs_ltlx_sl = Utils.keep2Wdouble(Constant.zfzyc_hbmzl_gyy, 0);
-            if (SpUtil.getSpDouble(getContext(),"hbmzs_ltlx_sl",0) != 0)
-                Constant.hbmzs_ltlx_sl = SpUtil.getSpDouble(getContext(),"hbmzs_ltlx_sl",0);
+
 
             Constant.hbmzs_ltlx_dj = Utils.keep2Wdouble(800, 2);
-            if (SpUtil.getSpDouble(getContext(),"hbmzs_ltlx_dj",0) != 0)
-                Constant.hbmzs_ltlx_dj = SpUtil.getSpDouble(getContext(),"hbmzs_ltlx_dj",0);
+            if (SpUtil.getSpDouble(App.context,"hbmzs_ltlx_dj",0) != 0)
+                Constant.hbmzs_ltlx_dj = SpUtil.getSpDouble(App.context,"hbmzs_ltlx_dj",0);
 
             Constant.hbmzs_ltlx_tz = Utils.keep2Wdouble((Constant.hbmzs_ltlx_sl * Constant.hbmzs_ltlx_dj) / 10000, 2);
 
             Constant.hbmzs_sl_sl = Utils.keep2Wdouble(Constant.zfzyc_hbmzs_gyy * 3 / 65, 0);
-            if (SpUtil.getSpDouble(getContext(),"hbmzs_sl_sl",0) != 0)
-                Constant.hbmzs_sl_sl = SpUtil.getSpDouble(getContext(),"hbmzs_sl_sl",0);
+
 
             Constant.hbmzs_sl_dj = 320;
-            if (SpUtil.getSpDouble(getContext(),"hbmzs_sl_dj",0) != 0)
-                Constant.hbmzs_sl_dj = SpUtil.getSpDouble(getContext(),"hbmzs_sl_dj",0);
+            if (SpUtil.getSpDouble(App.context,"hbmzs_sl_dj",0) != 0)
+                Constant.hbmzs_sl_dj = SpUtil.getSpDouble(App.context,"hbmzs_sl_dj",0);
 
             Constant.hbmzs_sl_tz = Utils.keep2Wdouble((Constant.hbmzs_sl_sl * Constant.hbmzs_sl_dj) / 10000, 2);
 
 
             Constant.hbmzs_fyfj_sl = Utils.keep2Wdouble(Math.round(Constant.hbmzs_sl_sl / 2 + 0.5), 0);
-            if (SpUtil.getSpDouble(getContext(),"hbmzs_fyfj_sl",0) != 0)
-                Constant.hbmzs_fyfj_sl = SpUtil.getSpDouble(getContext(),"hbmzs_fyfj_sl",0);
+
 
             Constant.hbmzs_fyfj_dj = 2800;
-            if (SpUtil.getSpDouble(getContext(),"hbmzs_fyfj_dj",0) != 0)
-                Constant.hbmzs_fyfj_dj = SpUtil.getSpDouble(getContext(),"hbmzs_fyfj_dj",0);
+            if (SpUtil.getSpDouble(App.context,"hbmzs_fyfj_dj",0) != 0)
+                Constant.hbmzs_fyfj_dj = SpUtil.getSpDouble(App.context,"hbmzs_fyfj_dj",0);
 
             Constant.hbmzs_fyfj_tz = Utils.keep2Wdouble((Constant.hbmzs_fyfj_sl * Constant.hbmzs_fyfj_dj) / 10000, 2);
 
             Constant.hbmzs_znhjkzq_sl = Utils.keep2Wdouble(Math.round(Constant.hbmzs_fyfj_sl / 4 ), 0);
-            if (SpUtil.getSpDouble(getContext(),"hbmzs_znhjkzq_sl",0) != 0)
-                Constant.hbmzs_znhjkzq_sl = SpUtil.getSpDouble(getContext(),"hbmzs_znhjkzq_sl",0);
+
 
             Constant.hbmzs_znhjkzq_dj = 20000;
-            if (SpUtil.getSpDouble(getContext(),"hbmzs_znhjkzq_dj",0) != 0)
-                Constant.hbmzs_znhjkzq_dj = SpUtil.getSpDouble(getContext(),"hbmzs_znhjkzq_dj",0);
+            if (SpUtil.getSpDouble(App.context,"hbmzs_znhjkzq_dj",0) != 0)
+                Constant.hbmzs_znhjkzq_dj = SpUtil.getSpDouble(App.context,"hbmzs_znhjkzq_dj",0);
 
             Constant.hbmzs_znhjkzq_tz = Utils.keep2Wdouble((Constant.hbmzs_znhjkzq_sl * Constant.hbmzs_znhjkzq_dj) / 10000, 2);
 
             Constant.hbmzs_lfdb_sl = Utils.keep2Wdouble(Constant.zfzyc_hbmzs_gyy / 5, 0);
-            if (SpUtil.getSpDouble(getContext(),"hbmzs_lfdb_sl",0) != 0)
-                Constant.hbmzs_lfdb_sl = SpUtil.getSpDouble(getContext(),"hbmzs_lfdb_sl",0);
+
 
             Constant.hbmzs_lfdb_dj = 160;
-            if (SpUtil.getSpDouble(getContext(),"hbmzs_lfdb_dj",0) != 0)
-                Constant.hbmzs_lfdb_dj = SpUtil.getSpDouble(getContext(),"hbmzs_lfdb_dj",0);
+            if (SpUtil.getSpDouble(App.context,"hbmzs_lfdb_dj",0) != 0)
+                Constant.hbmzs_lfdb_dj = SpUtil.getSpDouble(App.context,"hbmzs_lfdb_dj",0);
 
             Constant.hbmzs_lfdb_tz = Utils.keep2Wdouble((Constant.hbmzs_lfdb_sl * Constant.hbmzs_lfdb_dj) / 10000, 2);
 
             Constant.hbmzs_ysq_sl = Utils.keep2Wdouble(Constant.zfzyc_hbmzl_gyy * 2, 0);
-            if (SpUtil.getSpDouble(getContext(),"hbmzs_ysq_sl",0) != 0)
-                Constant.hbmzs_ysq_sl = SpUtil.getSpDouble(getContext(),"hbmzs_ysq_sl",0);
+
 
             Constant.hbmzs_ysq_dj = 60;
-            if (SpUtil.getSpDouble(getContext(),"hbmzs_ysq_dj",0) != 0)
-                Constant.hbmzs_ysq_dj = SpUtil.getSpDouble(getContext(),"hbmzs_ysq_dj",0);
+            if (SpUtil.getSpDouble(App.context,"hbmzs_ysq_dj",0) != 0)
+                Constant.hbmzs_ysq_dj = SpUtil.getSpDouble(App.context,"hbmzs_ysq_dj",0);
 
             Constant.hbmzs_ysq_tz = Utils.keep2Wdouble((Constant.hbmzs_ysq_sl * Constant.hbmzs_ysq_dj) / 10000, 2);
 
@@ -1381,101 +1388,89 @@ public class GzssbcsFragment extends BaseFragment {
 
             //公猪及配种壬检母猪舍
             Constant.gzjpzrjmzs_bzj_sl = Utils.keep2Wdouble(Math.round(Constant.clmzz / 200), 0);
-            if (SpUtil.getSpDouble(getContext(),"gzjpzrjmzs_bzj_sl",0) != 0)
-                Constant.gzjpzrjmzs_bzj_sl = SpUtil.getSpDouble(getContext(),"gzjpzrjmzs_bzj_sl",0);
+
             Constant.gzjpzrjmzs_bzj_dj = 800;
-            if (SpUtil.getSpDouble(getContext(),"gzjpzrjmzs_bzj_dj",0) != 0)
-                Constant.gzjpzrjmzs_bzj_dj = SpUtil.getSpDouble(getContext(),"gzjpzrjmzs_bzj_dj",0);
+            if (SpUtil.getSpDouble(App.context,"gzjpzrjmzs_bzj_dj",0) != 0)
+                Constant.gzjpzrjmzs_bzj_dj = SpUtil.getSpDouble(App.context,"gzjpzrjmzs_bzj_dj",0);
             Constant.gzjpzrjmzs_bzj_tz = Utils.keep2Wdouble((Constant.gzjpzrjmzs_bzj_sl * Constant.gzjpzrjmzs_bzj_dj) / 10000, 2);
 
             Constant.gzjpzrjmzs_jyzlzdfxy_sl = 1;
-            if (SpUtil.getSpDouble(getContext(),"hbmzs_xqjl_sl",0) != 0)
-                Constant.hbmzs_xqjl_sl = SpUtil.getSpDouble(getContext(),"hbmzs_xqjl_sl",0);
+
             Constant.gzjpzrjmzs_jyzlzdfxy_dj = 30000;
-            if (SpUtil.getSpDouble(getContext(),"gzjpzrjmzs_jyzlzdfxy_dj",0) != 0)
-                Constant.gzjpzrjmzs_jyzlzdfxy_dj = SpUtil.getSpDouble(getContext(),"gzjpzrjmzs_jyzlzdfxy_dj",0);
+            if (SpUtil.getSpDouble(App.context,"gzjpzrjmzs_jyzlzdfxy_dj",0) != 0)
+                Constant.gzjpzrjmzs_jyzlzdfxy_dj = SpUtil.getSpDouble(App.context,"gzjpzrjmzs_jyzlzdfxy_dj",0);
             Constant.gzjpzrjmzs_jyzlzdfxy_tz = Utils.keep2Wdouble((Constant.gzjpzrjmzs_jyzlzdfxy_sl * Constant.gzjpzrjmzs_jyzlzdfxy_dj) / 10000, 2);
 
             Constant.gzjpzrjmzs_szsj_sl = 1;
-            if (SpUtil.getSpDouble(getContext(),"gzjpzrjmzs_szsj_sl",0) != 0)
-                Constant.gzjpzrjmzs_szsj_sl = SpUtil.getSpDouble(getContext(),"gzjpzrjmzs_szsj_sl",0);
+
             Constant.gzjpzrjmzs_szsj_dj = 5000;
-            if (SpUtil.getSpDouble(getContext(),"gzjpzrjmzs_szsj_dj",0) != 0)
-                Constant.gzjpzrjmzs_szsj_dj = SpUtil.getSpDouble(getContext(),"gzjpzrjmzs_szsj_dj",0);
+            if (SpUtil.getSpDouble(App.context,"gzjpzrjmzs_szsj_dj",0) != 0)
+                Constant.gzjpzrjmzs_szsj_dj = SpUtil.getSpDouble(App.context,"gzjpzrjmzs_szsj_dj",0);
             Constant.gzjpzrjmzs_szsj_tz = Utils.keep2Wdouble((Constant.gzjpzrjmzs_szsj_sl * Constant.gzjpzrjmzs_szsj_dj) / 10000, 2);
 
             Constant.gzjpzrjmzs_szysjybzdgzj_sl = 1;
-            if (SpUtil.getSpDouble(getContext(),"gzjpzrjmzs_szysjybzdgzj_sl",0) != 0)
-                Constant.gzjpzrjmzs_szysjybzdgzj_sl = SpUtil.getSpDouble(getContext(),"gzjpzrjmzs_szysjybzdgzj_sl",0);
+
             Constant.gzjpzrjmzs_szysjybzdgzj_dj = 5000;
-            if (SpUtil.getSpDouble(getContext(),"gzjpzrjmzs_szysjybzdgzj_dj",0) != 0)
-                Constant.gzjpzrjmzs_szysjybzdgzj_dj = SpUtil.getSpDouble(getContext(),"gzjpzrjmzs_szysjybzdgzj_dj",0);
+            if (SpUtil.getSpDouble(App.context,"gzjpzrjmzs_szysjybzdgzj_dj",0) != 0)
+                Constant.gzjpzrjmzs_szysjybzdgzj_dj = SpUtil.getSpDouble(App.context,"gzjpzrjmzs_szysjybzdgzj_dj",0);
             Constant.gzjpzrjmzs_szysjybzdgzj_tz = Utils.keep2Wdouble((Constant.gzjpzrjmzs_szysjybzdgzj_sl * Constant.gzjpzrjmzs_szysjybzdgzj_dj) / 10000, 2);
 
             Constant.gzjpzrjmzs_xqjl_sl = Utils.keep2Wdouble(Constant.zfzyc_pzrjmzl_gye, 0);
-            if (SpUtil.getSpDouble(getContext(),"gzjpzrjmzs_xqjl_sl",0) != 0)
-                Constant.gzjpzrjmzs_xqjl_sl = SpUtil.getSpDouble(getContext(),"gzjpzrjmzs_xqjl_sl",0);
+
             Constant.gzjpzrjmzs_xqjl_dj = Utils.keep2Wdouble(Constant.gzjxqsyj_dj, 2);
-            if (SpUtil.getSpDouble(getContext(),"gzjpzrjmzs_xqjl_dj",0) != 0)
-                Constant.gzjpzrjmzs_xqjl_dj = SpUtil.getSpDouble(getContext(),"gzjpzrjmzs_xqjl_dj",0);
+            if (SpUtil.getSpDouble(App.context,"gzjpzrjmzs_xqjl_dj",0) != 0)
+                Constant.gzjpzrjmzs_xqjl_dj = SpUtil.getSpDouble(App.context,"gzjpzrjmzs_xqjl_dj",0);
             Constant.gzjpzrjmzs_xqjl_tz = Utils.keep2Wdouble((Constant.gzjpzrjmzs_xqjl_sl * Constant.gzjpzrjmzs_xqjl_dj) / 10000, 2);
 
             Constant.gzjpzrjmzs_ltxx_sl = Utils.keep2Wdouble(Constant.zfzyc_pzrjmzl_gye * 4, 0);
-            if (SpUtil.getSpDouble(getContext(),"gzjpzrjmzs_ltxx_sl",0) != 0)
-                Constant.gzjpzrjmzs_ltxx_sl = SpUtil.getSpDouble(getContext(),"gzjpzrjmzs_ltxx_sl",0);
+
             Constant.gzjpzrjmzs_ltxx_dj = Utils.keep2Wdouble(800, 2);
-            if (SpUtil.getSpDouble(getContext(),"gzjpzrjmzs_ltxx_dj",0) != 0)
-                Constant.gzjpzrjmzs_ltxx_dj = SpUtil.getSpDouble(getContext(),"gzjpzrjmzs_ltxx_dj",0);
+            if (SpUtil.getSpDouble(App.context,"gzjpzrjmzs_ltxx_dj",0) != 0)
+                Constant.gzjpzrjmzs_ltxx_dj = SpUtil.getSpDouble(App.context,"gzjpzrjmzs_ltxx_dj",0);
             Constant.gzjpzrjmzs_ltxx_tz = Utils.keep2Wdouble((Constant.gzjpzrjmzs_ltxx_sl * Constant.gzjpzrjmzs_ltxx_dj) / 10000, 2);
 
             Constant.gzjpzrjmzs_sl_sl = Utils.keep2Wdouble(Constant.zfzyc_gzjpzrjmzs_gye * 3 / 65, 0);
-            if (SpUtil.getSpDouble(getContext(),"gzjpzrjmzs_sl_sl",0) != 0)
-                Constant.gzjpzrjmzs_sl_sl = SpUtil.getSpDouble(getContext(),"gzjpzrjmzs_sl_sl",0);
+
             Constant.gzjpzrjmzs_sl_dj = Utils.keep2Wdouble(320, 2);
-            if (SpUtil.getSpDouble(getContext(),"gzjpzrjmzs_sl_dj",0) != 0)
-                Constant.gzjpzrjmzs_sl_dj = SpUtil.getSpDouble(getContext(),"gzjpzrjmzs_sl_dj",0);
+            if (SpUtil.getSpDouble(App.context,"gzjpzrjmzs_sl_dj",0) != 0)
+                Constant.gzjpzrjmzs_sl_dj = SpUtil.getSpDouble(App.context,"gzjpzrjmzs_sl_dj",0);
             Constant.gzjpzrjmzs_sl_tz = Utils.keep2Wdouble((Constant.gzjpzrjmzs_sl_sl * Constant.gzjpzrjmzs_sl_dj) / 10000, 2);
 
             Constant.gzjpzrjmzs_fyfj_sl = Utils.keep2Wdouble(Math.round(Constant.gzjpzrjmzs_sl_sl / 2 ), 0);
-            if (SpUtil.getSpDouble(getContext(),"gzjpzrjmzs_fyfj_sl",0) != 0)
-                Constant.gzjpzrjmzs_fyfj_sl = SpUtil.getSpDouble(getContext(),"gzjpzrjmzs_fyfj_sl",0);
+
             Constant.gzjpzrjmzs_fyfj_dj = Utils.keep2Wdouble(2800, 2);
-            if (SpUtil.getSpDouble(getContext(),"gzjpzrjmzs_fyfj_dj",0) != 0)
-                Constant.gzjpzrjmzs_fyfj_dj = SpUtil.getSpDouble(getContext(),"gzjpzrjmzs_fyfj_dj",0);
+            if (SpUtil.getSpDouble(App.context,"gzjpzrjmzs_fyfj_dj",0) != 0)
+                Constant.gzjpzrjmzs_fyfj_dj = SpUtil.getSpDouble(App.context,"gzjpzrjmzs_fyfj_dj",0);
             Constant.gzjpzrjmzs_fyfj_tz = Utils.keep2Wdouble((Constant.gzjpzrjmzs_fyfj_sl * Constant.gzjpzrjmzs_fyfj_dj) / 10000, 2);
 
             Constant.gzjpzrjmzs_znhjkzq_sl = Utils.keep2Wdouble(Math.round(Constant.gzjpzrjmzs_fyfj_sl / 4 -0.5), 0);
-            if (SpUtil.getSpDouble(getContext(),"gzjpzrjmzs_znhjkzq_sl",0) != 0)
-                Constant.gzjpzrjmzs_znhjkzq_sl = SpUtil.getSpDouble(getContext(),"gzjpzrjmzs_znhjkzq_sl",0);
+
             Constant.gzjpzrjmzs_znhjkzq_dj = Utils.keep2Wdouble(20000, 2);
-            if (SpUtil.getSpDouble(getContext(),"gzjpzrjmzs_znhjkzq_dj",0) != 0)
-                Constant.gzjpzrjmzs_znhjkzq_dj = SpUtil.getSpDouble(getContext(),"gzjpzrjmzs_znhjkzq_dj",0);
+            if (SpUtil.getSpDouble(App.context,"gzjpzrjmzs_znhjkzq_dj",0) != 0)
+                Constant.gzjpzrjmzs_znhjkzq_dj = SpUtil.getSpDouble(App.context,"gzjpzrjmzs_znhjkzq_dj",0);
             Constant.gzjpzrjmzs_znhjkzq_tz = Utils.keep2Wdouble((Constant.gzjpzrjmzs_znhjkzq_sl * Constant.gzjpzrjmzs_znhjkzq_dj) / 10000, 2);
 
 
             Constant.gzjpzrjmzs_lfdb_sl = Utils.keep2Wdouble(Constant.zfzyc_gzjpzrjmzs_gye / 5, 0);
-            if (SpUtil.getSpDouble(getContext(),"gzjpzrjmzs_lfdb_sl",0) != 0)
-                Constant.gzjpzrjmzs_lfdb_sl = SpUtil.getSpDouble(getContext(),"gzjpzrjmzs_lfdb_sl",0);
+
             Constant.gzjpzrjmzs_lfdb_dj = Utils.keep2Wdouble(160, 2);
-            if (SpUtil.getSpDouble(getContext(),"gzjpzrjmzs_lfdb_dj",0) != 0)
-                Constant.gzjpzrjmzs_lfdb_dj = SpUtil.getSpDouble(getContext(),"gzjpzrjmzs_lfdb_dj",0);
+            if (SpUtil.getSpDouble(App.context,"gzjpzrjmzs_lfdb_dj",0) != 0)
+                Constant.gzjpzrjmzs_lfdb_dj = SpUtil.getSpDouble(App.context,"gzjpzrjmzs_lfdb_dj",0);
             Constant.gzjpzrjmzs_lfdb_tz = Utils.keep2Wdouble((Constant.gzjpzrjmzs_lfdb_sl * Constant.gzjpzrjmzs_lfdb_dj) / 10000, 2);
 
             Constant.gzjpzrjmzs_ysq_sl = Utils.keep2Wdouble(Constant.zfzyc_pzrjmzl_gye * 2, 0);
-            if (SpUtil.getSpDouble(getContext(),"gzjpzrjmzs_ysq_sl",0) != 0)
-                Constant.gzjpzrjmzs_ysq_sl = SpUtil.getSpDouble(getContext(),"gzjpzrjmzs_ysq_sl",0);
+
             Constant.gzjpzrjmzs_ysq_dj = Utils.keep2Wdouble(60, 2);
-            if (SpUtil.getSpDouble(getContext(),"gzjpzrjmzs_ysq_dj",0) != 0)
-                Constant.gzjpzrjmzs_ysq_dj = SpUtil.getSpDouble(getContext(),"gzjpzrjmzs_ysq_dj",0);
+            if (SpUtil.getSpDouble(App.context,"gzjpzrjmzs_ysq_dj",0) != 0)
+                Constant.gzjpzrjmzs_ysq_dj = SpUtil.getSpDouble(App.context,"gzjpzrjmzs_ysq_dj",0);
             Constant.gzjpzrjmzs_ysq_tz = Utils.keep2Wdouble((Constant.gzjpzrjmzs_ysq_sl * Constant.gzjpzrjmzs_ysq_dj) / 10000, 2);
 
 
             Constant.gzjpzrjmzs_rcvczdy_sl = Utils.keep2Wdouble(1, 0);
-            if (SpUtil.getSpDouble(getContext(),"gzjpzrjmzs_rcvczdy_sl",0) != 0)
-                Constant.gzjpzrjmzs_rcvczdy_sl = SpUtil.getSpDouble(getContext(),"gzjpzrjmzs_rcvczdy_sl",0);
+
             Constant.gzjpzrjmzs_rcvczdy_dj = Utils.keep2Wdouble(12000, 2);
-            if (SpUtil.getSpDouble(getContext(),"gzjpzrjmzs_rcvczdy_dj",0) != 0)
-                Constant.gzjpzrjmzs_rcvczdy_dj = SpUtil.getSpDouble(getContext(),"gzjpzrjmzs_rcvczdy_dj",0);
+            if (SpUtil.getSpDouble(App.context,"gzjpzrjmzs_rcvczdy_dj",0) != 0)
+                Constant.gzjpzrjmzs_rcvczdy_dj = SpUtil.getSpDouble(App.context,"gzjpzrjmzs_rcvczdy_dj",0);
             Constant.gzjpzrjmzs_rcvczdy_tz = Utils.keep2Wdouble((Constant.gzjpzrjmzs_rcvczdy_sl * Constant.gzjpzrjmzs_rcvczdy_dj) / 10000, 2);
 
             Constant.gzjpzrjmzs_tzze = Utils.keep2Wdouble(Constant.gzjpzrjmzs_xqjl_tz + Constant.gzjpzrjmzs_ltxx_tz + Constant.gzjpzrjmzs_sl_tz + Constant.gzjpzrjmzs_fyfj_tz
@@ -1485,59 +1480,52 @@ public class GzssbcsFragment extends BaseFragment {
 
             //妊娠母猪舍
             Constant.rcmzs_xwl_sl = Utils.keep2Wdouble(Constant.zfzyc_rcmzl_gye, 0);
-            if (SpUtil.getSpDouble(getContext(),"rcmzs_xwl_sl",0) != 0)
-                Constant.rcmzs_xwl_sl = SpUtil.getSpDouble(getContext(),"rcmzs_xwl_sl",0);
+
             Constant.rcmzs_xwl_dj = Utils.keep2Wdouble(680, 2);
-            if (SpUtil.getSpDouble(getContext(),"rcmzs_xwl_dj",0) != 0)
-                Constant.rcmzs_xwl_dj = SpUtil.getSpDouble(getContext(),"rcmzs_xwl_dj",0);
+            if (SpUtil.getSpDouble(App.context,"rcmzs_xwl_dj",0) != 0)
+                Constant.rcmzs_xwl_dj = SpUtil.getSpDouble(App.context,"rcmzs_xwl_dj",0);
             Constant.rcmzs_xwl_tz = Utils.keep2Wdouble((Constant.rcmzs_xwl_sl * Constant.rcmzs_xwl_dj) / 10000, 2);
 
             Constant.rcmzs_ltlx_sl = Utils.keep2Wdouble(Constant.zfzyc_rcmzl_gye, 0);
-            if (SpUtil.getSpDouble(getContext(),"rcmzs_ltlx_sl",0) != 0)
-                Constant.rcmzs_ltlx_sl = SpUtil.getSpDouble(getContext(),"rcmzs_ltlx_sl",0);
+
             Constant.rcmzs_ltlx_dj = Utils.keep2Wdouble(800, 2);
-            if (SpUtil.getSpDouble(getContext(),"rcmzs_ltlx_dj",0) != 0)
-                Constant.rcmzs_ltlx_dj = SpUtil.getSpDouble(getContext(),"rcmzs_ltlx_dj",0);
+            if (SpUtil.getSpDouble(App.context,"rcmzs_ltlx_dj",0) != 0)
+                Constant.rcmzs_ltlx_dj = SpUtil.getSpDouble(App.context,"rcmzs_ltlx_dj",0);
             Constant.rcmzs_ltlx_tz = Utils.keep2Wdouble((Constant.rcmzs_ltlx_sl * Constant.rcmzs_ltlx_dj) / 10000, 2);
 
             Constant.rcmzs_sl_sl = Utils.keep2Wdouble(Constant.zfzyc_rcmzs_gye * 3 / 65, 0);
-            if (SpUtil.getSpDouble(getContext(),"rcmzs_sl_sl",0) != 0)
-                Constant.rcmzs_sl_sl = SpUtil.getSpDouble(getContext(),"rcmzs_sl_sl",0);
+
             Constant.rcmzs_sl_dj = Utils.keep2Wdouble(320, 2);
-            if (SpUtil.getSpDouble(getContext(),"rcmzs_sl_dj",0) != 0)
-                Constant.rcmzs_sl_dj = SpUtil.getSpDouble(getContext(),"rcmzs_sl_dj",0);
+            if (SpUtil.getSpDouble(App.context,"rcmzs_sl_dj",0) != 0)
+                Constant.rcmzs_sl_dj = SpUtil.getSpDouble(App.context,"rcmzs_sl_dj",0);
             Constant.rcmzs_sl_tz = Utils.keep2Wdouble((Constant.rcmzs_sl_sl * Constant.rcmzs_sl_dj) / 10000, 2);
 
             Constant.rcmzs_fyfj_sl = Utils.keep2Wdouble(Math.round(Constant.rcmzs_sl_sl / 2 ), 0);
-            if (SpUtil.getSpDouble(getContext(),"rcmzs_fyfj_sl",0) != 0)
-                Constant.rcmzs_fyfj_sl = SpUtil.getSpDouble(getContext(),"rcmzs_fyfj_sl",0);
+
             Constant.rcmzs_fyfj_dj = Utils.keep2Wdouble(2800, 2);
-            if (SpUtil.getSpDouble(getContext(),"rcmzs_fyfj_dj",0) != 0)
-                Constant.rcmzs_fyfj_dj = SpUtil.getSpDouble(getContext(),"rcmzs_fyfj_dj",0);
+            if (SpUtil.getSpDouble(App.context,"rcmzs_fyfj_dj",0) != 0)
+                Constant.rcmzs_fyfj_dj = SpUtil.getSpDouble(App.context,"rcmzs_fyfj_dj",0);
             Constant.rcmzs_fyfj_tz = Utils.keep2Wdouble((Constant.rcmzs_fyfj_sl * Constant.rcmzs_fyfj_dj) / 10000, 2);
 
             Constant.rcmzs_znhjkzq_sl = Utils.keep2Wdouble(Math.round(Constant.rcmzs_fyfj_sl / 4 -0.5), 0);
-            if (SpUtil.getSpDouble(getContext(),"rcmzs_znhjkzq_sl",0) != 0)
-                Constant.rcmzs_znhjkzq_sl = SpUtil.getSpDouble(getContext(),"rcmzs_znhjkzq_sl",0);
+
             Constant.rcmzs_znhjkzq_dj = Utils.keep2Wdouble(20000, 2);
-            if (SpUtil.getSpDouble(getContext(),"rcmzs_znhjkzq_dj",0) != 0)
-                Constant.rcmzs_znhjkzq_dj = SpUtil.getSpDouble(getContext(),"rcmzs_znhjkzq_dj",0);
+            if (SpUtil.getSpDouble(App.context,"rcmzs_znhjkzq_dj",0) != 0)
+                Constant.rcmzs_znhjkzq_dj = SpUtil.getSpDouble(App.context,"rcmzs_znhjkzq_dj",0);
             Constant.rcmzs_znhjkzq_tz = Utils.keep2Wdouble((Constant.rcmzs_znhjkzq_sl * Constant.rcmzs_znhjkzq_dj) / 10000, 2);
 
             Constant.rcmzs_lfdb_sl = Utils.keep2Wdouble(Constant.zfzyc_fws_gye / 3, 0);
-            if (SpUtil.getSpDouble(getContext(),"rcmzs_lfdb_sl",0) != 0)
-                Constant.rcmzs_lfdb_sl = SpUtil.getSpDouble(getContext(),"rcmzs_lfdb_sl",0);
+
             Constant.rcmzs_lfdb_dj = Utils.keep2Wdouble(160, 2);
-            if (SpUtil.getSpDouble(getContext(),"rcmzs_lfdb_dj",0) != 0)
-                Constant.rcmzs_lfdb_dj = SpUtil.getSpDouble(getContext(),"rcmzs_lfdb_dj",0);
+            if (SpUtil.getSpDouble(App.context,"rcmzs_lfdb_dj",0) != 0)
+                Constant.rcmzs_lfdb_dj = SpUtil.getSpDouble(App.context,"rcmzs_lfdb_dj",0);
             Constant.rcmzs_lfdb_tz = Utils.keep2Wdouble((Constant.rcmzs_lfdb_sl * Constant.rcmzs_lfdb_dj) / 10000, 2);
 
             Constant.rcmzs_ysq_sl = Utils.keep2Wdouble(Constant.zfzyc_rcmzl_gye , 0);
-            if (SpUtil.getSpDouble(getContext(),"rcmzs_ysq_sl",0) != 0)
-                Constant.rcmzs_ysq_sl = SpUtil.getSpDouble(getContext(),"rcmzs_ysq_sl",0);
+
             Constant.rcmzs_ysq_dj = Utils.keep2Wdouble(60, 2);
-            if (SpUtil.getSpDouble(getContext(),"rcmzs_ysq_dj",0) != 0)
-                Constant.rcmzs_ysq_dj = SpUtil.getSpDouble(getContext(),"rcmzs_ysq_dj",0);
+            if (SpUtil.getSpDouble(App.context,"rcmzs_ysq_dj",0) != 0)
+                Constant.rcmzs_ysq_dj = SpUtil.getSpDouble(App.context,"rcmzs_ysq_dj",0);
             Constant.rcmzs_ysq_tz = Utils.keep2Wdouble((Constant.rcmzs_ysq_sl * Constant.rcmzs_ysq_dj) / 10000, 2);
 
             Constant.rcmzs_tzze = Utils.keep2Wdouble(Constant.rcmzs_xwl_tz + Constant.rcmzs_ltlx_tz + Constant.rcmzs_sl_tz + Constant.rcmzs_fyfj_tz
@@ -1545,74 +1533,66 @@ public class GzssbcsFragment extends BaseFragment {
 
             //分娩栏舍
             Constant.fws_fwl_sl = Utils.keep2Wdouble(Constant.zfzyc_fwl_gye, 0);
-            if (SpUtil.getSpDouble(getContext(),"fws_fwl_sl",0) != 0)
-                Constant.fws_fwl_sl = SpUtil.getSpDouble(getContext(),"fws_fwl_sl",0);
+
             Constant.fws_fwl_dj = Utils.keep2Wdouble(3200, 2);
-            if (SpUtil.getSpDouble(getContext(),"fws_fwl_dj",0) != 0)
-                Constant.fws_fwl_dj = SpUtil.getSpDouble(getContext(),"fws_fwl_dj",0);
+            if (SpUtil.getSpDouble(App.context,"fws_fwl_dj",0) != 0)
+                Constant.fws_fwl_dj = SpUtil.getSpDouble(App.context,"fws_fwl_dj",0);
             Constant.fws_fwl_tz = Utils.keep2Wdouble((Constant.fws_fwl_sl * Constant.fws_fwl_dj) / 10000, 2);
 
 
             Constant.fws_ltlx_sl = Utils.keep2Wdouble(Constant.zfzyc_fwl_gye, 0);
-            if (SpUtil.getSpDouble(getContext(),"fws_ltlx_sl",0) != 0)
-                Constant.fws_ltlx_sl = SpUtil.getSpDouble(getContext(),"fws_ltlx_sl",0);
+
             Constant.fws_ltlx_dj = Utils.keep2Wdouble(800, 2);
-            if (SpUtil.getSpDouble(getContext(),"fws_ltlx_dj",0) != 0)
-                Constant.fws_ltlx_dj = SpUtil.getSpDouble(getContext(),"fws_ltlx_dj",0);
+            if (SpUtil.getSpDouble(App.context,"fws_ltlx_dj",0) != 0)
+                Constant.fws_ltlx_dj = SpUtil.getSpDouble(App.context,"fws_ltlx_dj",0);
             Constant.fws_ltlx_tz = Utils.keep2Wdouble((Constant.fws_ltlx_sl * Constant.fws_ltlx_dj) / 10000, 2);
            // LogUtil.e(Constant.fws_ltlx_sl+"---"+Constant.fws_ltlx_dj);
 
 
             Constant.fws_sl_sl = Utils.keep2Wdouble(Constant.zfzyc_fws_gyy * 3 / 65, 0);
-            if (SpUtil.getSpDouble(getContext(),"fws_sl_sl",0) != 0)
-                Constant.fws_sl_sl = SpUtil.getSpDouble(getContext(),"fws_sl_sl",0);
+
             Constant.fws_sl_dj = Utils.keep2Wdouble(320, 2);
-            if (SpUtil.getSpDouble(getContext(),"fws_sl_dj",0) != 0)
-                Constant.fws_sl_dj = SpUtil.getSpDouble(getContext(),"fws_sl_dj",0);
+            if (SpUtil.getSpDouble(App.context,"fws_sl_dj",0) != 0)
+                Constant.fws_sl_dj = SpUtil.getSpDouble(App.context,"fws_sl_dj",0);
             Constant.fws_sl_tz = Utils.keep2Wdouble((Constant.fws_sl_sl * Constant.fws_sl_dj) / 10000, 2);
 
             Constant.fws_flsj_sl = Utils.keep2Wdouble(Math.round(Constant.fws_sl_sl / 2 ), 0);
-            if (SpUtil.getSpDouble(getContext(),"fws_flsj_sl",0) != 0)
-                Constant.fws_flsj_sl = SpUtil.getSpDouble(getContext(),"fws_flsj_sl",0);
+
             Constant.fws_flsj_dj = Utils.keep2Wdouble(2800, 2);
-            if (SpUtil.getSpDouble(getContext(),"fws_flsj_dj",0) != 0)
-                Constant.fws_flsj_dj = SpUtil.getSpDouble(getContext(),"fws_flsj_dj",0);
+            if (SpUtil.getSpDouble(App.context,"fws_flsj_dj",0) != 0)
+                Constant.fws_flsj_dj = SpUtil.getSpDouble(App.context,"fws_flsj_dj",0);
             Constant.fws_flsj_tz = Utils.keep2Wdouble((Constant.fws_flsj_sl * Constant.fws_flsj_dj) / 10000, 2);
 
             Constant.fws_znhjkzq_sl = Utils.keep2Wdouble(Math.round(Constant.fws_flsj_sl / 4 - 0.5), 0);
-            if (SpUtil.getSpDouble(getContext(),"fws_znhjkzq_sl",0) != 0)
-                Constant.fws_znhjkzq_sl = SpUtil.getSpDouble(getContext(),"fws_znhjkzq_sl",0);
+
             Constant.fws_znhjkzq_dj = Utils.keep2Wdouble(20000, 2);
-            if (SpUtil.getSpDouble(getContext(),"fws_znhjkzq_dj",0) != 0)
-                Constant.fws_znhjkzq_dj = SpUtil.getSpDouble(getContext(),"fws_znhjkzq_dj",0);
+            if (SpUtil.getSpDouble(App.context,"fws_znhjkzq_dj",0) != 0)
+                Constant.fws_znhjkzq_dj = SpUtil.getSpDouble(App.context,"fws_znhjkzq_dj",0);
             Constant.fws_znhjkzq_tz = Utils.keep2Wdouble((Constant.fws_znhjkzq_sl * Constant.fws_znhjkzq_dj) / 10000, 2);
 
             LogUtil.e(Constant.fws_znhjkzq_sl+"-----"+Constant.fws_znhjkzq_dj+"---"+Constant.fws_znhjkzq_tz);
 
             Constant.fws_ysq_sl = Utils.keep2Wdouble(Constant.zfzyc_fwl_gye, 0);
-            if (SpUtil.getSpDouble(getContext(),"fws_ysq_sl",0) != 0)
-                Constant.fws_ysq_sl = SpUtil.getSpDouble(getContext(),"fws_ysq_sl",0);
+
             Constant.fws_ysq_dj = Utils.keep2Wdouble(60, 2);
-            if (SpUtil.getSpDouble(getContext(),"fws_ysq_dj",0) != 0)
-                Constant.fws_ysq_dj = SpUtil.getSpDouble(getContext(),"fws_ysq_dj",0);
+            if (SpUtil.getSpDouble(App.context,"fws_ysq_dj",0) != 0)
+                Constant.fws_ysq_dj = SpUtil.getSpDouble(App.context,"fws_ysq_dj",0);
             Constant.fws_ysq_tz = Utils.keep2Wdouble((Constant.fws_ysq_sl * Constant.fws_ysq_dj) / 10000, 2);
 
 
             Constant.fws_znbwx_sl = Utils.keep2Wdouble(Constant.zfzyc_fwl_gye, 0);
-            if (SpUtil.getSpDouble(getContext(),"fws_znbwx_sl",0) != 0)
-                Constant.fws_znbwx_sl = SpUtil.getSpDouble(getContext(),"fws_znbwx_sl",0);
+
             Constant.fws_znbwx_dj = Utils.keep2Wdouble(1500, 2);
-            if (SpUtil.getSpDouble(getContext(),"fws_znbwx_dj",0) != 0)
-                Constant.fws_znbwx_dj = SpUtil.getSpDouble(getContext(),"fws_znbwx_dj",0);
+            if (SpUtil.getSpDouble(App.context,"fws_znbwx_dj",0) != 0)
+                Constant.fws_znbwx_dj = SpUtil.getSpDouble(App.context,"fws_znbwx_dj",0);
             Constant.fws_znbwx_tz = Utils.keep2Wdouble((Constant.fws_znbwx_sl * Constant.fws_znbwx_dj) / 10000, 2);
 
 
             Constant.fws_dhjbysb_sl = Utils.keep2Wdouble(Constant.zfzyc_fws_gye, 0);
-            if (SpUtil.getSpDouble(getContext(),"fws_dhjbysb_sl",0) != 0)
-                Constant.fws_dhjbysb_sl = SpUtil.getSpDouble(getContext(),"fws_dhjbysb_sl",0);
+
             Constant.fws_dhjbysb_dj = Utils.keep2Wdouble(150, 2);
-            if (SpUtil.getSpDouble(getContext(),"fws_dhjbysb_dj",0) != 0)
-                Constant.fws_dhjbysb_dj = SpUtil.getSpDouble(getContext(),"fws_dhjbysb_dj",0);
+            if (SpUtil.getSpDouble(App.context,"fws_dhjbysb_dj",0) != 0)
+                Constant.fws_dhjbysb_dj = SpUtil.getSpDouble(App.context,"fws_dhjbysb_dj",0);
             Constant.fws_dhjbysb_tz = Utils.keep2Wdouble((Constant.fws_dhjbysb_sl * Constant.fws_dhjbysb_dj) / 10000, 2);
 
             Constant.fws_tzze = Utils.keep2Wdouble(Constant.fws_fwl_tz + Constant.fws_ltlx_tz + Constant.fws_sl_tz
@@ -1622,59 +1602,52 @@ public class GzssbcsFragment extends BaseFragment {
                     +"---"+  Constant.fws_znhjkzq_tz +"---"+  Constant.fws_znbwx_tz+"---"+  Constant.fws_ysq_tz +"---"+  Constant.fws_dhjbysb_tz+"---"+ Constant.fws_flsj_tz);
             //保育舍
             Constant.bys_byl_sl = Utils.keep2Wdouble(Constant.zfzyc_byl_gye, 0);
-            if (SpUtil.getSpDouble(getContext(),"bys_byl_sl",0) != 0)
-                Constant.bys_byl_sl = SpUtil.getSpDouble(getContext(),"bys_byl_sl",0);
+
             Constant.bys_byl_dj = Utils.keep2Wdouble(1950, 2);
-            if (SpUtil.getSpDouble(getContext(),"bys_byl_dj",0) != 0)
-                Constant.bys_byl_dj = SpUtil.getSpDouble(getContext(),"bys_byl_dj",0);
+            if (SpUtil.getSpDouble(App.context,"bys_byl_dj",0) != 0)
+                Constant.bys_byl_dj = SpUtil.getSpDouble(App.context,"bys_byl_dj",0);
             Constant.bys_byl_tz = Utils.keep2Wdouble((Constant.bys_byl_sl * Constant.bys_byl_dj) / 10000, 2);
 
             Constant.bys_ltlx_sl = Utils.keep2Wdouble(Constant.zfzyc_byl_gye, 0);
-            if (SpUtil.getSpDouble(getContext(),"bys_ltlx_sl",0) != 0)
-                Constant.bys_ltlx_sl = SpUtil.getSpDouble(getContext(),"bys_ltlx_sl",0);
+
             Constant.bys_ltlx_dj = Utils.keep2Wdouble(800, 2);
-            if (SpUtil.getSpDouble(getContext(),"bys_ltlx_dj",0) != 0)
-                Constant.bys_ltlx_dj = SpUtil.getSpDouble(getContext(),"bys_ltlx_dj",0);
+            if (SpUtil.getSpDouble(App.context,"bys_ltlx_dj",0) != 0)
+                Constant.bys_ltlx_dj = SpUtil.getSpDouble(App.context,"bys_ltlx_dj",0);
             Constant.bys_ltlx_tz = Utils.keep2Wdouble((Constant.bys_ltlx_sl * Constant.bys_ltlx_dj) / 10000, 2);
             LogUtil.e(Constant.bys_ltlx_sl+"---"+Constant.bys_ltlx_dj);
             Constant.bys_sl_sl = Utils.keep2Wdouble(Constant.zfzyc_bys_gyy * 3 / 65 +0.5, 0);
-            if (SpUtil.getSpDouble(getContext(),"bys_sl_sl",0) != 0)
-                Constant.bys_sl_sl = SpUtil.getSpDouble(getContext(),"bys_sl_sl",0);
+
             Constant.bys_sl_dj = Utils.keep2Wdouble(320, 2);
-            if (SpUtil.getSpDouble(getContext(),"bys_sl_dj",0) != 0)
-                Constant.bys_sl_dj = SpUtil.getSpDouble(getContext(),"bys_sl_dj",0);
+            if (SpUtil.getSpDouble(App.context,"bys_sl_dj",0) != 0)
+                Constant.bys_sl_dj = SpUtil.getSpDouble(App.context,"bys_sl_dj",0);
             Constant.bys_sl_tz = Utils.keep2Wdouble((Constant.bys_sl_sl * Constant.bys_sl_dj) / 10000, 2);
 
             Constant.bys_fyfj_sl = Utils.keep2Wdouble(Constant.bys_sl_sl / 2 , 0);
-            if (SpUtil.getSpDouble(getContext(),"bys_fyfj_sl",0) != 0)
-                Constant.bys_fyfj_sl = SpUtil.getSpDouble(getContext(),"bys_fyfj_sl",0);
+
             Constant.bys_fyfj_dj = Utils.keep2Wdouble(2800, 2);
-            if (SpUtil.getSpDouble(getContext(),"bys_fyfj_dj",0) != 0)
-                Constant.bys_fyfj_dj = SpUtil.getSpDouble(getContext(),"bys_fyfj_dj",0);
+            if (SpUtil.getSpDouble(App.context,"bys_fyfj_dj",0) != 0)
+                Constant.bys_fyfj_dj = SpUtil.getSpDouble(App.context,"bys_fyfj_dj",0);
             Constant.bys_fyfj_tz = Utils.keep2Wdouble((Constant.bys_fyfj_sl * Constant.bys_fyfj_dj) / 10000, 2);
 
             Constant.bys_znhjkzq_sl = Utils.keep2Wdouble(Math.round(Constant.bys_fyfj_sl / 4 - 0.5), 0);
-            if (SpUtil.getSpDouble(getContext(),"bys_znhjkzq_sl",0) != 0)
-                Constant.bys_znhjkzq_sl = SpUtil.getSpDouble(getContext(),"bys_znhjkzq_sl",0);
+
             Constant.bys_znhjkzq_dj = Utils.keep2Wdouble(20000, 2);
-            if (SpUtil.getSpDouble(getContext(),"bys_znhjkzq_dj",0) != 0)
-                Constant.bys_znhjkzq_dj = SpUtil.getSpDouble(getContext(),"bys_znhjkzq_dj",0);
+            if (SpUtil.getSpDouble(App.context,"bys_znhjkzq_dj",0) != 0)
+                Constant.bys_znhjkzq_dj = SpUtil.getSpDouble(App.context,"bys_znhjkzq_dj",0);
             Constant.bys_znhjkzq_tz = Utils.keep2Wdouble((Constant.bys_znhjkzq_sl * Constant.bys_znhjkzq_dj) / 10000, 2);
 
             Constant.bys_ysq_sl = Utils.keep2Wdouble(Constant.zfzyc_byl_gye, 0);
-            if (SpUtil.getSpDouble(getContext(),"bys_ysq_sl",0) != 0)
-                Constant.bys_ysq_sl = SpUtil.getSpDouble(getContext(),"bys_ysq_sl",0);
+
             Constant.bys_ysq_dj = Utils.keep2Wdouble(60, 2);
-            if (SpUtil.getSpDouble(getContext(),"bys_ysq_dj",0) != 0)
-                Constant.bys_ysq_dj = SpUtil.getSpDouble(getContext(),"bys_ysq_dj",0);
+            if (SpUtil.getSpDouble(App.context,"bys_ysq_dj",0) != 0)
+                Constant.bys_ysq_dj = SpUtil.getSpDouble(App.context,"bys_ysq_dj",0);
             Constant.bys_ysq_tz = Utils.keep2Wdouble((Constant.bys_ysq_sl * Constant.bys_ysq_dj) / 10000, 2);
 
             Constant.bys_dhjbwsb_sl = Utils.keep2Wdouble(Constant.zfzyc_bys_gyy, 0);
-            if (SpUtil.getSpDouble(getContext(),"bys_dhjbwsb_sl",0) != 0)
-                Constant.bys_dhjbwsb_sl = SpUtil.getSpDouble(getContext(),"bys_dhjbwsb_sl",0);
+
             Constant.bys_dhjbwsb_dj = Utils.keep2Wdouble(150, 2);
-            if (SpUtil.getSpDouble(getContext(),"bys_dhjbwsb_dj",0) != 0)
-                Constant.bys_dhjbwsb_dj = SpUtil.getSpDouble(getContext(),"bys_dhjbwsb_dj",0);
+            if (SpUtil.getSpDouble(App.context,"bys_dhjbwsb_dj",0) != 0)
+                Constant.bys_dhjbwsb_dj = SpUtil.getSpDouble(App.context,"bys_dhjbwsb_dj",0);
             Constant.bys_dhjbwsb_tz = Utils.keep2Wdouble((Constant.bys_dhjbwsb_sl * Constant.bys_dhjbwsb_dj) / 10000, 2);
 
             Constant.bys_tzze = Utils.keep2Wdouble(Constant.bys_byl_tz + Constant.bys_fyfj_tz + Constant.bys_sl_tz + Constant.bys_ltlx_tz
@@ -1683,60 +1656,53 @@ public class GzssbcsFragment extends BaseFragment {
 
             //生长育肥舍
             Constant.szyfs_xqjl_sl = Utils.keep2Wdouble(Constant.zfzyc_szyfl_gyy, 0);
-            if (SpUtil.getSpDouble(getContext(),"szyfs_xqjl_sl",0) != 0)
-                Constant.szyfs_xqjl_sl = SpUtil.getSpDouble(getContext(),"szyfs_xqjl_sl",0);
+
             Constant.szyfs_xqjl_dj = Utils.keep2Wdouble(Constant.gzjxqsyj_dj, 2);
-            if (SpUtil.getSpDouble(getContext(),"szyfs_xqjl_dj",0) != 0)
-                Constant.szyfs_xqjl_dj = SpUtil.getSpDouble(getContext(),"szyfs_xqjl_dj",0);
+            if (SpUtil.getSpDouble(App.context,"szyfs_xqjl_dj",0) != 0)
+                Constant.szyfs_xqjl_dj = SpUtil.getSpDouble(App.context,"szyfs_xqjl_dj",0);
             Constant.szyfs_xqjl_tz = Utils.keep2Wdouble((Constant.szyfs_xqjl_sl * Constant.szyfs_xqjl_dj) / 10000, 2);
 
             Constant.szyfs_ltlx_sl = Utils.keep2Wdouble(Constant.zfzyc_szyfl_gyy, 0);
-            if (SpUtil.getSpDouble(getContext(),"szyfs_ltlx_sl",0) != 0)
-                Constant.szyfs_ltlx_sl = SpUtil.getSpDouble(getContext(),"szyfs_ltlx_sl",0);
+
             Constant.szyfs_ltlx_dj = Utils.keep2Wdouble(800, 2);
-            if (SpUtil.getSpDouble(getContext(),"szyfs_ltlx_dj",0) != 0)
-                Constant.szyfs_ltlx_dj = SpUtil.getSpDouble(getContext(),"szyfs_ltlx_dj",0);
+            if (SpUtil.getSpDouble(App.context,"szyfs_ltlx_dj",0) != 0)
+                Constant.szyfs_ltlx_dj = SpUtil.getSpDouble(App.context,"szyfs_ltlx_dj",0);
             Constant.szyfs_ltlx_tz = Utils.keep2Wdouble((Constant.szyfs_ltlx_sl * Constant.szyfs_ltlx_dj) / 10000, 2);
 
             Constant.szyfs_sl_sl = Utils.keep2Wdouble(Constant.zfzyc_szyfs_gyy * 3 / 65, 0);
-            if (SpUtil.getSpDouble(getContext(),"szyfs_sl_sl",0) != 0)
-                Constant.szyfs_sl_sl = SpUtil.getSpDouble(getContext(),"szyfs_sl_sl",0);
+
             Constant.szyfs_sl_dj = Utils.keep2Wdouble(320, 2);
-            if (SpUtil.getSpDouble(getContext(),"szyfs_sl_dj",0) != 0)
-                Constant.szyfs_sl_dj = SpUtil.getSpDouble(getContext(),"szyfs_sl_dj",0);
+            if (SpUtil.getSpDouble(App.context,"szyfs_sl_dj",0) != 0)
+                Constant.szyfs_sl_dj = SpUtil.getSpDouble(App.context,"szyfs_sl_dj",0);
             Constant.szyfs_sl_tz = Utils.keep2Wdouble((Constant.szyfs_sl_sl * Constant.szyfs_sl_dj) / 10000, 2);
 
 
             Constant.szyfs_fyfj_sl = Utils.keep2Wdouble(Math.round(Constant.szyfs_sl_sl / 2 + 0.5), 0);
-            if (SpUtil.getSpDouble(getContext(),"szyfs_fyfj_sl",0) != 0)
-                Constant.szyfs_fyfj_sl = SpUtil.getSpDouble(getContext(),"szyfs_fyfj_sl",0);
+
             Constant.szyfs_fyfj_dj = Utils.keep2Wdouble(2800, 2);
-            if (SpUtil.getSpDouble(getContext(),"szyfs_fyfj_dj",0) != 0)
-                Constant.szyfs_fyfj_dj = SpUtil.getSpDouble(getContext(),"szyfs_fyfj_dj",0);
+            if (SpUtil.getSpDouble(App.context,"szyfs_fyfj_dj",0) != 0)
+                Constant.szyfs_fyfj_dj = SpUtil.getSpDouble(App.context,"szyfs_fyfj_dj",0);
             Constant.szyfs_fyfj_tz = Utils.keep2Wdouble((Constant.szyfs_fyfj_sl * Constant.szyfs_fyfj_dj) / 10000, 2);
 
             Constant.szyfs_znhjkzq_sl = Utils.keep2Wdouble(Math.round(Constant.szyfs_fyfj_sl / 4 - 0.5), 0);
-            if (SpUtil.getSpDouble(getContext(),"szyfs_znhjkzq_sl",0) != 0)
-                Constant.szyfs_znhjkzq_sl = SpUtil.getSpDouble(getContext(),"szyfs_znhjkzq_sl",0);
+
             Constant.szyfs_znhjkzq_dj = Utils.keep2Wdouble(20000, 2);
-            if (SpUtil.getSpDouble(getContext(),"szyfs_znhjkzq_dj",0) != 0)
-                Constant.szyfs_znhjkzq_dj = SpUtil.getSpDouble(getContext(),"szyfs_znhjkzq_dj",0);
+            if (SpUtil.getSpDouble(App.context,"szyfs_znhjkzq_dj",0) != 0)
+                Constant.szyfs_znhjkzq_dj = SpUtil.getSpDouble(App.context,"szyfs_znhjkzq_dj",0);
             Constant.szyfs_znhjkzq_tz = Utils.keep2Wdouble((Constant.szyfs_znhjkzq_sl * Constant.szyfs_znhjkzq_dj) / 10000, 2);
 
             Constant.szyfs_lfdb_sl = Utils.keep2Wdouble(Constant.zfzyc_szyfs_gyy / 5, 0);
-            if (SpUtil.getSpDouble(getContext(),"szyfs_lfdb_sl",0) != 0)
-                Constant.szyfs_lfdb_sl = SpUtil.getSpDouble(getContext(),"szyfs_lfdb_sl",0);
+
             Constant.szyfs_lfdb_dj = Utils.keep2Wdouble(160, 2);
-            if (SpUtil.getSpDouble(getContext(),"szyfs_lfdb_dj",0) != 0)
-                Constant.szyfs_lfdb_dj = SpUtil.getSpDouble(getContext(),"szyfs_lfdb_dj",0);
+            if (SpUtil.getSpDouble(App.context,"szyfs_lfdb_dj",0) != 0)
+                Constant.szyfs_lfdb_dj = SpUtil.getSpDouble(App.context,"szyfs_lfdb_dj",0);
             Constant.szyfs_lfdb_tz = Utils.keep2Wdouble((Constant.szyfs_lfdb_sl * Constant.szyfs_lfdb_dj) / 10000, 2);
 
             Constant.szyfs_ysq_sl = Utils.keep2Wdouble(Constant.zfzyc_szyfl_gyy * 2, 0);
-            if (SpUtil.getSpDouble(getContext(),"szyfs_ysq_sl",0) != 0)
-                Constant.szyfs_ysq_sl = SpUtil.getSpDouble(getContext(),"szyfs_ysq_sl",0);
+
             Constant.szyfs_ysq_dj = Utils.keep2Wdouble(60, 2);
-            if (SpUtil.getSpDouble(getContext(),"szyfs_ysq_dj",0) != 0)
-                Constant.szyfs_ysq_dj = SpUtil.getSpDouble(getContext(),"szyfs_ysq_dj",0);
+            if (SpUtil.getSpDouble(App.context,"szyfs_ysq_dj",0) != 0)
+                Constant.szyfs_ysq_dj = SpUtil.getSpDouble(App.context,"szyfs_ysq_dj",0);
             Constant.szyfs_ysq_tz = Utils.keep2Wdouble((Constant.szyfs_ysq_sl * Constant.szyfs_ysq_dj) / 10000, 2);
 
             Constant.szyfs_tzze = Utils.keep2Wdouble(Constant.szyfs_xqjl_tz + Constant.szyfs_ltlx_tz + Constant.szyfs_sl_tz + Constant.szyfs_fyfj_tz
@@ -1744,60 +1710,53 @@ public class GzssbcsFragment extends BaseFragment {
 
             //病猪隔离舍
             Constant.bzgls_xqjl_sl = Utils.keep2Wdouble(Constant.zfzyc_bzgll_gyy, 0);
-            if (SpUtil.getSpDouble(getContext(),"bzgls_xqjl_sl",0) != 0)
-                Constant.bzgls_xqjl_sl = SpUtil.getSpDouble(getContext(),"bzgls_xqjl_sl",0);
+
             Constant.bzgls_xqjl_dj = Utils.keep2Wdouble(1950, 2);
-            if (SpUtil.getSpDouble(getContext(),"bzgls_xqjl_dj",0) != 0)
-                Constant.bzgls_xqjl_dj = SpUtil.getSpDouble(getContext(),"bzgls_xqjl_dj",0);
+            if (SpUtil.getSpDouble(App.context,"bzgls_xqjl_dj",0) != 0)
+                Constant.bzgls_xqjl_dj = SpUtil.getSpDouble(App.context,"bzgls_xqjl_dj",0);
             Constant.bzgls_xqjl_tz = Utils.keep2Wdouble((Constant.bzgls_xqjl_sl * Constant.bzgls_xqjl_dj) / 10000, 2);
 
             Constant.bzgls_ltlx_sl = Utils.keep2Wdouble(Constant.zfzyc_bzgll_gyy, 0);
-            if (SpUtil.getSpDouble(getContext(),"bzgls_ltlx_sl",0) != 0)
-                Constant.bzgls_ltlx_sl = SpUtil.getSpDouble(getContext(),"bzgls_ltlx_sl",0);
+
             Constant.bzgls_ltlx_dj = Utils.keep2Wdouble(800, 2);
-            if (SpUtil.getSpDouble(getContext(),"bzgls_ltlx_dj",0) != 0)
-                Constant.bzgls_ltlx_dj = SpUtil.getSpDouble(getContext(),"bzgls_ltlx_dj",0);
+            if (SpUtil.getSpDouble(App.context,"bzgls_ltlx_dj",0) != 0)
+                Constant.bzgls_ltlx_dj = SpUtil.getSpDouble(App.context,"bzgls_ltlx_dj",0);
             Constant.bzgls_ltlx_tz = Utils.keep2Wdouble((Constant.bzgls_ltlx_sl * Constant.bzgls_ltlx_dj) / 10000, 2);
 
             Constant.bzgls_sl_sl = Utils.keep2Wdouble(Constant.zfzyc_bzgls_gyy * 3 / 65, 0);
-            if (SpUtil.getSpDouble(getContext(),"bzgls_sl_sl",0) != 0)
-                Constant.bzgls_sl_sl = SpUtil.getSpDouble(getContext(),"bzgls_sl_sl",0);
+
             Constant.bzgls_sl_dj = Utils.keep2Wdouble(320, 2);
-            if (SpUtil.getSpDouble(getContext(),"bzgls_sl_dj",0) != 0)
-                Constant.bzgls_sl_dj = SpUtil.getSpDouble(getContext(),"bzgls_sl_dj",0);
+            if (SpUtil.getSpDouble(App.context,"bzgls_sl_dj",0) != 0)
+                Constant.bzgls_sl_dj = SpUtil.getSpDouble(App.context,"bzgls_sl_dj",0);
             Constant.bzgls_sl_tz = Utils.keep2Wdouble((Constant.bzgls_sl_sl * Constant.bzgls_sl_dj) / 10000, 2);
 
 
             Constant.bzgls_fyfj_sl = Utils.keep2Wdouble(Math.round(Constant.bzgls_sl_sl / 2 + 0.5), 0);
-            if (SpUtil.getSpDouble(getContext(),"bzgls_fyfj_sl",0) != 0)
-                Constant.bzgls_fyfj_sl = SpUtil.getSpDouble(getContext(),"bzgls_fyfj_sl",0);
+
             Constant.bzgls_fyfj_dj = Utils.keep2Wdouble(2800, 2);
-            if (SpUtil.getSpDouble(getContext(),"bzgls_fyfj_dj",0) != 0)
-                Constant.bzgls_fyfj_dj = SpUtil.getSpDouble(getContext(),"bzgls_fyfj_dj",0);
+            if (SpUtil.getSpDouble(App.context,"bzgls_fyfj_dj",0) != 0)
+                Constant.bzgls_fyfj_dj = SpUtil.getSpDouble(App.context,"bzgls_fyfj_dj",0);
             Constant.bzgls_fyfj_tz = Utils.keep2Wdouble((Constant.bzgls_fyfj_sl * Constant.bzgls_fyfj_dj) / 10000, 2);
 
             Constant.bzgls_znhjkzq_sl = Utils.keep2Wdouble(Math.round(Constant.bzgls_fyfj_sl / 4 - 0.5), 0);
-            if (SpUtil.getSpDouble(getContext(),"bzgls_znhjkzq_sl",0) != 0)
-                Constant.bzgls_znhjkzq_sl = SpUtil.getSpDouble(getContext(),"bzgls_znhjkzq_sl",0);
+
             Constant.bzgls_znhjkzq_dj = Utils.keep2Wdouble(20000, 2);
-            if (SpUtil.getSpDouble(getContext(),"bzgls_znhjkzq_dj",0) != 0)
-                Constant.bzgls_znhjkzq_dj = SpUtil.getSpDouble(getContext(),"bzgls_znhjkzq_dj",0);
+            if (SpUtil.getSpDouble(App.context,"bzgls_znhjkzq_dj",0) != 0)
+                Constant.bzgls_znhjkzq_dj = SpUtil.getSpDouble(App.context,"bzgls_znhjkzq_dj",0);
             Constant.bzgls_znhjkzq_tz = Utils.keep2Wdouble((Constant.bzgls_znhjkzq_sl * Constant.bzgls_znhjkzq_dj) / 10000, 2);
 
             Constant.bzgls_lfdb_sl = Utils.keep2Wdouble(Constant.zfzyc_bzgls_gye / 5, 0);
-            if (SpUtil.getSpDouble(getContext(),"bzgls_lfdb_sl",0) != 0)
-                Constant.bzgls_lfdb_sl = SpUtil.getSpDouble(getContext(),"bzgls_lfdb_sl",0);
+
             Constant.bzgls_lfdb_dj = Utils.keep2Wdouble(160, 2);
-            if (SpUtil.getSpDouble(getContext(),"bzgls_lfdb_dj",0) != 0)
-                Constant.bzgls_lfdb_dj = SpUtil.getSpDouble(getContext(),"bzgls_lfdb_dj",0);
+            if (SpUtil.getSpDouble(App.context,"bzgls_lfdb_dj",0) != 0)
+                Constant.bzgls_lfdb_dj = SpUtil.getSpDouble(App.context,"bzgls_lfdb_dj",0);
             Constant.bzgls_lfdb_tz = Utils.keep2Wdouble((Constant.bzgls_lfdb_sl * Constant.bzgls_lfdb_dj) / 10000, 2);
 
             Constant.bzgls_ysq_sl = Utils.keep2Wdouble(Constant.zfzyc_bzgll_gyy * 2, 0);
-            if (SpUtil.getSpDouble(getContext(),"bzgls_ysq_sl",0) != 0)
-                Constant.bzgls_ysq_sl = SpUtil.getSpDouble(getContext(),"bzgls_ysq_sl",0);
+
             Constant.bzgls_ysq_dj = Utils.keep2Wdouble(60, 2);
-            if (SpUtil.getSpDouble(getContext(),"bzgls_ysq_dj",0) != 0)
-                Constant.bzgls_ysq_dj = SpUtil.getSpDouble(getContext(),"bzgls_ysq_dj",0);
+            if (SpUtil.getSpDouble(App.context,"bzgls_ysq_dj",0) != 0)
+                Constant.bzgls_ysq_dj = SpUtil.getSpDouble(App.context,"bzgls_ysq_dj",0);
             Constant.bzgls_ysq_tz = Utils.keep2Wdouble((Constant.bzgls_ysq_sl * Constant.bzgls_ysq_dj) / 10000, 2);
 
             Constant.bzgls_tzze = Utils.keep2Wdouble(Constant.bzgls_xqjl_tz + Constant.bzgls_ltlx_tz + Constant.bzgls_sl_tz + Constant.bzgls_fyfj_tz
@@ -1806,60 +1765,53 @@ public class GzssbcsFragment extends BaseFragment {
 
             //引种隔离舍
             Constant.yzgls_xqjl_sl = Utils.keep2Wdouble(Constant.zfzyc_yzgll_gyy, 0);
-            if (SpUtil.getSpDouble(getContext(),"yzgls_xqjl_sl",0) != 0)
-                Constant.yzgls_xqjl_sl = SpUtil.getSpDouble(getContext(),"yzgls_xqjl_sl",0);
+
             Constant.yzgls_xqjl_dj = Utils.keep2Wdouble(1950, 2);
-            if (SpUtil.getSpDouble(getContext(),"yzgls_xqjl_dj",0) != 0)
-                Constant.yzgls_xqjl_dj = SpUtil.getSpDouble(getContext(),"yzgls_xqjl_dj",0);
+            if (SpUtil.getSpDouble(App.context,"yzgls_xqjl_dj",0) != 0)
+                Constant.yzgls_xqjl_dj = SpUtil.getSpDouble(App.context,"yzgls_xqjl_dj",0);
             Constant.yzgls_xqjl_tz = Utils.keep2Wdouble((Constant.yzgls_xqjl_sl * Constant.yzgls_xqjl_dj) / 10000, 2);
 
             Constant.yzgls_ltlx_sl = Utils.keep2Wdouble(Constant.zfzyc_yzgll_gyy, 0);
-            if (SpUtil.getSpDouble(getContext(),"yzgls_ltlx_sl",0) != 0)
-                Constant.yzgls_ltlx_sl = SpUtil.getSpDouble(getContext(),"yzgls_ltlx_sl",0);
+
             Constant.yzgls_ltlx_dj = Utils.keep2Wdouble(800, 2);
-            if (SpUtil.getSpDouble(getContext(),"yzgls_ltlx_dj",0) != 0)
-                Constant.yzgls_ltlx_dj = SpUtil.getSpDouble(getContext(),"yzgls_ltlx_dj",0);
+            if (SpUtil.getSpDouble(App.context,"yzgls_ltlx_dj",0) != 0)
+                Constant.yzgls_ltlx_dj = SpUtil.getSpDouble(App.context,"yzgls_ltlx_dj",0);
             Constant.yzgls_ltlx_tz = Utils.keep2Wdouble((Constant.yzgls_ltlx_sl * Constant.yzgls_ltlx_dj) / 10000, 2);
 
             Constant.yzgls_sl_sl = Utils.keep2Wdouble(Constant.zfzyc_yzgls_gyy * 3 / 65, 0);
-            if (SpUtil.getSpDouble(getContext(),"yzgls_sl_sl",0) != 0)
-                Constant.yzgls_sl_sl = SpUtil.getSpDouble(getContext(),"yzgls_sl_sl",0);
+
             Constant.yzgls_sl_dj = Utils.keep2Wdouble(320, 2);
-            if (SpUtil.getSpDouble(getContext(),"yzgls_sl_dj",0) != 0)
-                Constant.yzgls_sl_dj = SpUtil.getSpDouble(getContext(),"yzgls_sl_dj",0);
+            if (SpUtil.getSpDouble(App.context,"yzgls_sl_dj",0) != 0)
+                Constant.yzgls_sl_dj = SpUtil.getSpDouble(App.context,"yzgls_sl_dj",0);
             Constant.yzgls_sl_tz = Utils.keep2Wdouble((Constant.yzgls_sl_sl * Constant.yzgls_sl_dj) / 10000, 2);
 
 
             Constant.yzgls_fyfj_sl = Utils.keep2Wdouble(Math.round(Constant.yzgls_sl_sl / 2 ), 0);
-            if (SpUtil.getSpDouble(getContext(),"yzgls_fyfj_sl",0) != 0)
-                Constant.yzgls_fyfj_sl = SpUtil.getSpDouble(getContext(),"yzgls_fyfj_sl",0);
+
             Constant.yzgls_fyfj_dj = Utils.keep2Wdouble(2800, 2);
-            if (SpUtil.getSpDouble(getContext(),"yzgls_fyfj_dj",0) != 0)
-                Constant.yzgls_fyfj_dj = SpUtil.getSpDouble(getContext(),"yzgls_fyfj_dj",0);
+            if (SpUtil.getSpDouble(App.context,"yzgls_fyfj_dj",0) != 0)
+                Constant.yzgls_fyfj_dj = SpUtil.getSpDouble(App.context,"yzgls_fyfj_dj",0);
             Constant.yzgls_fyfj_tz = Utils.keep2Wdouble((Constant.yzgls_fyfj_sl * Constant.yzgls_fyfj_dj) / 10000, 2);
 
             Constant.yzgls_znhjkzq_sl = Utils.keep2Wdouble(Math.round(Constant.yzgls_fyfj_sl / 4 - 0.5), 0);
-            if (SpUtil.getSpDouble(getContext(),"yzgls_znhjkzq_sl",0) != 0)
-                Constant.yzgls_znhjkzq_sl = SpUtil.getSpDouble(getContext(),"yzgls_znhjkzq_sl",0);
+
             Constant.yzgls_znhjkzq_dj = Utils.keep2Wdouble(20000, 2);
-            if (SpUtil.getSpDouble(getContext(),"yzgls_znhjkzq_dj",0) != 0)
-                Constant.yzgls_znhjkzq_dj = SpUtil.getSpDouble(getContext(),"yzgls_znhjkzq_dj",0);
+            if (SpUtil.getSpDouble(App.context,"yzgls_znhjkzq_dj",0) != 0)
+                Constant.yzgls_znhjkzq_dj = SpUtil.getSpDouble(App.context,"yzgls_znhjkzq_dj",0);
             Constant.yzgls_znhjkzq_tz = Utils.keep2Wdouble((Constant.yzgls_znhjkzq_sl * Constant.yzgls_znhjkzq_dj) / 10000, 2);
 
             Constant.yzgls_lfdb_sl = Utils.keep2Wdouble(Constant.zfzyc_yzgls_gye / 5, 0);
-            if (SpUtil.getSpDouble(getContext(),"yzgls_lfdb_sl",0) != 0)
-                Constant.yzgls_lfdb_sl = SpUtil.getSpDouble(getContext(),"yzgls_lfdb_sl",0);
+
             Constant.yzgls_lfdb_dj = Utils.keep2Wdouble(160, 2);
-            if (SpUtil.getSpDouble(getContext(),"yzgls_lfdb_dj",0) != 0)
-                Constant.yzgls_lfdb_dj = SpUtil.getSpDouble(getContext(),"yzgls_lfdb_dj",0);
+            if (SpUtil.getSpDouble(App.context,"yzgls_lfdb_dj",0) != 0)
+                Constant.yzgls_lfdb_dj = SpUtil.getSpDouble(App.context,"yzgls_lfdb_dj",0);
             Constant.yzgls_lfdb_tz = Utils.keep2Wdouble((Constant.yzgls_lfdb_sl * Constant.yzgls_lfdb_dj) / 10000, 2);
 
             Constant.yzgls_ysq_sl = Utils.keep2Wdouble(Constant.zfzyc_yzgll_gyy * 2, 0);
-            if (SpUtil.getSpDouble(getContext(),"yzgls_ysq_sl",0) != 0)
-                Constant.yzgls_ysq_sl = SpUtil.getSpDouble(getContext(),"yzgls_ysq_sl",0);
+            
             Constant.yzgls_ysq_dj = Utils.keep2Wdouble(60, 2);
-            if (SpUtil.getSpDouble(getContext(),"yzgls_ysq_dj",0) != 0)
-                Constant.yzgls_ysq_dj = SpUtil.getSpDouble(getContext(),"yzgls_ysq_dj",0);
+            if (SpUtil.getSpDouble(App.context,"yzgls_ysq_dj",0) != 0)
+                Constant.yzgls_ysq_dj = SpUtil.getSpDouble(App.context,"yzgls_ysq_dj",0);
             Constant.yzgls_ysq_tz = Utils.keep2Wdouble((Constant.yzgls_ysq_sl * Constant.yzgls_ysq_dj) / 10000, 2);
 
             Constant.yzgls_tzze = Utils.keep2Wdouble(Constant.yzgls_xqjl_tz + Constant.yzgls_ltlx_tz + Constant.yzgls_sl_tz + Constant.yzgls_fyfj_tz

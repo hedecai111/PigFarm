@@ -79,7 +79,7 @@
                 <EditText
                     android:id="@+id/hbmzs_xqjl_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/hbmzs_xqjl_dj"
@@ -108,7 +108,7 @@
                 <EditText
                     android:id="@+id/hbmzs_ltlx_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/hbmzs_ltlx_dj"
@@ -137,7 +137,7 @@
                 <EditText
                     android:id="@+id/hbmzs_sl_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/hbmzs_sl_dj"
@@ -166,7 +166,7 @@
                 <EditText
                     android:id="@+id/hbmzs_fyfj_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/hbmzs_fyfj_dj"
@@ -195,7 +195,7 @@
                 <EditText
                     android:id="@+id/hbmzs_znhjkzq_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/hbmzs_znhjkzq_dj"
@@ -224,7 +224,7 @@
                 <EditText
                     android:id="@+id/hbmzs_lfdb_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/hbmzs_lfdb_dj"
@@ -253,7 +253,7 @@
                 <EditText
                     android:id="@+id/hbmzs_ysq_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/hbmzs_ysq_dj"
@@ -329,7 +329,7 @@
                 <EditText
                     android:id="@+id/gzjpzrjmzs_bzj_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/gzjpzrjmzs_bzj_dj"
@@ -358,7 +358,7 @@
                 <EditText
                     android:id="@+id/gzjpzrjmzs_jyzlzdfxy_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/gzjpzrjmzs_jyzlzdfxy_dj"
@@ -387,7 +387,7 @@
                 <EditText
                     android:id="@+id/gzjpzrjmzs_szsj_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/gzjpzrjmzs_szsj_dj"
@@ -416,7 +416,7 @@
                 <EditText
                     android:id="@+id/gzjpzrjmzs_szysjybzdgzj_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/gzjpzrjmzs_szysjybzdgzj_dj"
@@ -445,7 +445,7 @@
                 <EditText
                     android:id="@+id/gzjpzrjmzs_xqjl_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/gzjpzrjmzs_xqjl_dj"
@@ -474,7 +474,7 @@
                 <EditText
                     android:id="@+id/gzjpzrjmzs_ltxx_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/gzjpzrjmzs_ltxx_dj"
@@ -503,7 +503,7 @@
                 <EditText
                     android:id="@+id/gzjpzrjmzs_sl_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/gzjpzrjmzs_sl_dj"
@@ -532,7 +532,7 @@
                 <EditText
                     android:id="@+id/gzjpzrjmzs_fyfj_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/gzjpzrjmzs_fyfj_dj"
@@ -561,7 +561,7 @@
                 <EditText
                     android:id="@+id/gzjpzrjmzs_znhjkzq_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/gzjpzrjmzs_znhjkzq_dj"
@@ -590,7 +590,7 @@
                 <EditText
                     android:id="@+id/gzjpzrjmzs_lfdb_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/gzjpzrjmzs_lfdb_dj"
@@ -619,7 +619,7 @@
                 <EditText
                     android:id="@+id/gzjpzrjmzs_ysq_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/gzjpzrjmzs_ysq_dj"
@@ -648,7 +648,7 @@
                 <EditText
                     android:id="@+id/gzjpzrjmzs_rcvczdy_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/gzjpzrjmzs_rcvczdy_dj"
@@ -724,7 +724,7 @@
                 <EditText
                     android:id="@+id/rcmzs_xwl_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/rcmzs_xwl_dj"
@@ -753,7 +753,7 @@
                 <EditText
                     android:id="@+id/rcmzs_ltlx_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/rcmzs_ltlx_dj"
@@ -782,7 +782,7 @@
                 <EditText
                     android:id="@+id/rcmzs_sl_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/rcmzs_sl_dj"
@@ -811,7 +811,7 @@
                 <EditText
                     android:id="@+id/rcmzs_fyfj_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/rcmzs_fyfj_dj"
@@ -840,7 +840,7 @@
                 <EditText
                     android:id="@+id/rcmzs_znhjkzq_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/rcmzs_znhjkzq_dj"
@@ -869,7 +869,7 @@
                 <EditText
                     android:id="@+id/rcmzs_lfdb_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/rcmzs_lfdb_dj"
@@ -898,7 +898,7 @@
                 <EditText
                     android:id="@+id/rcmzs_ysq_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/rcmzs_ysq_dj"
@@ -972,7 +972,7 @@
                 <EditText
                     android:id="@+id/fws_fwl_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/fws_fwl_dj"
@@ -1001,7 +1001,7 @@
                 <EditText
                     android:id="@+id/fws_ltlx_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/fws_ltlx_dj"
@@ -1030,7 +1030,7 @@
                 <EditText
                     android:id="@+id/fws_sl_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/fws_sl_dj"
@@ -1059,7 +1059,7 @@
                 <EditText
                     android:id="@+id/fws_flsj_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/fws_flsj_dj"
@@ -1088,7 +1088,7 @@
                 <EditText
                     android:id="@+id/fws_znhjkzq_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/fws_znhjkzq_dj"
@@ -1117,7 +1117,7 @@
                 <EditText
                     android:id="@+id/fws_ysq_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/fws_ysq_dj"
@@ -1146,7 +1146,7 @@
                 <EditText
                     android:id="@+id/fws_znbwx_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/fws_znbwx_dj"
@@ -1175,7 +1175,7 @@
                 <EditText
                     android:id="@+id/fws_dhjbysb_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/fws_dhjbysb_dj"
@@ -1251,7 +1251,7 @@
                 <EditText
                     android:id="@+id/bys_byl_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/bys_byl_dj"
@@ -1280,7 +1280,7 @@
                 <EditText
                     android:id="@+id/bys_ltlx_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/bys_ltlx_dj"
@@ -1309,7 +1309,7 @@
                 <EditText
                     android:id="@+id/bys_sl_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/bys_sl_dj"
@@ -1338,7 +1338,7 @@
                 <EditText
                     android:id="@+id/bys_fyfj_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/bys_fyfj_dj"
@@ -1367,7 +1367,7 @@
                 <EditText
                     android:id="@+id/bys_znhjkzq_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/bys_znhjkzq_dj"
@@ -1396,7 +1396,7 @@
                 <EditText
                     android:id="@+id/bys_ysq_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/bys_ysq_dj"
@@ -1425,7 +1425,7 @@
                 <EditText
                     android:id="@+id/bys_dhjbwsb_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/bys_dhjbwsb_dj"
@@ -1501,7 +1501,7 @@
                 <EditText
                     android:id="@+id/szyfs_xqjl_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/szyfs_xqjl_dj"
@@ -1530,7 +1530,7 @@
                 <EditText
                     android:id="@+id/szyfs_ltlx_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/szyfs_ltlx_dj"
@@ -1559,7 +1559,7 @@
                 <EditText
                     android:id="@+id/szyfs_sl_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/szyfs_sl_dj"
@@ -1588,7 +1588,7 @@
                 <EditText
                     android:id="@+id/szyfs_fyfj_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/szyfs_fyfj_dj"
@@ -1617,7 +1617,7 @@
                 <EditText
                     android:id="@+id/szyfs_znhjkzq_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/szyfs_znhjkzq_dj"
@@ -1646,7 +1646,7 @@
                 <EditText
                     android:id="@+id/szyfs_lfdb_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/szyfs_lfdb_dj"
@@ -1675,7 +1675,7 @@
                 <EditText
                     android:id="@+id/szyfs_ysq_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/szyfs_ysq_dj"
@@ -1751,7 +1751,7 @@
                 <EditText
                     android:id="@+id/bzgls_xqjl_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/bzgls_xqjl_dj"
@@ -1780,7 +1780,7 @@
                 <EditText
                     android:id="@+id/bzgls_ltlx_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/bzgls_ltlx_dj"
@@ -1809,7 +1809,7 @@
                 <EditText
                     android:id="@+id/bzgls_sl_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/bzgls_sl_dj"
@@ -1838,7 +1838,7 @@
                 <EditText
                     android:id="@+id/bzgls_fyfj_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/bzgls_fyfj_dj"
@@ -1867,7 +1867,7 @@
                 <EditText
                     android:id="@+id/bzgls_znhjkzq_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/bzgls_znhjkzq_dj"
@@ -1896,7 +1896,7 @@
                 <EditText
                     android:id="@+id/bzgls_lfdb_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/bzgls_lfdb_dj"
@@ -1925,7 +1925,7 @@
                 <EditText
                     android:id="@+id/bzgls_ysq_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/bzgls_ysq_dj"
@@ -2001,7 +2001,7 @@
                 <EditText
                     android:id="@+id/yzgls_xqjl_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/yzgls_xqjl_dj"
@@ -2030,7 +2030,7 @@
                 <EditText
                     android:id="@+id/yzgls_ltlx_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/yzgls_ltlx_dj"
@@ -2059,7 +2059,7 @@
                 <EditText
                     android:id="@+id/yzgls_sl_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/yzgls_sl_dj"
@@ -2088,7 +2088,7 @@
                 <EditText
                     android:id="@+id/yzgls_fyfj_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/yzgls_fyfj_dj"
@@ -2117,7 +2117,7 @@
                 <EditText
                     android:id="@+id/yzgls_znhjkzq_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/yzgls_znhjkzq_dj"
@@ -2146,7 +2146,7 @@
                 <EditText
                     android:id="@+id/yzgls_lfdb_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/yzgls_lfdb_dj"
@@ -2175,7 +2175,7 @@
                 <EditText
                     android:id="@+id/yzgls_ysq_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="true"
+                    android:enabled="false"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/yzgls_ysq_dj"
@@ -2203,7 +2203,7 @@
             android:layout_weight="1"
             android:layout_marginLeft="5dp"
             android:textColor="@color/text_white"
-            android:background="@drawable/left_right_button_selecotr"
+            android:background="#6e66e0"
             android:text="保存"/>
         <Button
             android:id="@+id/add_But"
@@ -2213,7 +2213,7 @@
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             android:textColor="@color/text_white"
-            android:background="@drawable/left_right_button_selecotr"
+            android:background="#63B8FF"
             android:text="添加"/>
     </LinearLayout>
 </LinearLayout>

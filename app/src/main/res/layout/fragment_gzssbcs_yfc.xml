@@ -20,7 +20,22 @@
         android:orientation="vertical">
         <!--标题栏-->
         <LinearLayout
-           style="@style/linear_style_zsjz">
+           style="@style/linear_style_zsjz"
+            android:id="@+id/yfc_Lin">
+            <TextView
+                style="@style/textview_driver" />
+            <LinearLayout style="@style/linear_style">
+                <TextView
+                    style="@style/textview_style_zqjg"
+                    android:layout_weight="1"
+                    android:text="投资总额(万元)"/>
+                <EditText
+                    android:id="@+id/yfc_tzze"
+                    style="@style/edittext_style_zqjg"
+                    android:text="--"/>
+            </LinearLayout>
+            <TextView
+                style="@style/textview_driver" />
             <LinearLayout style="@style/linear_style">
                 <TextView
                     style="@style/textview_style_zqjg"
@@ -59,12 +74,12 @@
                 <EditText
                     android:id="@+id/yfc_xqjl_sl"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="false"
+                    android:enabled="true"
                     android:hint="个"/>
                 <EditText
                     android:id="@+id/yfc_xqjl_dj"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="false"
+                    android:enabled="true"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/yfc_xqjl_tz"
@@ -93,7 +108,7 @@
                 <EditText
                     android:id="@+id/yfc_ltlx_dj"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="false"
+                    android:enabled="true"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/yfc_ltlx_tz"
@@ -122,7 +137,7 @@
                 <EditText
                     android:id="@+id/yfc_sl_dj"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="false"
+                    android:enabled="true"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/yfc_sl_tz"
@@ -151,7 +166,7 @@
                 <EditText
                     android:id="@+id/yfc_fyfj_dj"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="false"
+                    android:enabled="true"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/yfc_fyfj_tz"
@@ -180,7 +195,7 @@
                 <EditText
                     android:id="@+id/yfc_znhjkzq_dj"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="false"
+                    android:enabled="true"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/yfc_znhjkzq_tz"
@@ -209,7 +224,7 @@
                 <EditText
                     android:id="@+id/yfc_lfdb_dj"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="false"
+                    android:enabled="true"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/yfc_lfdb_tz"
@@ -238,30 +253,41 @@
                 <EditText
                     android:id="@+id/yfc_ysq_dj"
                     style="@style/edittext_style_zqjg"
-                    android:enabled="false"
+                    android:enabled="true"
                     android:hint="--"/>
                 <EditText
                     android:id="@+id/yfc_ysq_tz"
                     style="@style/edittext_style_zqjg"
                     android:text="--"/>
             </LinearLayout>
-            <TextView
-                style="@style/textview_driver" />
-            <LinearLayout style="@style/linear_style">
-                <TextView
-                    style="@style/textview_style_zqjg"
-                    android:layout_weight="1"
-                    android:text="投资总额(万元)"/>
-                <EditText
-                    android:id="@+id/yfc_tzze"
-                    style="@style/edittext_style_zqjg"
-                    android:text="--"/>
-            </LinearLayout>
+
         </LinearLayout>
 
     </LinearLayout>
     </ScrollView>
 
-    <include layout="@layout/left_right_button"
-        android:visibility="gone"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/save_But"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/text_white"
+            android:background="#6e66e0"
+            android:text="保存"/>
+        <Button
+            android:id="@+id/add_But"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:textColor="@color/text_white"
+            android:background="#63B8FF"
+            android:text="添加"/>
+    </LinearLayout>
 </LinearLayout>

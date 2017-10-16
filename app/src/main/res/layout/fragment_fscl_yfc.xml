@@ -48,6 +48,7 @@
                 <EditText
                     android:id="@+id/szyfz_f_gwz"
                     style="@style/edittext_style"
+                    android:enabled="false"
                     android:hint="请输入日干物质产量" />
             </LinearLayout>
 
@@ -76,6 +77,7 @@
                 <EditText
                     android:id="@+id/szyfz_l_gwz"
                     style="@style/edittext_style"
+                    android:enabled="false"
                     android:hint="请输入干物质产量" />
             </LinearLayout>
 
@@ -90,6 +92,7 @@
                 <EditText
                     android:id="@+id/szyfz_flhj"
                     style="@style/edittext_style"
+                    android:enabled="false"
                     android:hint="请输入粪尿合计产氮量" />
             </LinearLayout>
             <TextView style="@style/textview_driver" />
@@ -103,6 +106,7 @@
                 <EditText
                     android:id="@+id/szyfz_gwz"
                     style="@style/edittext_style"
+                    android:enabled="false"
                     android:hint="请输入干物质合计产量" />
             </LinearLayout>
         </LinearLayout>

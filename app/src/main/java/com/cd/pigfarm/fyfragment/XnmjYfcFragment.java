@@ -1,21 +1,32 @@
 package com.cd.pigfarm.fyfragment;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cd.pigfarm.R;
+import com.cd.pigfarm.app.App;
 import com.cd.pigfarm.base.BaseFragment;
 import com.cd.pigfarm.constant.Constant;
+import com.cd.pigfarm.entities.NzwEntity;
 import com.cd.pigfarm.util.LogUtil;
 import com.cd.pigfarm.util.SpUtil;
 import com.cd.pigfarm.util.Utils;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
+
+import java.util.List;
 
 /**
  * @author hedecai
@@ -23,7 +34,7 @@ import com.mobsandgeeks.saripaar.annotation.NotEmpty;
  * @date 2017/3/23 21:49
  * @Description: 消纳面积
  */
-public class XnmjYfcFragment extends BaseFragment {
+public class XnmjYfcFragment extends BaseFragment implements AdapterView.OnItemSelectedListener{
 
     @NotEmpty
     private EditText mYfc_zcdl;
@@ -173,6 +184,25 @@ public class XnmjYfcFragment extends BaseFragment {
     private EditText mYfc_cz_zsdl;
 
 
+    private Spinner yfc_sd_bfb;
+    private Spinner yfc_xm_bfb;
+    private Spinner yfc_ym_bfb;
+    private Spinner yfc_yc_bfb;
+    private Spinner yfc_gs_bfb;
+    private Spinner yfc_mls_bfb;
+    private Spinner yfc_jglsc_bfb;
+    private Spinner yfc_yclsc_bfb;
+    private Spinner yfc_glsc_bfb;
+    private Spinner yfc_dlsc_bfb;
+    private Spinner yfc_cslsc_bfb;
+    private Spinner yfc_lygs_bfb;
+    private Spinner yfc_clgs_bfb;
+    private Spinner yfc_cy_bfb;
+    private Spinner yfc_mc_bfb;
+
+    private Button yfc_czjs;
+
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -182,7 +212,344 @@ public class XnmjYfcFragment extends BaseFragment {
         return view;
     }
 
+
+    private LinearLayout yfc_Lin;
+
+
+
+
+    AlertDialog alertDialog;
+
+    String[] items = {"水稻","小麦","玉米","油菜","甘薯","马铃薯","茄果类蔬菜","瓜类蔬菜","叶菜类蔬菜","根菜类蔬菜",
+            "豆类蔬菜","葱蒜类蔬菜","落叶果树","常绿果树","茶叶","牧草"};
+
+    private void czjsYfc() {
+        if (Constant.yfc_cz_zsdl <= 0){
+            Toast.makeText(getContext(),"差值小于或等于0,无法分配",Toast.LENGTH_SHORT).show();
+            return;
+        }
+        alertDialog = new AlertDialog.Builder(getContext()).setTitle("请选择差值分配农作物")
+                .setSingleChoiceItems(items, 0, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        if (which == 0){
+                            //水稻
+                            if (Constant.yfc_sd_mj == 0){
+                                Constant.yfc_sd_mj = Constant.yfc_cz_zsdl/Constant.sd/Constant.yfc_sd_jshns/Constant.yfc_sd_bfb;
+                                Constant.yfc_sd_zsdl = Constant.yfc_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"yfc_sd_mj",Constant.yfc_sd_mj);
+                                Constant.yfc_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else if (which == 1){
+                            //水稻
+                            if (Constant.yfc_xm_mj == 0){
+                                Constant.yfc_xm_mj = Constant.yfc_cz_zsdl/Constant.xm/Constant.yfc_xm_jshns/Constant.yfc_xm_bfb;
+                                Constant.yfc_xm_zsdl = Constant.yfc_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"yfc_xm_mj",Constant.yfc_xm_mj);
+                                Constant.yfc_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else  if (which == 2){
+                            //水稻
+                            if (Constant.yfc_ym_mj == 0){
+                                Constant.yfc_ym_mj = Constant.yfc_cz_zsdl/Constant.ym/Constant.yfc_ym_jshns/Constant.yfc_ym_bfb;
+                                Constant.yfc_ym_zsdl = Constant.yfc_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"yfc_ym_mj",Constant.yfc_ym_mj);
+                                Constant.yfc_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else if (which == 3){
+                            //水稻
+                            if (Constant.yfc_yc_mj == 0){
+                                Constant.yfc_yc_mj = Constant.yfc_cz_zsdl/Constant.yc/Constant.yfc_yc_jshns/Constant.yfc_yc_bfb;
+                                Constant.yfc_yc_zsdl = Constant.yfc_cz_zsdl;
+                                Constant.yfc_cz_zsdl = 0;
+                                SpUtil.saveSP(getContext(),"yfc_yc_mj",Constant.yfc_yc_mj);
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else if (which == 4){
+                            //水稻
+                            if (Constant.yfc_gs_mj == 0){
+                                Constant.yfc_gs_mj = Constant.yfc_cz_zsdl/Constant.gs/Constant.yfc_gs_jshns/Constant.yfc_gs_bfb;
+                                Constant.yfc_gs_zsdl = Constant.yfc_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"yfc_gs_mj",Constant.yfc_gs_mj);
+                                Constant.yfc_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else if (which == 5){
+                            //水稻
+                            if (Constant.yfc_mls_mj == 0){
+                                Constant.yfc_mls_mj = Constant.yfc_cz_zsdl/Constant.mls/Constant.yfc_mls_jshns/Constant.yfc_mls_bfb;
+                                Constant.yfc_mls_zsdl = Constant.yfc_cz_zsdl;
+                                Toast.makeText(getContext(),Constant.yfc_mls_mj+"",Toast.LENGTH_SHORT).show();
+                                SpUtil.saveSP(getContext(),"yfc_mls_mj",Constant.yfc_mls_mj);
+                                Constant.yfc_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else  if (which == 6){
+                            //水稻
+                            if (Constant.yfc_qglsc_mj == 0){
+                                Constant.yfc_qglsc_mj = Constant.yfc_cz_zsdl/Constant.qglsc/Constant.yfc_qglsc_jshns/Constant.yfc_qglsc_bfb;
+                                Constant.yfc_qglsc_zsdl = Constant.yfc_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"yfc_qglsc_mj",Constant.yfc_qglsc_mj);
+                                Constant.yfc_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else  if (which == 7){
+                            //水稻
+                            if (Constant.yfc_ggsc_mj == 0){
+                                Constant.yfc_ggsc_mj = Constant.yfc_cz_zsdl/Constant.glsc/Constant.yfc_ggsc_jshns/Constant.yfc_ggsc_bfb;
+                                Constant.yfc_ggsc_zsdl = Constant.yfc_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"yfc_ggsc_mj",Constant.yfc_ggsc_mj);
+                                Constant.yfc_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else if (which == 8){
+                            //水稻
+                            if (Constant.yfc_yclsc_mj == 0){
+                                Constant.yfc_yclsc_mj = Constant.yfc_cz_zsdl/Constant.yclsc/Constant.yfc_yclsc_jshns/Constant.yfc_yclsc_bfb;
+                                Constant.yfc_yclsc_zsdl = Constant.yfc_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"yfc_yclsc_mj",Constant.yfc_yclsc_mj);
+                                Constant.yfc_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else if (which == 9){
+                            //水稻
+                            if (Constant.yfc_gclsc_mj == 0){
+                                Constant.yfc_gclsc_mj = Constant.yfc_cz_zsdl/Constant.gclsc/Constant.yfc_gclsc_jshns/Constant.yfc_gclsc_bfb;
+                                Constant.yfc_gclsc_zsdl = Constant.yfc_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"yfc_gclsc_mj",Constant.yfc_gclsc_mj);
+                                Constant.yfc_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else  if (which == 10){
+                            //水稻
+                            if (Constant.yfc_dlsc_mj == 0){
+                                Constant.yfc_dlsc_mj = Constant.yfc_cz_zsdl/Constant.dlsc/Constant.yfc_dlsc_jshns/Constant.yfc_dlsc_bfb;
+                                Constant.yfc_dlsc_zsdl = Constant.yfc_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"yfc_dlsc_mj",Constant.yfc_dlsc_mj);
+                                Constant.yfc_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else if (which == 11){
+                            //水稻
+                            if (Constant.yfc_cslsc_mj == 0){
+                                Constant.yfc_cslsc_mj = Constant.yfc_cz_zsdl/Constant.cslsc/Constant.yfc_cslsc_jshns/Constant.yfc_cslgs_bfb;
+                                Constant.yfc_cslsc_zsdl = Constant.yfc_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"yfc_cslsc_mj",Constant.yfc_cslsc_mj);
+                                Constant.yfc_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else if (which == 12){
+                            //水稻
+                            if (Constant.yfc_lygs_mj == 0){
+                                Constant.yfc_lygs_mj = Constant.yfc_cz_zsdl/Constant.lygs/Constant.yfc_lygs_jshns/Constant.yfc_lygs_bfb;
+                                Constant.yfc_lygs_zsdl = Constant.yfc_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"yfc_lygs_mj",Constant.yfc_lygs_mj);
+                                Constant.yfc_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else if (which == 13){
+                            //水稻
+                            if (Constant.yfc_clgs_mj == 0){
+                                Constant.yfc_clgs_mj = Constant.yfc_cz_zsdl/Constant.clgs/Constant.yfc_clgs_jshns/Constant.yfc_clgs_bfb;
+                                Constant.yfc_clgs_zsdl = Constant.yfc_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"yfc_clgs_mj",Constant.yfc_clgs_mj);
+                                Constant.yfc_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        else if (which == 14){
+                            //水稻
+                            if (Constant.yfc_cy_mj == 0){
+                                Constant.yfc_cy_mj = Constant.yfc_cz_zsdl/Constant.cy/Constant.yfc_cy_jshns/Constant.yfc_cy_bfb;
+                                Constant.yfc_cy_zsdl = Constant.yfc_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"yfc_cy_mj",Constant.yfc_cy_mj);
+                                Constant.yfc_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+
+                            }
+                        }
+
+                        else if (which == 15){
+                            //水稻
+                            if (Constant.yfc_mc_mj == 0){
+                                Constant.yfc_mc_mj = Constant.yfc_cz_zsdl/Constant.mc/Constant.yfc_mc_jshns/Constant.yfc_mc_bfb;
+                                Constant.yfc_mc_zsdl = Constant.yfc_cz_zsdl;
+                                SpUtil.saveSP(getContext(),"yfc_mc_mj",Constant.yfc_mc_mj);
+                                Constant.yfc_cz_zsdl = 0;
+                            }else {
+                                Toast.makeText(getContext(),"请选择未设置面积的农作物",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                        jsDatas();
+                        refreshViews();
+
+                        alertDialog.dismiss();
+                    }
+                }).show();
+    }
+
+
+    private void addViewByType(LinearLayout lin,NzwEntity nzwEntity){
+
+        TextView textView = (TextView) View.inflate(getContext(),R.layout.lin_textview,null);
+        lin.addView(textView,new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,1));
+        LinearLayout linearLayout = (LinearLayout) View.inflate(getContext(),R.layout.xnmj_item,null);
+        TextView textView1 = (TextView) linearLayout.findViewById(R.id.name);
+        textView1.setText(nzwEntity.getName());
+        lin.addView(linearLayout,new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, Utils.dip2px(getContext(),50f)));
+    }
+
     private void bindViews() {
+
+        yfc_czjs = (Button) view.findViewById(R.id.yfc_czjs);
+        yfc_czjs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                czjsYfc();
+            }
+        });
+
+
+        yfc_Lin = (LinearLayout) view.findViewById(R.id.yfc_Lin);
+
+
+        List<NzwEntity> nzwEntities = App.sqlOpenHelper.queryAllNzw();
+       // Toast.makeText(getContext(),nzwEntities.size()+"",Toast.LENGTH_SHORT).show();
+        if (nzwEntities != null && nzwEntities.size() > 0){
+            //Toast.makeText(getContext(),nzwEntities.size()+"",Toast.LENGTH_SHORT).show();
+            for (NzwEntity nzwEntity : nzwEntities){
+                addViewByType(yfc_Lin,nzwEntity);
+            }
+        }
+
+        yfc_sd_bfb = (Spinner) view.findViewById(R.id.yfc_sd_bfb);
+        yfc_sd_bfb.setOnItemSelectedListener(this);
+
+        if (Constant.yfc_sd_bfb != 1){
+            yfc_sd_bfb.setSelection((int)(10-1 - Constant.yfc_sd_bfb*10));
+            //Toast.makeText(getContext(),(int)(10-1 - Constant.yfc_sd_bfb*10)+"",Toast.LENGTH_SHORT).show();
+        }
+        yfc_xm_bfb = (Spinner) view.findViewById(R.id.yfc_xm_bfb);
+        yfc_xm_bfb.setOnItemSelectedListener(this);
+        if (Constant.yfc_xm_bfb != 1){
+            yfc_xm_bfb.setSelection((int)(10-1 - Constant.yfc_xm_bfb*10));
+        }
+        yfc_ym_bfb = (Spinner) view.findViewById(R.id.yfc_ym_bfb);
+        yfc_ym_bfb.setOnItemSelectedListener(this);
+        if (Constant.yfc_ym_bfb != 1){
+            yfc_ym_bfb.setSelection((int)(10-1 - Constant.yfc_ym_bfb*10));
+        }
+        yfc_yc_bfb = (Spinner) view.findViewById(R.id.yfc_yc_bfb);
+        yfc_yc_bfb.setOnItemSelectedListener(this);
+        if (Constant.yfc_yc_bfb != 1){
+            yfc_yc_bfb.setSelection((int)(10-1 - Constant.yfc_yc_bfb*10));
+        }
+        yfc_gs_bfb = (Spinner) view.findViewById(R.id.yfc_gs_bfb);
+        yfc_gs_bfb.setOnItemSelectedListener(this);
+        if (Constant.yfc_gs_bfb != 1){
+            yfc_gs_bfb.setSelection((int)(10-1 - Constant.yfc_gs_bfb*10));
+        }
+        yfc_mls_bfb = (Spinner) view.findViewById(R.id.yfc_mls_bfb);
+        yfc_mls_bfb.setOnItemSelectedListener(this);
+        if (Constant.yfc_mls_bfb != 1){
+            yfc_mls_bfb.setSelection((int)(10-1 - Constant.yfc_mls_bfb*10));
+        }
+        yfc_jglsc_bfb = (Spinner) view.findViewById(R.id.yfc_qglsc_bfb);
+        yfc_jglsc_bfb.setOnItemSelectedListener(this);
+        if (Constant.yfc_qglsc_bfb != 1){
+            yfc_jglsc_bfb.setSelection((int)(10-1 - Constant.yfc_qglsc_bfb*10));
+        }
+        yfc_yclsc_bfb = (Spinner) view.findViewById(R.id.yfc_yclsc_bfb);
+        yfc_yclsc_bfb.setOnItemSelectedListener(this);
+        if (Constant.yfc_yclsc_bfb != 1){
+            yfc_yclsc_bfb.setSelection((int)(10-1 - Constant.yfc_yclsc_bfb*10));
+        }
+        yfc_glsc_bfb = (Spinner) view.findViewById(R.id.yfc_glsc_bfb);
+        yfc_glsc_bfb.setOnItemSelectedListener(this);
+        if (Constant.yfc_ggsc_bfb != 1){
+            yfc_glsc_bfb.setSelection((int)(10-1 - Constant.yfc_ggsc_bfb*10));
+        }
+        yfc_dlsc_bfb = (Spinner) view.findViewById(R.id.yfc_dlsc_bfb);
+        yfc_dlsc_bfb.setOnItemSelectedListener(this);
+        if (Constant.yfc_dlsc_bfb != 1){
+            yfc_dlsc_bfb.setSelection((int)(10-1 - Constant.yfc_dlsc_bfb*10));
+        }
+        yfc_cslsc_bfb = (Spinner) view.findViewById(R.id.yfc_cslsc_bfb);
+        yfc_cslsc_bfb.setOnItemSelectedListener(this);
+        if (Constant.yfc_cslgs_bfb != 1){
+            yfc_cslsc_bfb.setSelection((int)(10-1 - Constant.yfc_cslgs_bfb*10));
+        }
+        yfc_lygs_bfb = (Spinner) view.findViewById(R.id.yfc_lygs_bfb);
+        yfc_lygs_bfb.setOnItemSelectedListener(this);
+        if (Constant.yfc_lygs_bfb != 1){
+            yfc_lygs_bfb.setSelection((int)(10-1 - Constant.yfc_lygs_bfb*10));
+        }
+        yfc_clgs_bfb = (Spinner) view.findViewById(R.id.yfc_clgs_bfb);
+        yfc_clgs_bfb.setOnItemSelectedListener(this);
+        if (Constant.yfc_clgs_bfb != 1){
+            yfc_clgs_bfb.setSelection((int)(10-1 - Constant.yfc_clgs_bfb*10));
+        }
+        yfc_cy_bfb = (Spinner) view.findViewById(R.id.yfc_cy_bfb);
+        yfc_cy_bfb.setOnItemSelectedListener(this);
+        if (Constant.yfc_cy_bfb != 1){
+            yfc_cy_bfb.setSelection((int)(10-1 - Constant.yfc_cy_bfb*10));
+        }
+        yfc_mc_bfb = (Spinner) view.findViewById(R.id.yfc_mc_bfb);
+        yfc_mc_bfb.setOnItemSelectedListener(this);
+        if (Constant.yfc_mc_bfb != 1){
+            yfc_mc_bfb.setSelection((int)(10-1 - Constant.yfc_mc_bfb*10));
+        }
+        
+        
+        
+        
+        
 
         mYfc_zcdl = (EditText) view.findViewById(R.id.yfc_zcdl);
         mYfc_zcdl.setOnFocusChangeListener(focusListener);
@@ -925,58 +1292,63 @@ public class XnmjYfcFragment extends BaseFragment {
         try {
             Constant.yfc_zcdl = Utils.keep2Wdouble(Constant.clspzs * Constant.szyfz_flhj * 365, 0);
             //ddd
-            Constant.yfc_sd_zsdl = Constant.sd * Constant.yfc_sd_mj;
+            Constant.yfc_sd_zsdl = Constant.sd * Constant.yfc_sd_mj* Constant.yfc_sd_jshns* Constant.yfc_sd_bfb;
             //SpUtil.saveSP(getContext(), "yfc_sd_zsdl", Constant.yfc_sd_zsdl);
 
-            Constant.yfc_xm_zsdl = Constant.xm * Constant.yfc_xm_mj;
+            Constant.yfc_xm_zsdl = Constant.xm * Constant.yfc_xm_mj* Constant.yfc_xm_jshns* Constant.yfc_xm_bfb;
             //SpUtil.saveSP(getContext(), "yfc_xm_zsdl", Constant.yfc_xm_zsdl);
 
-            Constant.yfc_ym_zsdl = Constant.ym * Constant.yfc_ym_mj;
+            Constant.yfc_ym_zsdl = Constant.ym * Constant.yfc_ym_mj* Constant.yfc_ym_jshns* Constant.yfc_ym_bfb;
             //SpUtil.saveSP(getContext(), "yfc_ym_zsdl", Constant.yfc_ym_zsdl);
 
-            Constant.yfc_yc_zsdl = Constant.yc * Constant.yfc_yc_mj;
+            Constant.yfc_yc_zsdl = Constant.yc * Constant.yfc_yc_mj* Constant.yfc_yc_jshns* Constant.yfc_yc_bfb;
             //SpUtil.saveSP(getContext(), "yfc_yc_zsdl", Constant.yfc_yc_zsdl);
 
-            Constant.yfc_gs_zsdl = Constant.gs * Constant.yfc_gs_mj;
+            Constant.yfc_gs_zsdl = Constant.gs * Constant.yfc_gs_mj* Constant.yfc_gs_jshns* Constant.yfc_gs_bfb;
             //SpUtil.saveSP(getContext(), "yfc_gs_zsdl", Constant.yfc_gs_zsdl);
 
-            Constant.yfc_mls_zsdl = Constant.mls * Constant.yfc_mls_mj;
+            Constant.yfc_mls_zsdl = Constant.mls * Constant.yfc_mls_mj* Constant.yfc_mls_jshns* Constant.yfc_mls_bfb;
             //SpUtil.saveSP(getContext(), "yfc_mls_zsdl", Constant.yfc_mls_zsdl);
 
-            Constant.yfc_qglsc_zsdl = Constant.qglsc * Constant.yfc_qglsc_mj;
+            Constant.yfc_qglsc_zsdl = Constant.qglsc * Constant.yfc_qglsc_mj* Constant.yfc_qglsc_jshns* Constant.yfc_qglsc_bfb;
             //SpUtil.saveSP(getContext(), "yfc_qglsc_zsdl", Constant.yfc_qglsc_zsdl);
 
-            Constant.yfc_ggsc_zsdl = Constant.glsc * Constant.yfc_ggsc_mj;
+            Constant.yfc_ggsc_zsdl = Constant.glsc * Constant.yfc_ggsc_mj* Constant.yfc_ggsc_jshns* Constant.yfc_ggsc_bfb;
             //SpUtil.saveSP(getContext(), "yfc_ggsc_zsdl", Constant.yfc_ggsc_zsdl);
 
-            Constant.yfc_yclsc_zsdl = Constant.yclsc * Constant.yfc_yclsc_mj;
+            Constant.yfc_yclsc_zsdl = Constant.yclsc * Constant.yfc_yclsc_mj* Constant.yfc_yclsc_jshns* Constant.yfc_yclsc_bfb;
             //SpUtil.saveSP(getContext(), "yfc_yclsc_zsdl", Constant.yfc_yclsc_zsdl);
 
-            Constant.yfc_gclsc_zsdl = Constant.gclsc * Constant.yfc_gclsc_mj;
+            Constant.yfc_gclsc_zsdl = Constant.gclsc * Constant.yfc_gclsc_mj* Constant.yfc_gclsc_jshns* Constant.yfc_gclsc_bfb;
             //SpUtil.saveSP(getContext(), "yfc_gclsc_zsdl", Constant.yfc_gclsc_zsdl);
 
-            Constant.yfc_dlsc_zsdl = Constant.dlsc * Constant.yfc_dlsc_mj;
+            Constant.yfc_dlsc_zsdl = Constant.dlsc * Constant.yfc_dlsc_mj* Constant.yfc_dlsc_jshns* Constant.yfc_dlsc_bfb;
             //SpUtil.saveSP(getContext(), "yfc_dlsc_zsdl", Constant.yfc_dlsc_zsdl);
 
-            Constant.yfc_cslsc_zsdl = Constant.cslsc * Constant.yfc_cslsc_mj;
+            Constant.yfc_cslsc_zsdl = Constant.cslsc * Constant.yfc_cslsc_mj* Constant.yfc_cslsc_jshns* Constant.yfc_cslgs_bfb;
             //SpUtil.saveSP(getContext(), "yfc_cslsc_zsdl", Constant.yfc_cslsc_zsdl);
 
-            Constant.yfc_lygs_zsdl = Constant.lygs * Constant.yfc_lygs_mj;
+            Constant.yfc_lygs_zsdl = Constant.lygs * Constant.yfc_lygs_mj* Constant.yfc_lygs_jshns* Constant.yfc_lygs_bfb;
             //SpUtil.saveSP(getContext(), "yfc_lygs_zsdl", Constant.yfc_lygs_zsdl);
 
-            Constant.yfc_clgs_zsdl = Constant.clgs * Constant.yfc_clgs_mj;
+            Constant.yfc_clgs_zsdl = Constant.clgs * Constant.yfc_clgs_mj* Constant.yfc_clgs_jshns* Constant.yfc_clgs_bfb;
             //SpUtil.saveSP(getContext(), "yfc_clgs_zsdl", Constant.yfc_clgs_zsdl);
 
-            Constant.yfc_cy_zsdl = Constant.cy * Constant.yfc_cy_mj;
+            Constant.yfc_cy_zsdl = Constant.cy * Constant.yfc_cy_mj* Constant.yfc_cy_jshns* Constant.yfc_cy_bfb;
             //SpUtil.saveSP(getContext(), "yfc_cy_zsdl", Constant.yfc_cy_zsdl);
 
-            Constant.yfc_mc_zsdl = Constant.mc * Constant.yfc_mc_mj;
+            Constant.yfc_mc_zsdl = Constant.mc * Constant.yfc_mc_mj* Constant.yfc_mc_jshns* Constant.yfc_mc_bfb;
             //SpUtil.saveSP(getContext(), "yfc_mc_zsdl", Constant.yfc_mc_zsdl);
 
             Constant.yfc_hj_zsdl = Constant.yfc_sd_zsdl + Constant.yfc_xm_zsdl + Constant.yfc_ym_zsdl + Constant.yfc_yc_zsdl +
                     Constant.yfc_gs_zsdl + Constant.yfc_mls_zsdl + Constant.yfc_qglsc_zsdl + Constant.yfc_ggsc_zsdl +
                     Constant.yfc_yclsc_zsdl + Constant.yfc_gclsc_zsdl + Constant.yfc_dlsc_zsdl + Constant.yfc_cslsc_zsdl +
                     Constant.yfc_lygs_zsdl + Constant.yfc_clgs_zsdl + Constant.yfc_cy_zsdl + Constant.yfc_mc_zsdl;
+
+            Constant.yfc_hj_mj = Constant.yfc_sd_mj + Constant.yfc_xm_mj + Constant.yfc_ym_mj + Constant.yfc_yc_mj +
+                    Constant.yfc_gs_mj + Constant.yfc_mls_mj + Constant.yfc_qglsc_mj + Constant.yfc_ggsc_mj +
+                    Constant.yfc_yclsc_mj + Constant.yfc_gclsc_mj + Constant.yfc_dlsc_mj + Constant.yfc_cslsc_mj +
+                    Constant.yfc_lygs_mj + Constant.yfc_clgs_mj + Constant.yfc_cy_mj + Constant.yfc_mc_mj;
             //SpUtil.saveSP(getContext(), "yfc_hj_zsdl", Constant.yfc_hj_zsdl);
 
             Constant.yfc_cz_zsdl = Constant.yfc_zcdl - Constant.yfc_hj_zsdl;
@@ -996,6 +1368,19 @@ public class XnmjYfcFragment extends BaseFragment {
         mYfc_zcdl.setText(Constant.yfc_zcdl + "");
 
         //ddd
+        
+
+        Constant.yfc_gs_zsdl = Constant.gs * Constant.yfc_gs_mj;
+        SpUtil.saveSP(getContext(), "yfc_gs_zsdl", Constant.yfc_gs_zsdl);
+        
+
+        Constant.yfc_qglsc_zsdl = Constant.qglsc * Constant.yfc_qglsc_mj;
+        SpUtil.saveSP(getContext(), "yfc_qglsc_zsdl", Constant.yfc_qglsc_zsdl);
+
+        mYfc_gs_zsdl.setText(Constant.yfc_gs_zsdl + "");
+
+        mYfc_mls_zsdl.setText(Constant.yfc_mls_zsdl + "");
+
         mYfc_sd_zsdl.setText(Constant.yfc_sd_zsdl + "");
 
         mYfc_xm_zsdl.setText(Constant.yfc_xm_zsdl + "");
@@ -1003,15 +1388,6 @@ public class XnmjYfcFragment extends BaseFragment {
         mYfc_ym_zsdl.setText(Constant.yfc_ym_zsdl + "");
 
         mYfc_yc_zsdl.setText(Constant.yfc_yc_zsdl + "");
-
-        Constant.yfc_gs_zsdl = Constant.gs * Constant.yfc_gs_mj;
-        SpUtil.saveSP(getContext(), "yfc_gs_zsdl", Constant.yfc_gs_zsdl);
-        mYfc_gs_zsdl.setText(Constant.yfc_gs_zsdl + "");
-
-        mYfc_mls_zsdl.setText(Constant.yfc_mls_zsdl + "");
-
-        Constant.yfc_qglsc_zsdl = Constant.qglsc * Constant.yfc_qglsc_mj;
-        SpUtil.saveSP(getContext(), "yfc_qglsc_zsdl", Constant.yfc_qglsc_zsdl);
         mYfc_qglsc_zsdl.setText(Constant.yfc_qglsc_zsdl + "");
 
         mYfc_ggsc_zsdl.setText(Constant.yfc_ggsc_zsdl + "");
@@ -1034,6 +1410,108 @@ public class XnmjYfcFragment extends BaseFragment {
 
         mYfc_hj_zsdl.setText(Constant.yfc_hj_zsdl + "");
 
+        mYfc_hj_mj.setText(Constant.yfc_hj_mj + "");
+
         mYfc_cz_zsdl.setText(Constant.yfc_cz_zsdl + "");
+
+
+        mYfc_gs_mj.setText(Constant.yfc_gs_mj + "");
+
+        mYfc_mls_mj.setText(Constant.yfc_mls_mj + "");
+
+        mYfc_sd_mj.setText(Constant.yfc_sd_mj + "");
+
+        mYfc_xm_mj.setText(Constant.yfc_xm_mj + "");
+
+        mYfc_ym_mj.setText(Constant.yfc_ym_mj + "");
+
+        mYfc_yc_mj.setText(Constant.yfc_yc_mj + "");
+        mYfc_qglsc_mj.setText(Constant.yfc_qglsc_mj + "");
+
+        mYfc_ggsc_mj.setText(Constant.yfc_ggsc_mj + "");
+
+        mYfc_yclsc_mj.setText(Constant.yfc_yclsc_mj + "");
+
+        mYfc_gclsc_mj.setText(Constant.yfc_gclsc_mj + "");
+
+        mYfc_dlsc_mj.setText(Constant.yfc_dlsc_mj + "");
+
+        mYfc_cslsc_mj.setText(Constant.yfc_cslsc_mj + "");
+
+        mYfc_lygs_mj.setText(Constant.yfc_lygs_mj + "");
+
+        mYfc_clgs_mj.setText(Constant.yfc_clgs_mj + "");
+
+        mYfc_cy_mj.setText(Constant.yfc_cy_mj + "");
+
+        mYfc_mc_mj.setText(Constant.yfc_mc_mj + "");
+
+        mYfc_hj_mj.setText(Constant.yfc_hj_mj + "");
+
+        mYfc_cz_mj.setText(Constant.yfc_cz_mj + "");
+    }
+
+    private double[] arr = new double[]{1,0.9,0.8,0.7,0.6,0.5,0.4,0.2,0.1,0};
+
+    private boolean isFirst = true;
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        double temp = arr[position];
+        if (isFirst){
+            if (parent == yfc_mc_bfb){
+                isFirst = false;
+            }
+            return;
+        }
+        if (parent == yfc_sd_bfb){
+            Constant.yfc_sd_bfb = temp;
+            //Toast.makeText(getContext(),Constant.yfc_sd_bfb+"-----1",Toast.LENGTH_SHORT).show();
+            SpUtil.saveSP(getContext(),"yfc_sd_bfb",Constant.yfc_sd_bfb);
+        }else if(parent == yfc_xm_bfb){
+            Constant.yfc_xm_bfb = temp;
+            SpUtil.saveSP(getContext(),"yfc_xm_bfb",Constant.yfc_xm_bfb);
+        }else if(parent == yfc_ym_bfb){
+            Constant.yfc_ym_bfb = temp;
+            SpUtil.saveSP(getContext(),"yfc_ym_bfb",Constant.yfc_ym_bfb);
+        }else if(parent == yfc_yc_bfb){
+            Constant.yfc_yc_bfb = temp;
+            SpUtil.saveSP(getContext(),"yfc_yc_bfb",Constant.yfc_yc_bfb);
+        }else if(parent == yfc_gs_bfb){
+            Constant.yfc_gs_bfb = temp;
+            SpUtil.saveSP(getContext(),"yfc_gs_bfb",Constant.yfc_gs_bfb);
+        }else if(parent == yfc_mls_bfb){
+            Constant.yfc_mls_bfb = temp;
+            SpUtil.saveSP(getContext(),"yfc_mls_bfb",Constant.yfc_mls_bfb);
+        }else if(parent == yfc_jglsc_bfb){
+            Constant.yfc_qglsc_bfb = temp;
+            SpUtil.saveSP(getContext(),"yfc_qglsc_bfb",Constant.yfc_qglsc_bfb);
+        }else if(parent == yfc_glsc_bfb){
+            Constant.yfc_ggsc_bfb = temp;
+            SpUtil.saveSP(getContext(),"yfc_ggsc_bfb",Constant.yfc_ggsc_bfb);
+        }else if(parent == yfc_dlsc_bfb){
+            Constant.yfc_dlsc_bfb = temp;
+            SpUtil.saveSP(getContext(),"yfc_dlsc_bfb",Constant.yfc_dlsc_bfb);
+        }else if(parent == yfc_cslsc_bfb){
+            Constant.yfc_cslgs_bfb = temp;
+            SpUtil.saveSP(getContext(),"yfc_cslgs_bfb",Constant.yfc_cslgs_bfb);
+        }else if(parent == yfc_clgs_bfb){
+            Constant.yfc_clgs_bfb = temp;
+            SpUtil.saveSP(getContext(),"yfc_clgs_bfb",Constant.yfc_clgs_bfb);
+        }else if(parent == yfc_cy_bfb){
+            Constant.yfc_cy_bfb = temp;
+            SpUtil.saveSP(getContext(),"yfc_cy_bfb",Constant.yfc_cy_bfb);
+        }else if(parent == yfc_mc_bfb){
+            Constant.yfc_mc_bfb = temp;
+            SpUtil.saveSP(getContext(),"yfc_mc_bfb",Constant.yfc_mc_bfb);
+        }
+        
+
+        jsDatas();
+        refreshViews();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
     }
 }
